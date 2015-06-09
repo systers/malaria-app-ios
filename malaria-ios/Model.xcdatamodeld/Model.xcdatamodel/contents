@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14D131" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Medicine" representedClassName="Medicine" syncable="YES">
+        <attribute name="currentStreak" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weekly" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="registries" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Registry" inverseName="medicine" inverseEntity="Registry" syncable="YES"/>
+    </entity>
+    <entity name="Registry" representedClassName="Registry" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="tookMedicine" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="medicine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medicine" inverseName="registries" inverseEntity="Medicine" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Medicine" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Registry" positionX="214" positionY="15" width="128" height="88"/>
+    </elements>
+</model>
