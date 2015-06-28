@@ -1,0 +1,18 @@
+{
+    "users": "http://pc-web-dev.systers.org/api/users/",
+    "posts": "http://pc-web-dev.systers.org/api/posts/",
+    "revposts": "http://pc-web-dev.systers.org/api/revposts/",
+    "regions": "http://pc-web-dev.systers.org/api/regions/",
+    "sectors": "http://pc-web-dev.systers.org/api/sectors/",
+    "ptposts": "http://pc-web-dev.systers.org/api/ptposts/",
+    "projects": "http://pc-web-dev.systers.org/api/projects/",
+    "goals": "http://pc-web-dev.systers.org/api/goals/",
+    "objectives": "http://pc-web-dev.systers.org/api/objectives/",
+    "indicators": "http://pc-web-dev.systers.org/api/indicators/",
+    "outputs": "http://pc-web-dev.systers.org/api/outputs/",
+    "outcomes": "http://pc-web-dev.systers.org/api/outcomes/",
+    "activity": "http://pc-web-dev.systers.org/api/activity/",
+    "measurement": "http://pc-web-dev.systers.org/api/measurement/",
+    "cohort": "http://pc-web-dev.systers.org/api/cohort/",
+    "volunteer": "http://pc-web-dev.systers.org/api/volunteer/"
+}
