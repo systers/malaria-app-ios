@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Api" representedClassName="Api" syncable="YES">
+        <attribute name="activity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cohort" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goals" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="indicators" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="measurement" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="objectives" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="outcomes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="outputs" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="posts" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="projects" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ptposts" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="regions" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="revposts" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sectors" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="users" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="volunteer" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CollectionPosts" representedClassName="CollectionPosts" isAbstract="YES" syncable="YES">
+        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Post" inverseName="contained_in" inverseEntity="Post" syncable="YES"/>
+    </entity>
+    <entity name="CollectionRevPosts" representedClassName="CollectionRevPosts" syncable="YES">
+        <relationship name="rev_posts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RevPost" inverseName="contained_in" inverseEntity="RevPost" syncable="YES"/>
+    </entity>
+    <entity name="Item" representedClassName="Item" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="associated_with" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" inverseName="items" inverseEntity="Trip" syncable="YES"/>
+    </entity>
+    <entity name="Medicine" representedClassName="Medicine" syncable="YES">
+        <attribute name="isCurrent" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="notificationTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="weekly" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="registries" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Registry" inverseName="medicine" inverseEntity="Registry" syncable="YES"/>
+    </entity>
+    <entity name="Post" representedClassName="Post" syncable="YES">
+        <attribute name="created_at" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="owner" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="post_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updated_at" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contained_in" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="CollectionPosts" inverseName="posts" inverseEntity="CollectionPosts" syncable="YES"/>
+    </entity>
+    <entity name="Posts" representedClassName="Posts" parentEntity="CollectionPosts" syncable="YES"/>
+    <entity name="Registry" representedClassName="Registry" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="tookMedicine" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="medicine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medicine" inverseName="registries" inverseEntity="Medicine" syncable="YES"/>
+    </entity>
+    <entity name="RevPost" representedClassName="RevPost" syncable="YES">
+        <attribute name="created_at" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="description_change" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="owner" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="owner_post" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="post_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title_change" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="contained_in" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="CollectionRevPosts" inverseName="rev_posts" inverseEntity="CollectionRevPosts" syncable="YES"/>
+    </entity>
+    <entity name="RevPosts" representedClassName="RevPosts" parentEntity="CollectionRevPosts" syncable="YES"/>
+    <entity name="Trip" representedClassName="Trip" syncable="YES">
+        <attribute name="cashToBring" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="medicine" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reminderDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Item" inverseName="associated_with" inverseEntity="Item" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Api" positionX="-495" positionY="207" width="128" height="283"/>
+        <element name="CollectionPosts" positionX="-270" positionY="207" width="128" height="58"/>
+        <element name="CollectionRevPosts" positionX="63" positionY="209" width="128" height="58"/>
+        <element name="Item" positionX="-207" positionY="11" width="128" height="88"/>
+        <element name="Medicine" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Post" positionX="-101" positionY="201" width="128" height="148"/>
+        <element name="Posts" positionX="-270" positionY="387" width="128" height="43"/>
+        <element name="Registry" positionX="214" positionY="15" width="128" height="88"/>
+        <element name="RevPost" positionX="234" positionY="209" width="128" height="178"/>
+        <element name="RevPosts" positionX="61" positionY="432" width="128" height="43"/>
+        <element name="Trip" positionX="-396" positionY="-18" width="128" height="118"/>
+    </elements>
+</model>
