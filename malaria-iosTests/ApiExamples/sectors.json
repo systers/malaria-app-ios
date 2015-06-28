@@ -1,0 +1,13 @@
+{
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+                {
+                "sector_name": "Community Economic Development",
+                "sector_desc": "Working towards that",
+                "sector_code": "CED",
+                "id": 1
+                }
+                ]
+}

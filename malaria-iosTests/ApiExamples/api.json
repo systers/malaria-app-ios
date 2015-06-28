@@ -1,0 +1,18 @@
+{
+    "users": "url1",
+    "posts": "url2",
+    "revposts": "url3",
+    "regions": "url4",
+    "sectors": "url5",
+    "ptposts": "url6",
+    "projects": "url7",
+    "goals": "url8",
+    "objectives": "url9",
+    "indicators": "url10",
+    "outputs": "url11",
+    "outcomes": "url12",
+    "activity": "url13",
+    "measurement": "url14",
+    "cohort": "url15",
+    "volunteer": "url16"
+}
