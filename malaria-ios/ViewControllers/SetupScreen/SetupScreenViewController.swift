@@ -109,7 +109,7 @@ extension SetupScreenViewController {
         medicineManager.registerNewMedicine(med.name(), interval: med.interval())
         medicineManager.setCurrentPill(med.name())
         UserSettingsManager.UserSetting.DidConfiguredMedicine.setBool(true)
-        
+
         let notificationManager = medicineManager.getCurrentMedicine()!.notificationManager
         
         if !UserSettingsManager.UserSetting.MedicineReminderSwitch.getBool(true){

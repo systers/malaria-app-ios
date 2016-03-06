@@ -58,7 +58,6 @@ class TestWeeklyMedicineStatistics: XCTestCase {
         XCTAssertEqual(stats.pillStreak(), 1)
     }
     
-    
     func testSupposedPillsMissingEntries(){
         //baseline on the 5th week
         XCTAssertEqual(stats.numberSupposedPills(), 6)
