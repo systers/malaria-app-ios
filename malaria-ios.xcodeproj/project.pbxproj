@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19E816201C8C37C000E176AA /* Trip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19E8161F1C8C37C000E176AA /* Trip.storyboard */; };
+		19E816231C8C3C0100E176AA /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19E816211C8C3C0100E176AA /* Info.storyboard */; };
 		1C8EC00569FE604833382644 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE51359F71142430EEFFC50A /* Pods.framework */; };
 		200A18C31B64F48E00EC2A65 /* PillsStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A18C21B64F48E00EC2A65 /* PillsStatsViewController.swift */; };
 		200A18C51B64F49A00EC2A65 /* MonthyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A18C41B64F49A00EC2A65 /* MonthyViewController.swift */; };
@@ -174,6 +176,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19E8161F1C8C37C000E176AA /* Trip.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Trip.storyboard; sourceTree = "<group>"; };
+		19E816221C8C3C0100E176AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Info.storyboard; sourceTree = "<group>"; };
 		200A18C21B64F48E00EC2A65 /* PillsStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PillsStatsViewController.swift; path = PillStats/PillsStatsViewController.swift; sourceTree = "<group>"; };
 		200A18C41B64F49A00EC2A65 /* MonthyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonthyViewController.swift; path = PillStats/MonthyViewController.swift; sourceTree = "<group>"; };
 		200A18C61B64F4B800EC2A65 /* CachedStatistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CachedStatistics.swift; path = SupportingFiles/CachedStatistics.swift; sourceTree = "<group>"; };
@@ -503,6 +507,8 @@
 				200C72681B40368600998100 /* Frontend */,
 				200EE4891B1343A50087FB24 /* AppDelegate.swift */,
 				200EE48D1B1343A50087FB24 /* Main.storyboard */,
+				19E816211C8C3C0100E176AA /* Info.storyboard */,
+				19E8161F1C8C37C000E176AA /* Trip.storyboard */,
 				200EE4921B1343A50087FB24 /* LaunchScreen.xib */,
 				200EE4AE1B1349D40087FB24 /* ImagesAssets.xcassets */,
 				20EA06D41B2234DA00D6840E /* Model.xcdatamodeld */,
@@ -803,11 +809,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E816231C8C3C0100E176AA /* Info.storyboard in Resources */,
 				200EE4AF1B1349D40087FB24 /* ImagesAssets.xcassets in Resources */,
 				200EE48F1B1343A50087FB24 /* Main.storyboard in Resources */,
 				200C73431B40392A00998100 /* ApiExamples in Resources */,
 				200EE4941B1343A50087FB24 /* LaunchScreen.xib in Resources */,
 				203A40921B66A7BE00FCE4EE /* Settings.bundle in Resources */,
+				19E816201C8C37C000E176AA /* Trip.storyboard in Resources */,
 				200C730F1B40370500998100 /* Info.plist in Resources */,
 				209F60BF1B6E4AED00EDA461 /* Sounds in Resources */,
 			);
@@ -1022,6 +1030,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		19E816211C8C3C0100E176AA /* Info.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19E816221C8C3C0100E176AA /* Base */,
+			);
+			name = Info.storyboard;
+			sourceTree = "<group>";
+		};
 		200EE48D1B1343A50087FB24 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1139,7 +1155,7 @@
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				INFOPLIST_FILE = "malaria-ios/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "anita-borg.malaria-ios-feather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1156,7 +1172,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "malaria-ios/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "anita-borg.malaria-ios-feather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
