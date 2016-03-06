@@ -5,13 +5,19 @@ class InfoHubViewController : UIViewController{
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let refreshControl = UIRefreshControl()
-
+    
     private var viewContext = CoreDataHelper.sharedInstance.createBackgroundContext()!
     private var syncManager: SyncManager!
     private var posts: [Post] = []
     
+    private var currentRow = -1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        
         
         syncManager = SyncManager(context: viewContext)
         
@@ -29,6 +35,9 @@ class InfoHubViewController : UIViewController{
         refreshScreen()
     }
     
+    
+    
+    
     internal func pullRefreshHandler(){
         Logger.Info("Pull refresh")
         syncManager.sync(EndpointType.Posts.path(), save: true, completionHandler: {(url: String, error: NSError?) in
@@ -42,7 +51,7 @@ class InfoHubViewController : UIViewController{
         })
     }
     
-   private func refreshScreen() {
+    private func refreshScreen() {
         func completionHandler(url: String, error: NSError?){
             if error != nil{
                 delay(0.5){
@@ -57,7 +66,7 @@ class InfoHubViewController : UIViewController{
                 self.refreshFromCoreData()
             }
         }
-    
+        
         if !refreshFromCoreData(){
             syncManager.sync(EndpointType.Posts.path(), save: true, completionHandler: completionHandler)
         }
@@ -116,6 +125,11 @@ extension InfoHubViewController : UICollectionViewDelegate, UICollectionViewData
         let postView = UIStoryboard.instantiate(viewControllerClass: PostDetailedViewController.self)
         postView.post = posts[indexPath.row]
         
+        postView.currentIndex = indexPath.row
+        
+        postView.postsArray = posts
+        currentRow = indexPath.row
+        
         dispatch_async(dispatch_get_main_queue()) {
             self.presentViewController(postView, animated: true, completion: nil)
         }
@@ -146,20 +160,20 @@ extension InfoHubViewController {
     
     private var NoInformationAvailableAlertText: AlertText {get {
         return ("No available message from Peace Corps", "")
-    }}
+        }}
     
     private var CantUpdateFromPeaceCorpsAlertText: AlertText {get {
         return ("Couldn't update Peace Corps messages", "Please try again later")
-    }}
+        }}
     
     private var NoInternetConnectionAlertText: AlertText {get {
         return ("Couldn't update Peace Corps messages", "No available internet connection. Please try again later")
-    }}
+        }}
     
     //type of alerts options
     private var AlertOptions: (ok: String, cancel: String, settings: String) {get {
         return ("ok", "Cancel", "Settings")
-    }}
+        }}
     
 }
 
