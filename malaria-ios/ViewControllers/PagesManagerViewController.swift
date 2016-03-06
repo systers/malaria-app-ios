@@ -61,8 +61,10 @@ class PagesManagerViewController : UIViewController {
     func presentSetupScreen() {
         //fix delay
         dispatch_async(dispatch_get_main_queue()) {
-            let view = UIStoryboard.instantiate(viewControllerClass: SetupScreenViewController.self) as SetupScreenViewController
-            view.delegate = self.currentViewController
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let view = storyboard.instantiateViewControllerWithIdentifier("SetupScreenViewController")
+//            let view = UIStoryboard.instantiate(viewControllerClass: SetupScreenViewController.self) as SetupScreenViewController
+            //view.delegate = self.currentViewController
             self.presentViewController(view, animated: true, completion: nil)
         }
     }

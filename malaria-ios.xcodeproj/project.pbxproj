@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		19E816201C8C37C000E176AA /* Trip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19E8161F1C8C37C000E176AA /* Trip.storyboard */; };
 		19E816231C8C3C0100E176AA /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19E816211C8C3C0100E176AA /* Info.storyboard */; };
+		19E816251C8C404E00E176AA /* Pages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19E816241C8C404E00E176AA /* Pages.storyboard */; };
 		1C8EC00569FE604833382644 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE51359F71142430EEFFC50A /* Pods.framework */; };
 		200A18C31B64F48E00EC2A65 /* PillsStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A18C21B64F48E00EC2A65 /* PillsStatsViewController.swift */; };
 		200A18C51B64F49A00EC2A65 /* MonthyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A18C41B64F49A00EC2A65 /* MonthyViewController.swift */; };
@@ -178,6 +179,7 @@
 /* Begin PBXFileReference section */
 		19E8161F1C8C37C000E176AA /* Trip.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Trip.storyboard; sourceTree = "<group>"; };
 		19E816221C8C3C0100E176AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Info.storyboard; sourceTree = "<group>"; };
+		19E816241C8C404E00E176AA /* Pages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pages.storyboard; sourceTree = "<group>"; };
 		200A18C21B64F48E00EC2A65 /* PillsStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PillsStatsViewController.swift; path = PillStats/PillsStatsViewController.swift; sourceTree = "<group>"; };
 		200A18C41B64F49A00EC2A65 /* MonthyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonthyViewController.swift; path = PillStats/MonthyViewController.swift; sourceTree = "<group>"; };
 		200A18C61B64F4B800EC2A65 /* CachedStatistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CachedStatistics.swift; path = SupportingFiles/CachedStatistics.swift; sourceTree = "<group>"; };
@@ -302,6 +304,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19E816261C8C42BD00E176AA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				200EE48D1B1343A50087FB24 /* Main.storyboard */,
+				19E816241C8C404E00E176AA /* Pages.storyboard */,
+				19E816211C8C3C0100E176AA /* Info.storyboard */,
+				19E8161F1C8C37C000E176AA /* Trip.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		200A18E41B64F62B00EC2A65 /* DailyStats */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,9 +519,7 @@
 				20FC57351B72CB0C00D51801 /* Backend */,
 				200C72681B40368600998100 /* Frontend */,
 				200EE4891B1343A50087FB24 /* AppDelegate.swift */,
-				200EE48D1B1343A50087FB24 /* Main.storyboard */,
-				19E816211C8C3C0100E176AA /* Info.storyboard */,
-				19E8161F1C8C37C000E176AA /* Trip.storyboard */,
+				19E816261C8C42BD00E176AA /* Storyboards */,
 				200EE4921B1343A50087FB24 /* LaunchScreen.xib */,
 				200EE4AE1B1349D40087FB24 /* ImagesAssets.xcassets */,
 				20EA06D41B2234DA00D6840E /* Model.xcdatamodeld */,
@@ -818,6 +829,7 @@
 				19E816201C8C37C000E176AA /* Trip.storyboard in Resources */,
 				200C730F1B40370500998100 /* Info.plist in Resources */,
 				209F60BF1B6E4AED00EDA461 /* Sounds in Resources */,
+				19E816251C8C404E00E176AA /* Pages.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
