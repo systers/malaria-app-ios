@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19E816201C8C37C000E176AA /* Trip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19E8161F1C8C37C000E176AA /* Trip.storyboard */; };
+		19E816231C8C3C0100E176AA /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19E816211C8C3C0100E176AA /* Info.storyboard */; };
+		19E816251C8C404E00E176AA /* Pages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19E816241C8C404E00E176AA /* Pages.storyboard */; };
 		1C8EC00569FE604833382644 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE51359F71142430EEFFC50A /* Pods.framework */; };
 		200A18C31B64F48E00EC2A65 /* PillsStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A18C21B64F48E00EC2A65 /* PillsStatsViewController.swift */; };
 		200A18C51B64F49A00EC2A65 /* MonthyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A18C41B64F49A00EC2A65 /* MonthyViewController.swift */; };
@@ -63,8 +66,8 @@
 		200EE4AF1B1349D40087FB24 /* ImagesAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 200EE4AE1B1349D40087FB24 /* ImagesAssets.xcassets */; };
 		20246D151B4F1BA000384759 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20246D141B4F1BA000384759 /* CoreDataManager.swift */; };
 		20246D1B1B4F245300384759 /* TestMedicineRegistries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA07081B237D4900D6840E /* TestMedicineRegistries.swift */; };
-		2027E94F1BADC71D00DA55A4 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027E94E1BADC71D00DA55A4 /* Array.swift */; settings = {ASSET_TAGS = (); }; };
-		2027E9501BADC71D00DA55A4 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027E94E1BADC71D00DA55A4 /* Array.swift */; settings = {ASSET_TAGS = (); }; };
+		2027E94F1BADC71D00DA55A4 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027E94E1BADC71D00DA55A4 /* Array.swift */; };
+		2027E9501BADC71D00DA55A4 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027E94E1BADC71D00DA55A4 /* Array.swift */; };
 		202E18431B5AFFB3007D5194 /* NSNotificationEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E18421B5AFFB3007D5194 /* NSNotificationEvents.swift */; };
 		203A40921B66A7BE00FCE4EE /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 203A40911B66A7BE00FCE4EE /* Settings.bundle */; };
 		203F0B0F1B45B3B900826E06 /* TabbedBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203F0B0E1B45B3B900826E06 /* TabbedBarController.swift */; };
@@ -101,6 +104,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		19E816181C8BFDA700E176AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73828B901BCEE68C00CAAC56 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2537CD7606FED797BB6CC7B11F89569F;
+			remoteInfo = DoneToolbarSwift;
+		};
+		19E8161A1C8BFDA700E176AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73828B901BCEE68C00CAAC56 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 989387338FD09C46FC2357B300B398AA;
+			remoteInfo = SimpleCircleProgressView;
+		};
 		200EE49A1B1343A60087FB24 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 200EE47C1B1343A50087FB24 /* Project object */;
@@ -122,26 +139,12 @@
 			remoteGlobalIDString = B3CF7387B3E690701FDE2E467043722B;
 			remoteInfo = Charts;
 		};
-		73828BA01BCEE68D00CAAC56 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 73828B901BCEE68C00CAAC56 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2B3B10913ADE58D5B1E70537C50B3B98;
-			remoteInfo = CircleProgressView;
-		};
 		73828BA21BCEE68D00CAAC56 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 73828B901BCEE68C00CAAC56 /* Pods.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = ADA7C0FF4EFCC0E2DD380762F8D627E3;
 			remoteInfo = CVCalendar;
-		};
-		73828BA41BCEE68D00CAAC56 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 73828B901BCEE68C00CAAC56 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8674A9F0A890257B727023402A6B0E30;
-			remoteInfo = DoneToolBarSwift;
 		};
 		73828BA61BCEE68D00CAAC56 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -174,6 +177,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19E8161F1C8C37C000E176AA /* Trip.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Trip.storyboard; sourceTree = "<group>"; };
+		19E816221C8C3C0100E176AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Info.storyboard; sourceTree = "<group>"; };
+		19E816241C8C404E00E176AA /* Pages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pages.storyboard; sourceTree = "<group>"; };
 		200A18C21B64F48E00EC2A65 /* PillsStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PillsStatsViewController.swift; path = PillStats/PillsStatsViewController.swift; sourceTree = "<group>"; };
 		200A18C41B64F49A00EC2A65 /* MonthyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonthyViewController.swift; path = PillStats/MonthyViewController.swift; sourceTree = "<group>"; };
 		200A18C61B64F4B800EC2A65 /* CachedStatistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CachedStatistics.swift; path = SupportingFiles/CachedStatistics.swift; sourceTree = "<group>"; };
@@ -298,6 +304,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19E816261C8C42BD00E176AA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				200EE48D1B1343A50087FB24 /* Main.storyboard */,
+				19E816241C8C404E00E176AA /* Pages.storyboard */,
+				19E816211C8C3C0100E176AA /* Info.storyboard */,
+				19E8161F1C8C37C000E176AA /* Trip.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		200A18E41B64F62B00EC2A65 /* DailyStats */ = {
 			isa = PBXGroup;
 			children = (
@@ -502,7 +519,7 @@
 				20FC57351B72CB0C00D51801 /* Backend */,
 				200C72681B40368600998100 /* Frontend */,
 				200EE4891B1343A50087FB24 /* AppDelegate.swift */,
-				200EE48D1B1343A50087FB24 /* Main.storyboard */,
+				19E816261C8C42BD00E176AA /* Storyboards */,
 				200EE4921B1343A50087FB24 /* LaunchScreen.xib */,
 				200EE4AE1B1349D40087FB24 /* ImagesAssets.xcassets */,
 				20EA06D41B2234DA00D6840E /* Model.xcdatamodeld */,
@@ -608,12 +625,12 @@
 			children = (
 				73828B9D1BCEE68D00CAAC56 /* Alamofire.framework */,
 				73828B9F1BCEE68D00CAAC56 /* Charts.framework */,
-				73828BA11BCEE68D00CAAC56 /* CircleProgressView.framework */,
 				73828BA31BCEE68D00CAAC56 /* CVCalendar.framework */,
-				73828BA51BCEE68D00CAAC56 /* DoneToolBarSwift.framework */,
+				19E816191C8BFDA700E176AA /* DoneToolbarSwift.framework */,
 				73828BA71BCEE68D00CAAC56 /* HorizontalProgressView.framework */,
 				73828BA91BCEE68D00CAAC56 /* PickerSwift.framework */,
 				73828BAB1BCEE68D00CAAC56 /* Pods.framework */,
+				19E8161B1C8BFDA700E176AA /* SimpleCircleProgressView.framework */,
 				73828BAD1BCEE68D00CAAC56 /* SwiftyJSON.framework */,
 			);
 			name = Products;
@@ -694,7 +711,7 @@
 				TargetAttributes = {
 					200EE4831B1343A50087FB24 = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = A9972S5PQC;
+						DevelopmentTeam = EKFMY2Y3YC;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -733,6 +750,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		19E816191C8BFDA700E176AA /* DoneToolbarSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DoneToolbarSwift.framework;
+			remoteRef = 19E816181C8BFDA700E176AA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		19E8161B1C8BFDA700E176AA /* SimpleCircleProgressView.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SimpleCircleProgressView.framework;
+			remoteRef = 19E8161A1C8BFDA700E176AA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		73828B9D1BCEE68D00CAAC56 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -747,25 +778,11 @@
 			remoteRef = 73828B9E1BCEE68D00CAAC56 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		73828BA11BCEE68D00CAAC56 /* CircleProgressView.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CircleProgressView.framework;
-			remoteRef = 73828BA01BCEE68D00CAAC56 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		73828BA31BCEE68D00CAAC56 /* CVCalendar.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = CVCalendar.framework;
 			remoteRef = 73828BA21BCEE68D00CAAC56 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		73828BA51BCEE68D00CAAC56 /* DoneToolBarSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = DoneToolBarSwift.framework;
-			remoteRef = 73828BA41BCEE68D00CAAC56 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		73828BA71BCEE68D00CAAC56 /* HorizontalProgressView.framework */ = {
@@ -803,13 +820,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E816231C8C3C0100E176AA /* Info.storyboard in Resources */,
 				200EE4AF1B1349D40087FB24 /* ImagesAssets.xcassets in Resources */,
 				200EE48F1B1343A50087FB24 /* Main.storyboard in Resources */,
 				200C73431B40392A00998100 /* ApiExamples in Resources */,
 				200EE4941B1343A50087FB24 /* LaunchScreen.xib in Resources */,
 				203A40921B66A7BE00FCE4EE /* Settings.bundle in Resources */,
+				19E816201C8C37C000E176AA /* Trip.storyboard in Resources */,
 				200C730F1B40370500998100 /* Info.plist in Resources */,
 				209F60BF1B6E4AED00EDA461 /* Sounds in Resources */,
+				19E816251C8C404E00E176AA /* Pages.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1022,6 +1042,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		19E816211C8C3C0100E176AA /* Info.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19E816221C8C3C0100E176AA /* Base */,
+			);
+			name = Info.storyboard;
+			sourceTree = "<group>";
+		};
 		200EE48D1B1343A50087FB24 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1139,9 +1167,9 @@
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				INFOPLIST_FILE = "malaria-ios/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "anita-borg.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "anita-borg.malaria-ios-feather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/bridging_header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1156,9 +1184,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "malaria-ios/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "anita-borg.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "anita-borg.malaria-ios-feather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/bridging_header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";

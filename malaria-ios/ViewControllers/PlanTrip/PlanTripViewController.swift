@@ -118,8 +118,10 @@ class PlanTripViewController: UIViewController {
 extension PlanTripViewController{
     @IBAction func settingsBtnHandler(sender: AnyObject) {
         //fix delay
+        
         dispatch_async(dispatch_get_main_queue()) {
-            let view = UIStoryboard.instantiate(viewControllerClass: SetupScreenViewController.self)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let view = storyboard.instantiateViewControllerWithIdentifier("SetupScreenViewController")
             self.presentViewController(view, animated: true, completion: nil)
         }
     }
@@ -130,6 +132,7 @@ extension PlanTripViewController{
     
     @IBAction func itemListBtnHandler(sender: AnyObject) {
         //fix delay
+        
         dispatch_async(dispatch_get_main_queue()) {
             let view = UIStoryboard.instantiate(viewControllerClass: ListItemsViewController.self)
             view.arrival = self.arrivalDay

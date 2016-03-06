@@ -16,8 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         readApplicationSettings()
         
         //setting up initial screen, can be configured in the storyboard if there is only one option but here we have more flexibility
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let rootController = storyboard.instantiateViewControllerWithIdentifier("TabbedBarController") as! TabbedBarController
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window!.rootViewController = UIStoryboard.instantiate(viewControllerClass: TabbedBarController.self)
+//        window!.rootViewController = UIStoryboard.instantiate(viewControllerClass: TabbedBarController.self)
+        window!.rootViewController = rootController
         window!.makeKeyAndVisible()
         
         return true
