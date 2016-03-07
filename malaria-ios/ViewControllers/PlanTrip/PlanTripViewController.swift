@@ -378,12 +378,12 @@ extension PlanTripViewController: GMSAutocompleteViewControllerDelegate {
     
     func wasCancelled(viewController: GMSAutocompleteViewController) {
         self.dismissViewControllerAnimated(true, completion: nil)
-        print("User canceled the operation")
+        Logger.Info("User canceled the operation")
     }
     
     func didRequestAutocompletePredictions(viewController: GMSAutocompleteViewController) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        print("Turn the network activity indicator on and off again.")
+        Logger.Info("Turn the network activity indicator on and off again.")
     }
     
     func didUpdateAutocompletePredictions(viewController: GMSAutocompleteViewController) {
@@ -406,7 +406,7 @@ extension PlanTripViewController: GMSAutocompleteResultsViewControllerDelegate {
     
     func didRequestAutocompletePredictionsForResultsController(resultsController: GMSAutocompleteResultsViewController) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        print("Turn the network activity indicator on and off again.")
+        Logger.Info("urn the network activity indicator on and off again")
     }
     
     func didUpdateAutocompletePredictionsForResultsController(resultsController: GMSAutocompleteResultsViewController) {
