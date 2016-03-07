@@ -154,12 +154,9 @@ extension PlanTripViewController{
     }
     
     @IBAction func locationEditingChangedHandler(sender: AnyObject) {
-        //updateLocation(location.text!)
         if let loc = location.text {
             generateTripBtn.enabled = !loc.isEmpty
-            print("3. generateTripBtn.enabled", generateTripBtn.enabled)
             tripLocation = loc
-
         }
     }
     
@@ -291,7 +288,6 @@ extension PlanTripViewController {
     
     private func updateLocation(loc: String){
         generateTripBtn.enabled = !loc.isEmpty
-        
         tripLocation = loc
     }
     
@@ -361,36 +357,33 @@ extension PlanTripViewController {
 }
 
 
-//Google Autocomplete
+//Google Autocomplete Delegate function implementation
 extension PlanTripViewController: GMSAutocompleteViewControllerDelegate {
     
     // Handle the user's selection.
     func viewController(viewController: GMSAutocompleteViewController, didAutocompleteWithPlace place: GMSPlace) {
         generateTripBtn.enabled = true
         tripLocation = "value"
-        
         if let loc:String = "\(place.name)" {
             location.text = loc
             tripLocation = loc
             generateTripBtn.enabled = true
         }
         self.dismissViewControllerAnimated(true, completion: nil)
-        
-        
     }
     
     func viewController(viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: NSError) {
         print("Error: ", error.description)
     }
     
-    // User canceled the operation.
     func wasCancelled(viewController: GMSAutocompleteViewController) {
         self.dismissViewControllerAnimated(true, completion: nil)
+        print("User canceled the operation")
     }
     
-    // Turn the network activity indicator on and off again.
     func didRequestAutocompletePredictions(viewController: GMSAutocompleteViewController) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        print("Turn the network activity indicator on and off again.")
     }
     
     func didUpdateAutocompletePredictions(viewController: GMSAutocompleteViewController) {
@@ -403,9 +396,7 @@ extension PlanTripViewController: GMSAutocompleteViewControllerDelegate {
 extension PlanTripViewController: GMSAutocompleteResultsViewControllerDelegate {
     func resultsController(resultsController: GMSAutocompleteResultsViewController,
         didAutocompleteWithPlace place: GMSPlace) {
-            
             searchController?.active = false
-            
     }
     
     func resultsController(resultsController: GMSAutocompleteResultsViewController,
@@ -413,9 +404,9 @@ extension PlanTripViewController: GMSAutocompleteResultsViewControllerDelegate {
             print("Error: ", error.description)
     }
     
-    // Turn the network activity indicator on and off again.
     func didRequestAutocompletePredictionsForResultsController(resultsController: GMSAutocompleteResultsViewController) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        print("Turn the network activity indicator on and off again.")
     }
     
     func didUpdateAutocompletePredictionsForResultsController(resultsController: GMSAutocompleteResultsViewController) {
