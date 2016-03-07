@@ -10,21 +10,23 @@ class PostDetailedViewController : UIViewController{
     var post: Post!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         postDescription.clipsToBounds = true
-        var leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
-        var rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
         leftSwipe.direction = .Left
         rightSwipe.direction = .Right
         view.addGestureRecognizer(leftSwipe)
         view.addGestureRecognizer(rightSwipe)
     }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         postTitle.text = post.title
         postDescription.text = post.post_description
         postDescription.scrollRangeToVisible(NSMakeRange(0, 0))
     }
+    
     func handleSwipes(sender:UISwipeGestureRecognizer) {
         if (sender.direction == .Left) {
             print("Swipe Left")
@@ -48,6 +50,7 @@ class PostDetailedViewController : UIViewController{
         postDescription.scrollRangeToVisible(NSMakeRange(0, 0))
         
     }
+    
     @IBAction func goBackBtnHandler(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
