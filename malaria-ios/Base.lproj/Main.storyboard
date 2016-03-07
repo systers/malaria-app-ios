@@ -436,8 +436,14 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="27" id="REM-zR-6vy"/>
                                             <constraint firstAttribute="height" constant="27" id="gWK-Wg-WdT"/>
+                                            <constraint firstAttribute="width" constant="27" id="uQO-Nm-hDd"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="Geography Filled-100"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="REM-zR-6vy"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <action selector="autocompleteClicked:" destination="cfZ-pD-OHm" eventType="touchUpInside" id="b18-Mz-jGf"/>
                                         </connections>
@@ -493,10 +499,12 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="I5y-FZ-Mlw"/>
                                         <exclude reference="ejD-TA-npe"/>
                                         <exclude reference="h0k-ye-uaE"/>
                                         <exclude reference="kT0-wO-wy2"/>
                                         <exclude reference="RGR-m2-eo8"/>
+                                        <exclude reference="lZM-ez-W64"/>
                                     </mask>
                                 </variation>
                             </view>
