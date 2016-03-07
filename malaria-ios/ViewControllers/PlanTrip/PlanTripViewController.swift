@@ -373,7 +373,7 @@ extension PlanTripViewController: GMSAutocompleteViewControllerDelegate {
     }
     
     func viewController(viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: NSError) {
-        print("Error: ", error.description)
+        Logger.Error("Error: ", function: error.description)
     }
     
     func wasCancelled(viewController: GMSAutocompleteViewController) {
@@ -401,7 +401,7 @@ extension PlanTripViewController: GMSAutocompleteResultsViewControllerDelegate {
     
     func resultsController(resultsController: GMSAutocompleteResultsViewController,
         didFailAutocompleteWithError error: NSError){
-            print("Error: ", error.description)
+            Logger.Error("Error: ", function: error.description)
     }
     
     func didRequestAutocompletePredictionsForResultsController(resultsController: GMSAutocompleteResultsViewController) {
