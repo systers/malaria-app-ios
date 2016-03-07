@@ -1,4 +1,5 @@
 import UIKit
+import GoogleMaps
 
 /// AppDelegate
 @UIApplicationMain
@@ -6,6 +7,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        //API Key For GoogleMaps
+        GMSServices.provideAPIKey("AIzaSyAEu7he5ESO-TyseWx50Bw_2F4RJvPvwGM")
         
         //registering for notifications
         var notificationsCategories: [UIMutableUserNotificationCategory] = [UIMutableUserNotificationCategory]()
