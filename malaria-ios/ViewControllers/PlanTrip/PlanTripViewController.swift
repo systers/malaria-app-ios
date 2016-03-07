@@ -283,7 +283,7 @@ extension PlanTripViewController {
         generateTripBtn.enabled = !loc.isEmpty
         
         tripLocation = loc
-        location.text = loc
+        //location.text = loc
     }
     
     private func updateMedicine(medicine: Medicine.Pill){
@@ -390,8 +390,8 @@ extension PlanTripViewController: GMSAutocompleteViewControllerDelegate {
 
 // Handle the user's selection.
 extension PlanTripViewController: GMSAutocompleteResultsViewControllerDelegate {
-    func resultsController(resultsController: GMSAutocompleteResultsViewController!,
-        didAutocompleteWithPlace place: GMSPlace!) {
+    func resultsController(resultsController: GMSAutocompleteResultsViewController,
+        didAutocompleteWithPlace place: GMSPlace) {
             
             searchController?.active = false
             
@@ -404,18 +404,18 @@ extension PlanTripViewController: GMSAutocompleteResultsViewControllerDelegate {
             updateLocation(location.text!)
     }
     
-    func resultsController(resultsController: GMSAutocompleteResultsViewController!,
-        didFailAutocompleteWithError error: NSError!){
+    func resultsController(resultsController: GMSAutocompleteResultsViewController,
+        didFailAutocompleteWithError error: NSError){
             // TODO: handle the error.
             print("Error: ", error.description)
     }
     
     // Turn the network activity indicator on and off again.
-    func didRequestAutocompletePredictionsForResultsController(resultsController: GMSAutocompleteResultsViewController!) {
+    func didRequestAutocompletePredictionsForResultsController(resultsController: GMSAutocompleteResultsViewController) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
     }
     
-    func didUpdateAutocompletePredictionsForResultsController(resultsController: GMSAutocompleteResultsViewController!) {
+    func didUpdateAutocompletePredictionsForResultsController(resultsController: GMSAutocompleteResultsViewController) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
 }
