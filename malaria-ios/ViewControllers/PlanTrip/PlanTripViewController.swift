@@ -94,6 +94,9 @@ class PlanTripViewController: UIViewController {
         
         // Prevent the navigation bar from being hidden when searching.
         searchController?.hidesNavigationBarDuringPresentation = false
+        
+        //make the submit button invisible when no text
+        generateTripBtn.enabled = !tripLocation.isEmpty
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -110,7 +113,10 @@ class PlanTripViewController: UIViewController {
         reminder = getStoredReminderTime()
         
         //update fields
-        updateLocation(tripLocation)
+        //updateLocation(tripLocation)
+        //generateTripBtn.enabled = !tripLocation.isEmpty
+        print("generateTripBtn.enabled", generateTripBtn.enabled)
+        
         updateItemsTextField(items)
         updateArrival(arrivalDay)
         updateDeparture(departureDay)
@@ -127,7 +133,11 @@ class PlanTripViewController: UIViewController {
     
     func prepareHistoryValuePicker(){
         tripLocationHistoryPickerViewer = TripLocationHistoryPickerViewer(context: viewContext, selectCallback: {(object: String) in
-            self.updateLocation(object)
+            self.generateTripBtn.enabled = !object.isEmpty
+            
+            self.tripLocation = object
+            self.location.text = object
+            //self.updateLocation(object)
         })
         
         historyTextField.inputView = toolBar.generateInputView(tripLocationHistoryPickerViewer)
@@ -150,7 +160,13 @@ extension PlanTripViewController{
     }
     
     @IBAction func locationEditingChangedHandler(sender: AnyObject) {
-        updateLocation(location.text!)
+        //updateLocation(location.text!)
+        if let loc = location.text {
+            generateTripBtn.enabled = !loc.isEmpty
+            print("3. generateTripBtn.enabled", generateTripBtn.enabled)
+            tripLocation = loc
+
+        }
     }
     
     @IBAction func itemListBtnHandler(sender: AnyObject) {
@@ -361,10 +377,35 @@ extension PlanTripViewController: GMSAutocompleteViewControllerDelegate {
         print("Place address: kb", place.formattedAddress)
         print("Place attributions: jhv", place.attributions)
         
-        location.text = "\(place.name)"
-        updateLocation(location.text!)
+        generateTripBtn.enabled = true
+        tripLocation = "value"
+        
+        if let loc:String = "\(place.name)" {
+            location.text = loc
+            tripLocation = loc
+            
+            generateTripBtn.enabled = true
+            print("It happeded", generateTripBtn)
+            updateLocation(loc)
+            
+            
+        }
+        if let loc = location.text {
+            generateTripBtn.enabled = !loc.isEmpty
+            tripLocation = loc
+            if generateTripBtn.enabled {
+                print("generateTRipBtn is enabled")
+            }
+            
+        }
+//        location.text = "\(place.name)"
+//        generateTripBtn.enabled = !(location.text!.isEmpty)
+//        
+        //updateLocation(location.text!)
         print("Location Text", location.text)
         self.dismissViewControllerAnimated(true, completion: nil)
+        
+        
     }
     
     func viewController(viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: NSError) {
@@ -400,8 +441,6 @@ extension PlanTripViewController: GMSAutocompleteResultsViewControllerDelegate {
             print("Place address: ", place.formattedAddress)
             print("Place attributions: ", place.attributions)
             
-            location.text = "\(place.name)"
-            updateLocation(location.text!)
     }
     
     func resultsController(resultsController: GMSAutocompleteResultsViewController,
