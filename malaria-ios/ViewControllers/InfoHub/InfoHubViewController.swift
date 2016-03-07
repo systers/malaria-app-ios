@@ -62,7 +62,6 @@ class InfoHubViewController : UIViewController{
             syncManager.sync(EndpointType.Posts.path(), save: true, completionHandler: completionHandler)
         }
     }
-    
     private func createAlertViewError(error : NSError) -> UIAlertController {
         let (title, message) = (CantUpdateFromPeaceCorpsAlertText.title, CantUpdateFromPeaceCorpsAlertText.message)
         let refreshAlert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
@@ -111,7 +110,6 @@ extension InfoHubViewController : UICollectionViewDelegate, UICollectionViewData
         
         return cell
     }
-    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
         let postView = UIStoryboard.instantiate(viewControllerClass: PostDetailedViewController.self)
         postView.post = posts[indexPath.row]
@@ -125,7 +123,6 @@ extension InfoHubViewController : UICollectionViewDelegate, UICollectionViewData
             self.presentViewController(postView, animated: true, completion: nil)
         }
     }
-    
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         let spacing = determineSpacing()
