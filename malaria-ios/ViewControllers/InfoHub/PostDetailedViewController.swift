@@ -28,17 +28,13 @@ class PostDetailedViewController : UIViewController{
     }
     
     func handleSwipes(sender:UISwipeGestureRecognizer) {
-        if (sender.direction == .Left) {
-            if (currentIndex < postsArray.count-1){
-                currentIndex++
+        if (sender.direction == .Left && currentIndex < postsArray.count-1) {
+            currentIndex++
                 reloadView()
-            }
         }
-        if (sender.direction == .Right) {
-            if (currentIndex > 0){
-                currentIndex--
+        if (sender.direction == .Right && currentIndex > 0) {
+            currentIndex--
                 reloadView()
-            }
         }
     }
     
