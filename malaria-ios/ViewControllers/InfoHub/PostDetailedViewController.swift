@@ -41,11 +41,7 @@ class PostDetailedViewController : UIViewController{
             if (currentIndex < postsArray.count-1){
                 currentIndex++
                 reloadView()
-                
-                
             }
-            
-            
         }
         
         if (sender.direction == .Right) {
@@ -60,16 +56,12 @@ class PostDetailedViewController : UIViewController{
     }
     
     func reloadView(){
-        
-        
         postTitle.text = postsArray[currentIndex].title
         postDescription.text = postsArray[currentIndex].post_description
         
         postDescription.scrollRangeToVisible(NSMakeRange(0, 0))
         
-        
     }
-    
     @IBAction func goBackBtnHandler(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }

@@ -14,12 +14,7 @@ class InfoHubViewController : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
-        
-        syncManager = SyncManager(context: viewContext)
+                syncManager = SyncManager(context: viewContext)
         
         view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         
@@ -34,10 +29,6 @@ class InfoHubViewController : UIViewController{
         super.viewWillAppear(animated)
         refreshScreen()
     }
-    
-    
-    
-    
     internal func pullRefreshHandler(){
         Logger.Info("Pull refresh")
         syncManager.sync(EndpointType.Posts.path(), save: true, completionHandler: {(url: String, error: NSError?) in
