@@ -10,6 +10,7 @@ class PostDetailedViewController : UIViewController{
     var post: Post!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         postDescription.clipsToBounds = true
         var leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
         var rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
