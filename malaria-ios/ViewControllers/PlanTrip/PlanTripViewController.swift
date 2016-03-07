@@ -112,11 +112,6 @@ class PlanTripViewController: UIViewController {
         medicine = Medicine.Pill(rawValue: MedicineManager(context: viewContext).getCurrentMedicine()!.name)!
         reminder = getStoredReminderTime()
         
-        //update fields
-        //updateLocation(tripLocation)
-        //generateTripBtn.enabled = !tripLocation.isEmpty
-        print("generateTripBtn.enabled", generateTripBtn.enabled)
-        
         updateItemsTextField(items)
         updateArrival(arrivalDay)
         updateDeparture(departureDay)
@@ -137,7 +132,6 @@ class PlanTripViewController: UIViewController {
             
             self.tripLocation = object
             self.location.text = object
-            //self.updateLocation(object)
         })
         
         historyTextField.inputView = toolBar.generateInputView(tripLocationHistoryPickerViewer)
@@ -299,7 +293,6 @@ extension PlanTripViewController {
         generateTripBtn.enabled = !loc.isEmpty
         
         tripLocation = loc
-        //location.text = loc
     }
     
     private func updateMedicine(medicine: Medicine.Pill){
@@ -373,43 +366,20 @@ extension PlanTripViewController: GMSAutocompleteViewControllerDelegate {
     
     // Handle the user's selection.
     func viewController(viewController: GMSAutocompleteViewController, didAutocompleteWithPlace place: GMSPlace) {
-        print("Place name: jhv", place.name)
-        print("Place address: kb", place.formattedAddress)
-        print("Place attributions: jhv", place.attributions)
-        
         generateTripBtn.enabled = true
         tripLocation = "value"
         
         if let loc:String = "\(place.name)" {
             location.text = loc
             tripLocation = loc
-            
             generateTripBtn.enabled = true
-            print("It happeded", generateTripBtn)
-            updateLocation(loc)
-            
-            
         }
-        if let loc = location.text {
-            generateTripBtn.enabled = !loc.isEmpty
-            tripLocation = loc
-            if generateTripBtn.enabled {
-                print("generateTRipBtn is enabled")
-            }
-            
-        }
-//        location.text = "\(place.name)"
-//        generateTripBtn.enabled = !(location.text!.isEmpty)
-//        
-        //updateLocation(location.text!)
-        print("Location Text", location.text)
         self.dismissViewControllerAnimated(true, completion: nil)
         
         
     }
     
     func viewController(viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: NSError) {
-        // TODO: handle the error.
         print("Error: ", error.description)
     }
     
@@ -436,16 +406,10 @@ extension PlanTripViewController: GMSAutocompleteResultsViewControllerDelegate {
             
             searchController?.active = false
             
-            // Do something with the selected place.
-            print("Place name: ", place.name)
-            print("Place address: ", place.formattedAddress)
-            print("Place attributions: ", place.attributions)
-            
     }
     
     func resultsController(resultsController: GMSAutocompleteResultsViewController,
         didFailAutocompleteWithError error: NSError){
-            // TODO: handle the error.
             print("Error: ", error.description)
     }
     
