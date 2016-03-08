@@ -257,9 +257,11 @@ extension PlanTripViewController{
     
     
     @IBAction func autocompleteClicked(sender: AnyObject) {
-        let autocompleteController = GMSAutocompleteViewController()
-        autocompleteController.delegate = self
-        self.presentViewController(autocompleteController, animated: true, completion: nil)
+        if !SYSTEM_VERSION_LESS_THAN("9.0") {
+            let autocompleteController = GMSAutocompleteViewController()
+            autocompleteController.delegate = self
+            self.presentViewController(autocompleteController, animated: true, completion: nil)
+        }
     }
 
 }
