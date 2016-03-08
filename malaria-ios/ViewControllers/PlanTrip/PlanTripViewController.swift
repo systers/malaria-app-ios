@@ -78,30 +78,31 @@ class PlanTripViewController: UIViewController {
         })
         reminderTime.inputAccessoryView = toolBar
         
-        // For Using Google AutoComplete
-        resultsViewController = GMSAutocompleteResultsViewController()
-        resultsViewController?.delegate = self
-        
-        searchController = UISearchController(searchResultsController: resultsViewController)
-        searchController?.searchResultsUpdater = resultsViewController
-        
-        // Put the search bar in the navigation bar.
-        searchController?.searchBar.sizeToFit()
-        self.navigationItem.titleView = searchController?.searchBar
-        
-        // When UISearchController presents the results view, present it in
-        // this view controller, not one further up the chain.
-        self.definesPresentationContext = true
-        
-        // Prevent the navigation bar from being hidden when searching.
-        searchController?.hidesNavigationBarDuringPresentation = false
-        
-        //make the submit button invisible when no text
-        generateTripBtn.enabled = !tripLocation.isEmpty
         
         //Check the current version of system os
         if SYSTEM_VERSION_LESS_THAN("9.0") {
             autoCompleteBtn.hidden = true
+            // For Using Google AutoComplete
+            resultsViewController = GMSAutocompleteResultsViewController()
+            resultsViewController?.delegate = self
+            
+            searchController = UISearchController(searchResultsController: resultsViewController)
+            searchController?.searchResultsUpdater = resultsViewController
+            
+            // Put the search bar in the navigation bar.
+            searchController?.searchBar.sizeToFit()
+            self.navigationItem.titleView = searchController?.searchBar
+            
+            // When UISearchController presents the results view, present it in
+            // this view controller, not one further up the chain.
+            self.definesPresentationContext = true
+            
+            // Prevent the navigation bar from being hidden when searching.
+            searchController?.hidesNavigationBarDuringPresentation = false
+            
+            //make the submit button invisible when no text
+            generateTripBtn.enabled = !tripLocation.isEmpty
+            
         }
     }
     
