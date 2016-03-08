@@ -312,7 +312,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aEx-jR-M42" userLabel="InputContainer">
                                 <rect key="frame" x="20" y="121" width="560" height="348"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Destination" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDI-g8-P7t">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Destination" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDI-g8-P7t">
                                         <rect key="frame" x="8" y="8" width="120" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="7Jj-kw-IeY"/>
@@ -322,20 +322,8 @@
                                         <color key="textColor" red="0.43787151575088501" green="0.32177186012268066" blue="0.27448359131813049" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNH-Wo-4uw" userLabel="LocateMe">
-                                        <rect key="frame" x="490" y="8" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="Bqn-E9-2Rc"/>
-                                        </constraints>
-                                        <state key="normal" image="WhereAmIIcon">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="historyButtonHandler:" destination="cfZ-pD-OHm" eventType="touchUpInside" id="dJ5-Rr-4rx"/>
-                                        </connections>
-                                    </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wsy-a8-zYC" userLabel="LocationInput">
-                                        <rect key="frame" x="128" y="8" width="360" height="30"/>
+                                        <rect key="frame" x="128" y="8" width="391" height="30"/>
                                         <color key="backgroundColor" red="0.52156862745098043" green="0.72156862745098038" blue="0.31372549019607843" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
@@ -344,7 +332,7 @@
                                             <action selector="locationEditingChangedHandler:" destination="cfZ-pD-OHm" eventType="editingChanged" id="ErV-5l-RdV"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Departure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zsv-66-dIF">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Departure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zsv-66-dIF">
                                         <rect key="frame" x="8" y="53" width="120" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="bAL-cI-MIt"/>
@@ -353,14 +341,14 @@
                                         <color key="textColor" red="0.43787151575088501" green="0.32177186012268066" blue="0.27448359131813049" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="buv-20-bVO" userLabel="dayInput">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="buv-20-bVO" userLabel="dayInput">
                                         <rect key="frame" x="128" y="53" width="424" height="30"/>
                                         <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Arrival" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0EB-cQ-R9d">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Arrival" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0EB-cQ-R9d">
                                         <rect key="frame" x="8" y="98" width="120" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Jsj-0v-jst"/>
@@ -369,14 +357,14 @@
                                         <color key="textColor" red="0.4378715158" green="0.32177186009999997" blue="0.2744835913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Izn-kJ-Tw1" userLabel="dayInput">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Izn-kJ-Tw1" userLabel="dayInput">
                                         <rect key="frame" x="128" y="98" width="424" height="30"/>
                                         <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Packing List" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oL5-9q-JdS">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Packing List" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oL5-9q-JdS">
                                         <rect key="frame" x="8" y="143" width="120" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="X2H-SY-RNp"/>
@@ -385,7 +373,7 @@
                                         <color key="textColor" red="0.43787151575088501" green="0.32177186012268066" blue="0.27448359131813049" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Remind me at" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7x-NC-6ho" userLabel="ReminderTime">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Remind me at" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7x-NC-6ho" userLabel="ReminderTime">
                                         <rect key="frame" x="8" y="188" width="120" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="gs7-5K-SBZ"/>
@@ -394,14 +382,14 @@
                                         <color key="textColor" red="0.4378715158" green="0.32177186009999997" blue="0.2744835913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yRe-ea-anp" userLabel="PackagingListInput">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yRe-ea-anp" userLabel="PackagingListInput">
                                         <rect key="frame" x="128" y="143" width="424" height="30"/>
                                         <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeO-hB-pOE" userLabel="PackagingListBtn">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeO-hB-pOE" userLabel="PackagingListBtn">
                                         <rect key="frame" x="128" y="143" width="424" height="30"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -424,21 +412,21 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="FYx-2W-myp" userLabel="timeInput">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="FYx-2W-myp" userLabel="timeInput">
                                         <rect key="frame" x="128" y="188" width="424" height="30"/>
                                         <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hwg-SX-NJm">
-                                        <rect key="frame" x="525" y="8" width="27" height="27"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hwg-SX-NJm">
+                                        <rect key="frame" x="492" y="12" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="27" id="REM-zR-6vy"/>
-                                            <constraint firstAttribute="height" constant="27" id="gWK-Wg-WdT"/>
-                                            <constraint firstAttribute="width" constant="27" id="uQO-Nm-hDd"/>
+                                            <constraint firstAttribute="height" constant="20" id="gWK-Wg-WdT"/>
+                                            <constraint firstAttribute="width" constant="20" id="uQO-Nm-hDd"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="Geography Filled-100"/>
+                                        <state key="normal" title="Button" image="Geography-100"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="REM-zR-6vy"/>
@@ -448,11 +436,24 @@
                                             <action selector="autocompleteClicked:" destination="cfZ-pD-OHm" eventType="touchUpInside" id="b18-Mz-jGf"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNH-Wo-4uw" userLabel="LocateMe">
+                                        <rect key="frame" x="522" y="8" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="Bqn-E9-2Rc"/>
+                                        </constraints>
+                                        <state key="normal" image="WhereAmIIcon">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="historyButtonHandler:" destination="cfZ-pD-OHm" eventType="touchUpInside" id="dJ5-Rr-4rx"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="buv-20-bVO" secondAttribute="trailing" constant="8" id="0qS-Pd-pxH"/>
                                     <constraint firstItem="wsy-a8-zYC" firstAttribute="bottom" secondItem="BNH-Wo-4uw" secondAttribute="bottom" id="1Qp-O1-suf"/>
+                                    <constraint firstItem="BNH-Wo-4uw" firstAttribute="trailing" secondItem="buv-20-bVO" secondAttribute="trailing" id="1nC-nx-ckj"/>
                                     <constraint firstItem="lDI-g8-P7t" firstAttribute="trailing" secondItem="Zsv-66-dIF" secondAttribute="trailing" id="224-xX-ops"/>
                                     <constraint firstItem="Hwg-SX-NJm" firstAttribute="trailing" secondItem="buv-20-bVO" secondAttribute="trailing" id="2py-zi-cvU"/>
                                     <constraint firstItem="0EB-cQ-R9d" firstAttribute="trailing" secondItem="oL5-9q-JdS" secondAttribute="trailing" id="37u-fz-Rvv"/>
@@ -470,6 +471,7 @@
                                     <constraint firstItem="wsy-a8-zYC" firstAttribute="top" secondItem="lDI-g8-P7t" secondAttribute="top" id="I5y-FZ-Mlw"/>
                                     <constraint firstItem="Zsv-66-dIF" firstAttribute="top" secondItem="lDI-g8-P7t" secondAttribute="bottom" constant="15" id="Jc7-YQ-90o"/>
                                     <constraint firstItem="Hwg-SX-NJm" firstAttribute="top" secondItem="aEx-jR-M42" secondAttribute="top" constant="8" id="Kbn-dz-zCU"/>
+                                    <constraint firstItem="Hwg-SX-NJm" firstAttribute="top" secondItem="aEx-jR-M42" secondAttribute="top" constant="12" id="RAp-aj-vc3"/>
                                     <constraint firstAttribute="trailing" secondItem="Hwg-SX-NJm" secondAttribute="trailing" constant="8" id="RGR-m2-eo8"/>
                                     <constraint firstItem="lDI-g8-P7t" firstAttribute="leading" secondItem="Zsv-66-dIF" secondAttribute="leading" id="UPn-qS-zLb"/>
                                     <constraint firstItem="0EB-cQ-R9d" firstAttribute="top" secondItem="Zsv-66-dIF" secondAttribute="bottom" constant="15" id="WXF-q0-aRn"/>
@@ -480,6 +482,7 @@
                                     <constraint firstAttribute="height" constant="348" id="bUx-rk-ej4"/>
                                     <constraint firstItem="Hwg-SX-NJm" firstAttribute="bottom" secondItem="wsy-a8-zYC" secondAttribute="bottom" id="bni-1x-ot8"/>
                                     <constraint firstItem="yRe-ea-anp" firstAttribute="leading" secondItem="OeO-hB-pOE" secondAttribute="leading" id="c8B-1N-YFR"/>
+                                    <constraint firstItem="BNH-Wo-4uw" firstAttribute="leading" secondItem="Hwg-SX-NJm" secondAttribute="trailing" constant="11" id="cBF-Ve-VOr"/>
                                     <constraint firstItem="Zsv-66-dIF" firstAttribute="centerY" secondItem="buv-20-bVO" secondAttribute="centerY" id="ehS-56-Ls9"/>
                                     <constraint firstItem="BNH-Wo-4uw" firstAttribute="leading" secondItem="wsy-a8-zYC" secondAttribute="trailing" constant="8" symbolic="YES" id="ejD-TA-npe"/>
                                     <constraint firstItem="OeO-hB-pOE" firstAttribute="trailing" secondItem="FYx-2W-myp" secondAttribute="trailing" id="flm-d4-azF"/>
@@ -495,16 +498,22 @@
                                     <constraint firstItem="0EB-cQ-R9d" firstAttribute="leading" secondItem="Zsv-66-dIF" secondAttribute="leading" id="uLY-u4-XE6"/>
                                     <constraint firstItem="wsy-a8-zYC" firstAttribute="bottom" secondItem="lDI-g8-P7t" secondAttribute="bottom" id="xe0-nu-Nhl"/>
                                     <constraint firstItem="OeO-hB-pOE" firstAttribute="centerY" secondItem="oL5-9q-JdS" secondAttribute="centerY" id="xew-FQ-yaQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hwg-SX-NJm" secondAttribute="trailing" constant="8" id="xgY-rr-8Dp"/>
                                     <constraint firstItem="BNH-Wo-4uw" firstAttribute="top" secondItem="wsy-a8-zYC" secondAttribute="top" id="zrf-qp-LdJ"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="I5y-FZ-Mlw"/>
+                                        <exclude reference="2py-zi-cvU"/>
+                                        <exclude reference="4g3-aQ-ZUY"/>
+                                        <exclude reference="Kbn-dz-zCU"/>
+                                        <exclude reference="RGR-m2-eo8"/>
+                                        <exclude reference="bni-1x-ot8"/>
+                                        <exclude reference="lZM-ez-W64"/>
+                                        <exclude reference="xgY-rr-8Dp"/>
                                         <exclude reference="ejD-TA-npe"/>
                                         <exclude reference="h0k-ye-uaE"/>
                                         <exclude reference="kT0-wO-wy2"/>
-                                        <exclude reference="RGR-m2-eo8"/>
-                                        <exclude reference="lZM-ez-W64"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -567,6 +576,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="arrival" destination="Izn-kJ-Tw1" id="3C1-PT-uHN"/>
+                        <outlet property="autoCompleteBtn" destination="Hwg-SX-NJm" id="OQW-Za-lFh"/>
                         <outlet property="departure" destination="buv-20-bVO" id="ays-sR-r7B"/>
                         <outlet property="generateTripBtn" destination="w6B-Dp-svL" id="fqp-Hy-7GM"/>
                         <outlet property="historyBtn" destination="BNH-Wo-4uw" id="vYe-5q-GzQ"/>
@@ -1583,7 +1593,7 @@
         <image name="Adherence" width="99" height="99"/>
         <image name="DailyStatsTextBackground" width="197" height="85"/>
         <image name="GenerateTripButton" width="167" height="55"/>
-        <image name="Geography Filled-100" width="100" height="100"/>
+        <image name="Geography-100" width="100" height="100"/>
         <image name="InfoHubButton" width="147" height="82"/>
         <image name="Medicine" width="176" height="176"/>
         <image name="No" width="105" height="104"/>
