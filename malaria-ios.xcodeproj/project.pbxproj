@@ -118,6 +118,20 @@
 			remoteGlobalIDString = 200EE4831B1343A50087FB24;
 			remoteInfo = "malaria-ios";
 		};
+		4C0A121D1C8CAD7000DC35BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73828B901BCEE68C00CAAC56 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2537CD7606FED797BB6CC7B11F89569F;
+			remoteInfo = DoneToolbarSwift;
+		};
+		4C0A121F1C8CAD7000DC35BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73828B901BCEE68C00CAAC56 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 989387338FD09C46FC2357B300B398AA;
+			remoteInfo = SimpleCircleProgressView;
+		};
 		73828B9C1BCEE68D00CAAC56 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 73828B901BCEE68C00CAAC56 /* Pods.xcodeproj */;
@@ -166,20 +180,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = E79B7A15614AE870E94735EA754443CA;
 			remoteInfo = SwiftyJSON;
-		};
-		E4C20AC81C8B79A900B686F4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 73828B901BCEE68C00CAAC56 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2537CD7606FED797BB6CC7B11F89569F;
-			remoteInfo = DoneToolbarSwift;
-		};
-		E4C20ACA1C8B79A900B686F4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 73828B901BCEE68C00CAAC56 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 989387338FD09C46FC2357B300B398AA;
-			remoteInfo = SimpleCircleProgressView;
 		};
 		E4C20ADC1C8B7D6000B686F4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -302,11 +302,11 @@
 		20FC56FA1B72CA1200D51801 /* UITabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITabBarController.swift; path = SupportingFiles/Extensions/UITabBarController.swift; sourceTree = "<group>"; };
 		20FC56FC1B72CA2800D51801 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Globals.swift; path = SupportingFiles/Extensions/Globals.swift; sourceTree = "<group>"; };
 		20FC56FE1B72CA3E00D51801 /* UITabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITabBarItem.swift; path = SupportingFiles/Extensions/UITabBarItem.swift; sourceTree = "<group>"; };
+		4C0A12211C8CAD7C00DC35BF /* malaria-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "malaria-ios.entitlements"; sourceTree = "<group>"; };
 		67AE5C8ADFA45BFBD2B8F09D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		73828B901BCEE68C00CAAC56 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		A4DE863BDDB7DAB1E7ED688C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BE51359F71142430EEFFC50A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4C20ACC1C8B79A900B686F4 /* malaria-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "malaria-ios.entitlements"; sourceTree = "<group>"; };
 		E4C20AD21C8B7D6000B686F4 /* Malaria App Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Malaria App Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4C20AD31C8B7D6000B686F4 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		E4C20AD61C8B7D6000B686F4 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -314,7 +314,7 @@
 		E4C20ADB1C8B7D6000B686F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4C20AE41C8B7F0E00B686F4 /* Malaria App Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Malaria App Widget.entitlements"; sourceTree = "<group>"; };
 		E4C20AE61C8B863E00B686F4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		E4C20AF41C8C4BD000B686F4 /* WidgetHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WidgetHandler.swift; path = ../ViewControllers/WidgetHandler.swift; sourceTree = "<group>"; };
+		E4C20AF41C8C4BD000B686F4 /* WidgetHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WidgetHandler.swift; path = SupportingFiles/WidgetHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -401,6 +401,7 @@
 				209F60B71B6E2AB300EDA461 /* MedicineFrontEndExtension.swift */,
 				20FC56BC1B71951300D51801 /* PresentsModalityDelegate.swift */,
 				E4C20AE61C8B863E00B686F4 /* Constants.swift */,
+				E4C20AF41C8C4BD000B686F4 /* WidgetHandler.swift */,
 			);
 			name = SupportingFiles;
 			sourceTree = "<group>";
@@ -431,7 +432,6 @@
 				200C72371B40368600998100 /* NotificationManager.swift */,
 				200C72381B40368600998100 /* SyncManager.swift */,
 				20246D141B4F1BA000384759 /* CoreDataManager.swift */,
-				E4C20AF41C8C4BD000B686F4 /* WidgetHandler.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -551,7 +551,7 @@
 		200EE4861B1343A50087FB24 /* malaria-ios */ = {
 			isa = PBXGroup;
 			children = (
-				E4C20ACC1C8B79A900B686F4 /* malaria-ios.entitlements */,
+				4C0A12211C8CAD7C00DC35BF /* malaria-ios.entitlements */,
 				20FC57351B72CB0C00D51801 /* Backend */,
 				200C72681B40368600998100 /* Frontend */,
 				200EE4891B1343A50087FB24 /* AppDelegate.swift */,
@@ -662,11 +662,11 @@
 				73828B9D1BCEE68D00CAAC56 /* Alamofire.framework */,
 				73828B9F1BCEE68D00CAAC56 /* Charts.framework */,
 				73828BA31BCEE68D00CAAC56 /* CVCalendar.framework */,
-				E4C20AC91C8B79A900B686F4 /* DoneToolbarSwift.framework */,
+				4C0A121E1C8CAD7000DC35BF /* DoneToolbarSwift.framework */,
 				73828BA71BCEE68D00CAAC56 /* HorizontalProgressView.framework */,
 				73828BA91BCEE68D00CAAC56 /* PickerSwift.framework */,
 				73828BAB1BCEE68D00CAAC56 /* Pods.framework */,
-				E4C20ACB1C8B79A900B686F4 /* SimpleCircleProgressView.framework */,
+				4C0A12201C8CAD7000DC35BF /* SimpleCircleProgressView.framework */,
 				73828BAD1BCEE68D00CAAC56 /* SwiftyJSON.framework */,
 			);
 			name = Products;
@@ -778,7 +778,6 @@
 				TargetAttributes = {
 					200EE4831B1343A50087FB24 = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = YHDTGVMUD8;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -794,7 +793,7 @@
 					};
 					E4C20AD11C8B7D6000B686F4 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = YHDTGVMUD8;
+						DevelopmentTeam = A9972S5PQC;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -830,6 +829,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		4C0A121E1C8CAD7000DC35BF /* DoneToolbarSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DoneToolbarSwift.framework;
+			remoteRef = 4C0A121D1C8CAD7000DC35BF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4C0A12201C8CAD7000DC35BF /* SimpleCircleProgressView.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SimpleCircleProgressView.framework;
+			remoteRef = 4C0A121F1C8CAD7000DC35BF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		73828B9D1BCEE68D00CAAC56 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -877,20 +890,6 @@
 			fileType = wrapper.framework;
 			path = SwiftyJSON.framework;
 			remoteRef = 73828BAC1BCEE68D00CAAC56 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		E4C20AC91C8B79A900B686F4 /* DoneToolbarSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = DoneToolbarSwift.framework;
-			remoteRef = E4C20AC81C8B79A900B686F4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		E4C20ACB1C8B79A900B686F4 /* SimpleCircleProgressView.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SimpleCircleProgressView.framework;
-			remoteRef = E4C20ACA1C8B79A900B686F4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1270,13 +1269,12 @@
 				CODE_SIGN_ENTITLEMENTS = "malaria-ios/malaria-ios.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				INFOPLIST_FILE = "malaria-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "pc-anita-borg.malaria-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = org.systers.peacecorps.malaria;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/bridging_header.h";
@@ -1293,11 +1291,10 @@
 				CODE_SIGN_ENTITLEMENTS = "malaria-ios/malaria-ios.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "malaria-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "pc-anita-borg.malaria-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = org.systers.peacecorps.malaria;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/bridging_header.h";
@@ -1359,7 +1356,7 @@
 				INFOPLIST_FILE = "Malaria App Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "pc-anita-borg.malaria-ios.Malaria-App-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = org.systers.peacecorps.malaria.pillWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -1375,7 +1372,7 @@
 				INFOPLIST_FILE = "Malaria App Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "pc-anita-borg.malaria-ios.Malaria-App-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = org.systers.peacecorps.malaria.pillWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;

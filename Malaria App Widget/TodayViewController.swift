@@ -1,11 +1,3 @@
-//
-//  TodayViewController.swift
-//  Malaria App Widget
-//
-//  Created by Teodor Ciuraru on 3/1/16.
-//  Copyright © 2016 Bruno Henriques. All rights reserved.
-//
-
 import UIKit
 import NotificationCenter
 
