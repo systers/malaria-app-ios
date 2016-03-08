@@ -80,7 +80,7 @@ class PlanTripViewController: UIViewController {
         
         
         //Check the current version of system os
-        if SYSTEM_VERSION_LESS_THAN("9.0") {
+        if Global().SYSTEM_VERSION_LESS_THAN("9.0") {
             autoCompleteBtn.hidden = true
             // For Using Google AutoComplete
             resultsViewController = GMSAutocompleteResultsViewController()
@@ -132,11 +132,6 @@ class PlanTripViewController: UIViewController {
         //update history
         prepareHistoryValuePicker()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     
     func prepareHistoryValuePicker(){
         tripLocationHistoryPickerViewer = TripLocationHistoryPickerViewer(context: viewContext, selectCallback: {(object: String) in
@@ -258,7 +253,7 @@ extension PlanTripViewController{
     
     
     @IBAction func autocompleteClicked(sender: AnyObject) {
-        if !SYSTEM_VERSION_LESS_THAN("9.0") {
+        if Global().SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO("9.0") {
             let autocompleteController = GMSAutocompleteViewController()
             autocompleteController.delegate = self
             self.presentViewController(autocompleteController, animated: true, completion: nil)
@@ -428,9 +423,14 @@ extension PlanTripViewController: GMSAutocompleteResultsViewControllerDelegate {
     }
 }
 
-//Check System Version
-func SYSTEM_VERSION_LESS_THAN(version: String) -> Bool {
-    return UIDevice.currentDevice().systemVersion.compare(version,
-        options: NSStringCompareOptions.NumericSearch) == NSComparisonResult.OrderedAscending
-}
+////Check System Version
+//func SYSTEM_VERSION_LESS_THAN(version: String) -> Bool {
+//    return UIDevice.currentDevice().systemVersion.compare(version,
+//        options: NSStringCompareOptions.NumericSearch) == NSComparisonResult.OrderedAscending
+//}
+//
+//func SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(version: String) -> Bool {
+//    return UIDevice.currentDevice().systemVersion.compare(version,
+//        options: NSStringCompareOptions.NumericSearch) != NSComparisonResult.OrderedAscending
+//}
 
