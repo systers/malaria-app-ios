@@ -8,6 +8,7 @@ import GoogleMaps
 class PlanTripViewController: UIViewController {
     @IBOutlet weak var location: UITextField!
     @IBOutlet weak var departure: UITextField!
+    @IBOutlet weak var autoCompleteBtn: UIButton!
     @IBOutlet weak var arrival: UITextField!
     @IBOutlet weak var packingList: UITextField!
     @IBOutlet weak var generateTripBtn: UIButton!
@@ -97,6 +98,11 @@ class PlanTripViewController: UIViewController {
         
         //make the submit button invisible when no text
         generateTripBtn.enabled = !tripLocation.isEmpty
+        
+        //Check the current version of system os
+        if SYSTEM_VERSION_LESS_THAN("9.0") {
+            autoCompleteBtn.hidden = true
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -125,6 +131,11 @@ class PlanTripViewController: UIViewController {
         //update history
         prepareHistoryValuePicker()
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     
     func prepareHistoryValuePicker(){
         tripLocationHistoryPickerViewer = TripLocationHistoryPickerViewer(context: viewContext, selectCallback: {(object: String) in
@@ -412,5 +423,11 @@ extension PlanTripViewController: GMSAutocompleteResultsViewControllerDelegate {
     func didUpdateAutocompletePredictionsForResultsController(resultsController: GMSAutocompleteResultsViewController) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
+}
+
+//Check System Version
+func SYSTEM_VERSION_LESS_THAN(version: String) -> Bool {
+    return UIDevice.currentDevice().systemVersion.compare(version,
+        options: NSStringCompareOptions.NumericSearch) == NSComparisonResult.OrderedAscending
 }
 
