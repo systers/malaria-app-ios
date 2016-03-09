@@ -11,7 +11,6 @@ import CoreData
 import NotificationCenter
 
 // Class that will handle the user interaction with the widget
-
 public class WidgetHandler : NSObject {
 
   // Singleton
@@ -39,7 +38,6 @@ public class WidgetHandler : NSObject {
   }
 
   func checkIfWeNeedToShowWidget() -> Bool {
-
     // check if entry was updated
     guard let currentMedicine = currentMedicine else {
       return false
@@ -58,7 +56,6 @@ public class WidgetHandler : NSObject {
 
   // check is user pressed Did Take Pill in the widget
   func checkIfUserPressedButtonInWidget() -> Bool {
-
     let didTakePillObject = NSUserDefaults(suiteName: Constants.Widget.AppGroupBundleID)!.objectForKey(Constants.Widget.DidTakePillForToday)
 
     guard let _ = didTakePillObject as? Bool else {
@@ -69,7 +66,6 @@ public class WidgetHandler : NSObject {
   }
 
   func addAppPillEntry() {
-
     let didTakePillObject = NSUserDefaults(suiteName: Constants.Widget.AppGroupBundleID)!.objectForKey(Constants.Widget.DidTakePillForToday)
 
     guard let didTakePill = didTakePillObject as? Bool else {

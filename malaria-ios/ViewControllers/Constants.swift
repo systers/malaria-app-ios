@@ -12,6 +12,5 @@ class Constants {
     static let WidgetBundleID = "pc-anita-borg.malaria-ios.Malaria-App-Widget"
     static let DidTakePillForToday = "DidTakePillForToday"
     static let AppGroupBundleID = "group.malaria-app-ios"
-    static let ShouldShowWidget = "ShouldShowWidget"
   }
 }

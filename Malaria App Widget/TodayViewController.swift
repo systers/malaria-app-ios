@@ -36,17 +36,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     return defaultMarginInsets;
   }
 
-  // Not doing anything yet, not even dismissing widget
-  @IBAction func noPressed(sender: UIButton) {
-
-  //    NSUserDefaults(suiteName: Constants.Widget.AppGroupBundleID)!.setObject(false, forKey: Constants.Widget.PillStatusUserDefaultsConstant)
-  }
-
   @IBAction func yesPressed(sender: UIButton) {
-
+    // Save entry in user defaults and let it be added to the app when it becomes active
     NSUserDefaults(suiteName: Constants.Widget.AppGroupBundleID)!.setObject(true, forKey: Constants.Widget.DidTakePillForToday)
 
-    // dimiss widget
+    // Dimiss widget
     widgetController.setHasContent(false, forWidgetWithBundleIdentifier: Constants.Widget.WidgetBundleID)
   }
 }
