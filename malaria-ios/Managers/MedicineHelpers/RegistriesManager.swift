@@ -139,7 +139,7 @@ public class RegistriesManager : CoreDataContextManager{
                 medicine.registries = NSSet(array: newRegistries)
                 CoreDataHelper.sharedInstance.saveContext(context)
                 NSNotificationEvents.DataUpdated(registry)
-                
+
                 return true
             }
             
