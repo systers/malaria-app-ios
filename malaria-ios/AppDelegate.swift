@@ -1,4 +1,5 @@
 import UIKit
+import GoogleMaps
 
 /// AppDelegate
 @UIApplicationMain

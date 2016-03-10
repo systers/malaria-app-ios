@@ -2,11 +2,13 @@ import Foundation
 import UIKit
 import PickerSwift
 import DoneToolbarSwift
+import GoogleMaps
 
 /// `PlanTripViewController` manages trips
 class PlanTripViewController: UIViewController {
     @IBOutlet weak var location: UITextField!
     @IBOutlet weak var departure: UITextField!
+    @IBOutlet weak var autoCompleteBtn: UIButton!
     @IBOutlet weak var arrival: UITextField!
     @IBOutlet weak var packingList: UITextField!
     @IBOutlet weak var generateTripBtn: UIButton!
@@ -43,6 +45,12 @@ class PlanTripViewController: UIViewController {
     
     private var toolBar: ToolbarWithDone!
     
+    
+    //AutoComplete Varibales
+    var resultsViewController: GMSAutocompleteResultsViewController?
+    var searchController: UISearchController?
+    var resultView: UITextView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -69,6 +77,33 @@ class PlanTripViewController: UIViewController {
             self.updateReminder(date)
         })
         reminderTime.inputAccessoryView = toolBar
+        
+        
+        //Check the current version of system os
+        if Global.SYSTEM_VERSION_LESS_THAN("9.0") {
+            autoCompleteBtn.hidden = true
+            // For Using Google AutoComplete
+            resultsViewController = GMSAutocompleteResultsViewController()
+            resultsViewController?.delegate = self
+            
+            searchController = UISearchController(searchResultsController: resultsViewController)
+            searchController?.searchResultsUpdater = resultsViewController
+            
+            // Put the search bar in the navigation bar.
+            searchController?.searchBar.sizeToFit()
+            self.navigationItem.titleView = searchController?.searchBar
+            
+            // When UISearchController presents the results view, present it in
+            // this view controller, not one further up the chain.
+            self.definesPresentationContext = true
+            
+            // Prevent the navigation bar from being hidden when searching.
+            searchController?.hidesNavigationBarDuringPresentation = false
+            
+            //make the submit button invisible when no text
+            generateTripBtn.enabled = !tripLocation.isEmpty
+            
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -84,8 +119,6 @@ class PlanTripViewController: UIViewController {
         medicine = Medicine.Pill(rawValue: MedicineManager(context: viewContext).getCurrentMedicine()!.name)!
         reminder = getStoredReminderTime()
         
-        //update fields
-        updateLocation(tripLocation)
         updateItemsTextField(items)
         updateArrival(arrivalDay)
         updateDeparture(departureDay)
@@ -102,7 +135,10 @@ class PlanTripViewController: UIViewController {
     
     func prepareHistoryValuePicker(){
         tripLocationHistoryPickerViewer = TripLocationHistoryPickerViewer(context: viewContext, selectCallback: {(object: String) in
-            self.updateLocation(object)
+            self.generateTripBtn.enabled = !object.isEmpty
+            
+            self.tripLocation = object
+            self.location.text = object
         })
         
         historyTextField.inputView = toolBar.generateInputView(tripLocationHistoryPickerViewer)
@@ -125,7 +161,10 @@ extension PlanTripViewController{
     }
     
     @IBAction func locationEditingChangedHandler(sender: AnyObject) {
-        updateLocation(location.text!)
+        if let loc = location.text {
+            generateTripBtn.enabled = !loc.isEmpty
+            tripLocation = loc
+        }
     }
     
     @IBAction func itemListBtnHandler(sender: AnyObject) {
@@ -211,6 +250,16 @@ extension PlanTripViewController{
             historyTextField.becomeFirstResponder()
         }
     }
+    
+    
+    @IBAction func autocompleteClicked(sender: AnyObject) {
+        if Global.SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO("9.0") {
+            let autocompleteController = GMSAutocompleteViewController()
+            autocompleteController.delegate = self
+            self.presentViewController(autocompleteController, animated: true, completion: nil)
+        }
+    }
+
 }
 
 /// local variables updaters
@@ -248,9 +297,7 @@ extension PlanTripViewController {
     
     private func updateLocation(loc: String){
         generateTripBtn.enabled = !loc.isEmpty
-        
         tripLocation = loc
-        location.text = loc
     }
     
     private func updateMedicine(medicine: Medicine.Pill){
@@ -316,4 +363,62 @@ extension PlanTripViewController {
     private var AlertOptions: (ok: String, cancel: String) {get {
         return ("Ok", "Cancel")
         }}
+}
+
+
+//Google Autocomplete Delegate function implementation
+extension PlanTripViewController: GMSAutocompleteViewControllerDelegate {
+    
+    // Handle the user's selection.
+    func viewController(viewController: GMSAutocompleteViewController, didAutocompleteWithPlace place: GMSPlace) {
+        generateTripBtn.enabled = true
+        tripLocation = "value"
+        if let loc:String = "\(place.name)" {
+            location.text = loc
+            tripLocation = loc
+            generateTripBtn.enabled = true
+        }
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func viewController(viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: NSError) {
+        Logger.Error(error.description)
+    }
+    
+    func wasCancelled(viewController: GMSAutocompleteViewController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        Logger.Info("User canceled the operation")
+    }
+    
+    func didRequestAutocompletePredictions(viewController: GMSAutocompleteViewController) {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        Logger.Info("Turn the network activity indicator on and off again.")
+    }
+    
+    func didUpdateAutocompletePredictions(viewController: GMSAutocompleteViewController) {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    }
+    
+}
+
+// Handle the user's selection.
+extension PlanTripViewController: GMSAutocompleteResultsViewControllerDelegate {
+    func resultsController(resultsController: GMSAutocompleteResultsViewController,
+        didAutocompleteWithPlace place: GMSPlace) {
+            searchController?.active = false
+    }
+    
+    func resultsController(resultsController: GMSAutocompleteResultsViewController,
+        didFailAutocompleteWithError error: NSError){
+            Logger.Error(error.description)
+    }
+    
+    func didRequestAutocompletePredictionsForResultsController(resultsController: GMSAutocompleteResultsViewController) {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        Logger.Info("urn the network activity indicator on and off again")
+    }
+    
+    func didUpdateAutocompletePredictionsForResultsController(resultsController: GMSAutocompleteResultsViewController) {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    }
 }
