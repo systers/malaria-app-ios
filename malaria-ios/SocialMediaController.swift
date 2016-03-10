@@ -28,14 +28,11 @@ extension DailyStatsTableViewController: SocialMediaController {
                 case SLComposeViewControllerResult.Cancelled:
                     Logger.Info("User cancelled sharing to \(toMedia.rawValue)")
                 case SLComposeViewControllerResult.Done:
-                    // TODO: ADD SOME CODE FOR SUCCESS
                     Logger.Info("User has shared to \(toMedia.rawValue)")
                 }
             }
             
-            self.presentViewController(controller, animated: true, completion: { () -> Void in
-                // controller is presented... do something if needed
-            })
+            self.presentViewController(controller, animated: true, completion: nil)
         } else {
             Logger.Error("\(toMedia.rawValue) is not avaliable")
         }
