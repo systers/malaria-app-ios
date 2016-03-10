@@ -98,6 +98,10 @@
 		20FC56FB1B72CA1200D51801 /* UITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC56FA1B72CA1200D51801 /* UITabBarController.swift */; };
 		20FC56FD1B72CA2800D51801 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC56FC1B72CA2800D51801 /* Globals.swift */; };
 		20FC56FF1B72CA3E00D51801 /* UITabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC56FE1B72CA3E00D51801 /* UITabBarItem.swift */; };
+		31F4DD4C1C923E8A00035477 /* SocialMediaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F4DD481C923E8A00035477 /* SocialMediaController.swift */; };
+		31F4DD4D1C923E8A00035477 /* SocialMediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F4DD491C923E8A00035477 /* SocialMediaType.swift */; };
+		31F4DD4E1C923E8A00035477 /* SocialShareable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F4DD4A1C923E8A00035477 /* SocialShareable.swift */; };
+		31F4DD4F1C923E8A00035477 /* SocialShareAbleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F4DD4B1C923E8A00035477 /* SocialShareAbleTest.swift */; };
 		5258A14277AFC3B571DB91E0 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
@@ -273,6 +277,10 @@
 		20FC56FA1B72CA1200D51801 /* UITabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITabBarController.swift; path = SupportingFiles/Extensions/UITabBarController.swift; sourceTree = "<group>"; };
 		20FC56FC1B72CA2800D51801 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Globals.swift; path = SupportingFiles/Extensions/Globals.swift; sourceTree = "<group>"; };
 		20FC56FE1B72CA3E00D51801 /* UITabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITabBarItem.swift; path = SupportingFiles/Extensions/UITabBarItem.swift; sourceTree = "<group>"; };
+		31F4DD481C923E8A00035477 /* SocialMediaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMediaController.swift; sourceTree = "<group>"; };
+		31F4DD491C923E8A00035477 /* SocialMediaType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMediaType.swift; sourceTree = "<group>"; };
+		31F4DD4A1C923E8A00035477 /* SocialShareable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialShareable.swift; sourceTree = "<group>"; };
+		31F4DD4B1C923E8A00035477 /* SocialShareAbleTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialShareAbleTest.swift; sourceTree = "<group>"; };
 		4C0A12211C8CAD7C00DC35BF /* malaria-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "malaria-ios.entitlements"; sourceTree = "<group>"; };
 		67AE5C8ADFA45BFBD2B8F09D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		73828B901BCEE68C00CAAC56 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
@@ -507,6 +515,7 @@
 				20FC57351B72CB0C00D51801 /* Backend */,
 				200C72681B40368600998100 /* Frontend */,
 				200EE4891B1343A50087FB24 /* AppDelegate.swift */,
+				31F4DD3E1C923E7000035477 /* Social Integartion */,
 				200EE48D1B1343A50087FB24 /* Main.storyboard */,
 				200EE4921B1343A50087FB24 /* LaunchScreen.xib */,
 				200EE4AE1B1349D40087FB24 /* ImagesAssets.xcassets */,
@@ -606,6 +615,17 @@
 				203F0B0E1B45B3B900826E06 /* TabbedBarController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		31F4DD3E1C923E7000035477 /* Social Integartion */ = {
+			isa = PBXGroup;
+			children = (
+				31F4DD481C923E8A00035477 /* SocialMediaController.swift */,
+				31F4DD491C923E8A00035477 /* SocialMediaType.swift */,
+				31F4DD4A1C923E8A00035477 /* SocialShareable.swift */,
+				31F4DD4B1C923E8A00035477 /* SocialShareAbleTest.swift */,
+			);
+			name = "Social Integartion";
 			sourceTree = "<group>";
 		};
 		73828B911BCEE68C00CAAC56 /* Products */ = {
@@ -938,6 +958,7 @@
 				200C72AE1B40368600998100 /* TripsManager.swift in Sources */,
 				200C72A01B40368600998100 /* MedicineNotificationsManager.swift in Sources */,
 				200A18C71B64F4B800EC2A65 /* CachedStatistics.swift in Sources */,
+				31F4DD4C1C923E8A00035477 /* SocialMediaController.swift in Sources */,
 				200A18D51B64F55F00EC2A65 /* InfoHubViewController.swift in Sources */,
 				20FC56FB1B72CA1200D51801 /* UITabBarController.swift in Sources */,
 				20FC56C31B72C1BC00D51801 /* CalendarSettings.swift in Sources */,
@@ -946,6 +967,7 @@
 				200C72F21B40368600998100 /* NSManagedObject.swift in Sources */,
 				200C72A81B40368600998100 /* SyncManager.swift in Sources */,
 				200C73061B40368600998100 /* PagesManagerViewController.swift in Sources */,
+				31F4DD4E1C923E8A00035477 /* SocialShareable.swift in Sources */,
 				205E417E1B6AE74E0028A8D7 /* TripLocationHistoryPickerViewer.swift in Sources */,
 				200A18CF1B64F51300EC2A65 /* MedicinePickerViewTrip.swift in Sources */,
 				200EE48A1B1343A50087FB24 /* AppDelegate.swift in Sources */,
@@ -985,8 +1007,10 @@
 				200A18DF1B64F60200EC2A65 /* SetupScreenViewController.swift in Sources */,
 				200C72BA1B40368600998100 /* MedicineExtension.swift in Sources */,
 				209F60B81B6E2AB300EDA461 /* MedicineFrontEndExtension.swift in Sources */,
+				31F4DD4F1C923E8A00035477 /* SocialShareAbleTest.swift in Sources */,
 				200A18C31B64F48E00EC2A65 /* PillsStatsViewController.swift in Sources */,
 				200C72C21B40368600998100 /* CollectionPosts.swift in Sources */,
+				31F4DD4D1C923E8A00035477 /* SocialMediaType.swift in Sources */,
 				20EA06DB1B2234DA00D6840E /* Model.xcdatamodeld in Sources */,
 				20FC56F51B72C9CF00D51801 /* UIColor.swift in Sources */,
 				200C72AA1B40368600998100 /* ItemsManager.swift in Sources */,
