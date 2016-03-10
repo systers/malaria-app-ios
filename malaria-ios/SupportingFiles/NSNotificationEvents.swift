@@ -12,6 +12,7 @@ public class NSNotificationEvents {
     case DataUpdated
     case UIApplicationWillEnterForegroundNotification
     case UIApplicationDidBecomeActiveNotification
+    case UIApplicationWillResignActiveNotification
   }
 
   /// Observe entered foreground events
@@ -28,6 +29,14 @@ public class NSNotificationEvents {
   /// - parameter `Selector`:: NSObject selector
   public static func ObserveAppBecomeActive(observer: NSObject, selector: Selector) {
     NSNotificationEvents.observe(Events.UIApplicationDidBecomeActiveNotification.rawValue, observer, selector)
+  }
+
+  /// Observe app did resign active events
+  ///
+  /// - parameter `NSObject`:: intended object
+  /// - parameter `Selector`:: NSObject selector
+  public static func ObserveAppWillResignActive(observer: NSObject, selector: Selector) {
+    NSNotificationEvents.observe(Events.UIApplicationWillResignActiveNotification.rawValue, observer, selector)
   }
 
 

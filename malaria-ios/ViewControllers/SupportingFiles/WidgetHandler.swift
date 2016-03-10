@@ -10,12 +10,16 @@ public class WidgetHandler : NSObject {
 
   let widgetController = NCWidgetController.widgetController()
 
-  var context: NSManagedObjectContext {
-    return CoreDataHelper.sharedInstance.createBackgroundContext()!
+  var _currentContext: NSManagedObjectContext!
+  var currentContext: NSManagedObjectContext! {
+    get {
+      _currentContext = CoreDataHelper.sharedInstance.createBackgroundContext()!
+      return _currentContext
+    }
   }
 
   var currentMedicine: Medicine? {
-    return MedicineManager(context: context).getCurrentMedicine()
+    return MedicineManager(context: currentContext).getCurrentMedicine()
   }
 
   override init() {
@@ -24,6 +28,8 @@ public class WidgetHandler : NSObject {
     // an in-app Yes or No button was pressed. If not used, it will not have time to dismiss the widget
     // the first time the app resigns active
     NSNotificationEvents.ObserveDataUpdated(self, selector: "handleDataUpdated")
+    NSNotificationEvents.ObserveAppWillResignActive(self, selector: "handleAppWillResignActive")
+    NSNotificationEvents.ObserveAppBecomeActive(self, selector: "handleAppDidBecomeActive")
   }
 
   deinit {
@@ -31,15 +37,16 @@ public class WidgetHandler : NSObject {
   }
 
   func handleDataUpdated() {
-    setVisibility(false)
+    setVisibility(checkIfUserPressedButtonInWidget())
   }
 
-  func checkIfWeNeedToShowWidget() -> Bool {
+
+  func UserProvidedFeedbackForToday() -> Bool {
     return (currentMedicine?.registriesManager.allRegistriesInPeriod(NSDate()).entries.count == 0) ?? false;
   }
 
   func setVisibility(value: Bool) {
-    widgetController.setHasContent(value, forWidgetWithBundleIdentifier: Constants.Widget.WidgetBundleID)
+    widgetController.setHasContent(value, forWidgetWithBundleIdentifier: Constants.Widget.BundleID)
   }
 
   // check is user pressed Did Take Pill in the widget
@@ -65,12 +72,11 @@ public class WidgetHandler : NSObject {
   }
 
   func handleAppDidBecomeActive() {
-
     guard let _ = currentMedicine else {
       return
     }
 
-    setVisibility(checkIfWeNeedToShowWidget())
+    setVisibility(UserProvidedFeedbackForToday())
 
     if checkIfUserPressedButtonInWidget() {
       addAppPillEntry()
@@ -80,12 +86,11 @@ public class WidgetHandler : NSObject {
     }
   }
 
-  func handleAppDidResignActive() {
-
+  func handleAppWillResignActive() {
     guard let _ = currentMedicine else {
       return
     }
     
-    setVisibility(checkIfWeNeedToShowWidget())
+    setVisibility(UserProvidedFeedbackForToday())
   }
 }
