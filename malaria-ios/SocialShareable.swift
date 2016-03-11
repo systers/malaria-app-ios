@@ -8,11 +8,9 @@ protocol SocialShareable {
 
 // Example of Models Conforming to SocialShareable
 extension SocialShareable where Self: Stat {
-    
     var message: String {
         return ("My \(self.title) is \(self.attributeValue)")
     }
-
 }
 
 extension MedicineLastTaken: SocialShareable {}
