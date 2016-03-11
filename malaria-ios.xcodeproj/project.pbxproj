@@ -101,7 +101,7 @@
 		31F4DD4C1C923E8A00035477 /* SocialMediaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F4DD481C923E8A00035477 /* SocialMediaController.swift */; };
 		31F4DD4D1C923E8A00035477 /* SocialMediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F4DD491C923E8A00035477 /* SocialMediaType.swift */; };
 		31F4DD4E1C923E8A00035477 /* SocialShareable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F4DD4A1C923E8A00035477 /* SocialShareable.swift */; };
-		31F4DD4F1C923E8A00035477 /* SocialShareAbleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F4DD4B1C923E8A00035477 /* SocialShareAbleTest.swift */; };
+		31F4DD541C92623A00035477 /* TestSocialShareAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F4DD531C92623A00035477 /* TestSocialShareAble.swift */; };
 		5258A14277AFC3B571DB91E0 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
@@ -280,7 +280,7 @@
 		31F4DD481C923E8A00035477 /* SocialMediaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMediaController.swift; sourceTree = "<group>"; };
 		31F4DD491C923E8A00035477 /* SocialMediaType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMediaType.swift; sourceTree = "<group>"; };
 		31F4DD4A1C923E8A00035477 /* SocialShareable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialShareable.swift; sourceTree = "<group>"; };
-		31F4DD4B1C923E8A00035477 /* SocialShareAbleTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialShareAbleTest.swift; sourceTree = "<group>"; };
+		31F4DD531C92623A00035477 /* TestSocialShareAble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSocialShareAble.swift; sourceTree = "<group>"; };
 		4C0A12211C8CAD7C00DC35BF /* malaria-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "malaria-ios.entitlements"; sourceTree = "<group>"; };
 		67AE5C8ADFA45BFBD2B8F09D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		73828B901BCEE68C00CAAC56 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
@@ -543,6 +543,7 @@
 				20503CD21B3F497200ED490A /* TestMapping.swift */,
 				20F9945C1B3F649F00925FA1 /* TestSyncManager.swift */,
 				20C718EC1B77DCB1007424F6 /* TestMonthAdherence.swift */,
+				31F4DD531C92623A00035477 /* TestSocialShareAble.swift */,
 			);
 			path = "malaria-iosTests";
 			sourceTree = "<group>";
@@ -623,7 +624,6 @@
 				31F4DD481C923E8A00035477 /* SocialMediaController.swift */,
 				31F4DD491C923E8A00035477 /* SocialMediaType.swift */,
 				31F4DD4A1C923E8A00035477 /* SocialShareable.swift */,
-				31F4DD4B1C923E8A00035477 /* SocialShareAbleTest.swift */,
 			);
 			name = "Social Integartion";
 			sourceTree = "<group>";
@@ -1007,7 +1007,6 @@
 				200A18DF1B64F60200EC2A65 /* SetupScreenViewController.swift in Sources */,
 				200C72BA1B40368600998100 /* MedicineExtension.swift in Sources */,
 				209F60B81B6E2AB300EDA461 /* MedicineFrontEndExtension.swift in Sources */,
-				31F4DD4F1C923E8A00035477 /* SocialShareAbleTest.swift in Sources */,
 				200A18C31B64F48E00EC2A65 /* PillsStatsViewController.swift in Sources */,
 				200C72C21B40368600998100 /* CollectionPosts.swift in Sources */,
 				31F4DD4D1C923E8A00035477 /* SocialMediaType.swift in Sources */,
@@ -1038,6 +1037,7 @@
 				20C718E61B76C28D007424F6 /* TestNSDateExtensions.swift in Sources */,
 				20C718E71B76C28D007424F6 /* TestPlanTrip.swift in Sources */,
 				2027E9501BADC71D00DA55A4 /* Array.swift in Sources */,
+				31F4DD541C92623A00035477 /* TestSocialShareAble.swift in Sources */,
 				20246D1B1B4F245300384759 /* TestMedicineRegistries.swift in Sources */,
 				209F60B61B6DA6B100EDA461 /* TestTimedInsertions.swift in Sources */,
 				20C718E51B76C28D007424F6 /* TestUserSettings.swift in Sources */,
