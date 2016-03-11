@@ -1,11 +1,3 @@
-//
-//  SocialMediaType.swift
-//  malaria-ios
-//
-//  Created by Eric Huang on 1/10/16.
-//  Copyright © 2016 Bruno Henriques. All rights reserved.
-//
-
 import Foundation
 
 /// Types of Social Media that are avialable
