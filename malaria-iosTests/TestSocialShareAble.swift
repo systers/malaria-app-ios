@@ -2,24 +2,14 @@ import XCTest
 @testable import malaria_ios
 
 class SocialShareAbleTest: XCTestCase {
-    
-    var viewController: SocialMediaController!
 
-    override func setUp() {
-        super.setUp()
+    func testControllerPresentsSLComposeViewController() {
         
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
-    func testControllerPresentsSocialMedia() {
         struct fakeSocialItem: SocialShareable {
             var message = "Fake message"
-        
+            
         }
+        
         class fakeSocialMediaController: SocialMediaController {
             var shared = false
             var socialItem = fakeSocialItem()
@@ -27,8 +17,6 @@ class SocialShareAbleTest: XCTestCase {
                 shared = true
             }
         }
-        
-        
         
         let socialMediaController = fakeSocialMediaController()
         let socialItem = socialMediaController.socialItem
