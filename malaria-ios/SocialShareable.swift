@@ -1,11 +1,3 @@
-//
-//  SocialShareable.swift
-//  malaria-ios
-//
-//  Created by Eric Huang on 1/7/16.
-//  Copyright © 2016 Bruno Henriques. All rights reserved.
-//
-
 import Foundation
 import Social
 
