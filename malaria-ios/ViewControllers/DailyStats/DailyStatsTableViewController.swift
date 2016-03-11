@@ -97,11 +97,11 @@ extension DailyStatsTableViewController{
         let actionSheet = UIAlertController(title: "", message: "Share Your Stats!", preferredStyle: .ActionSheet)
         
         let facebookPostAction = UIAlertAction(title: "Facebook", style: .Default) { [unowned self] (action) -> Void in
-            self.share(socialItem, toMedia: .Facebook, withMessage: "ASD")
+            self.share(socialItem, toMedia: .Facebook)
         }
         
         let twitterTweetAction = UIAlertAction(title: "Twitter", style: .Default) { [unowned self] (action) -> Void in
-            self.share(socialItem, toMedia: .Twitter, withMessage: "ASD")
+            self.share(socialItem, toMedia: .Twitter)
         }
     
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
