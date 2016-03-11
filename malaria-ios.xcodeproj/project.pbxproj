@@ -99,6 +99,16 @@
 		20FC56FD1B72CA2800D51801 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC56FC1B72CA2800D51801 /* Globals.swift */; };
 		20FC56FF1B72CA3E00D51801 /* UITabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC56FE1B72CA3E00D51801 /* UITabBarItem.swift */; };
 		5258A14277AFC3B571DB91E0 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		E4A01EFD1C8F84310070AED4 /* ImagesAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 200EE4AE1B1349D40087FB24 /* ImagesAssets.xcassets */; };
+		E4C20AD41C8B7D6000B686F4 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C20AD31C8B7D6000B686F4 /* NotificationCenter.framework */; };
+		E4C20AD71C8B7D6000B686F4 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C20AD61C8B7D6000B686F4 /* TodayViewController.swift */; };
+		E4C20ADA1C8B7D6000B686F4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C20AD81C8B7D6000B686F4 /* MainInterface.storyboard */; };
+		E4C20ADE1C8B7D6000B686F4 /* Malaria App Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E4C20AD21C8B7D6000B686F4 /* Malaria App Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E4C20AE31C8B7E0E00B686F4 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200C72621B40368600998100 /* NSDate.swift */; };
+		E4C20AE51C8B811400B686F4 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200C72611B40368600998100 /* Int.swift */; };
+		E4C20AE71C8B863E00B686F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C20AE61C8B863E00B686F4 /* Constants.swift */; };
+		E4C20AE91C8B863E00B686F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C20AE61C8B863E00B686F4 /* Constants.swift */; };
+		E4C20AF51C8C4BD000B686F4 /* WidgetHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C20AF41C8C4BD000B686F4 /* WidgetHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,7 +182,28 @@
 			remoteGlobalIDString = E79B7A15614AE870E94735EA754443CA;
 			remoteInfo = SwiftyJSON;
 		};
+		E4C20ADC1C8B7D6000B686F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 200EE47C1B1343A50087FB24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4C20AD11C8B7D6000B686F4;
+			remoteInfo = "Malaria App Widget";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E4C20AE21C8B7D6000B686F4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E4C20ADE1C8B7D6000B686F4 /* Malaria App Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		19B10C661C8F2A7F003D4236 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -278,6 +309,14 @@
 		73828B901BCEE68C00CAAC56 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		A4DE863BDDB7DAB1E7ED688C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BE51359F71142430EEFFC50A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4C20AD21C8B7D6000B686F4 /* Malaria App Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Malaria App Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4C20AD31C8B7D6000B686F4 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		E4C20AD61C8B7D6000B686F4 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		E4C20AD91C8B7D6000B686F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		E4C20ADB1C8B7D6000B686F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4C20AE41C8B7F0E00B686F4 /* Malaria App Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Malaria App Widget.entitlements"; sourceTree = "<group>"; };
+		E4C20AE61C8B863E00B686F4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E4C20AF41C8C4BD000B686F4 /* WidgetHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WidgetHandler.swift; path = SupportingFiles/WidgetHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +334,14 @@
 			files = (
 				5258A14277AFC3B571DB91E0 /* (null) in Frameworks */,
 				1C8EC00569FE604833382644 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4C20ACF1C8B7D6000B686F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4C20AD41C8B7D6000B686F4 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +402,8 @@
 				200A18C61B64F4B800EC2A65 /* CachedStatistics.swift */,
 				209F60B71B6E2AB300EDA461 /* MedicineFrontEndExtension.swift */,
 				20FC56BC1B71951300D51801 /* PresentsModalityDelegate.swift */,
+				E4C20AE61C8B863E00B686F4 /* Constants.swift */,
+				E4C20AF41C8C4BD000B686F4 /* WidgetHandler.swift */,
 			);
 			name = SupportingFiles;
 			sourceTree = "<group>";
@@ -485,6 +534,7 @@
 			children = (
 				200EE4861B1343A50087FB24 /* malaria-ios */,
 				200EE49C1B1343A60087FB24 /* malaria-iosTests */,
+				E4C20AD51C8B7D6000B686F4 /* Malaria App Widget */,
 				200EE4851B1343A50087FB24 /* Products */,
 				C3160C97150C507D61AF9074 /* Pods */,
 				C53F0C2A2C26B2BD2949012D /* Frameworks */,
@@ -496,6 +546,7 @@
 			children = (
 				200EE4841B1343A50087FB24 /* malaria-ios.app */,
 				200EE4991B1343A60087FB24 /* malaria-iosTests.xctest */,
+				E4C20AD21C8B7D6000B686F4 /* Malaria App Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -638,8 +689,20 @@
 			children = (
 				73828B901BCEE68C00CAAC56 /* Pods.xcodeproj */,
 				BE51359F71142430EEFFC50A /* Pods.framework */,
+				E4C20AD31C8B7D6000B686F4 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4C20AD51C8B7D6000B686F4 /* Malaria App Widget */ = {
+			isa = PBXGroup;
+			children = (
+				E4C20AE41C8B7F0E00B686F4 /* Malaria App Widget.entitlements */,
+				E4C20AD61C8B7D6000B686F4 /* TodayViewController.swift */,
+				E4C20AD81C8B7D6000B686F4 /* MainInterface.storyboard */,
+				E4C20ADB1C8B7D6000B686F4 /* Info.plist */,
+			);
+			path = "Malaria App Widget";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -655,10 +718,12 @@
 				200EE4821B1343A50087FB24 /* Resources */,
 				0D9675A334F7BCCEE80D5913 /* Copy Pods Resources */,
 				1DFC206682541934F004F48F /* Embed Pods Frameworks */,
+				E4C20AE21C8B7D6000B686F4 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E4C20ADD1C8B7D6000B686F4 /* PBXTargetDependency */,
 			);
 			name = "malaria-ios";
 			productName = "malaria-ios";
@@ -686,6 +751,23 @@
 			productReference = 200EE4991B1343A60087FB24 /* malaria-iosTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		E4C20AD11C8B7D6000B686F4 /* Malaria App Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4C20ADF1C8B7D6000B686F4 /* Build configuration list for PBXNativeTarget "Malaria App Widget" */;
+			buildPhases = (
+				E4C20ACE1C8B7D6000B686F4 /* Sources */,
+				E4C20ACF1C8B7D6000B686F4 /* Frameworks */,
+				E4C20AD01C8B7D6000B686F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Malaria App Widget";
+			productName = "Malaria App Widget";
+			productReference = E4C20AD21C8B7D6000B686F4 /* Malaria App Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -693,13 +775,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0700;
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Bruno Henriques";
 				TargetAttributes = {
 					200EE4831B1343A50087FB24 = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = A9972S5PQC;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -712,6 +793,15 @@
 					200EE4981B1343A60087FB24 = {
 						CreatedOnToolsVersion = 6.3.2;
 						TestTargetID = 200EE4831B1343A50087FB24;
+					};
+					E4C20AD11C8B7D6000B686F4 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = A9972S5PQC;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -736,6 +826,7 @@
 			targets = (
 				200EE4831B1343A50087FB24 /* malaria-ios */,
 				200EE4981B1343A60087FB24 /* malaria-iosTests */,
+				E4C20AD11C8B7D6000B686F4 /* Malaria App Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -828,6 +919,15 @@
 				204943EA1B7FE513002D494B /* ImagesAssets.xcassets in Resources */,
 				200C73441B40392A00998100 /* ApiExamples in Resources */,
 				200C73101B40370500998100 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4C20AD01C8B7D6000B686F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4A01EFD1C8F84310070AED4 /* ImagesAssets.xcassets in Resources */,
+				E4C20ADA1C8B7D6000B686F4 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -954,6 +1054,7 @@
 				200C72AC1B40368600998100 /* TripNotificationsManager.swift in Sources */,
 				200C72F01B40368600998100 /* NSDate.swift in Sources */,
 				200C72EA1B40368600998100 /* CoreDataHelper.swift in Sources */,
+				E4C20AE71C8B863E00B686F4 /* Constants.swift in Sources */,
 				200C72D21B40368600998100 /* Post.swift in Sources */,
 				200C72EE1B40368600998100 /* Int.swift in Sources */,
 				200C72A41B40368600998100 /* RegistriesManager.swift in Sources */,
@@ -969,6 +1070,7 @@
 				200C72B61B40368600998100 /* ItemExtension.swift in Sources */,
 				200C72781B40368600998100 /* CollectionPostsEndpoint.swift in Sources */,
 				200A18DB1B64F5C200EC2A65 /* DidTakePillsViewController.swift in Sources */,
+				E4C20AF51C8C4BD000B686F4 /* WidgetHandler.swift in Sources */,
 				200A18CD1B64F50500EC2A65 /* MedicinePickerView.swift in Sources */,
 				200C72BC1B40368600998100 /* Registry.swift in Sources */,
 				200C72F41B40368600998100 /* NSSet.swift in Sources */,
@@ -1020,6 +1122,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E4C20ACE1C8B7D6000B686F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4C20AE51C8B811400B686F4 /* Int.swift in Sources */,
+				E4C20AE31C8B7E0E00B686F4 /* NSDate.swift in Sources */,
+				E4C20AD71C8B7D6000B686F4 /* TodayViewController.swift in Sources */,
+				E4C20AE91C8B863E00B686F4 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1027,6 +1140,11 @@
 			isa = PBXTargetDependency;
 			target = 200EE4831B1343A50087FB24 /* malaria-ios */;
 			targetProxy = 200EE49A1B1343A60087FB24 /* PBXContainerItemProxy */;
+		};
+		E4C20ADD1C8B7D6000B686F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4C20AD11C8B7D6000B686F4 /* Malaria App Widget */;
+			targetProxy = E4C20ADC1C8B7D6000B686F4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1045,6 +1163,14 @@
 				200EE4931B1343A50087FB24 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		E4C20AD81C8B7D6000B686F4 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4C20AD91C8B7D6000B686F4 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1224,6 +1350,39 @@
 			};
 			name = Release;
 		};
+		E4C20AE01C8B7D6000B686F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Malaria App Widget/Malaria App Widget.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "Malaria App Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.systers.peacecorps.malaria.pillWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E4C20AE11C8B7D6000B686F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Malaria App Widget/Malaria App Widget.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Malaria App Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.systers.peacecorps.malaria.pillWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1250,6 +1409,15 @@
 			buildConfigurations = (
 				200EE4A71B1343A60087FB24 /* Debug */,
 				200EE4A81B1343A60087FB24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4C20ADF1C8B7D6000B686F4 /* Build configuration list for PBXNativeTarget "Malaria App Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4C20AE01C8B7D6000B686F4 /* Debug */,
+				E4C20AE11C8B7D6000B686F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
