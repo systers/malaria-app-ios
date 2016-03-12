@@ -17,15 +17,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    // experimental code
-    //    // Using this in order to hide the widget on the app's first run
-    //    // Letting the user select his medicine first
-    //    if !NSUserDefaults(suiteName: Constants.Widget.AppGroupBundleID)!.boolForKey(Constants.Widget.FirstRunFlag) {
-    //      widgetController.setHasContent(false, forWidgetWithBundleIdentifier: Constants.Widget.BundleID)
-    //
-    //      NSUserDefaults(suiteName: Constants.Widget.AppGroupBundleID)!.setBool(true, forKey: Constants.Widget.FirstRunFlag)
-    //    }
-
     currentDate = NSDate()
     dayLabel.text = currentDate.formatWith(MinorDateTextFormat)
     dateLabel.text = currentDate.formatWith(FullDateTextFormat)
