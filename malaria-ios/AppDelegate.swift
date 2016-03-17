@@ -1,5 +1,7 @@
 import UIKit
 import GoogleMaps
+import Fabric
+import Crashlytics
 
 /// AppDelegate
 @UIApplicationMain
@@ -27,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window = UIWindow(frame: UIScreen.mainScreen().bounds)
     window!.rootViewController = UIStoryboard.instantiate(viewControllerClass: TabbedBarController.self)
     window!.makeKeyAndVisible()
+    
+    Fabric.with([Crashlytics.self])
 
     return true
   }
