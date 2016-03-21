@@ -98,6 +98,11 @@
 		20FC56FB1B72CA1200D51801 /* UITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC56FA1B72CA1200D51801 /* UITabBarController.swift */; };
 		20FC56FD1B72CA2800D51801 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC56FC1B72CA2800D51801 /* Globals.swift */; };
 		20FC56FF1B72CA3E00D51801 /* UITabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC56FE1B72CA3E00D51801 /* UITabBarItem.swift */; };
+		31B54D431C9F9374001CACC2 /* SocialMediaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B54D401C9F9374001CACC2 /* SocialMediaController.swift */; };
+		31B54D441C9F9374001CACC2 /* SocialMediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B54D411C9F9374001CACC2 /* SocialMediaType.swift */; };
+		31B54D451C9F9374001CACC2 /* SocialShareable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B54D421C9F9374001CACC2 /* SocialShareable.swift */; };
+		31B54D481C9F939F001CACC2 /* Stat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B54D471C9F939F001CACC2 /* Stat+Extensions.swift */; };
+		31B54D4E1C9F946E001CACC2 /* DailyStatsTableViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B54D4D1C9F946E001CACC2 /* DailyStatsTableViewController+Extensions.swift */; };
 		5258A14277AFC3B571DB91E0 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		E4A01EFD1C8F84310070AED4 /* ImagesAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 200EE4AE1B1349D40087FB24 /* ImagesAssets.xcassets */; };
 		E4C20AD41C8B7D6000B686F4 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C20AD31C8B7D6000B686F4 /* NotificationCenter.framework */; };
@@ -304,6 +309,11 @@
 		20FC56FA1B72CA1200D51801 /* UITabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITabBarController.swift; path = SupportingFiles/Extensions/UITabBarController.swift; sourceTree = "<group>"; };
 		20FC56FC1B72CA2800D51801 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Globals.swift; path = SupportingFiles/Extensions/Globals.swift; sourceTree = "<group>"; };
 		20FC56FE1B72CA3E00D51801 /* UITabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITabBarItem.swift; path = SupportingFiles/Extensions/UITabBarItem.swift; sourceTree = "<group>"; };
+		31B54D401C9F9374001CACC2 /* SocialMediaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMediaController.swift; sourceTree = "<group>"; };
+		31B54D411C9F9374001CACC2 /* SocialMediaType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMediaType.swift; sourceTree = "<group>"; };
+		31B54D421C9F9374001CACC2 /* SocialShareable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialShareable.swift; sourceTree = "<group>"; };
+		31B54D471C9F939F001CACC2 /* Stat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stat+Extensions.swift"; sourceTree = "<group>"; };
+		31B54D4D1C9F946E001CACC2 /* DailyStatsTableViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DailyStatsTableViewController+Extensions.swift"; sourceTree = "<group>"; };
 		4C0A12211C8CAD7C00DC35BF /* malaria-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "malaria-ios.entitlements"; sourceTree = "<group>"; };
 		67AE5C8ADFA45BFBD2B8F09D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		73828B901BCEE68C00CAAC56 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
@@ -635,6 +645,7 @@
 		20FC57351B72CB0C00D51801 /* Backend */ = {
 			isa = PBXGroup;
 			children = (
+				31B54D361C9F9311001CACC2 /* Social Integration */,
 				200C72181B40368600998100 /* Endpoints */,
 				200C722D1B40368600998100 /* Information */,
 				200C72311B40368600998100 /* Managers */,
@@ -657,6 +668,26 @@
 				203F0B0E1B45B3B900826E06 /* TabbedBarController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		31B54D361C9F9311001CACC2 /* Social Integration */ = {
+			isa = PBXGroup;
+			children = (
+				31B54D461C9F9391001CACC2 /* Extensions */,
+				31B54D401C9F9374001CACC2 /* SocialMediaController.swift */,
+				31B54D411C9F9374001CACC2 /* SocialMediaType.swift */,
+				31B54D421C9F9374001CACC2 /* SocialShareable.swift */,
+			);
+			name = "Social Integration";
+			sourceTree = "<group>";
+		};
+		31B54D461C9F9391001CACC2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				31B54D471C9F939F001CACC2 /* Stat+Extensions.swift */,
+				31B54D4D1C9F946E001CACC2 /* DailyStatsTableViewController+Extensions.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		73828B911BCEE68C00CAAC56 /* Products */ = {
@@ -1034,6 +1065,7 @@
 				200A18C51B64F49A00EC2A65 /* MonthyViewController.swift in Sources */,
 				200C72A21B40368600998100 /* MedicineStats.swift in Sources */,
 				20246D151B4F1BA000384759 /* CoreDataManager.swift in Sources */,
+				31B54D431C9F9374001CACC2 /* SocialMediaController.swift in Sources */,
 				205E417C1B6AE4A70028A8D7 /* TripHistory.swift in Sources */,
 				200C72AE1B40368600998100 /* TripsManager.swift in Sources */,
 				200C72A01B40368600998100 /* MedicineNotificationsManager.swift in Sources */,
@@ -1045,6 +1077,7 @@
 				200C727C1B40368600998100 /* Endpoint.swift in Sources */,
 				200C72F21B40368600998100 /* NSManagedObject.swift in Sources */,
 				200C72A81B40368600998100 /* SyncManager.swift in Sources */,
+				31B54D441C9F9374001CACC2 /* SocialMediaType.swift in Sources */,
 				200C73061B40368600998100 /* PagesManagerViewController.swift in Sources */,
 				205E417E1B6AE74E0028A8D7 /* TripLocationHistoryPickerViewer.swift in Sources */,
 				200A18CF1B64F51300EC2A65 /* MedicinePickerViewTrip.swift in Sources */,
@@ -1074,12 +1107,14 @@
 				200A18CD1B64F50500EC2A65 /* MedicinePickerView.swift in Sources */,
 				200C72BC1B40368600998100 /* Registry.swift in Sources */,
 				200C72F41B40368600998100 /* NSSet.swift in Sources */,
+				31B54D4E1C9F946E001CACC2 /* DailyStatsTableViewController+Extensions.swift in Sources */,
 				20FC56FD1B72CA2800D51801 /* Globals.swift in Sources */,
 				200C72B81B40368600998100 /* Medicine.swift in Sources */,
 				200C72B41B40368600998100 /* Item.swift in Sources */,
 				20FC56BD1B71951300D51801 /* PresentsModalityDelegate.swift in Sources */,
 				200A18DD1B64F5F300EC2A65 /* PlanTripViewController.swift in Sources */,
 				20FC56F91B72C9FB00D51801 /* UIView.swift in Sources */,
+				31B54D451C9F9374001CACC2 /* SocialShareable.swift in Sources */,
 				200C72F81B40368600998100 /* Logger.swift in Sources */,
 				200C72E61B40368600998100 /* Trip.swift in Sources */,
 				20FC56F31B72C9AF00D51801 /* UIStoryboard.swift in Sources */,
@@ -1099,6 +1134,7 @@
 				200C72EC1B40368600998100 /* CoreDataStore.swift in Sources */,
 				200A18E11B64F61000EC2A65 /* PostDetailedViewController.swift in Sources */,
 				200A18D71B64F58F00EC2A65 /* DailyStatsTableViewController.swift in Sources */,
+				31B54D481C9F939F001CACC2 /* Stat+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
