@@ -73,7 +73,45 @@ extension DailyStatsTableViewController{
 
     //yes, it is really needed to remove white background color from ipad
     cell.backgroundColor = cell.backgroundColor
+    
+    // Social Integration with Stat Label
+    let tapGesture = UITapGestureRecognizer(target: self, action: "didPressInfo:")
+    cell.userInteractionEnabled = true
+    cell.statValueLbl.tag = indexPath.row
+    cell.statValueLbl.addGestureRecognizer(tapGesture)
+    cell.statValueLbl.userInteractionEnabled = true
+    cell.selectionStyle = .None
 
     return cell
   }
 }
+
+//MARK: Social Media methods
+extension DailyStatsTableViewController{
+    func didPressInfo(sender: UITapGestureRecognizer) {
+        guard let indexOfCell = sender.view?.tag else {
+            return
+        }
+        
+        let socialItem = listStats[indexOfCell] as! SocialShareable
+        
+        let actionSheet = UIAlertController(title: "", message: "Share Your Stats!", preferredStyle: .ActionSheet)
+        
+        let facebookPostAction = UIAlertAction(title: "Facebook", style: .Default) { [unowned self] (action) -> Void in
+            self.share(socialItem, toMedia: .Facebook)
+        }
+        
+        let twitterTweetAction = UIAlertAction(title: "Twitter", style: .Default) { [unowned self] (action) -> Void in
+            self.share(socialItem, toMedia: .Twitter)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        actionSheet.addAction(facebookPostAction)
+        actionSheet.addAction(cancelAction)
+        actionSheet.addAction(twitterTweetAction)
+        
+        presentViewController(actionSheet, animated: true, completion: nil)
+    }
+}
+
