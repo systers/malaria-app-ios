@@ -20,7 +20,7 @@ class ListItemsViewController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "longPressHandler:")
+        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressHandler))
         longPressGestureRecognizer.minimumPressDuration = 0.75
         longPressGestureRecognizer.delegate = self
         tableView.addGestureRecognizer(longPressGestureRecognizer)

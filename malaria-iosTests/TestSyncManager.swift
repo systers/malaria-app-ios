@@ -8,7 +8,6 @@ class TestSyncManager: XCTestCase {
     var expectation: XCTestExpectation?
     var completionCalled = false
     
-    
     var currentContext: NSManagedObjectContext!
     override func setUp() {
         super.setUp()
