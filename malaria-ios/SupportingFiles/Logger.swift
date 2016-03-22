@@ -9,7 +9,7 @@ public class Logger{
   /// Logs an Information message
   ///
   /// - parameter `Printable`:: The message
-    class public func Info(message: CustomStringConvertible, function: String = #function, path: String = #file, line: Int = #line) {
+  class public func Info(message: CustomStringConvertible, function: String = #function, path: String = #file, line: Int = #line) {
     Logger.Write("INFO", message: message, function: function, path: path, line: line)
   }
 
