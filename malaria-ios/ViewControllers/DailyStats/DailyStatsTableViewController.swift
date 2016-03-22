@@ -75,7 +75,7 @@ extension DailyStatsTableViewController{
     cell.backgroundColor = cell.backgroundColor
     
     // Social Integration with Stat Label
-    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(DailyStatsTableViewController.didPressInfo(_:)))
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didPressInfo))
     cell.userInteractionEnabled = true
     cell.statValueLbl.tag = indexPath.row
     cell.statValueLbl.addGestureRecognizer(tapGesture)
