@@ -58,7 +58,7 @@ public class SyncManager : CoreDataContextManager{
     public func syncAll(completionHandler: (()->())? = nil){
         var count = endpoints.count
         func completionHandlerExpanded(url: String, error: NSError?){
-            count--
+            count -= 1
             if(count == 0){
                 Logger.Info("Sync complete")
                 completionHandler?()
