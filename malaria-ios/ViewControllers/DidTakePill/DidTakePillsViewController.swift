@@ -32,7 +32,7 @@ class DidTakePillsViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    NSNotificationEvents.ObserveAppBecomeActive(self, selector: "refreshScreen")
+    NSNotificationEvents.ObserveAppBecomeActive(self, selector: #selector(refreshScreen))
 
     if let tookPillSoundPath = TookPillSoundPath,
       let didNotTakePillSoundPath = DidNotTakePillSoundPath {

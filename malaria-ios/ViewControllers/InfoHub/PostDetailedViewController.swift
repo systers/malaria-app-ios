@@ -12,8 +12,8 @@ class PostDetailedViewController : UIViewController{
         super.viewDidLoad()
         postDescription.clipsToBounds = true
         
-        let leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes))
         leftSwipe.direction = .Left
         rightSwipe.direction = .Right
         view.addGestureRecognizer(leftSwipe)
@@ -29,11 +29,11 @@ class PostDetailedViewController : UIViewController{
     
     func handleSwipes(sender:UISwipeGestureRecognizer) {
         if (sender.direction == .Left && currentIndex < postsArray.count-1) {
-            currentIndex++
+            currentIndex += 1
             reloadView()
         }
         if (sender.direction == .Right && currentIndex > 0) {
-            currentIndex--
+            currentIndex -= 1
             reloadView()
         }
     }

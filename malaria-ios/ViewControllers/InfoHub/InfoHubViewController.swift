@@ -20,7 +20,7 @@ class InfoHubViewController : UIViewController{
         
         refreshControl.tintColor = UIColor(hex: 0xE46D71)
         refreshControl.backgroundColor = UIColor.clearColor()
-        refreshControl.addTarget(self, action: "pullRefreshHandler", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.addTarget(self, action: #selector(pullRefreshHandler), forControlEvents: UIControlEvents.ValueChanged)
         
         collectionView.addSubview(refreshControl)
     }

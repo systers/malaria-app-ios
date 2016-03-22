@@ -12,7 +12,7 @@ class DailyStatsTableViewController : UITableViewController{
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    NSNotificationEvents.ObserveAppBecomeActive(self, selector: "refreshScreen")
+    NSNotificationEvents.ObserveAppBecomeActive(self, selector: #selector(refreshScreen))
   }
 
   deinit{
@@ -75,7 +75,7 @@ extension DailyStatsTableViewController{
     cell.backgroundColor = cell.backgroundColor
     
     // Social Integration with Stat Label
-    let tapGesture = UITapGestureRecognizer(target: self, action: "didPressInfo:")
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didPressInfo))
     cell.userInteractionEnabled = true
     cell.statValueLbl.tag = indexPath.row
     cell.statValueLbl.addGestureRecognizer(tapGesture)
