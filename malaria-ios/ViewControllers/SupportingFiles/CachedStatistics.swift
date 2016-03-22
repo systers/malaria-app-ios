@@ -33,8 +33,8 @@ public class CachedStatistics : NSObject{
     /// Init
     override public init(){
         super.init()
-        NSNotificationEvents.ObserveDataUpdated(self, selector: "resetFlags")
-        NSNotificationEvents.ObserveEnteredForeground(self, selector: "resetFlags")
+        NSNotificationEvents.ObserveDataUpdated(self, selector: #selector(resetFlags))
+        NSNotificationEvents.ObserveEnteredForeground(self, selector: #selector(resetFlags))
     }
     
     deinit{

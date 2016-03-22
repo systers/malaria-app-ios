@@ -9,7 +9,7 @@ public class CoreDataHelper: NSObject {
     override init(){
         super.init()
         let notificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.addObserver(self, selector: "contextDidSaveContext:",
+        notificationCenter.addObserver(self, selector: #selector(contextDidSaveContext),
                                        name: NSManagedObjectContextDidSaveNotification, object: nil)
     }
     
