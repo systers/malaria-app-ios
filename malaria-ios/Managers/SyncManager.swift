@@ -3,21 +3,13 @@ import SwiftyJSON
 
 /// Responsible for syncing remote server with CoreData
 public class SyncManager : CoreDataContextManager{
+
     private let user = "TestUser"
     private let password = "password"
     
     /// Init
     public override init(context: NSManagedObjectContext!){
-        super.init(context: context)
-        
-        // set up the base64-encoded credentials
-        let loginString = NSString(format: "%@:%@", user, password)
-        let loginData: NSData = loginString.dataUsingEncoding(NSUTF8StringEncoding)!
-        let base64LoginString = loginData.base64EncodedStringWithOptions([])
-        
-        let key = "Authorization"
-        let value = "Basic \(base64LoginString)"
-        Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders!.updateValue(value, forKey: key)
+        super.init(context: context)        
     }
     
     /// dictionary with key full endpoint url path and object an instance of `Endpoint`
@@ -73,14 +65,21 @@ public class SyncManager : CoreDataContextManager{
         }
     }
     
-    
+    private func headers() -> [String : String] {
+        
+        // set up the base64-encoded credentials
+        let loginString = NSString(format: "%@:%@", user, password)
+        let loginData: NSData = loginString.dataUsingEncoding(NSUTF8StringEncoding)!
+        let base64LoginString = loginData.base64EncodedStringWithOptions([])
+        
+        return ["Authorization":"Basic \(base64LoginString)"]
+    }
     
     
     private func remoteFetch(endpoint: Endpoint, save: Bool = false, completion: ((url: String, error: NSError?)->())? = nil){
         Logger.Info("Syncing: \(endpoint.path)")
         
-        
-        Alamofire.request(.GET, endpoint.path, parameters: ["format": "json"]).validate().responseJSON { response in
+        Alamofire.request(.GET, endpoint.path, headers: headers(), parameters: ["format": "json"]).validate().responseJSON { response in
             var resultError: NSError? = nil
             
             switch response.result {
