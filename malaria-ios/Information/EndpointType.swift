@@ -21,10 +21,14 @@ import Foundation
 /// - `Objectives`
 /// - `Goals`
 public enum EndpointType : String{
-    case BaseUrl = "http://pc-web-dev.systers.org/"
+    #if DEBUG
+    case BaseUrl = "https://systerspcweb.herokuapp.com/"
+    #else
+    case BaseUrl = "https://pc-web-dev.systers.org/"
+    #endif
     
     case Api = "api"
-    case Posts = "posts"
+    case Posts = "posts/"
     case Revposts = "revposts"
     case Regions = "regions"
     case Sectors = "sectors"
