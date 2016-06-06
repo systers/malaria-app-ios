@@ -1,12 +1,13 @@
 import UIKit
 import PickerSwift
 import DoneToolbarSwift
+import Crashlytics
 
 /// `SetupViewController` where the user configures the current medicine and the notification time
 class SetupScreenViewController : UIViewController{
     @IBOutlet weak var reminderTime: UITextField!
     @IBOutlet weak var medicineName: UITextField!
-    @IBInspectable var reminderTimeFormat: String = "HH:mm a"
+    @IBInspectable var reminderTimeFormat: String = "HH:mm"
     
     //provided by pagesManagerViewController
     var delegate: PresentsModalityDelegate!
@@ -25,7 +26,7 @@ class SetupScreenViewController : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         toolBar = ToolbarWithDone(viewsWithToolbar: [medicineName, reminderTime])
     }
     
@@ -82,7 +83,7 @@ extension SetupScreenViewController {
         
         //avoid showing the alert view if there are no changes
         if let current = medicineManager.getCurrentMedicine(){
-            if current.name == medicineName.text && current.notificationTime!.sameClockTimeAs(pillReminderNotificationTime){
+            if current.name == medicineName.text && current.notificationTime!.sameClockTimeAs(pillReminderNotificationTime) {
                 self.dismissViewControllerAnimated(true, completion: nil)
                 return
             }
@@ -90,6 +91,10 @@ extension SetupScreenViewController {
             let (title, message) = (ReplaceMedicineAlertText.title, ReplaceMedicineAlertText.message)
             let medicineAlert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
             medicineAlert.addAction(UIAlertAction(title: AlertOptions.ok, style: .Destructive, handler: { _ in
+
+                // Send Answers (Crashlytics) log to server
+                Answers.logCustomEventWithName("User changed pill.", customAttributes: ["Medicine Name" : current.name])
+
                 self.setupMedicine(med)
                 self.dismissViewControllerAnimated(true, completion: nil)
             }))

@@ -8,7 +8,6 @@ import GoogleMaps
 class PlanTripViewController: UIViewController {
     @IBOutlet weak var location: UITextField!
     @IBOutlet weak var departure: UITextField!
-    @IBOutlet weak var autoCompleteBtn: UIButton!
     @IBOutlet weak var arrival: UITextField!
     @IBOutlet weak var packingList: UITextField!
     @IBOutlet weak var generateTripBtn: UIButton!
@@ -44,8 +43,7 @@ class PlanTripViewController: UIViewController {
     var reminder = NSDate().startOfDay + 9.hour //9:00
     
     private var toolBar: ToolbarWithDone!
-    
-    
+
     //AutoComplete Varibales
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
@@ -67,7 +65,7 @@ class PlanTripViewController: UIViewController {
         })
         departure.inputAccessoryView = toolBar
         
-        //Setting up arrival date picker
+        // Setting up arrival date picker
         arrivalDatePickerview = TimePickerView(pickerMode: .Date, startDate: arrivalDay, selectCallback: {(date: NSDate) in
             self.updateArrival(date)
         })
@@ -77,33 +75,6 @@ class PlanTripViewController: UIViewController {
             self.updateReminder(date)
         })
         reminderTime.inputAccessoryView = toolBar
-        
-        
-        //Check the current version of system os
-        if Global.SYSTEM_VERSION_LESS_THAN("9.0") {
-            autoCompleteBtn.hidden = true
-            // For Using Google AutoComplete
-            resultsViewController = GMSAutocompleteResultsViewController()
-            resultsViewController?.delegate = self
-            
-            searchController = UISearchController(searchResultsController: resultsViewController)
-            searchController?.searchResultsUpdater = resultsViewController
-            
-            // Put the search bar in the navigation bar.
-            searchController?.searchBar.sizeToFit()
-            self.navigationItem.titleView = searchController?.searchBar
-            
-            // When UISearchController presents the results view, present it in
-            // this view controller, not one further up the chain.
-            self.definesPresentationContext = true
-            
-            // Prevent the navigation bar from being hidden when searching.
-            searchController?.hidesNavigationBarDuringPresentation = false
-            
-            //make the submit button invisible when no text
-            generateTripBtn.enabled = !tripLocation.isEmpty
-            
-        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -246,7 +217,7 @@ extension PlanTripViewController{
             successAlert.addAction(UIAlertAction(title: AlertOptions.ok, style: .Default, handler: nil))
             
             presentViewController(successAlert, animated: true, completion: nil)
-        }else{
+        } else{
             historyTextField.becomeFirstResponder()
         }
     }
@@ -271,7 +242,7 @@ extension PlanTripViewController {
             refreshAlert.addAction(UIAlertAction(title: AlertOptions.ok, style: .Default, handler: nil))
             
             presentViewController(refreshAlert, animated: true, completion: nil)
-        }else {
+        } else {
             departureDay = date
             departure.text = date.formatWith(textFieldsDateFormat)
         }
@@ -365,8 +336,7 @@ extension PlanTripViewController {
         }}
 }
 
-
-//Google Autocomplete Delegate function implementation
+// MARK: Autocomplete View Controller Delegate
 extension PlanTripViewController: GMSAutocompleteViewControllerDelegate {
     
     // Handle the user's selection.
@@ -387,7 +357,7 @@ extension PlanTripViewController: GMSAutocompleteViewControllerDelegate {
     
     func wasCancelled(viewController: GMSAutocompleteViewController) {
         self.dismissViewControllerAnimated(true, completion: nil)
-        Logger.Info("User canceled the operation")
+        Logger.Info("User canceled the operation.")
     }
     
     func didRequestAutocompletePredictions(viewController: GMSAutocompleteViewController) {
@@ -401,7 +371,7 @@ extension PlanTripViewController: GMSAutocompleteViewControllerDelegate {
     
 }
 
-// Handle the user's selection.
+// MARK: Autocomplete Results View Controller Delegate
 extension PlanTripViewController: GMSAutocompleteResultsViewControllerDelegate {
     func resultsController(resultsController: GMSAutocompleteResultsViewController,
         didAutocompleteWithPlace place: GMSPlace) {
@@ -415,7 +385,7 @@ extension PlanTripViewController: GMSAutocompleteResultsViewControllerDelegate {
     
     func didRequestAutocompletePredictionsForResultsController(resultsController: GMSAutocompleteResultsViewController) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        Logger.Info("urn the network activity indicator on and off again")
+        Logger.Info("Turn the network activity indicator on and off again.")
     }
     
     func didUpdateAutocompletePredictionsForResultsController(resultsController: GMSAutocompleteResultsViewController) {
