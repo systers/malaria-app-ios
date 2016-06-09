@@ -4,7 +4,7 @@ xcodeproj 'malaria-ios.xcodeproj'
 platform :ios, '8.0'
 use_frameworks!
 
-def testing_pods
+def pods
     	pod 'Alamofire', '~> 3.1.4'
 	pod 'SwiftyJSON', '~> 2.3.1'
 	pod 'Charts', '~> 2.1.6'
@@ -21,11 +21,5 @@ def testing_pods
 end
  
 target 'malaria-ios' do
-    testing_pods
+    pods
 end
- 
-target 'malaria-iosTests' do
-    testing_pods
-end
-
-
