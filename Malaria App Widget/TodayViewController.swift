@@ -23,7 +23,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   }
 
   // Solves unnecesary widget bottom margin problem
-  func widgetMarginInsetsForProposedMarginInsets(var defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
+  func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
+    var defaultMarginInsets = defaultMarginInsets
     defaultMarginInsets.bottom = 10.0;
     return defaultMarginInsets;
   }

@@ -9,7 +9,6 @@ class TestNSDateExtensions: XCTestCase {
     }
     
     func testGreaterThan() {
-        
         let a = NSDate.from(2015, month: 1, day: 1)
         let b = NSDate.from(2015, month: 1, day: 2)
         let c = NSDate.from(2015, month: 2, day: 1)

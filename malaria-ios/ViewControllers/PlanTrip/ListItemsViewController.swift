@@ -27,6 +27,7 @@ class ListItemsViewController : UIViewController{
     }
     
     @IBAction func cancelBtnHandler(sender: AnyObject) {
+        view.endEditing(true)
         dismissViewControllerAnimated(true, completion: nil)
     }
 

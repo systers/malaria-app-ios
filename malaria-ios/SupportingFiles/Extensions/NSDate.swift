@@ -133,7 +133,7 @@ public extension NSDate{
     /// - parameter `String: optional`: default dd-MMMM-yyyy hh:mm
     ///
     /// - returns: `String`
-    public func formatWith(format: String = "dd-MMMM-yyyy hh:mm") -> String{
+    public func formatWith(format: String = "dd-MMMM-yyyy hh:mm") -> String {
         let formatter = NSDateFormatter()
         formatter.dateFormat = format
         return formatter.stringFromDate(self)

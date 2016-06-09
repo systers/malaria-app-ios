@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		19B10C671C8F2A7F003D4236 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B10C661C8F2A7F003D4236 /* Global.swift */; };
-		1C8EC00569FE604833382644 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE51359F71142430EEFFC50A /* Pods.framework */; };
 		200A18C31B64F48E00EC2A65 /* PillsStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A18C21B64F48E00EC2A65 /* PillsStatsViewController.swift */; };
 		200A18C51B64F49A00EC2A65 /* MonthyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A18C41B64F49A00EC2A65 /* MonthyViewController.swift */; };
 		200A18C71B64F4B800EC2A65 /* CachedStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A18C61B64F4B800EC2A65 /* CachedStatistics.swift */; };
@@ -70,7 +69,6 @@
 		203A40921B66A7BE00FCE4EE /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 203A40911B66A7BE00FCE4EE /* Settings.bundle */; };
 		203F0B0F1B45B3B900826E06 /* TabbedBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203F0B0E1B45B3B900826E06 /* TabbedBarController.swift */; };
 		204943EA1B7FE513002D494B /* ImagesAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 200EE4AE1B1349D40087FB24 /* ImagesAssets.xcassets */; };
-		204943EB1B7FE576002D494B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE51359F71142430EEFFC50A /* Pods.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		205E417C1B6AE4A70028A8D7 /* TripHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205E417B1B6AE4A70028A8D7 /* TripHistory.swift */; };
 		205E417E1B6AE74E0028A8D7 /* TripLocationHistoryPickerViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205E417D1B6AE74E0028A8D7 /* TripLocationHistoryPickerViewer.swift */; };
 		209F60B31B6DA6B100EDA461 /* TestDailyMedicineStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA070A1B2394EB00D6840E /* TestDailyMedicineStatistics.swift */; };
@@ -103,8 +101,9 @@
 		311E38EA1CA0DC400051B14E /* SocialShareable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E38E81CA0DC400051B14E /* SocialShareable.swift */; };
 		311E38EC1CA0DC510051B14E /* DailyStatsTableViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E38EB1CA0DC510051B14E /* DailyStatsTableViewController+Extensions.swift */; };
 		311E38EE1CA0DC540051B14E /* Stat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E38ED1CA0DC540051B14E /* Stat+Extensions.swift */; };
-		5258A14277AFC3B571DB91E0 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		86957547BE8D5D859A86E700 /* Pods_malaria_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0D8BF6CDC8A45F2D123303 /* Pods_malaria_ios.framework */; };
 		E4A01EFD1C8F84310070AED4 /* ImagesAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 200EE4AE1B1349D40087FB24 /* ImagesAssets.xcassets */; };
+		E4A66DB61D09A5DB008D9B40 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A66DB51D09A5DB008D9B40 /* Reachability.swift */; };
 		E4C20AD41C8B7D6000B686F4 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C20AD31C8B7D6000B686F4 /* NotificationCenter.framework */; };
 		E4C20AD71C8B7D6000B686F4 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C20AD61C8B7D6000B686F4 /* TodayViewController.swift */; };
 		E4C20ADA1C8B7D6000B686F4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C20AD81C8B7D6000B686F4 /* MainInterface.storyboard */; };
@@ -173,13 +172,6 @@
 			remoteGlobalIDString = 7A89BE675A096F762093BC6FD4680611;
 			remoteInfo = PickerSwift;
 		};
-		73828BAA1BCEE68D00CAAC56 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 73828B901BCEE68C00CAAC56 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6FB8752F1EB98644202D914E6F0E753F;
-			remoteInfo = Pods;
-		};
 		73828BAC1BCEE68D00CAAC56 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 73828B901BCEE68C00CAAC56 /* Pods.xcodeproj */;
@@ -193,6 +185,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = E4C20AD11C8B7D6000B686F4;
 			remoteInfo = "Malaria App Widget";
+		};
+		E4DF68D71D05FE090073BB8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73828B901BCEE68C00CAAC56 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A701F4EE6D010D4B849EA9E0AC97DA00;
+			remoteInfo = "Pods-malaria-ios";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -314,11 +313,13 @@
 		311E38E81CA0DC400051B14E /* SocialShareable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocialShareable.swift; path = SocialMedia/SocialShareable.swift; sourceTree = "<group>"; };
 		311E38EB1CA0DC510051B14E /* DailyStatsTableViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DailyStatsTableViewController+Extensions.swift"; path = "SocialMedia/DailyStatsTableViewController+Extensions.swift"; sourceTree = "<group>"; };
 		311E38ED1CA0DC540051B14E /* Stat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stat+Extensions.swift"; path = "SocialMedia/Stat+Extensions.swift"; sourceTree = "<group>"; };
+		405E616ADFDE4FA92F463F95 /* Pods-malaria-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-malaria-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-malaria-ios/Pods-malaria-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		4C0A12211C8CAD7C00DC35BF /* malaria-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "malaria-ios.entitlements"; sourceTree = "<group>"; };
-		67AE5C8ADFA45BFBD2B8F09D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		5ED16CF6D98BC35F9510D8F3 /* Pods_malaria_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_malaria_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73828B901BCEE68C00CAAC56 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
-		A4DE863BDDB7DAB1E7ED688C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9A0D8BF6CDC8A45F2D123303 /* Pods_malaria_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_malaria_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE51359F71142430EEFFC50A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4A66DB51D09A5DB008D9B40 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		E4C20AD21C8B7D6000B686F4 /* Malaria App Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Malaria App Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4C20AD31C8B7D6000B686F4 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		E4C20AD61C8B7D6000B686F4 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -327,6 +328,7 @@
 		E4C20AE41C8B7F0E00B686F4 /* Malaria App Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Malaria App Widget.entitlements"; sourceTree = "<group>"; };
 		E4C20AE61C8B863E00B686F4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E4C20AF41C8C4BD000B686F4 /* WidgetHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WidgetHandler.swift; path = SupportingFiles/WidgetHandler.swift; sourceTree = "<group>"; };
+		F4BEAEF4D133CA1070C284D6 /* Pods-malaria-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-malaria-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-malaria-ios/Pods-malaria-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,7 +336,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				204943EB1B7FE576002D494B /* Pods.framework in Frameworks */,
+				86957547BE8D5D859A86E700 /* Pods_malaria_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,8 +344,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5258A14277AFC3B571DB91E0 /* (null) in Frameworks */,
-				1C8EC00569FE604833382644 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +414,7 @@
 				20FC56BC1B71951300D51801 /* PresentsModalityDelegate.swift */,
 				E4C20AE61C8B863E00B686F4 /* Constants.swift */,
 				E4C20AF41C8C4BD000B686F4 /* WidgetHandler.swift */,
+				E4A66DB51D09A5DB008D9B40 /* Reachability.swift */,
 			);
 			name = SupportingFiles;
 			sourceTree = "<group>";
@@ -546,8 +547,8 @@
 				200EE49C1B1343A60087FB24 /* malaria-iosTests */,
 				E4C20AD51C8B7D6000B686F4 /* Malaria App Widget */,
 				200EE4851B1343A50087FB24 /* Products */,
-				C3160C97150C507D61AF9074 /* Pods */,
 				C53F0C2A2C26B2BD2949012D /* Frameworks */,
+				AEDD6EC83030A3B5CCC8484F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -699,18 +700,18 @@
 				4C0A121E1C8CAD7000DC35BF /* DoneToolbarSwift.framework */,
 				73828BA71BCEE68D00CAAC56 /* HorizontalProgressView.framework */,
 				73828BA91BCEE68D00CAAC56 /* PickerSwift.framework */,
-				73828BAB1BCEE68D00CAAC56 /* Pods.framework */,
+				E4DF68D81D05FE090073BB8D /* Pods_malaria_ios.framework */,
 				4C0A12201C8CAD7000DC35BF /* SimpleCircleProgressView.framework */,
 				73828BAD1BCEE68D00CAAC56 /* SwiftyJSON.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C3160C97150C507D61AF9074 /* Pods */ = {
+		AEDD6EC83030A3B5CCC8484F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				67AE5C8ADFA45BFBD2B8F09D /* Pods.debug.xcconfig */,
-				A4DE863BDDB7DAB1E7ED688C /* Pods.release.xcconfig */,
+				405E616ADFDE4FA92F463F95 /* Pods-malaria-ios.debug.xcconfig */,
+				F4BEAEF4D133CA1070C284D6 /* Pods-malaria-ios.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -721,6 +722,8 @@
 				73828B901BCEE68C00CAAC56 /* Pods.xcodeproj */,
 				BE51359F71142430EEFFC50A /* Pods.framework */,
 				E4C20AD31C8B7D6000B686F4 /* NotificationCenter.framework */,
+				9A0D8BF6CDC8A45F2D123303 /* Pods_malaria_ios.framework */,
+				5ED16CF6D98BC35F9510D8F3 /* Pods_malaria_iosTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -743,13 +746,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 200EE4A31B1343A60087FB24 /* Build configuration list for PBXNativeTarget "malaria-ios" */;
 			buildPhases = (
-				AAA0F3003C4D5AF55F749680 /* Check Pods Manifest.lock */,
+				DE31DE797E70273468F81321 /* [CP] Check Pods Manifest.lock */,
 				200EE4801B1343A50087FB24 /* Sources */,
 				200EE4811B1343A50087FB24 /* Frameworks */,
 				200EE4821B1343A50087FB24 /* Resources */,
-				0D9675A334F7BCCEE80D5913 /* Copy Pods Resources */,
-				1DFC206682541934F004F48F /* Embed Pods Frameworks */,
+				E448DFEC1D00B31C002DD951 /* ShellScript */,
 				E4C20AE21C8B7D6000B686F4 /* Embed App Extensions */,
+				5AB297908A3A1B9DDDAE3663 /* [CP] Embed Pods Frameworks */,
+				F1BFD62FB4958935781F7E08 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -765,12 +769,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 200EE4A61B1343A60087FB24 /* Build configuration list for PBXNativeTarget "malaria-iosTests" */;
 			buildPhases = (
-				F97D48DA2C13FA01AA2597A5 /* Check Pods Manifest.lock */,
 				200EE4951B1343A60087FB24 /* Sources */,
 				200EE4961B1343A60087FB24 /* Frameworks */,
 				200EE4971B1343A60087FB24 /* Resources */,
-				3A937F1C28D6D25205AE486A /* Copy Pods Resources */,
-				752D60E0C6822B0161E4331C /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -812,6 +813,7 @@
 				TargetAttributes = {
 					200EE4831B1343A50087FB24 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 8GY46T35JG;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -827,7 +829,7 @@
 					};
 					E4C20AD11C8B7D6000B686F4 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = A9972S5PQC;
+						DevelopmentTeam = 8GY46T35JG;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -912,18 +914,18 @@
 			remoteRef = 73828BA81BCEE68D00CAAC56 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		73828BAB1BCEE68D00CAAC56 /* Pods.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Pods.framework;
-			remoteRef = 73828BAA1BCEE68D00CAAC56 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		73828BAD1BCEE68D00CAAC56 /* SwiftyJSON.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SwiftyJSON.framework;
 			remoteRef = 73828BAC1BCEE68D00CAAC56 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4DF68D81D05FE090073BB8D /* Pods_malaria_ios.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_malaria_ios.framework;
+			remoteRef = E4DF68D71D05FE090073BB8D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -965,74 +967,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0D9675A334F7BCCEE80D5913 /* Copy Pods Resources */ = {
+		5AB297908A3A1B9DDDAE3663 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-malaria-ios/Pods-malaria-ios-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1DFC206682541934F004F48F /* Embed Pods Frameworks */ = {
+		DE31DE797E70273468F81321 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3A937F1C28D6D25205AE486A /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		752D60E0C6822B0161E4331C /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AAA0F3003C4D5AF55F749680 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1040,19 +997,32 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		F97D48DA2C13FA01AA2597A5 /* Check Pods Manifest.lock */ = {
+		E448DFEC1D00B31C002DD951 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" d8957e914a589228b6c1991476925ebed39b5fab 476718313327b10d598c9fcf69a0cf1a0ea9cb368b0a2ee2a0236d3916d2c2f3";
+		};
+		F1BFD62FB4958935781F7E08 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-malaria-ios/Pods-malaria-ios-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1114,6 +1084,7 @@
 				20FC56BD1B71951300D51801 /* PresentsModalityDelegate.swift in Sources */,
 				200A18DD1B64F5F300EC2A65 /* PlanTripViewController.swift in Sources */,
 				20FC56F91B72C9FB00D51801 /* UIView.swift in Sources */,
+				E4A66DB61D09A5DB008D9B40 /* Reachability.swift in Sources */,
 				311E38EA1CA0DC400051B14E /* SocialShareable.swift in Sources */,
 				200C72F81B40368600998100 /* Logger.swift in Sources */,
 				200C72E61B40368600998100 /* Trip.swift in Sources */,
@@ -1302,7 +1273,7 @@
 		};
 		200EE4A41B1343A60087FB24 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67AE5C8ADFA45BFBD2B8F09D /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 405E616ADFDE4FA92F463F95 /* Pods-malaria-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1314,7 +1285,7 @@
 				INFOPLIST_FILE = "malaria-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.systers.peacecorps.malaria;
+				PRODUCT_BUNDLE_IDENTIFIER = "anita-borg.pc-malaria-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/bridging_header.h";
@@ -1324,7 +1295,7 @@
 		};
 		200EE4A51B1343A60087FB24 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4DE863BDDB7DAB1E7ED688C /* Pods.release.xcconfig */;
+			baseConfigurationReference = F4BEAEF4D133CA1070C284D6 /* Pods-malaria-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1334,7 +1305,7 @@
 				INFOPLIST_FILE = "malaria-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.systers.peacecorps.malaria;
+				PRODUCT_BUNDLE_IDENTIFIER = "anita-borg.pc-malaria-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/bridging_header.h";
@@ -1344,7 +1315,6 @@
 		};
 		200EE4A71B1343A60087FB24 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67AE5C8ADFA45BFBD2B8F09D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1368,7 +1338,6 @@
 		};
 		200EE4A81B1343A60087FB24 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4DE863BDDB7DAB1E7ED688C /* Pods.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1396,7 +1365,7 @@
 				INFOPLIST_FILE = "Malaria App Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.systers.peacecorps.malaria.pillWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = "anita-borg.pc-malaria-ios.pill-widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -1412,7 +1381,7 @@
 				INFOPLIST_FILE = "Malaria App Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.systers.peacecorps.malaria.pillWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = "anita-borg.pc-malaria-ios.pill-widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;

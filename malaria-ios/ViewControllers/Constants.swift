@@ -1,9 +1,9 @@
 class Constants {
 
   struct Widget {
-    static let BundleID = "org.systers.peacecorps.malaria.pillWidget"
+    static let BundleID = "anita-borg.pc-malaria-ios.pill-widget"
     static let DidTakePillForToday = "DidTakePillForToday"
-    static let AppGroupBundleID = "group.org.systers.peacecorps.malaria.tookpillwidget"
+    static let AppGroupBundleID = "group.anita-borg.pc-malaria-ios.took-pill"
     static let FirstRunFlag = "FirstRunFlag"
   }
 }

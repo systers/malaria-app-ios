@@ -1,5 +1,7 @@
 import UIKit
 import GoogleMaps
+import Fabric
+import Crashlytics
 
 /// AppDelegate
 @UIApplicationMain
@@ -9,8 +11,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-    //API Key For GoogleMaps
-    GMSServices.provideAPIKey("AIzaSyAEu7he5ESO-TyseWx50Bw_2F4RJvPvwGM")
+    // Fabric's Crashlytics initialization
+    Fabric.with([Crashlytics.self])
+
+    // API Key For GoogleMaps
+    GMSServices.provideAPIKey("AIzaSyBgUKTQgo0v5dCz-qzHbbDL3dvatlyx8E8")
 
     // Do not show widget by default (first starting the app and still needing to select the medicine)
     widgetHandler.setVisibility(false)
