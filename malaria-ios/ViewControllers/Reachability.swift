@@ -1,15 +1,3 @@
-//
-//  Reachability.swift
-//  ParkingPlusSDK
-//
-//  Created by Teodor Ciuraru on 5/12/16.
-//  Copyright © 2016 Cronos Mobile Agency. All rights reserved.
-//
-
-/**
-Module used to test the internet connection status of the user
-*/
-
 import SystemConfiguration
 
 public class Reachability {
