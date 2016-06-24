@@ -28,7 +28,7 @@ public class MedicineNotificationsManager : NotificationManager{
     /// notification category
     public static let NotificationCategory = "PILL_REMINDER"
     
-    /// Init
+    /// Init 
     public init(medicine: Medicine){
         self.medicine = medicine
         super.init(context: medicine.managedObjectContext!)

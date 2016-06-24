@@ -9,4 +9,6 @@ public class Medicine: NSManagedObject {
     @NSManaged public var registries: NSSet
     @NSManaged public var internalInterval: Int64
     @NSManaged public var notificationTime: NSDate?
+    @NSManaged public var remainingMedicine: Int64
+    @NSManaged public var lastStockRefill: NSDate?
 }

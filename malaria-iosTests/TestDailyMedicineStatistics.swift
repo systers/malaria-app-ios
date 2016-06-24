@@ -26,16 +26,16 @@ class TestDailyMedicineStatistics: XCTestCase {
         registriesManager = md.registriesManager
         stats = md.stats
         
-        XCTAssertTrue(registriesManager.addRegistry(d1, tookMedicine: true))
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 1.day, tookMedicine: true))
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 2.day, tookMedicine: true))
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 3.day, tookMedicine: true))
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 4.day, tookMedicine: true))
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 5.day, tookMedicine: true))
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 6.day, tookMedicine: true))
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 7.day, tookMedicine: true))
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 8.day, tookMedicine: true))
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 9.day, tookMedicine: true))
+        XCTAssertTrue(registriesManager.addRegistry(d1, tookMedicine: true).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 1.day, tookMedicine: true).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 2.day, tookMedicine: true).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 3.day, tookMedicine: true).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 4.day, tookMedicine: true).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 5.day, tookMedicine: true).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 6.day, tookMedicine: true).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 7.day, tookMedicine: true).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 8.day, tookMedicine: true).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 9.day, tookMedicine: true).0)
     }
     
     override func tearDown() {
@@ -66,7 +66,7 @@ class TestDailyMedicineStatistics: XCTestCase {
         XCTAssertEqual(1, stats.pillAdherence(registries: entries))
         XCTAssertEqual(1, stats.pillAdherence(registries: entriesOldestFirst))
         // miss one: 9/10
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 5.day, tookMedicine: false, modifyEntry: true))
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 5.day, tookMedicine: false, modifyEntry: true).0)
         
         let updatedEntries = registriesManager.getRegistries(mostRecentFirst: true)
         let reverseUpdatedEntries = registriesManager.getRegistries(mostRecentFirst: false)
@@ -80,12 +80,12 @@ class TestDailyMedicineStatistics: XCTestCase {
         XCTAssertEqual(6, stats.pillStreak(d1, date2: d1 - 5.day))
     
         //miss one pill
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 5.day, tookMedicine: false, modifyEntry: true))
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 5.day, tookMedicine: false, modifyEntry: true).0)
         XCTAssertEqual(0, stats.pillStreak(d1 - 9.day, date2: d1 - 5.day))
         XCTAssertEqual(5, stats.pillStreak(d1, date2: d1 - 5.day))
         
         //did not took a pill more recently
-        XCTAssertTrue(registriesManager.addRegistry(d1, tookMedicine: false, modifyEntry: true))
+        XCTAssertTrue(registriesManager.addRegistry(d1, tookMedicine: false, modifyEntry: true).0)
         XCTAssertEqual(0, stats.pillStreak())
     }
     
@@ -93,7 +93,7 @@ class TestDailyMedicineStatistics: XCTestCase {
         XCTAssertEqual(3, stats.pillStreak(d1 - 2.day))
         
         //miss one pill
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 3.day, tookMedicine: false, modifyEntry: true))
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 3.day, tookMedicine: false, modifyEntry: true).0)
         XCTAssertEqual(1, stats.pillStreak(date2: d1 - 2.day))
         XCTAssertEqual(0, stats.pillStreak(date2: d1 - 3.day))
     }
@@ -102,14 +102,14 @@ class TestDailyMedicineStatistics: XCTestCase {
         XCTAssertEqual(10, stats.pillStreak())
 
         //add 5 day gap
-        XCTAssertTrue(registriesManager.addRegistry(d1 + 5.day, tookMedicine: true))
+        XCTAssertTrue(registriesManager.addRegistry(d1 + 5.day, tookMedicine: true).0)
         XCTAssertEqual(1, stats.pillStreak())
         
-        XCTAssertTrue(registriesManager.addRegistry(d1 + 6.day, tookMedicine: true))
+        XCTAssertTrue(registriesManager.addRegistry(d1 + 6.day, tookMedicine: true).0)
         XCTAssertEqual(2, stats.pillStreak())
         
         //add one day gap
-        XCTAssertTrue(registriesManager.addRegistry(d1 + 8.day, tookMedicine: false))
+        XCTAssertTrue(registriesManager.addRegistry(d1 + 8.day, tookMedicine: false).0)
         XCTAssertEqual(0, stats.pillStreak())
     }
     
@@ -118,15 +118,15 @@ class TestDailyMedicineStatistics: XCTestCase {
         XCTAssertEqual(10, stats.numberSupposedPills())
         
         //add one pill
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 10.day, tookMedicine: false))
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 10.day, tookMedicine: false).0)
         XCTAssertEqual(11, stats.numberSupposedPills())
         
         //miss one pill
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 11.day, tookMedicine: false))
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 11.day, tookMedicine: false).0)
         XCTAssertEqual(12, stats.numberSupposedPills())
         
         //miss one pill in the past
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 5.day, tookMedicine: false, modifyEntry: true))
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 5.day, tookMedicine: false, modifyEntry: true).0)
         XCTAssertEqual(3, stats.numberSupposedPills(d1 - 6.day, date2: d1 - 4.day))
     }
     
@@ -135,7 +135,7 @@ class TestDailyMedicineStatistics: XCTestCase {
         XCTAssertEqual(10, stats.numberSupposedPills())
         
         //add 1 days gap
-        XCTAssertTrue(registriesManager.addRegistry(d1 + 2.day, tookMedicine: false))
+        XCTAssertTrue(registriesManager.addRegistry(d1 + 2.day, tookMedicine: false).0)
     }
     
     
@@ -144,15 +144,15 @@ class TestDailyMedicineStatistics: XCTestCase {
         XCTAssertEqual(6, stats.numberPillsTaken(d1, date2: d1 - 5.day))
         
         //add one pill
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 11.day, tookMedicine: true))
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 11.day, tookMedicine: true).0)
         XCTAssertEqual(11, stats.numberPillsTaken())
         
         //miss one pill
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 10.day, tookMedicine: false))
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 10.day, tookMedicine: false).0)
         XCTAssertEqual(11, stats.numberPillsTaken())
         
         //miss one pill in the past
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 5.day, tookMedicine: false, modifyEntry: true))
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 5.day, tookMedicine: false, modifyEntry: true).0)
         XCTAssertEqual(2, stats.numberPillsTaken(d1 - 6.day, date2: d1 - 4.day))
     }
     
@@ -161,11 +161,11 @@ class TestDailyMedicineStatistics: XCTestCase {
         XCTAssertEqual(10, stats.numberPillsTaken())
         
         //add 1 day gap
-        XCTAssertTrue(registriesManager.addRegistry(d1 + 2.day, tookMedicine: true))
+        XCTAssertTrue(registriesManager.addRegistry(d1 + 2.day, tookMedicine: true).0)
         XCTAssertEqual(11, stats.numberPillsTaken())
         
         //check if doesn't change
-        XCTAssertTrue(registriesManager.addRegistry(d1 + 6.day, tookMedicine: false))
+        XCTAssertTrue(registriesManager.addRegistry(d1 + 6.day, tookMedicine: false).0)
         XCTAssertEqual(11, stats.numberPillsTaken())
     }
     
@@ -173,17 +173,17 @@ class TestDailyMedicineStatistics: XCTestCase {
         XCTAssertEqual(1, stats.pillAdherence())
         
         //add one pill
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 10.day, tookMedicine: true))
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 10.day, tookMedicine: true).0)
         XCTAssertEqual(1, stats.pillAdherence())
         
         //miss one pill
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 11.day, tookMedicine: false))
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 11.day, tookMedicine: false).0)
         
         
         XCTAssertEqual(Float(stats.numberPillsTaken())/Float(stats.numberSupposedPills()), stats.pillAdherence())
         
         //miss one pill in the past
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 5.day, tookMedicine: false, modifyEntry: true))
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 5.day, tookMedicine: false, modifyEntry: true).0)
         
         let afterDate = d1 - 6.day
         let beforeDate = d1 - 4.day

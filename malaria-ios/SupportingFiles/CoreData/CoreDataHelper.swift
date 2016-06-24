@@ -33,8 +33,7 @@ public class CoreDataHelper: NSObject {
     ///
     /// - returns: `NSManagedObjectContext`
     public func createBackgroundContext() -> NSManagedObjectContext?{
-        let coordinator = CoreDataStore.sharedInstance.persistentStoreCoordinator
-        if coordinator == nil {
+        guard CoreDataStore.sharedInstance.persistentStoreCoordinator != nil else {
             return nil
         }
         

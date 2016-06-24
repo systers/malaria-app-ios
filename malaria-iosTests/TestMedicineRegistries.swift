@@ -24,16 +24,16 @@ class TestMedicineRegistries: XCTestCase {
         md.notificationManager.scheduleNotification(d1)
         registriesManager = md.registriesManager
         
-        XCTAssertTrue(registriesManager.addRegistry(d1, tookMedicine: true))
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 1.day, tookMedicine: true))
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 2.day, tookMedicine: false))
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 3.day, tookMedicine: true))
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 4.day, tookMedicine: false))
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 5.day, tookMedicine: true))
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 6.day, tookMedicine: true))
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 7.day, tookMedicine: false))
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 8.day, tookMedicine: true))
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 9.day, tookMedicine: false))
+        XCTAssertTrue(registriesManager.addRegistry(d1, tookMedicine: true).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 1.day, tookMedicine: true).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 2.day, tookMedicine: false).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 3.day, tookMedicine: true).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 4.day, tookMedicine: false).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 5.day, tookMedicine: true).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 6.day, tookMedicine: true).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 7.day, tookMedicine: false).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 8.day, tookMedicine: true).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 9.day, tookMedicine: false).0)
     }
     
     override func tearDown() {
@@ -126,7 +126,7 @@ class TestMedicineRegistries: XCTestCase {
         //Saturday = 0, Sunday = 1, etc
         let dStartWeek = d1 + NSCalendar.currentCalendar().firstWeekday.day
         
-        XCTAssertTrue(weeklyRegistriesManager.addRegistry(dStartWeek, tookMedicine: true))
+        XCTAssertTrue(weeklyRegistriesManager.addRegistry(dStartWeek, tookMedicine: true).0)
 
         XCTAssertTrue(weeklyRegistriesManager.tookMedicine(dStartWeek - 1.day) == nil)
         XCTAssertTrue(weeklyRegistriesManager.tookMedicine(dStartWeek + 1.day) != nil)
@@ -145,14 +145,14 @@ class TestMedicineRegistries: XCTestCase {
     }
     
     func testFailAddEntryInFuture(){
-        XCTAssertTrue(registriesManager.addRegistry( NSDate(), tookMedicine: true))
-        XCTAssertFalse(registriesManager.addRegistry( NSDate() + 1.day, tookMedicine: true))
+        XCTAssertTrue(registriesManager.addRegistry( NSDate(), tookMedicine: true).0)
+        XCTAssertFalse(registriesManager.addRegistry( NSDate() + 1.day, tookMedicine: true).0)
     }
     
     func testModifyEntry(){
         //modify entry and check if the number of elements did not change
         let lastCount = registriesManager.getRegistries().count
-        XCTAssertTrue(registriesManager.addRegistry(d1 - 4.day, tookMedicine: true, modifyEntry: true))
+        XCTAssertTrue(registriesManager.addRegistry(d1 - 4.day, tookMedicine: true, modifyEntry: true).0)
         XCTAssertEqual(lastCount, registriesManager.getRegistries().count)
         
         //verify if modification was a success
@@ -211,7 +211,7 @@ class TestMedicineRegistries: XCTestCase {
         m.registerNewMedicine(Medicine.Pill.Mefloquine.name(), interval: Medicine.Pill.Mefloquine.interval())
         registriesManager = m.getMedicine(Medicine.Pill.Mefloquine.name())!.registriesManager
         
-        XCTAssertTrue(registriesManager.addRegistry(d1, tookMedicine: true))
+        XCTAssertTrue(registriesManager.addRegistry(d1, tookMedicine: true).0)
         for i in 1...6{
             XCTAssertFalse(registriesManager.tookMedicine(d1 - i.day) != nil)
         }
@@ -223,7 +223,7 @@ class TestMedicineRegistries: XCTestCase {
         XCTAssertFalse(registriesManager.tookMedicine(d1 + 7.day) != nil)
         
         //skip one day
-        XCTAssertTrue(registriesManager.addRegistry(d1 + 8.day, tookMedicine: true))
+        XCTAssertTrue(registriesManager.addRegistry(d1 + 8.day, tookMedicine: true).0)
         XCTAssertFalse(registriesManager.tookMedicine(d1 + 7.day) != nil)
     }
     
@@ -233,7 +233,7 @@ class TestMedicineRegistries: XCTestCase {
         m.registerNewMedicine(Medicine.Pill.Mefloquine.name(), interval: Medicine.Pill.Mefloquine.interval())
         registriesManager = m.getMedicine(Medicine.Pill.Mefloquine.name())!.registriesManager
         
-        XCTAssertTrue(registriesManager.addRegistry(d1, tookMedicine: false))
+        XCTAssertTrue(registriesManager.addRegistry(d1, tookMedicine: false).0)
         for i in 0...6{
             XCTAssertFalse(registriesManager.tookMedicine(d1 - i.day) != nil)
         }
@@ -242,7 +242,7 @@ class TestMedicineRegistries: XCTestCase {
         }
         
         let tookWeeklyDate = d1 + 2.day
-        XCTAssertTrue(registriesManager.addRegistry(tookWeeklyDate, tookMedicine: false))
+        XCTAssertTrue(registriesManager.addRegistry(tookWeeklyDate, tookMedicine: false).0)
         for i in 0...6{
             XCTAssertFalse(registriesManager.tookMedicine(tookWeeklyDate - i.day) != nil)
         }

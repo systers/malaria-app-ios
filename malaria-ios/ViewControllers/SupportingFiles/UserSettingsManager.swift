@@ -1,7 +1,7 @@
 import Foundation
 
 /// NSUserDefaults Wrapper
-public class UserSettingsManager{
+public class UserSettingsManager {
     
     /// Possible user defined settings
     ///
@@ -11,13 +11,14 @@ public class UserSettingsManager{
     /// - `MedicineReminderSwitch`: Boolean toggled in the settings that allows turning on and off the reminders
     /// - `TripReminderOption`: String value that represents notification settings for trip
     public enum UserSetting: String{
-        private static let allValues = [DidConfiguredMedicine, ClearTripHistory, ClearMedicineHistory, MedicineReminderSwitch, TripReminderOption]
+        private static let allValues = [DidConfiguredMedicine, ClearTripHistory, ClearMedicineHistory, MedicineReminderSwitch, TripReminderOption, PillReminderValue]
         
         case DidConfiguredMedicine
         case ClearTripHistory
         case ClearMedicineHistory
         case MedicineReminderSwitch
         case TripReminderOption
+        case PillReminderValue
         
         /// Sets settings boolean flag to the value given by argument
         ///
@@ -55,7 +56,7 @@ public class UserSettingsManager{
         ///
         /// - returns: `String`:  The value
         public func getString(defaultValue: String = "") -> String{
-            if let value = NSUserDefaults.standardUserDefaults().objectForKey(self.rawValue) as? String{
+            if let value = NSUserDefaults.standardUserDefaults().objectForKey(self.rawValue) as? String {
                 return value
             }
             

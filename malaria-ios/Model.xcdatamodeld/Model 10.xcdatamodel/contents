@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="4" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="4" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Xcode 4.3">
     <entity name="CollectionPosts" representedClassName="malaria_ios.CollectionPosts" isAbstract="YES" syncable="YES">
         <relationship name="posts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Post" inverseName="contained_in" inverseEntity="Post" syncable="YES"/>
     </entity>
@@ -12,8 +12,10 @@
     <entity name="Medicine" representedClassName="malaria_ios.Medicine" syncable="YES">
         <attribute name="internalInterval" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="isCurrent" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastStockRefill" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="notificationTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="remainingMedicine" optional="YES" attributeType="Integer 64" defaultValueString="0.0" syncable="YES"/>
         <relationship name="registries" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Registry" inverseName="medicine" inverseEntity="Registry" syncable="YES"/>
     </entity>
     <entity name="Post" representedClassName="malaria_ios.Post" syncable="YES">
@@ -46,7 +48,7 @@
     <elements>
         <element name="CollectionPosts" positionX="-270" positionY="207" width="128" height="60"/>
         <element name="Item" positionX="-207" positionY="11" width="128" height="105"/>
-        <element name="Medicine" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Medicine" positionX="-63" positionY="9" width="126" height="148"/>
         <element name="Post" positionX="-101" positionY="201" width="128" height="150"/>
         <element name="Posts" positionX="-270" positionY="387" width="128" height="45"/>
         <element name="Registry" positionX="214" positionY="15" width="128" height="90"/>

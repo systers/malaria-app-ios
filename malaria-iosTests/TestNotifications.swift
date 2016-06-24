@@ -40,7 +40,7 @@ class TestNotifications: XCTestCase {
         mdDailyNotifManager = mdDaily.notificationManager
         mdWeeklyNotifManager = mdWeekly.notificationManager
         
-        XCTAssertTrue(mdDailyregistriesManager.addRegistry(d1, tookMedicine: true))
+        XCTAssertTrue(mdDailyregistriesManager.addRegistry(d1, tookMedicine: true).0)
     }
     
     override func tearDown() {
@@ -66,7 +66,7 @@ class TestNotifications: XCTestCase {
         XCTAssertTrue(mdWeekly.notificationTime!.sameDayAs(d1))
         
         //add new entry and reshedule
-        XCTAssertTrue(mdWeeklyregistriesManager.addRegistry(d1, tookMedicine: true))
+        XCTAssertTrue(mdWeeklyregistriesManager.addRegistry(d1, tookMedicine: true).0)
         mdWeeklyNotifManager.reshedule()
         XCTAssertTrue(mdWeekly.notificationTime!.sameDayAs(d1 + 7.day))
     }

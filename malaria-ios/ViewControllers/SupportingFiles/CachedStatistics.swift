@@ -10,6 +10,7 @@ public class CachedStatistics : NSObject{
     
     var medicine: Medicine!
     var registriesManager: RegistriesManager!
+    var medicineStockManager: MedicineStockManager!
     var statsManager: MedicineStats!
     
     var registries = [Registry]()
@@ -53,7 +54,9 @@ public class CachedStatistics : NSObject{
         self.context = CoreDataHelper.sharedInstance.createBackgroundContext()!
         
         medicine = MedicineManager(context: context).getCurrentMedicine()
+      
         registriesManager = medicine.registriesManager
+        medicineStockManager = medicine.medicineStockManager
         statsManager = medicine.stats
     }
     

@@ -60,4 +60,5 @@ class TestSetupInsertClear: XCTestCase {
         
         XCTAssertEqual(true, m.getRegisteredMedicines().count == 0)
     }
+    
 }

@@ -27,6 +27,7 @@ public class MedicineManager : CoreDataContextManager{
         let medicine = Medicine.create(Medicine.self, context: context)
         medicine.name = name
         medicine.interval = max(1, interval)
+        medicine.remainingMedicine = 0
         
         CoreDataHelper.sharedInstance.saveContext(context)
         
@@ -36,7 +37,7 @@ public class MedicineManager : CoreDataContextManager{
     /// Retuns the current medicine being tracked (if any)
     ///
     /// - returns: `Medicine?`: default medicine.
-    public func getCurrentMedicine() -> Medicine?{
+    public func getCurrentMedicine() -> Medicine? {
         let predicate = NSPredicate(format: "isCurrent == %@", true)
         return Medicine.retrieve(Medicine.self, predicate: predicate, fetchLimit: 1, context: context).first
     }
