@@ -122,7 +122,7 @@ class TestMedicineStockManager: XCTestCase {
     
     let registryAdded = medicine.registriesManager.addRegistry(NSDate(), tookMedicine: true)
     
-    if registryAdded.0 && registryAdded.noOtherEntryFound {
+    if registryAdded.registryAdded && registryAdded.noOtherEntryFound {
       msm.updateStock(true)
       XCTAssertEqual(medicine.remainingMedicine, 0)
     }

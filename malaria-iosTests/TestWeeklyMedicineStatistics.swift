@@ -30,7 +30,7 @@ class TestWeeklyMedicineStatistics: XCTestCase {
         registriesManager = md.registriesManager
         stats = md.stats
         for i in 0...5{
-            XCTAssertTrue(registriesManager.addRegistry(d1 + i.week, tookMedicine: true).0)
+            XCTAssertTrue(registriesManager.addRegistry(d1 + i.week, tookMedicine: true).registryAdded)
         }
     }
     
@@ -41,7 +41,7 @@ class TestWeeklyMedicineStatistics: XCTestCase {
     
     func testPillStreak(){
         XCTAssertEqual(stats.pillStreak(), 6)
-        XCTAssertTrue(registriesManager.addRegistry(d1 + 6.week, tookMedicine: false).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 + 6.week, tookMedicine: false).registryAdded)
         XCTAssertEqual(stats.pillStreak(), 0)
     }
     
@@ -50,11 +50,11 @@ class TestWeeklyMedicineStatistics: XCTestCase {
         XCTAssertEqual(stats.pillStreak(), 6)
         
         //1 week gap
-        XCTAssertTrue(registriesManager.addRegistry(d1 + 8.week, tookMedicine: false).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 + 8.week, tookMedicine: false).registryAdded)
         XCTAssertEqual(stats.pillStreak(), 0)
         
         //2 more week gap
-        XCTAssertTrue(registriesManager.addRegistry(d1 + 10.week, tookMedicine: true).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 + 10.week, tookMedicine: true).registryAdded)
         XCTAssertEqual(stats.pillStreak(), 1)
     }
     
@@ -63,21 +63,21 @@ class TestWeeklyMedicineStatistics: XCTestCase {
         XCTAssertEqual(stats.numberSupposedPills(), 6)
         
         //1 week gap. 6th and 7th week were skipped. week none
-        XCTAssertTrue(registriesManager.addRegistry(d1 + 8.week, tookMedicine: false).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 + 8.week, tookMedicine: false).registryAdded)
         XCTAssertEqual(stats.numberSupposedPills(), 9)
         
         //1 more week gap
-        XCTAssertTrue(registriesManager.addRegistry(d1 + 10.week, tookMedicine: true).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 + 10.week, tookMedicine: true).registryAdded)
         XCTAssertEqual(stats.numberSupposedPills(), 11)
     }
     
     func testSupposedPills(){
         XCTAssertEqual(stats.numberSupposedPills(), 6)
         
-        XCTAssertTrue(registriesManager.addRegistry(d1 + 6.week, tookMedicine: false).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 + 6.week, tookMedicine: false).registryAdded)
         XCTAssertEqual(stats.numberSupposedPills(), 7)
         
-        XCTAssertTrue(registriesManager.addRegistry(d1 + 7.week, tookMedicine: true).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 + 7.week, tookMedicine: true).registryAdded)
         XCTAssertEqual(stats.numberSupposedPills(), 8)
     }
     
@@ -85,10 +85,10 @@ class TestWeeklyMedicineStatistics: XCTestCase {
     func testPillsTaken(){
         XCTAssertEqual(stats.numberPillsTaken(), 6)
         
-        XCTAssertTrue(registriesManager.addRegistry(d1 + 6.week, tookMedicine: false).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 + 6.week, tookMedicine: false).registryAdded)
         XCTAssertEqual(stats.numberPillsTaken(), 6)
         
-        XCTAssertTrue(registriesManager.addRegistry(d1 + 7.week, tookMedicine: true).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 + 7.week, tookMedicine: true).registryAdded)
         XCTAssertEqual(stats.numberPillsTaken(), 7)
     }
     
@@ -96,11 +96,11 @@ class TestWeeklyMedicineStatistics: XCTestCase {
         XCTAssertEqual(stats.numberPillsTaken(), 6)
         
         //add gap
-        XCTAssertTrue(registriesManager.addRegistry(d1 + 7.week, tookMedicine: false).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 + 7.week, tookMedicine: false).registryAdded)
         XCTAssertEqual(stats.numberPillsTaken(), 6)
         
         //add another gap
-        XCTAssertTrue(registriesManager.addRegistry(d1 + 9.week, tookMedicine: true).0)
+        XCTAssertTrue(registriesManager.addRegistry(d1 + 9.week, tookMedicine: true).registryAdded)
         XCTAssertEqual(stats.numberPillsTaken(), 7)
     }
 }

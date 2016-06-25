@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 /// Abstract class for handling `UILocalNotification`
-public class NotificationManager : CoreDataContextManager{
+public class NotificationManager : CoreDataContextManager {
   /// Alert category, default fatalError
   public var category: String { get{ fatalError("No category provided")} }
   
@@ -12,7 +12,7 @@ public class NotificationManager : CoreDataContextManager{
   /// Alert action, default fatalError
   public var alertAction: String { get{ fatalError("No alertAction provided")} }
   
-  override public init(context: NSManagedObjectContext!){
+  override public init(context: NSManagedObjectContext!) {
     super.init(context: context)
   }
   
@@ -23,20 +23,15 @@ public class NotificationManager : CoreDataContextManager{
   /// All previous notifications will be unsheduled
   ///
   /// - parameter `NSDate`:: fireTime
-  public func scheduleNotification(fireTime: NSDate){
+  public func scheduleNotification(fireTime: NSDate) {
     Logger.Info("Sheduling \(category) to " + fireTime.formatWith("dd-MMMM-yyyy hh:mm"))
     let notification: UILocalNotification = createNotification(fireTime)
     UIApplication.sharedApplication().scheduleLocalNotification(notification)
   }
   
   /// Unschedule all notifications with the category
-  public func unsheduleNotification(){
-    //        for event in UIApplication.sharedApplication().scheduledLocalNotifications!
-    //          where event.category == category {
-    //                UIApplication.sharedApplication().cancelLocalNotification(event)
-    //        }
-    
-    let localNotificationArrayData = NSUserDefaults.standardUserDefaults().objectForKey(Constants.localNotificationsArray) as? NSData
+  public func unsheduleNotification() {
+    let localNotificationArrayData = UserSettingsManager.UserSetting.SaveLocalNotifications.getLocalNotifications()
     
     guard let data = localNotificationArrayData else {
       return
@@ -58,7 +53,7 @@ public class NotificationManager : CoreDataContextManager{
   ///
   /// - parameter `NSDate`:: fireTime
   /// - returns: `UILocalNotification`: local notification
-  private func createNotification(fireDate: NSDate) -> UILocalNotification{
+  private func createNotification(fireDate: NSDate) -> UILocalNotification {
     let localNotification = UILocalNotification()
     localNotification.fireDate = fireDate
     localNotification.soundName = UILocalNotificationDefaultSoundName;
@@ -71,7 +66,7 @@ public class NotificationManager : CoreDataContextManager{
     
     // Save the notifications persistently
     let localNotificationArrayData = NSKeyedArchiver.archivedDataWithRootObject(scheduledNotifications)
-    NSUserDefaults.standardUserDefaults().setObject(localNotificationArrayData, forKey: Constants.localNotificationsArray)
+    UserSettingsManager.UserSetting.SaveLocalNotifications.setLocalNotifications(localNotificationArrayData)
     
     return localNotification
   }

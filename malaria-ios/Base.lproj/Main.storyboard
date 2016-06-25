@@ -1773,7 +1773,7 @@
                                 <color key="textColor" red="0.4378715158" green="0.32177186009999997" blue="0.2744835913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhq-rN-fLa" userLabel="GenerateTrip">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhq-rN-fLa" userLabel="GenerateTrip">
                                 <rect key="frame" x="216" y="492" width="169" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="jsX-iB-ngQ"/>
@@ -1814,9 +1814,9 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="PlanTripIconUnselected" id="IKD-Sj-Igg">
+                    <tabBarItem key="tabBarItem" title="" image="UserProfileUnselected" id="IKD-Sj-Igg">
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="image" keyPath="imageWhenSelected" value="PlanTripIcon"/>
+                            <userDefinedRuntimeAttribute type="image" keyPath="imageWhenSelected" value="UserProfileIcon"/>
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <connections>
@@ -1846,6 +1846,8 @@
         <image name="TabHomeIconUnselected" width="96" height="56"/>
         <image name="TabInfoHubIcon" width="55" height="56"/>
         <image name="TabInfoHubIconUnselected" width="55" height="56"/>
+        <image name="UserProfileIcon" width="96" height="50"/>
+        <image name="UserProfileUnselected" width="96" height="50"/>
         <image name="WhereAmIIcon" width="19" height="24"/>
         <image name="Yes" width="105" height="104"/>
         <image name="email" width="64" height="64"/>

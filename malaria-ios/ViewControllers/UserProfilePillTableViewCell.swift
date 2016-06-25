@@ -12,17 +12,20 @@ class UserProfilePillTableViewCell: UITableViewCell {
   
   var toolBar: ToolbarWithDone!
   
-  func updateCellWithParameters(delegate: SaveRemainingPillsProtocol,
-                                name: String,
-                                remainingMedicine: String,
-                                indexPath: NSIndexPath) {
-    pillName.text = name
-    print(remainingMedicine)
-    quantityTextField.text = remainingMedicine
-    quantityTextField.delegate = self
-    quantityTextField.tag = indexPath.row
+  override func layoutSubviews() {
+    super.layoutSubviews()
     toolBar = ToolbarWithDone(viewsWithToolbar: [quantityTextField])
     quantityTextField.inputAccessoryView = toolBar
+    quantityTextField.delegate = self
+  }
+  
+  func updateCell(delegate: SaveRemainingPillsProtocol,
+                                name: String,
+                                remainingMedicine: Int64,
+                                indexPath: NSIndexPath) {
+    pillName.text = name
+    quantityTextField.text = String(remainingMedicine)
+    quantityTextField.tag = indexPath.row
   }
 }
 

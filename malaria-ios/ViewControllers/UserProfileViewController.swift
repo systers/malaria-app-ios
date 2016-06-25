@@ -7,9 +7,16 @@ protocol SaveRemainingPillsProtocol: class {
   func saveRemainingPills(textField: UITextField)
 }
 
+/// A class that stores all the user information and sets up the Pill Taking mechanism.
+
 // MARK: - Table View controller
 
 class UserProfileViewController: UIViewController {
+  
+  // We found a problem that didn't allow us to click on the table view's cell if we only set the cell
+  // height (60) and not add ~30-50 offset to it
+  let CellHeightAndOffset: CGFloat = 60 + 30
+  let CellReuseIdentifier = "User Profile Pill Cell Identifier"
   
   @IBOutlet weak var remindMeWeeksButton: UIButton!
   @IBOutlet weak var tableView: UITableView!
@@ -23,7 +30,11 @@ class UserProfileViewController: UIViewController {
     }
   }
   
+  private var medicineStock: Int?
+  private var timeMeasuringUnit: String?
+  
   // Core Data
+  
   private var context: NSManagedObjectContext?
   private var medicineManager: MedicineManager?
   private var psnm: PillStatusNotificationsManager?
@@ -38,7 +49,7 @@ class UserProfileViewController: UIViewController {
     let value = UserSettingsManager.UserSetting.PillReminderValue.getString()
     
     remindMeWeeksButton.setTitle(value, forState: .Normal)
-
+    
     self.reminderValue = value.toReminderValue()
   }
   
@@ -51,20 +62,28 @@ class UserProfileViewController: UIViewController {
     
     getRegisteredMedicine()
     calculateMedicineLeft()
+    saveRemainingPillStatusForTheWidget()
     recalculateTableHeight()
+    refreshScreen(checkIfWeNeedToPresentNotification())
   }
   
   func dismissKeyboard() {
     view.endEditing(true)
   }
   
+  /// Gets the current medicine the user uses.
+  /// To get a list of all the medicine use:
+  /// medicine = medicineManager!.getRegisteredMedicines()
+
   func getRegisteredMedicine() {
-    medicine = []
-    medicine.append(medicineManager!.getCurrentMedicine()!)
+    guard let currentMedicine = medicineManager!.getCurrentMedicine() else {
+      return
+    }
     
-    // To get all medicine use only:
-    // medicine = medicineManager!.getRegisteredMedicines()
+    medicine = [currentMedicine]
   }
+  
+  /// Calculates and sets medicineStock and timeMeasuringUnit values.
   
   func calculateMedicineLeft() {
     guard let currentMedicine = medicineManager!.getCurrentMedicine() else {
@@ -72,29 +91,57 @@ class UserProfileViewController: UIViewController {
       return
     }
     
+    // The result if floored.
+    medicineStock = Int(currentMedicine.remainingMedicine)
+    
+    if medicineStock == 1 {
+      timeMeasuringUnit = (currentMedicine.interval == 7) ? "week" : "day"
+    }
+    else {
+      timeMeasuringUnit = (currentMedicine.interval == 7) ? "weeks" : "days"
+    }
+  }
+  
+  // Refreshes all elements of the UI that can change, based on the current medicine stock.
+  
+  func refreshScreen(shouldPresentNotification: Bool) {
     tableView.reloadData()
-
-    // remaining value is floored (opposed to ceiled)
-    let remaining = Int(currentMedicine.remainingMedicine) / currentMedicine.interval
     
-    let timeMeasuringUnit = (currentMedicine.interval == 7) ? "weeks" : "days"
+    guard let currentMedicine = medicineManager!.getCurrentMedicine() else {
+      remainingLabel.text = ""
+      return
+    }
     
-    remainingLabel.text = "You have \(remaining) \(timeMeasuringUnit) of \(currentMedicine.name) left."
-    
-    // Save pill status to show it in the widget
-    WidgetSettingsManager.WidgetSetting.RemainingPills.setObject(remaining)
-    WidgetSettingsManager.WidgetSetting.RemainingPillsMeasuringUnit.setObject(timeMeasuringUnit)
-    
-    let shouldPresentNotification: Bool = psnm!.shouldPresentNotification(remaining, reminderValue: reminderValue.rawValue)
-    
-    shouldPresentNotification ? psnm!.scheduleNotification(NSDate()) : psnm!.unsheduleNotification()
+    remainingLabel.text = "You have \(medicineStock!) \(timeMeasuringUnit!) of \(currentMedicine.name) left."
     
     let defaultBrownTint = self.remindMeWeeksButton.titleLabel?.textColor
     self.remainingLabel.textColor = shouldPresentNotification ? UIColor.redColor() : defaultBrownTint
+    
+    shouldPresentNotification ? psnm!.scheduleNotification(NSDate()) : psnm!.unsheduleNotification()
   }
   
+  /// Save medicine stock status to show be shown in the widget.
+  
+  func saveRemainingPillStatusForTheWidget() {
+    WidgetSettingsManager.WidgetSetting.RemainingPills.setObject(medicineStock ?? 0)
+    WidgetSettingsManager.WidgetSetting.RemainingPillsMeasuringUnit.setObject(timeMeasuringUnit ?? "days")
+  }
+  
+  func checkIfWeNeedToPresentNotification() -> Bool {
+    guard let currentMedicine = medicineManager!.getCurrentMedicine() else {
+      return false
+    }
+    
+    let remainingPillsBasedOnTheirInterval = medicineStock! * currentMedicine.interval
+    let shouldPresentNotification: Bool = psnm!.shouldPresentNotification(remainingPillsBasedOnTheirInterval, reminderValue: reminderValue.rawValue)
+    
+    return shouldPresentNotification
+  }
+  
+  /// Calculates a new table height that will be as tall as the number of cells in the table.
+  
   func recalculateTableHeight() {
-    tableViewHeightConstraint.constant = CGFloat(medicine.count) * Constants.UserProfile.CellHeightAndOffset
+    tableViewHeightConstraint.constant = CGFloat(medicine.count) * CellHeightAndOffset
   }
 }
 
@@ -111,7 +158,9 @@ extension UserProfileViewController {
   }
   
   @IBAction func remindMeWeeksPressed(sender: UIButton) {
-    let alertController = UIAlertController(title: "Set reminder for:", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+    let (title, message) = (SetReminderText.title, SetReminderText.message)
+
+    let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
     
     for intervalValue in PillStatusNotificationsManager.ReminderInterval.allValues {
       let action = UIAlertAction(title: intervalValue.toString(),
@@ -124,8 +173,9 @@ extension UserProfileViewController {
                                   // Save the reminder value internally
                                   UserSettingsManager.UserSetting.PillReminderValue.setString(self.reminderValue.toString())
                                   
-                                  // Recalculate medicine left
                                   self.calculateMedicineLeft()
+                                  self.saveRemainingPillStatusForTheWidget()
+                                  self.refreshScreen(self.checkIfWeNeedToPresentNotification())
       })
       
       alertController.addAction(action)
@@ -136,6 +186,7 @@ extension UserProfileViewController {
 }
 
 // MARK: Table View Data Source
+
 extension UserProfileViewController: UITableViewDataSource {
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -143,15 +194,14 @@ extension UserProfileViewController: UITableViewDataSource {
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier(Constants.UserProfile.CellReuseIdentifier, forIndexPath: indexPath) as! UserProfilePillTableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier(CellReuseIdentifier, forIndexPath: indexPath) as! UserProfilePillTableViewCell
     
     let name = medicine[indexPath.row].name
     let remainingMedicine = medicine[indexPath.row].remainingMedicine
     
-    cell.updateCellWithParameters(self,
-                                  name: name,
-                                  remainingMedicine: String(remainingMedicine),
-                                  indexPath: indexPath)
+    cell.updateCell(self, name: name,
+                    remainingMedicine: remainingMedicine,
+                    indexPath: indexPath)
     cell.delegate = self
     
     return cell
@@ -166,7 +216,6 @@ extension UserProfileViewController: UITableViewDelegate {
   // http://stackoverflow.com/questions/24977047/tableview-cell-on-ipad-refusing-to-accept-clear-color
   
   func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-    
     cell.backgroundColor = UIColor.clearColor()
   }
 }
@@ -175,11 +224,13 @@ extension UserProfileViewController: UITableViewDelegate {
 
 extension UserProfileViewController: PresentsModalityDelegate {
   
+  /// Method called when the Setup screen is dismissed.
   func OnDismiss() {
     getRegisteredMedicine()
     recalculateTableHeight()
-    tableView.reloadData()
-  }
+    calculateMedicineLeft()
+    saveRemainingPillStatusForTheWidget()
+    refreshScreen(checkIfWeNeedToPresentNotification())  }
 }
 
 // MARK: Save Remaining Pills Protocol
@@ -195,5 +246,20 @@ extension UserProfileViewController: SaveRemainingPillsProtocol {
     
     // Recalculate medicine left
     calculateMedicineLeft()
+    saveRemainingPillStatusForTheWidget()
+    refreshScreen(checkIfWeNeedToPresentNotification())
+  }
+}
+
+// MARK: Messages
+
+extension UserProfileViewController {
+  typealias AlertText = (title: String, message: String)
+
+  // Set reminder
+  private var SetReminderText: AlertText {
+    get {
+      return ("Set reminder for:", "")
+    }
   }
 }

@@ -11,7 +11,7 @@ public class UserSettingsManager {
     /// - `MedicineReminderSwitch`: Boolean toggled in the settings that allows turning on and off the reminders
     /// - `TripReminderOption`: String value that represents notification settings for trip
     public enum UserSetting: String{
-        private static let allValues = [DidConfiguredMedicine, ClearTripHistory, ClearMedicineHistory, MedicineReminderSwitch, TripReminderOption, PillReminderValue]
+        private static let allValues = [DidConfiguredMedicine, ClearTripHistory, ClearMedicineHistory, MedicineReminderSwitch, TripReminderOption, PillReminderValue, SaveLocalNotifications]
         
         case DidConfiguredMedicine
         case ClearTripHistory
@@ -19,6 +19,7 @@ public class UserSettingsManager {
         case MedicineReminderSwitch
         case TripReminderOption
         case PillReminderValue
+        case SaveLocalNotifications
         
         /// Sets settings boolean flag to the value given by argument
         ///
@@ -65,7 +66,29 @@ public class UserSettingsManager {
             self.setString(defaultValue)
             return defaultValue
         }
+      
+      /// Sets settings local notifications data in the user setting.
+      ///
+      /// - parameter `NSData`:: local notifications array.
+      public func setLocalNotifications(value: NSData) {
+        NSUserDefaults.standardUserDefaults().setObject(value, forKey: self.rawValue)
+      }
+      
+      /// Gets the local notifications data for the key. If it is not set, returns the default value.
+      /// - parameter `String: optional`: default value when the variable isn't set, currently, empty data.
+      ///
+      /// - returns: `NSData?`:  The value we get from NSUserDefaults.
+      public func getLocalNotifications(defaultValue: NSData = NSData()) -> NSData? {
+        if let value = NSUserDefaults.standardUserDefaults().objectForKey(self.rawValue) {
+          return value as? NSData
+        }
         
+        Logger.Warn("\(self.rawValue) isn't set, setting and returning default value \(defaultValue)")
+        
+        self.setLocalNotifications(defaultValue)
+        return defaultValue
+      }
+      
         /// clears the key from UserDefaults
         public func removeKey() {
             return NSUserDefaults.standardUserDefaults().removeObjectForKey(self.rawValue)

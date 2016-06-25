@@ -113,7 +113,7 @@ public class RegistriesManager: CoreDataContextManager{
   /// - parameter `Bool: optional`: overwrite previous entry (by default is false)
   ///
   /// - returns: `Bool`: true if there was a change, false if not
-  public func addRegistry(date: NSDate, tookMedicine: Bool, modifyEntry: Bool = false) -> (Bool, noOtherEntryFound: Bool) {
+  public func addRegistry(date: NSDate, tookMedicine: Bool, modifyEntry: Bool = false) -> (registryAdded: Bool, noOtherEntryFound: Bool) {
     if date > NSDate() {
       Logger.Error("Cannot change entries in the future")
       return (false, true)

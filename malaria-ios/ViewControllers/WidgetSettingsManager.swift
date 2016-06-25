@@ -18,16 +18,16 @@ public class WidgetSettingsManager {
 
     private static let allValues = [RemainingPills, RemainingPillsMeasuringUnit, DidTakePillForToday]
     
-    /// Sets settings boolean flag to the value given by argument
+    /// Sets settings boolean flag to the value given by argument.
     ///
     /// - parameter `Bool`:
     public func setBool(value: Bool){
       NSUserDefaults(suiteName: Constants.Widget.AppGroupBundleID)!.setBool(value, forKey: self.rawValue)
     }
     
-    /// Gets the value of the boolean user setting. If the value isn't set, sets it as default value and returns
+    /// Gets the value of the boolean widget setting, if it exists. Else, returns nil.
     ///
-    /// - parameter `Bool: optional`: default value when the variable isn't set. Default false
+    /// - parameter `Bool: optional`: default value when the variable isn't set. Default False.
     ///
     /// - returns: `Bool`: The value
     public func getBool(defaultValue: Bool = false) -> Bool? {
