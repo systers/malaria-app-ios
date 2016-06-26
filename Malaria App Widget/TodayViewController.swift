@@ -22,7 +22,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     dateLabel.text = currentDate.formatWith(FullDateTextFormat)
   }
 
-  // Solves unnecesary widget bottom margin problem
+  // Solves widget bottom margin problem
   func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
     var defaultMarginInsets = defaultMarginInsets
     defaultMarginInsets.bottom = 10.0;

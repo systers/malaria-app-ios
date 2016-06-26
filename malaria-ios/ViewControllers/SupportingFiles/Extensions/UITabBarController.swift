@@ -9,7 +9,7 @@ import UIKit
     /// Sets `backgroundImage` and `shadowImage` to UIImage
     @IBInspectable public var showBar: Bool {
         get {
-            fatalError("Never meant to be called")
+            fatalError("Never meant to be called.")
         }
         
         set(value) {

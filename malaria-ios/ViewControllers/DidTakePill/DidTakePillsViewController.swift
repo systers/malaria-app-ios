@@ -31,7 +31,9 @@ class DidTakePillsViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    
+    // check if we refill the pill stock in UserProfileVC
+    NSNotificationEvents.ObserveDataUpdated(self, selector: #selector(refreshScreen))
     NSNotificationEvents.ObserveAppBecomeActive(self, selector: #selector(refreshScreen))
 
     if let tookPillSoundPath = TookPillSoundPath,
@@ -117,30 +119,27 @@ class DidTakePillsViewController: UIViewController {
       Logger.Info("Took medicine today")
       didNotTookPillBtn.enabled = false
       tookPillBtn.enabled = true
-
-      // stop showing widget
     } else {
       //didn't took because there is no information
       if registriesManager.allRegistriesInPeriod(currentDate).entries.count == 0 {
         Logger.Info("No information")
         didNotTookPillBtn.enabled = true
-        tookPillBtn.enabled = true
+        tookPillBtn.enabled = medicine?.medicineStockManager.hasEnoughPills() == true
       } else {
-        //or there is and he he didn't took the medicine yet
+        //or there is and he didn't took the medicine yet
         //check if he already registered today
         if registriesManager.findRegistry(currentDate) != nil {
           Logger.Info("Didn't took today")
           didNotTookPillBtn.enabled = true
           tookPillBtn.enabled = false
         } else {
-          Logger.Info("Hasn't took yet")
-          //which means that there are no entries for today, so he still has the opportunity to change that
+          // there are no entries for today, so he still has the opportunity to change that
+          tookPillBtn.enabled = medicine?.medicineStockManager.hasEnoughPills() == true
           didNotTookPillBtn.enabled = true
-          tookPillBtn.enabled = true
         }
       }
     }
-
+    
     if medicine!.interval > 1 {
       if shouldReset(currentDate, interval: medicine!.interval){
 
@@ -149,7 +148,8 @@ class DidTakePillsViewController: UIViewController {
 
         //reset configuration so that the user can reshedule the time
         reset()
-      }else if !currentDate.sameDayAs(medicine!.notificationTime!)
+      } else if medicine!.notificationTime != nil
+        && !currentDate.sameDayAs(medicine!.notificationTime!)
         && currentDate > medicine!.notificationTime!
         && tookMedicineEntry == nil {
 
@@ -167,7 +167,7 @@ class DidTakePillsViewController: UIViewController {
 extension DidTakePillsViewController {
   @IBAction func didNotTookMedicineBtnHandler(sender: AnyObject) {
     if let m = medicine {
-      if (tookPillBtn.enabled && didNotTookPillBtn.enabled && registriesManager.addRegistry(currentDate, tookMedicine: false)){
+      if (tookPillBtn.enabled && didNotTookPillBtn.enabled && m.medicineStockManager.addRegistry(currentDate, tookMedicine: false)){
         didNotTakePillPlayer.play()
         reshedule(m.notificationManager)
         refreshScreen()
@@ -177,7 +177,7 @@ extension DidTakePillsViewController {
 
   @IBAction func tookMedicineBtnHandler(sender: AnyObject) {
     if let m = medicine {
-      if (tookPillBtn.enabled && didNotTookPillBtn.enabled && registriesManager.addRegistry(currentDate, tookMedicine: true)){
+      if (tookPillBtn.enabled && didNotTookPillBtn.enabled && m.medicineStockManager.addRegistry(currentDate, tookMedicine: true)){
         tookPillPlayer.play()
         reshedule(m.notificationManager)
         refreshScreen()

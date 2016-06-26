@@ -40,7 +40,7 @@ class TestNotifications: XCTestCase {
         mdDailyNotifManager = mdDaily.notificationManager
         mdWeeklyNotifManager = mdWeekly.notificationManager
         
-        XCTAssertTrue(mdDailyregistriesManager.addRegistry(d1, tookMedicine: true))
+        XCTAssertTrue(mdDailyregistriesManager.addRegistry(d1, tookMedicine: true).registryAdded)
     }
     
     override func tearDown() {
@@ -48,8 +48,7 @@ class TestNotifications: XCTestCase {
         m.clearCoreData()
     }
     
-    
-    func testReshedule(){
+    func testReshedule() {
         //reshedule notification
         mdDailyNotifManager.reshedule()
         XCTAssertTrue(mdDaily.notificationTime!.sameDayAs(d1 + 1.day))
@@ -66,8 +65,33 @@ class TestNotifications: XCTestCase {
         XCTAssertTrue(mdWeekly.notificationTime!.sameDayAs(d1))
         
         //add new entry and reshedule
-        XCTAssertTrue(mdWeeklyregistriesManager.addRegistry(d1, tookMedicine: true))
+        XCTAssertTrue(mdWeeklyregistriesManager.addRegistry(d1, tookMedicine: true).registryAdded)
         mdWeeklyNotifManager.reshedule()
         XCTAssertTrue(mdWeekly.notificationTime!.sameDayAs(d1 + 7.day))
     }
+  
+    // Checks if notifications are created and correctly archived into NSUserDefaults.
+    
+    func testCreateNotification() {
+      
+      // Set two notifications
+      mdDailyNotifManager.scheduleNotification(NSDate())
+      mdWeeklyNotifManager.scheduleNotification(NSDate())
+      
+      // Check if they were saved in the user defaults
+      let localNotificationArrayData = UserSettingsManager.UserSetting.SaveLocalNotifications.getLocalNotifications()
+      
+      guard let data = localNotificationArrayData else {
+        return
+      }
+      
+      let scheduledNotifications = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [UILocalNotification]
+      
+      guard let notifications = scheduledNotifications else {
+        return
+      }
+
+      XCTAssert(notifications.count == 1)
+    }
+  
 }

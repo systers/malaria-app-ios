@@ -10,6 +10,7 @@ public class CachedStatistics : NSObject{
     
     var medicine: Medicine!
     var registriesManager: RegistriesManager!
+    var medicineStockManager: MedicineStockManager!
     var statsManager: MedicineStats!
     
     var registries = [Registry]()
@@ -53,7 +54,9 @@ public class CachedStatistics : NSObject{
         self.context = CoreDataHelper.sharedInstance.createBackgroundContext()!
         
         medicine = MedicineManager(context: context).getCurrentMedicine()
+      
         registriesManager = medicine.registriesManager
+        medicineStockManager = medicine.medicineStockManager
         statsManager = medicine.stats
     }
     
@@ -72,7 +75,7 @@ extension CachedStatistics {
         todaysPillStreak = 0
         todaysAdherence = 0
         
-        Logger.Info("retrieveingDailyStats")
+        Logger.Info("Retrieving DailyStats")
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             self.todaysAdherence = self.statsManager.pillAdherence(date2: NSDate(), registries: self.registries) * 100
             

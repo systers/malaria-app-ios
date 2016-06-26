@@ -39,7 +39,6 @@ public class NSNotificationEvents {
     NSNotificationEvents.observe(Events.UIApplicationWillResignActiveNotification.rawValue, observer, selector)
   }
 
-
   /// Send event saying that the current medicine was changed
   ///
   /// - parameter `AnyObject?`:: attached object

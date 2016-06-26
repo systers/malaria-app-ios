@@ -41,14 +41,14 @@ class TestMonthAdherence: XCTestCase {
     
     func testMonthAdherence() {
         let tenAugust = NSDate.from(2015, month: 8, day: 10)
-        XCTAssertTrue(registriesManager.addRegistry(tenAugust, tookMedicine: true))
+        XCTAssertTrue(registriesManager.addRegistry(tenAugust, tookMedicine: true).registryAdded)
         XCTAssertEqual(1, stats.monthAdherence(tenAugust, currentDay: tenAugust))
         
         //missing days count as he didn't take the pill
         XCTAssertEqual(0.5, stats.monthAdherence(d1, currentDay: tenAugust + 1.day))
         
         let tenJuly = NSDate.from(2015, month: 7, day: 10)
-        XCTAssertTrue(registriesManager.addRegistry(tenJuly, tookMedicine: true))
+        XCTAssertTrue(registriesManager.addRegistry(tenJuly, tookMedicine: true).registryAdded)
         
         
         //july month, between first entry in 10 July and end of July

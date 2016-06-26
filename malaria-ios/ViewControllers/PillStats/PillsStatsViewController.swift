@@ -32,6 +32,7 @@ class PillsStatsViewController : UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     NSNotificationEvents.ObserveAppBecomeActive(self, selector: #selector(refreshScreen))
+    NSNotificationEvents.ObserveDataUpdated(self, selector: #selector(refreshScreen))
 
     configureChart()
   }

@@ -172,13 +172,13 @@ extension MonthlyViewController {
         
         let tookPillActionSheet: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet)
         tookPillActionSheet.addAction(UIAlertAction(title: TookMedicineAlertActionText.did, style: .Default, handler: { _ in
-            if CachedStatistics.sharedInstance.registriesManager.addRegistry(date, tookMedicine: true, modifyEntry: true) {
+            if CachedStatistics.sharedInstance.medicineStockManager.addRegistry(date, tookMedicine: true, modifyEntry: true) {
                 CachedStatistics.sharedInstance.updateTookMedicineStats(date, progress: self.updateDayView)
             }
         }))
         
         tookPillActionSheet.addAction(UIAlertAction(title: TookMedicineAlertActionText.didNot, style: .Default, handler: { _ in
-            if CachedStatistics.sharedInstance.registriesManager.addRegistry(date, tookMedicine: false, modifyEntry: true) {
+            if CachedStatistics.sharedInstance.medicineStockManager.addRegistry(date, tookMedicine: false, modifyEntry: true) {
                 CachedStatistics.sharedInstance.updateTookMedicineStats(date, progress: self.updateDayView)                
             }
         }))
@@ -192,8 +192,6 @@ extension MonthlyViewController {
         }
         presentViewController(tookPillActionSheet, animated: true, completion: nil)
     }
-    
-    
     
     ///hack until library offers what we need
     func updateDayView(day: NSDate, remove: Bool) {

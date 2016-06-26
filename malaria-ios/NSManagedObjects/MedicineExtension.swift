@@ -22,8 +22,13 @@ public extension Medicine{
         return RegistriesManager(medicine: self)
     }
     
-    /// Returns an object responsible for hadling the notifications
+    /// Returns an object responsible for handling the notifications
     public var notificationManager: MedicineNotificationsManager{
         return MedicineNotificationsManager(medicine: self)
+    }
+  
+    /// Returns an object responsible for handling the user's remaining pills
+    internal var medicineStockManager: MedicineStockManager {
+        return MedicineStockManager(medicine: self)
     }
 }

@@ -82,12 +82,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           case MedicineNotificationsManager.TookPillId:
             let context = CoreDataHelper.sharedInstance.createBackgroundContext()!
             let currentMedicine = MedicineManager(context: context).getCurrentMedicine()
-            currentMedicine?.registriesManager.addRegistry(NSDate(), tookMedicine: true)
+            currentMedicine?.medicineStockManager.addRegistry(NSDate(), tookMedicine: true)
             currentMedicine?.notificationManager.reshedule()
           case MedicineNotificationsManager.DidNotTakePillId:
             let context = CoreDataHelper.sharedInstance.createBackgroundContext()!
             let currentMedicine = MedicineManager(context: context).getCurrentMedicine()
-            currentMedicine?.registriesManager.addRegistry(NSDate(), tookMedicine: false)
+            currentMedicine?.medicineStockManager.addRegistry(NSDate(), tookMedicine: false)
 
             currentMedicine?.notificationManager.reshedule()
           default:

@@ -29,13 +29,7 @@ public class Logger{
 
   class private func Write(prefix: String, message: CustomStringConvertible, function: String = #function, path: String = #file, line: Int = #line) {
 
-    guard let url = NSURL(string: path),
-      let lastPathComponent = url.lastPathComponent
-      else {
-        return
-    }
-
-    var file = lastPathComponent.description
+    var file = NSURL(fileURLWithPath: path).lastPathComponent!.description
     file = file.substringToIndex(file.characters.indexOf(".")!)
     let location = [file, function, line.description].joinWithSeparator("::")
 

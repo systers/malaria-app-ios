@@ -34,7 +34,6 @@ class SetupScreenViewController : UIViewController{
         super.viewWillAppear(animated)
         
         viewContext = CoreDataHelper.sharedInstance.createBackgroundContext()!
-        
         medicineManager = MedicineManager(context: viewContext)
         
         pillReminderNotificationTime = getStoredReminderTime()
