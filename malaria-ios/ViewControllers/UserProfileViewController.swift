@@ -17,6 +17,7 @@ class UserProfileViewController: UIViewController {
   // height (60) and not add ~30-50 offset to it
   let CellHeightAndOffset: CGFloat = 60 + 30
   let CellReuseIdentifier = "User Profile Pill Cell Identifier"
+  let DefaultBrownTint = UIColor(red: 118.0 / 255.0, green: 80.0 / 255.0, blue: 72.0 / 255.0, alpha: 1)
   
   @IBOutlet weak var remindMeWeeksButton: UIButton!
   @IBOutlet weak var tableView: UITableView!
@@ -61,12 +62,6 @@ class UserProfileViewController: UIViewController {
     medicineManager = MedicineManager(context: context!)
     psnm = PillStatusNotificationsManager(context: context!)
     
-    guard let medicine = medicineManager!.getCurrentMedicine() else {
-      return
-    }
-    
-    self.currentMedicine = medicine
-    
     getRegisteredMedicine()
     recalculateTableHeight()
     refreshData()
@@ -88,8 +83,7 @@ class UserProfileViewController: UIViewController {
     
     let shouldPresentNotification: Bool = psnm!.shouldPresentNotification(remainingPillsBasedOnTheirInterval, reminderValue: reminderValue.rawValue)
     
-    let defaultBrownTint = self.remindMeWeeksButton.titleLabel?.textColor
-    self.remainingLabel.textColor = shouldPresentNotification ? UIColor.redColor() : defaultBrownTint
+       self.remainingLabel.textColor = shouldPresentNotification ? UIColor.redColor() : DefaultBrownTint
     
     if shouldPresentNotification {
       psnm!.scheduleNotification(NSDate())
@@ -123,7 +117,12 @@ class UserProfileViewController: UIViewController {
   /// medicine = medicineManager!.getRegisteredMedicines()
   
   func getRegisteredMedicine() {
-    medicine = [currentMedicine!]
+    guard let medicine = medicineManager!.getCurrentMedicine() else {
+      return
+    }
+    
+    self.currentMedicine = medicine
+    self.medicine = [currentMedicine!]
   }
   
   /// Calculates a new table height that will be as tall as the number of cells in the table.

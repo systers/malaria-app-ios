@@ -304,12 +304,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="plan My trip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="vS7-WU-xrN" userLabel="Title">
-                                <rect key="frame" x="211" y="41" width="209" height="55"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="35"/>
-                                <color key="textColor" red="0.43787151575088501" green="0.32177186012268066" blue="0.27448359131813049" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aEx-jR-M42" userLabel="InputContainer">
                                 <rect key="frame" x="20" y="121" width="560" height="348"/>
                                 <subviews>
@@ -332,13 +326,6 @@
                                         <color key="textColor" red="0.43787151575088501" green="0.32177186012268066" blue="0.27448359131813049" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="buv-20-bVO" userLabel="dayInput">
-                                        <rect key="frame" x="128" y="53" width="424" height="30"/>
-                                        <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Arrival" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0EB-cQ-R9d">
                                         <rect key="frame" x="8" y="98" width="120" height="30"/>
                                         <constraints>
@@ -433,6 +420,13 @@
                                             <action selector="locationEditingChangedHandler:" destination="cfZ-pD-OHm" eventType="editingChanged" id="ErV-5l-RdV"/>
                                         </connections>
                                     </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="buv-20-bVO" userLabel="dayInput">
+                                        <rect key="frame" x="128" y="53" width="424" height="30"/>
+                                        <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -521,6 +515,12 @@
                                     <action selector="settingsBtnHandler:" destination="cfZ-pD-OHm" eventType="touchUpInside" id="YJd-YM-KFi"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="plan My trip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="vS7-WU-xrN" userLabel="Title">
+                                <rect key="frame" x="211" y="41" width="209" height="55"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="35"/>
+                                <color key="textColor" red="0.43787151575088501" green="0.32177186012268066" blue="0.27448359131813049" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1577,21 +1577,8 @@
                                     <constraint firstAttribute="width" constant="55" id="W9B-d9-tgT"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9m-lA-cYV" userLabel="Settings">
-                                <rect key="frame" x="554" y="28" width="26" height="27"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="26" id="JXS-Yp-GPS"/>
-                                    <constraint firstAttribute="height" constant="27" id="krj-hk-N18"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="SettingsIcon">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="settingsBtnHandler:" destination="5p7-9L-nGd" eventType="touchUpInside" id="lcb-Bm-6EE"/>
-                                </connections>
-                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="71b-u0-MeU">
-                                <rect key="frame" x="20" y="104" width="560" height="380"/>
+                                <rect key="frame" x="20" y="121" width="560" height="363"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97d-O4-I6r" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="466"/>
@@ -1628,7 +1615,8 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="97" id="mYc-yO-KMQ"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="14"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                 </textField>
                                                             </subviews>
@@ -1700,7 +1688,7 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="16"/>
                                                 <state key="normal" title="X weeks">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1798,6 +1786,19 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9m-lA-cYV" userLabel="Settings">
+                                <rect key="frame" x="554" y="28" width="26" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="26" id="JXS-Yp-GPS"/>
+                                    <constraint firstAttribute="height" constant="27" id="krj-hk-N18"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="SettingsIcon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="settingsBtnHandler:" destination="5p7-9L-nGd" eventType="touchUpInside" id="lcb-Bm-6EE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1809,18 +1810,21 @@
                             <constraint firstAttribute="centerX" secondItem="Rdi-4G-gzq" secondAttribute="centerX" constant="-15.5" id="Vm9-RN-mhA"/>
                             <constraint firstItem="yhq-rN-fLa" firstAttribute="top" secondItem="71b-u0-MeU" secondAttribute="bottom" constant="8" id="XUO-0x-eqA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="71b-u0-MeU" secondAttribute="trailing" id="YEw-sa-j8N"/>
-                            <constraint firstItem="Rdi-4G-gzq" firstAttribute="leading" secondItem="3oP-NJ-ef1" secondAttribute="trailing" constant="155.5" id="a3V-cN-SHG"/>
+                            <constraint firstItem="Rdi-4G-gzq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3oP-NJ-ef1" secondAttribute="trailing" constant="5" id="a3V-cN-SHG"/>
                             <constraint firstItem="3oP-NJ-ef1" firstAttribute="top" secondItem="XZk-uY-8vr" secondAttribute="bottom" constant="21" id="bGi-Yw-MIf"/>
                             <constraint firstAttribute="leadingMargin" secondItem="71b-u0-MeU" secondAttribute="leading" id="evD-q7-9Zd"/>
                             <constraint firstItem="Rdi-4G-gzq" firstAttribute="leading" secondItem="3oP-NJ-ef1" secondAttribute="trailing" constant="5" id="gxf-ag-FiH"/>
-                            <constraint firstItem="71b-u0-MeU" firstAttribute="top" secondItem="Rdi-4G-gzq" secondAttribute="bottom" constant="8" id="h21-Ay-axO"/>
+                            <constraint firstItem="71b-u0-MeU" firstAttribute="top" secondItem="Rdi-4G-gzq" secondAttribute="bottom" constant="25" id="h21-Ay-axO"/>
                             <constraint firstItem="71b-u0-MeU" firstAttribute="centerX" secondItem="luw-lc-BBe" secondAttribute="centerX" id="js8-wz-P8L"/>
+                            <constraint firstItem="3oP-NJ-ef1" firstAttribute="leading" secondItem="97d-O4-I6r" secondAttribute="leading" id="k4H-de-DN2"/>
                             <constraint firstItem="e7d-oc-ZXG" firstAttribute="top" secondItem="yhq-rN-fLa" secondAttribute="bottom" constant="15" id="lwx-Mo-0Ln"/>
                             <constraint firstItem="yhq-rN-fLa" firstAttribute="centerX" secondItem="luw-lc-BBe" secondAttribute="centerX" id="mad-Gt-kY4"/>
+                            <constraint firstItem="3oP-NJ-ef1" firstAttribute="leading" secondItem="luw-lc-BBe" secondAttribute="leadingMargin" id="vAD-bZ-Nb6"/>
                             <constraint firstItem="F9m-lA-cYV" firstAttribute="top" secondItem="XZk-uY-8vr" secondAttribute="bottom" constant="8" symbolic="YES" id="xma-YV-2Vd"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="20w-lV-v7p"/>
                                 <exclude reference="ETn-8y-i1l"/>
                                 <exclude reference="js8-wz-P8L"/>
                                 <exclude reference="gxf-ag-FiH"/>
