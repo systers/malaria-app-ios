@@ -1,7 +1,8 @@
 extension String {
   
+  // Check if the user copy-pastes something in the input fields
+  
   func isNumber() -> Bool {
-    // Check if the user copy-pastes something in the input fields
     let invalidCharacters = NSCharacterSet(charactersInString: "0123456789").invertedSet
     
     return self.rangeOfCharacterFromSet(invalidCharacters, options: [], range: self.startIndex ..< self.endIndex) == nil

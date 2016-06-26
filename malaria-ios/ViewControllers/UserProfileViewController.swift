@@ -38,6 +38,7 @@ class UserProfileViewController: UIViewController {
   private var context: NSManagedObjectContext?
   private var medicineManager: MedicineManager?
   private var psnm: PillStatusNotificationsManager?
+  private var currentMedicine: Medicine?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -60,82 +61,69 @@ class UserProfileViewController: UIViewController {
     medicineManager = MedicineManager(context: context!)
     psnm = PillStatusNotificationsManager(context: context!)
     
+    guard let medicine = medicineManager!.getCurrentMedicine() else {
+      return
+    }
+    
+    self.currentMedicine = medicine
+    
     getRegisteredMedicine()
-    calculateMedicineLeft()
-    saveRemainingPillStatusForTheWidget()
     recalculateTableHeight()
-    refreshScreen(checkIfWeNeedToPresentNotification())
+    refreshData()
+    refreshUI()
   }
   
   func dismissKeyboard() {
     view.endEditing(true)
   }
   
-  /// Gets the current medicine the user uses.
-  /// To get a list of all the medicine use:
-  /// medicine = medicineManager!.getRegisteredMedicines()
-
-  func getRegisteredMedicine() {
-    guard let currentMedicine = medicineManager!.getCurrentMedicine() else {
-      return
-    }
-    
-    medicine = [currentMedicine]
-  }
-  
-  /// Calculates and sets medicineStock and timeMeasuringUnit values.
-  
-  func calculateMedicineLeft() {
-    guard let currentMedicine = medicineManager!.getCurrentMedicine() else {
-      remainingLabel.text = ""
-      return
-    }
-    
-    // The result if floored.
-    medicineStock = Int(currentMedicine.remainingMedicine)
-    
-    if medicineStock == 1 {
-      timeMeasuringUnit = (currentMedicine.interval == 7) ? "week" : "day"
-    }
-    else {
-      timeMeasuringUnit = (currentMedicine.interval == 7) ? "weeks" : "days"
-    }
-  }
-  
-  // Refreshes all elements of the UI that can change, based on the current medicine stock.
-  
-  func refreshScreen(shouldPresentNotification: Bool) {
+  func refreshUI() {
     tableView.reloadData()
     
-    guard let currentMedicine = medicineManager!.getCurrentMedicine() else {
-      remainingLabel.text = ""
-      return
-    }
+    remainingLabel.text = "You have \(medicineStock!) \(timeMeasuringUnit!) of \(currentMedicine!.name) left."
     
-    remainingLabel.text = "You have \(medicineStock!) \(timeMeasuringUnit!) of \(currentMedicine.name) left."
+    // Check if we need to refresh notification
+    
+    let remainingPillsBasedOnTheirInterval = medicineStock! * currentMedicine!.interval
+    
+    let shouldPresentNotification: Bool = psnm!.shouldPresentNotification(remainingPillsBasedOnTheirInterval, reminderValue: reminderValue.rawValue)
     
     let defaultBrownTint = self.remindMeWeeksButton.titleLabel?.textColor
     self.remainingLabel.textColor = shouldPresentNotification ? UIColor.redColor() : defaultBrownTint
     
-    shouldPresentNotification ? psnm!.scheduleNotification(NSDate()) : psnm!.unsheduleNotification()
+    if shouldPresentNotification {
+      psnm!.scheduleNotification(NSDate())
+    }
+    else {
+      psnm!.unsheduleNotification()
+    }
   }
   
-  /// Save medicine stock status to show be shown in the widget.
-  
-  func saveRemainingPillStatusForTheWidget() {
+  func refreshData() {
+    // Calculate medicine left
+    
+    // The result if floored.
+    medicineStock = Int(currentMedicine!.remainingMedicine)
+    
+    if medicineStock == 1 {
+      timeMeasuringUnit = (currentMedicine!.interval == 7) ? "week" : "day"
+    }
+    else {
+      timeMeasuringUnit = (currentMedicine!.interval == 7) ? "weeks" : "days"
+    }
+    
+    // Save the results for the widget (TODO)
+    
     WidgetSettingsManager.WidgetSetting.RemainingPills.setObject(medicineStock ?? 0)
     WidgetSettingsManager.WidgetSetting.RemainingPillsMeasuringUnit.setObject(timeMeasuringUnit ?? "days")
   }
   
-  func checkIfWeNeedToPresentNotification() -> Bool {
-    guard let currentMedicine = medicineManager!.getCurrentMedicine() else {
-      return false
-    }
-    
-    let remainingPillsBasedOnTheirInterval = medicineStock! * currentMedicine.interval
-    let shouldPresentNotification: Bool = psnm!.shouldPresentNotification(remainingPillsBasedOnTheirInterval, reminderValue: reminderValue.rawValue)
-    
-    return shouldPresentNotification
+  /// Gets the current medicine the user uses.
+  /// To get a list of all the medicine use:
+  /// medicine = medicineManager!.getRegisteredMedicines()
+  
+  func getRegisteredMedicine() {
+    medicine = [currentMedicine!]
   }
   
   /// Calculates a new table height that will be as tall as the number of cells in the table.
@@ -159,7 +147,7 @@ extension UserProfileViewController {
   
   @IBAction func remindMeWeeksPressed(sender: UIButton) {
     let (title, message) = (SetReminderText.title, SetReminderText.message)
-
+    
     let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
     
     for intervalValue in PillStatusNotificationsManager.ReminderInterval.allValues {
@@ -173,9 +161,8 @@ extension UserProfileViewController {
                                   // Save the reminder value internally
                                   UserSettingsManager.UserSetting.PillReminderValue.setString(self.reminderValue.toString())
                                   
-                                  self.calculateMedicineLeft()
-                                  self.saveRemainingPillStatusForTheWidget()
-                                  self.refreshScreen(self.checkIfWeNeedToPresentNotification())
+                                  self.refreshData()
+                                  self.refreshUI()
       })
       
       alertController.addAction(action)
@@ -228,9 +215,9 @@ extension UserProfileViewController: PresentsModalityDelegate {
   func OnDismiss() {
     getRegisteredMedicine()
     recalculateTableHeight()
-    calculateMedicineLeft()
-    saveRemainingPillStatusForTheWidget()
-    refreshScreen(checkIfWeNeedToPresentNotification())  }
+    refreshData()
+    refreshUI()
+  }
 }
 
 // MARK: Save Remaining Pills Protocol
@@ -244,10 +231,8 @@ extension UserProfileViewController: SaveRemainingPillsProtocol {
     
     CoreDataHelper.sharedInstance.saveContext(context!)
     
-    // Recalculate medicine left
-    calculateMedicineLeft()
-    saveRemainingPillStatusForTheWidget()
-    refreshScreen(checkIfWeNeedToPresentNotification())
+    refreshData()
+    refreshUI()
   }
 }
 
@@ -255,7 +240,7 @@ extension UserProfileViewController: SaveRemainingPillsProtocol {
 
 extension UserProfileViewController {
   typealias AlertText = (title: String, message: String)
-
+  
   // Set reminder
   private var SetReminderText: AlertText {
     get {

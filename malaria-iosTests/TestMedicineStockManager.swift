@@ -4,10 +4,6 @@ import XCTest
 
 class TestMedicineStockManager: XCTestCase {
   
-  let secondsTillYesterday: Int = -86400
-  let twoDaysAgo: Int = -86400 * 2
-  let secondTillTomorrow: Int = 86400
-  
   var m: MedicineManager!
   var msm: MedicineStockManager!
   
@@ -105,7 +101,7 @@ class TestMedicineStockManager: XCTestCase {
       return
     }
     
-    msm.addRegistry(NSDate() + (-1, .Day), tookMedicine: true)
+    msm.addRegistry(NSDate() - 1.day, tookMedicine: true)
     
     XCTAssertFalse(medicine.remainingMedicine == 1)
   }
@@ -119,7 +115,7 @@ class TestMedicineStockManager: XCTestCase {
     medicine.remainingMedicine = 1
     medicine.lastStockRefill = NSDate()
     
-    XCTAssertTrue(msm.addRegistry(NSDate() + (-1, .Day), tookMedicine: true))
+    XCTAssertTrue(msm.addRegistry(NSDate() - 1.day, tookMedicine: true))
   }
   
   func testAddRegistrySameDayAsRefill() {
@@ -141,9 +137,9 @@ class TestMedicineStockManager: XCTestCase {
     }
     
     medicine.remainingMedicine = 1
-    medicine.lastStockRefill = NSDate() + (-2, .Day)
+    medicine.lastStockRefill = NSDate() - 2.day
 
-    XCTAssertTrue(msm.addRegistry(NSDate() + (-1, .Day), tookMedicine: true))
+    XCTAssertTrue(msm.addRegistry(NSDate() - 1.day, tookMedicine: true))
   }
   
   func testOnlyUpdateStockIfAddRegistryWasSuccesful() {
