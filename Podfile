@@ -24,6 +24,6 @@ target 'malaria-ios' do
     pods
 end
 
-target 'malaria-iosTests’ do
+target 'malaria-iosTests' do
     	pod 'SwiftyJSON', '~> 2.3.1'
 end

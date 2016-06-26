@@ -39,8 +39,11 @@ class MedicineStockManager: CoreDataContextManager {
       
       let addRegistryResult = medicine.registriesManager.addRegistry(date, tookMedicine: tookMedicine, modifyEntry: modifyEntry)
       
-      // Only update stock if the entry was added successfully.
-      if addRegistryResult.registryAdded && addRegistryResult.noOtherEntryFound {
+      // Only update stock if the entry was added successfully and we replace another entry (after the refill date)
+      // or when we just added an entry which was a Yes (in the No case, there will be no updateStock).
+      
+      if (addRegistryResult.registryAdded && addRegistryResult.otherEntriesFound) ||
+      (addRegistryResult.registryAdded && !addRegistryResult.otherEntriesFound && tookMedicine) {
         updateStock(tookMedicine)
       }
       

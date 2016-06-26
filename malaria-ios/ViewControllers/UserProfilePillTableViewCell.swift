@@ -14,7 +14,11 @@ class UserProfilePillTableViewCell: UITableViewCell {
   
   override func layoutSubviews() {
     super.layoutSubviews()
-    toolBar = ToolbarWithDone(viewsWithToolbar: [quantityTextField])
+    
+    if toolBar == nil {
+      toolBar = ToolbarWithDone(viewsWithToolbar: [quantityTextField])
+    }
+    
     quantityTextField.inputAccessoryView = toolBar
     quantityTextField.delegate = self
   }

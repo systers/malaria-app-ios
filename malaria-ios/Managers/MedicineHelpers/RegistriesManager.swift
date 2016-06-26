@@ -113,10 +113,21 @@ public class RegistriesManager: CoreDataContextManager{
   /// - parameter `Bool: optional`: overwrite previous entry (by default is false)
   ///
   /// - returns: `Bool`: true if there was a change, false if not
-  public func addRegistry(date: NSDate, tookMedicine: Bool, modifyEntry: Bool = false) -> (registryAdded: Bool, noOtherEntryFound: Bool) {
+  public func addRegistry(date: NSDate, tookMedicine: Bool, modifyEntry: Bool = false) -> (registryAdded: Bool, otherEntriesFound: Bool) {
     if date > NSDate() {
       Logger.Error("Cannot change entries in the future")
       return (false, true)
+    }
+    
+    //check if there is already a registry
+    var registry : Registry? = findRegistry(date)
+    
+    defer {
+      CoreDataHelper.sharedInstance.saveContext(context)
+      
+      if let registry = registry {
+        NSNotificationEvents.DataUpdated(registry)
+      }
     }
     
     if let conflitingTookMedicineEntry = self.tookMedicine(date) {
@@ -137,8 +148,6 @@ public class RegistriesManager: CoreDataContextManager{
         var newRegistries: [Registry] = medicine.registries.convertToArray()
         newRegistries.append(registry)
         medicine.registries = NSSet(array: newRegistries)
-        CoreDataHelper.sharedInstance.saveContext(context)
-        NSNotificationEvents.DataUpdated(registry)
         
         return (true, true)
       }
@@ -148,21 +157,20 @@ public class RegistriesManager: CoreDataContextManager{
       return (false, false)
     }
     
-    //check if there is already a registry
-    var registry : Registry? = findRegistry(date)
-    
     if let r = registry{
       if r.tookMedicine && tookMedicine || !r.tookMedicine && !tookMedicine{
         Logger.Warn("Found equivalent entry")
-        return (false, false)
+        return (false, true)
       } else if !modifyEntry {
         Logger.Info("Can't modify entry. Aborting")
-        return (false, true)
+        return (false, false)
       }
       
       Logger.Info("Found entry same date. Modifying entry")
       r.tookMedicine = tookMedicine
       
+      return (true, true)
+
     } else {
       Logger.Info("Adding entry on day: " + date.formatWith())
       registry = Registry.create(Registry.self, context: context)
@@ -174,10 +182,7 @@ public class RegistriesManager: CoreDataContextManager{
       medicine.registries = NSSet(array: newRegistries)
     }
     
-    CoreDataHelper.sharedInstance.saveContext(context)
-    NSNotificationEvents.DataUpdated(registry!)
-    
-    return (true, true)
+    return (true, false)
   }
   
   /// Returns entries between the two specified dates

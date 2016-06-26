@@ -4,9 +4,9 @@ import XCTest
 
 class TestMedicineStockManager: XCTestCase {
   
-  let secondsTillYesterday: Double = -86400.0
-  let twoDaysAgo: Double = -86400.0 * 2
-  let secondTillTomorrow: Double = 86400.0
+  let secondsTillYesterday: Int = -86400
+  let twoDaysAgo: Int = -86400 * 2
+  let secondTillTomorrow: Int = 86400
   
   var m: MedicineManager!
   var msm: MedicineStockManager!
@@ -47,6 +47,9 @@ class TestMedicineStockManager: XCTestCase {
     XCTAssertEqual(medicine.remainingMedicine, 1)
   }
   
+  // Tests what happens when user presses Yes -> It should remove a pill.
+  // If the user pressed No, after he just pressed Yes, the pill should return in his inventory.
+  
   func testUserHasEnoughPillsToPressYes() {
     guard let medicine = m.getCurrentMedicine() else {
       XCTFail("Fail initializing:")
@@ -62,18 +65,49 @@ class TestMedicineStockManager: XCTestCase {
     XCTAssertTrue(msm.addRegistry(NSDate(), tookMedicine: true))
   }
   
+  // This case is when the user doesn't modify an entry to No and getting his pill back.
+  // In this case, the user pressed No without needing to receive any pills back, because he never pressed Yes.
+  
+  func testUserSetNoWithoutPressingYesFirst() {
+    guard let medicine = m.getCurrentMedicine() else {
+      XCTFail("Fail initializing:")
+      return
+    }
+    
+    medicine.remainingMedicine = 0
+
+    medicine.registriesManager.addRegistry(NSDate(), tookMedicine: true, modifyEntry: false)
+    
+    XCTAssertEqual(medicine.remainingMedicine, 0)
+  }
+  
+  func testUserSetNoAfterShePressedYes() {
+    guard let medicine = m.getCurrentMedicine() else {
+      XCTFail("Fail initializing:")
+      return
+    }
+    
+    medicine.remainingMedicine = 1
+    
+    medicine.registriesManager.addRegistry(NSDate(), tookMedicine: true, modifyEntry: false)
+    
+    medicine.registriesManager.addRegistry(NSDate(), tookMedicine: false, modifyEntry: false)
+    
+    XCTAssertEqual(medicine.remainingMedicine, 1)
+  }
+  
   // Makes sure the updateStock method is not called for a date before the refill date
   // because the reminder shouldn't care about past values in order to update the current stock
+  
   func testUpdateStockWhenDateBeforeRefill() {
     guard let medicine = m.getCurrentMedicine() else {
       XCTFail("Fail initializing:")
       return
     }
     
-    msm.addRegistry(NSDate().dateByAddingTimeInterval(secondsTillYesterday), tookMedicine: true)
+    msm.addRegistry(NSDate() + (-1, .Day), tookMedicine: true)
     
     XCTAssertFalse(medicine.remainingMedicine == 1)
-    XCTAssertTrue(medicine.remainingMedicine == 0)
   }
   
   func testAddRegistryBeforeRefill() {
@@ -85,7 +119,7 @@ class TestMedicineStockManager: XCTestCase {
     medicine.remainingMedicine = 1
     medicine.lastStockRefill = NSDate()
     
-    XCTAssertTrue(msm.addRegistry(NSDate().dateByAddingTimeInterval(secondsTillYesterday), tookMedicine: true))
+    XCTAssertTrue(msm.addRegistry(NSDate() + (-1, .Day), tookMedicine: true))
   }
   
   func testAddRegistrySameDayAsRefill() {
@@ -107,9 +141,9 @@ class TestMedicineStockManager: XCTestCase {
     }
     
     medicine.remainingMedicine = 1
-    medicine.lastStockRefill = NSDate().dateByAddingTimeInterval(twoDaysAgo)
+    medicine.lastStockRefill = NSDate() + (-2, .Day)
 
-    XCTAssertTrue(msm.addRegistry(NSDate().dateByAddingTimeInterval(secondsTillYesterday), tookMedicine: true))
+    XCTAssertTrue(msm.addRegistry(NSDate() + (-1, .Day), tookMedicine: true))
   }
   
   func testOnlyUpdateStockIfAddRegistryWasSuccesful() {
@@ -122,7 +156,7 @@ class TestMedicineStockManager: XCTestCase {
     
     let registryAdded = medicine.registriesManager.addRegistry(NSDate(), tookMedicine: true)
     
-    if registryAdded.registryAdded && registryAdded.noOtherEntryFound {
+    if registryAdded.registryAdded && registryAdded.otherEntriesFound {
       msm.updateStock(true)
       XCTAssertEqual(medicine.remainingMedicine, 0)
     }
