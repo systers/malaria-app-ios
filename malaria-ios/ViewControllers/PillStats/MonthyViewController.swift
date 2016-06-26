@@ -193,8 +193,6 @@ extension MonthlyViewController {
         presentViewController(tookPillActionSheet, animated: true, completion: nil)
     }
     
-    
-    
     ///hack until library offers what we need
     func updateDayView(day: NSDate, remove: Bool) {
         if let dViews = dayViews[day] {

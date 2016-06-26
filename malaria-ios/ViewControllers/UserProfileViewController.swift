@@ -68,10 +68,6 @@ class UserProfileViewController: UIViewController {
     refreshUI()
   }
   
-  func dismissKeyboard() {
-    view.endEditing(true)
-  }
-  
   func refreshUI() {
     tableView.reloadData()
     
