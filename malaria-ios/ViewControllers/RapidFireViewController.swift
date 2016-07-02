@@ -7,15 +7,18 @@ class RapidFireViewController: UIViewController {
   @IBOutlet weak var countDownLabel: UILabel!
   @IBOutlet weak var scoreLabel: UILabel!
   
+  @IBInspectable let TimerBlinkAtSecond: Int = 3
+  @IBInspectable let TimerMaxValue: Int = 5
+  
   var rapidFireGame: RapidFireGame?
   
   private var timer: NSTimer?
-
+  
   private var currentLevel = 0 {
     didSet {
       // Check if we ran out of questions
       if rapidFireGame!.entries.count == currentLevel {
-        saveProgress()
+        endGame()
         return
       }
       
@@ -33,7 +36,7 @@ class RapidFireViewController: UIViewController {
     }
   }
   
-  private var userScore = 0 {
+  private var userScore: Int = 0 {
     didSet {
       scoreLabel.text = "Score: \(userScore)"
     }
@@ -41,7 +44,7 @@ class RapidFireViewController: UIViewController {
   
   private var count = 5 {
     didSet {
-      countDownLabel.text = "Time: \(count):00"
+      countDownLabel.text = count != 1 ? "\(count) seconds" : "\(count) second"
     }
   }
   
@@ -53,40 +56,61 @@ class RapidFireViewController: UIViewController {
     
     // Start game
     currentLevel = 0
-    count = 5
+    count = TimerMaxValue
   }
   
   func updateTimer() {
-    count == 1 ? nextQuestion(false) : (count -= 1)
+    if count == 0 {
+      nextQuestion(false)
+      return
+    }
+    
+    if count <= TimerBlinkAtSecond {
+      countDownLabel.blink()
+    }
+    
+    count -= 1
   }
   
-  func saveProgress() {
+  func endGame() {
     let (title, message) = (GameProgressText.title, GameProgressText.message)
-
+    
     let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
     
     let alertAction = UIAlertAction(title: "Back", style: UIAlertActionStyle.Default) {
       (action:UIAlertAction!) -> Void in
-      self.navigationController?.popViewControllerAnimated(true)
+      
+      self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     alert.addAction(alertAction)
     
-    self.presentViewController(alert, animated: true, completion: nil)
+    presentViewController(alert, animated: true, completion: nil)
   }
   
   func showWrongAnswerAnimation() {
     let defaultColor = questionLabel.textColor
     
-    UIView.transitionWithView(questionLabel, duration: 0.1, options: .TransitionCrossDissolve, animations: { () -> Void in
+    let animationBlock = { () -> Void in
       self.questionLabel.textColor = UIColor.redColor()
-    }) { (complete: Bool) in
+    }
+    
+    let completionBlock = { (complete: Bool) in
       self.questionLabel.textColor = defaultColor
     }
+    
+    UIView.transitionWithView(questionLabel, duration: 0.1,
+                              options: .TransitionCrossDissolve,
+                              animations: animationBlock,
+                              completion: completionBlock)
   }
   
   func nextQuestion(correctAnswer: Bool) {
-    correctAnswer ? (userScore += 1) : showWrongAnswerAnimation()
+    if correctAnswer {
+      userScore += 1
+    } else {
+      showWrongAnswerAnimation()
+    }
     
     // Reset timer
     count = 5
@@ -97,7 +121,12 @@ class RapidFireViewController: UIViewController {
   
   @IBAction func answerPressed(sender: UIButton) {
     let correctAnswer = rapidFireGame?.entries[currentLevel].correctAnswer == sender.tag
+    
     nextQuestion(correctAnswer)
+  }
+  
+  @IBAction func endGamePressed(sender: UIButton) {
+    self.dismissViewControllerAnimated(true, completion: nil)
   }
 }
 
@@ -108,8 +137,23 @@ extension RapidFireViewController {
   
   // Set reminder
   private var GameProgressText: AlertText {
-    get {
-      return ("Game over", "Each 3 points mean one achievement point. You scored \(userScore / 3) points.")
-    }
+    return ("Game over",
+            "Each 3 points mean one achievement point. You scored \(userScore / 3) "
+              + ( ((userScore / 3) == 1) ? "point." : "points.")
+    )
+  }
+}
+
+// MARK: Label Extension
+
+extension UILabel {
+  
+  func blink() {
+    self.alpha = 1.0;
+    UIView.animateWithDuration(0.2, // Time duration you want
+      delay: 0.0,
+      options: [.CurveEaseInOut, .Autoreverse],
+      animations: { [weak self] in self?.alpha = 0.0 },
+      completion: { [weak self] _ in self?.alpha = 1.0 })
   }
 }

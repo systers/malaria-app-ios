@@ -104,8 +104,16 @@
 		311E38EE1CA0DC540051B14E /* Stat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E38ED1CA0DC540051B14E /* Stat+Extensions.swift */; };
 		68043E311D2304D700D5DBF3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68043E301D2304D700D5DBF3 /* Game.swift */; };
 		68043E3D1D23061A00D5DBF3 /* RapidFireGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68043E3C1D23061A00D5DBF3 /* RapidFireGame.swift */; };
+		680BF7651D26E2BF0021353F /* InfoHubPageManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680BF7641D26E2BF0021353F /* InfoHubPageManagerViewController.swift */; };
+		680BF7711D26E4890021353F /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680BF7701D26E4890021353F /* AchievementsViewController.swift */; };
+		6852744B1D26D011000A8D96 /* InfoHub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6852744A1D26D011000A8D96 /* InfoHub.storyboard */; };
 		6873D0491D23003A00775757 /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6873D0481D23003A00775757 /* GamesViewController.swift */; };
 		688240D21D243D3100C63F6C /* RapidFireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688240D11D243D3100C63F6C /* RapidFireViewController.swift */; };
+		68BEC3261D270BA000FCFAF5 /* RFQuestionsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BEC3251D270BA000FCFAF5 /* RFQuestionsEndpoint.swift */; };
+		68BEC3281D270C3000FCFAF5 /* RFQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BEC3271D270C3000FCFAF5 /* RFQuestions.swift */; };
+		68BEC32A1D270C9900FCFAF5 /* CollectionRFQuestionsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BEC3291D270C9900FCFAF5 /* CollectionRFQuestionsEndpoint.swift */; };
+		68BEC32F1D270D5700FCFAF5 /* RFQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BEC32E1D270D5700FCFAF5 /* RFQuestion.swift */; };
+		68BEC3311D270D6700FCFAF5 /* CollectionRFQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BEC3301D270D6700FCFAF5 /* CollectionRFQuestions.swift */; };
 		68E62F731D14619A00743214 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F721D14619A00743214 /* UserProfileViewController.swift */; };
 		68E62F751D14675600743214 /* UserProfilePillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F741D14675600743214 /* UserProfilePillTableViewCell.swift */; };
 		68E62F781D191BB800743214 /* PillStatusNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F771D191BB800743214 /* PillStatusNotificationsManager.swift */; };
@@ -338,8 +346,16 @@
 		5ED16CF6D98BC35F9510D8F3 /* Pods_malaria_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_malaria_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68043E301D2304D700D5DBF3 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		68043E3C1D23061A00D5DBF3 /* RapidFireGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidFireGame.swift; sourceTree = "<group>"; };
+		680BF7641D26E2BF0021353F /* InfoHubPageManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoHubPageManagerViewController.swift; sourceTree = "<group>"; };
+		680BF7701D26E4890021353F /* AchievementsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
+		6852744A1D26D011000A8D96 /* InfoHub.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = InfoHub.storyboard; path = ../../InfoHub.storyboard; sourceTree = "<group>"; };
 		6873D0481D23003A00775757 /* GamesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
 		688240D11D243D3100C63F6C /* RapidFireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidFireViewController.swift; sourceTree = "<group>"; };
+		68BEC3251D270BA000FCFAF5 /* RFQuestionsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFQuestionsEndpoint.swift; sourceTree = "<group>"; };
+		68BEC3271D270C3000FCFAF5 /* RFQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFQuestions.swift; sourceTree = "<group>"; };
+		68BEC3291D270C9900FCFAF5 /* CollectionRFQuestionsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionRFQuestionsEndpoint.swift; sourceTree = "<group>"; };
+		68BEC32E1D270D5700FCFAF5 /* RFQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFQuestion.swift; sourceTree = "<group>"; };
+		68BEC3301D270D6700FCFAF5 /* CollectionRFQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionRFQuestions.swift; sourceTree = "<group>"; };
 		68E62F721D14619A00743214 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		68E62F741D14675600743214 /* UserProfilePillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfilePillTableViewCell.swift; sourceTree = "<group>"; };
 		68E62F771D191BB800743214 /* PillStatusNotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillStatusNotificationsManager.swift; sourceTree = "<group>"; };
@@ -455,9 +471,9 @@
 		200C72181B40368600998100 /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
-				200C721D1B40368600998100 /* CollectionPostsEndpoint.swift */,
 				200C721F1B40368600998100 /* Endpoint.swift */,
-				200C72261B40368600998100 /* PostsEndpoint.swift */,
+				68BEC3331D27BF0A00FCFAF5 /* Info Hub Posts */,
+				68BEC3321D27BEFE00FCFAF5 /* Rapid Fire */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -524,9 +540,8 @@
 		200C72451B40368600998100 /* RestAPI */ = {
 			isa = PBXGroup;
 			children = (
-				200C72481B40368600998100 /* CollectionPosts.swift */,
-				200C72501B40368600998100 /* Post.swift */,
-				200C72511B40368600998100 /* Posts.swift */,
+				68BEC32C1D270CE900FCFAF5 /* Rapid Fire Questions */,
+				68BEC32B1D270CDF00FCFAF5 /* Posts */,
 			);
 			path = RestAPI;
 			sourceTree = "<group>";
@@ -702,9 +717,8 @@
 				200A18E41B64F62B00EC2A65 /* DailyStats */,
 				2095B8701B5A4B8500119896 /* PillStats */,
 				200A18E61B64F65A00EC2A65 /* PlanTrip */,
-				200A18E81B64F66D00EC2A65 /* InfoHub */,
+				6885FB641D26E6C1006A1D84 /* Third Tab */,
 				68E62F671D14617700743214 /* User Profile */,
-				6873D03D1D22FFF800775757 /* Games */,
 				200C726E1B40368600998100 /* PagesManagerViewController.swift */,
 				203F0B0E1B45B3B900826E06 /* TabbedBarController.swift */,
 			);
@@ -734,11 +748,69 @@
 		6873D03D1D22FFF800775757 /* Games */ = {
 			isa = PBXGroup;
 			children = (
-				68F9B6301D244A5900606680 /* Game Models */,
+				68043E301D2304D700D5DBF3 /* Game.swift */,
 				6873D0481D23003A00775757 /* GamesViewController.swift */,
-				688240D11D243D3100C63F6C /* RapidFireViewController.swift */,
+				68EE72BB1D26F4B2004ED3AA /* Rapid Fire */,
 			);
 			name = Games;
+			sourceTree = "<group>";
+		};
+		6885FB641D26E6C1006A1D84 /* Third Tab */ = {
+			isa = PBXGroup;
+			children = (
+				680BF7641D26E2BF0021353F /* InfoHubPageManagerViewController.swift */,
+				6852744A1D26D011000A8D96 /* InfoHub.storyboard */,
+				200A18E81B64F66D00EC2A65 /* InfoHub */,
+				6873D03D1D22FFF800775757 /* Games */,
+				6885FB651D26E6E9006A1D84 /* Achievements */,
+			);
+			name = "Third Tab";
+			sourceTree = "<group>";
+		};
+		6885FB651D26E6E9006A1D84 /* Achievements */ = {
+			isa = PBXGroup;
+			children = (
+				680BF7701D26E4890021353F /* AchievementsViewController.swift */,
+			);
+			name = Achievements;
+			sourceTree = "<group>";
+		};
+		68BEC32B1D270CDF00FCFAF5 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				200C72481B40368600998100 /* CollectionPosts.swift */,
+				200C72501B40368600998100 /* Post.swift */,
+				200C72511B40368600998100 /* Posts.swift */,
+			);
+			name = Posts;
+			sourceTree = "<group>";
+		};
+		68BEC32C1D270CE900FCFAF5 /* Rapid Fire Questions */ = {
+			isa = PBXGroup;
+			children = (
+				68BEC3301D270D6700FCFAF5 /* CollectionRFQuestions.swift */,
+				68BEC3271D270C3000FCFAF5 /* RFQuestions.swift */,
+				68BEC32E1D270D5700FCFAF5 /* RFQuestion.swift */,
+			);
+			name = "Rapid Fire Questions";
+			sourceTree = "<group>";
+		};
+		68BEC3321D27BEFE00FCFAF5 /* Rapid Fire */ = {
+			isa = PBXGroup;
+			children = (
+				68BEC3291D270C9900FCFAF5 /* CollectionRFQuestionsEndpoint.swift */,
+				68BEC3251D270BA000FCFAF5 /* RFQuestionsEndpoint.swift */,
+			);
+			name = "Rapid Fire";
+			sourceTree = "<group>";
+		};
+		68BEC3331D27BF0A00FCFAF5 /* Info Hub Posts */ = {
+			isa = PBXGroup;
+			children = (
+				200C721D1B40368600998100 /* CollectionPostsEndpoint.swift */,
+				200C72261B40368600998100 /* PostsEndpoint.swift */,
+			);
+			name = "Info Hub Posts";
 			sourceTree = "<group>";
 		};
 		68E62F671D14617700743214 /* User Profile */ = {
@@ -758,13 +830,13 @@
 			name = UserProfileHelpers;
 			sourceTree = "<group>";
 		};
-		68F9B6301D244A5900606680 /* Game Models */ = {
+		68EE72BB1D26F4B2004ED3AA /* Rapid Fire */ = {
 			isa = PBXGroup;
 			children = (
-				68043E301D2304D700D5DBF3 /* Game.swift */,
 				68043E3C1D23061A00D5DBF3 /* RapidFireGame.swift */,
+				688240D11D243D3100C63F6C /* RapidFireViewController.swift */,
 			);
-			name = "Game Models";
+			name = "Rapid Fire";
 			sourceTree = "<group>";
 		};
 		73828B911BCEE68C00CAAC56 /* Products */ = {
@@ -1028,6 +1100,7 @@
 				200EE48F1B1343A50087FB24 /* Main.storyboard in Resources */,
 				200C73431B40392A00998100 /* ApiExamples in Resources */,
 				200EE4941B1343A50087FB24 /* LaunchScreen.xib in Resources */,
+				6852744B1D26D011000A8D96 /* InfoHub.storyboard in Resources */,
 				203A40921B66A7BE00FCE4EE /* Settings.bundle in Resources */,
 				200C730F1B40370500998100 /* Info.plist in Resources */,
 				209F60BF1B6E4AED00EDA461 /* Sounds in Resources */,
@@ -1185,6 +1258,7 @@
 				200C72A81B40368600998100 /* SyncManager.swift in Sources */,
 				311E38E91CA0DC400051B14E /* SocialMediaType.swift in Sources */,
 				200C73061B40368600998100 /* PagesManagerViewController.swift in Sources */,
+				68BEC3311D270D6700FCFAF5 /* CollectionRFQuestions.swift in Sources */,
 				205E417E1B6AE74E0028A8D7 /* TripLocationHistoryPickerViewer.swift in Sources */,
 				200A18CF1B64F51300EC2A65 /* MedicinePickerViewTrip.swift in Sources */,
 				200EE48A1B1343A50087FB24 /* AppDelegate.swift in Sources */,
@@ -1198,6 +1272,8 @@
 				200C72EA1B40368600998100 /* CoreDataHelper.swift in Sources */,
 				68E62F7C1D1AC1B100743214 /* WidgetSettingsManager.swift in Sources */,
 				E4C20AE71C8B863E00B686F4 /* Constants.swift in Sources */,
+				68BEC32A1D270C9900FCFAF5 /* CollectionRFQuestionsEndpoint.swift in Sources */,
+				68BEC3261D270BA000FCFAF5 /* RFQuestionsEndpoint.swift in Sources */,
 				200C72D21B40368600998100 /* Post.swift in Sources */,
 				200C72EE1B40368600998100 /* Int.swift in Sources */,
 				200C72A41B40368600998100 /* RegistriesManager.swift in Sources */,
@@ -1217,14 +1293,17 @@
 				200A18CD1B64F50500EC2A65 /* MedicinePickerView.swift in Sources */,
 				200C72BC1B40368600998100 /* Registry.swift in Sources */,
 				200C72F41B40368600998100 /* NSSet.swift in Sources */,
+				680BF7711D26E4890021353F /* AchievementsViewController.swift in Sources */,
 				20FC56FD1B72CA2800D51801 /* Globals.swift in Sources */,
 				200C72B81B40368600998100 /* Medicine.swift in Sources */,
 				200C72B41B40368600998100 /* Item.swift in Sources */,
 				20FC56BD1B71951300D51801 /* PresentsModalityDelegate.swift in Sources */,
 				200A18DD1B64F5F300EC2A65 /* PlanTripViewController.swift in Sources */,
+				68BEC32F1D270D5700FCFAF5 /* RFQuestion.swift in Sources */,
 				20FC56F91B72C9FB00D51801 /* UIView.swift in Sources */,
 				68043E311D2304D700D5DBF3 /* Game.swift in Sources */,
 				68E62F751D14675600743214 /* UserProfilePillTableViewCell.swift in Sources */,
+				68BEC3281D270C3000FCFAF5 /* RFQuestions.swift in Sources */,
 				6873D0491D23003A00775757 /* GamesViewController.swift in Sources */,
 				68043E3D1D23061A00D5DBF3 /* RapidFireGame.swift in Sources */,
 				E4A66DB61D09A5DB008D9B40 /* Reachability.swift in Sources */,
@@ -1235,6 +1314,7 @@
 				19B10C671C8F2A7F003D4236 /* Global.swift in Sources */,
 				200A18DF1B64F60200EC2A65 /* SetupScreenViewController.swift in Sources */,
 				200C72BA1B40368600998100 /* MedicineExtension.swift in Sources */,
+				680BF7651D26E2BF0021353F /* InfoHubPageManagerViewController.swift in Sources */,
 				688240D21D243D3100C63F6C /* RapidFireViewController.swift in Sources */,
 				209F60B81B6E2AB300EDA461 /* MedicineFrontEndExtension.swift in Sources */,
 				200A18C31B64F48E00EC2A65 /* PillsStatsViewController.swift in Sources */,

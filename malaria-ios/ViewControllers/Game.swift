@@ -1,6 +1,6 @@
 import Foundation
 
-class Game: NSObject {
+class Game {
   
   var numberOfLevels: Int
   var name: String
@@ -8,6 +8,5 @@ class Game: NSObject {
   init(numberOfLevels: Int, name: String) {
     self.numberOfLevels = numberOfLevels
     self.name = name
-    super.init()
   }
 }

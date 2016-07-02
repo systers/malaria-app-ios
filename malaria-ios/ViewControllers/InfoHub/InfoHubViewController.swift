@@ -41,7 +41,13 @@ class InfoHubViewController : UIViewController{
             self.refreshControl.endRefreshing()
         })
     }
-    
+  
+    var pagesManager: InfoHubPageManagerViewController!
+    override func viewDidAppear(animated: Bool) {
+      super.viewDidAppear(animated)
+      pagesManager.currentViewController = self
+    }
+  
     private func refreshScreen() {
         func completionHandler(url: String, error: NSError?){
             if error != nil{
@@ -91,11 +97,19 @@ class InfoHubViewController : UIViewController{
     @IBAction func settingsBtnHandler(sender: AnyObject) {
         //fix delay
         dispatch_async(dispatch_get_main_queue()) {
-            let view = UIStoryboard.instantiate(viewControllerClass: SetupScreenViewController.self)
+            let view = UIStoryboard.instantiate(SetupScreenViewController.self)
             self.presentViewController(view, animated: true, completion: nil)
         }
     }
 }
+
+// MARK: PresentsModalityDelegate
+extension InfoHubViewController : PresentsModalityDelegate{
+  func OnDismiss() {
+    refreshScreen()
+  }
+}
+
 
 extension InfoHubViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -111,7 +125,7 @@ extension InfoHubViewController : UICollectionViewDelegate, UICollectionViewData
         return cell
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
-        let postView = UIStoryboard.instantiate(viewControllerClass: PostDetailedViewController.self)
+        let postView = UIStoryboard.instantiate(PostDetailedViewController.self)
         postView.post = posts[indexPath.row]
         
         postView.currentIndex = indexPath.row

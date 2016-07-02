@@ -1,7 +1,6 @@
 import Foundation
 import UIKit
 
-
 class PostDetailedViewController : UIViewController{
     @IBOutlet weak var postTitle: UILabel!
     @IBOutlet weak var postDescription: UITextView!

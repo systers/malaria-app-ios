@@ -53,6 +53,9 @@ extension GamesViewController: UICollectionViewDataSource {
 extension GamesViewController: UICollectionViewDelegate {
   
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    
+    // Each position in the collection view will represent a different segue to a View Controller
+    // We switch VC's based on the index path that was selected
     switch indexPath.row {
     case 0: fallthrough
     default: performSegueWithIdentifier("Show Rapid Fire", sender: self)

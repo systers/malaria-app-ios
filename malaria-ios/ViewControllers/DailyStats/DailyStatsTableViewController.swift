@@ -30,8 +30,6 @@ class DailyStatsTableViewController : UITableViewController{
     pagesManager.currentViewController = self
   }
 
-
-
   func refreshScreen() {
     Logger.Info("Refreshing DAILY")
     let cachedStats = CachedStatistics.sharedInstance
