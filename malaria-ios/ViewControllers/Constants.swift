@@ -10,4 +10,8 @@ class Constants {
   }
   
   static let localNotificationsArray = "Local Notifications Array"
+  
+  struct Games {
+    static let UnwindToGamesListVC = "Unwind to Games List"
+  }
 }

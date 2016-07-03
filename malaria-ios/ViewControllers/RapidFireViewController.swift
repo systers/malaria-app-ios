@@ -1,18 +1,22 @@
 import UIKit
 
-class RapidFireViewController: UIViewController {
+class RapidFireViewController: GameViewController {
   
   @IBOutlet weak var questionLabel: UILabel!
   @IBOutlet var answerButtons: [UIButton]!
   @IBOutlet weak var countDownLabel: UILabel!
   @IBOutlet weak var scoreLabel: UILabel!
+  @IBOutlet weak var questionNumberLabel: UILabel!
   
   @IBInspectable let TimerBlinkAtSecond: Int = 3
   @IBInspectable let TimerMaxValue: Int = 5
   
-  var rapidFireGame: RapidFireGame?
+  // Measured in seconds.
+  let TimerTickingInterval: Double = 1
   
-  private var timer: NSTimer?
+  var rapidFireGame: RapidFireGame!
+  
+  private var timer: NSTimer!
   
   private var currentLevel = 0 {
     didSet {
@@ -25,6 +29,8 @@ class RapidFireViewController: UIViewController {
       // Set the question
       questionLabel.text = rapidFireGame?.entries[currentLevel].question
       
+      questionNumberLabel.text = "Question \(currentLevel + 1) / \(rapidFireGame!.entries.count)"
+      
       // Set the answer buttons
       let answers = rapidFireGame?.entries[currentLevel].answers
       for (index, answer) in (answers?.enumerate())! {
@@ -32,7 +38,7 @@ class RapidFireViewController: UIViewController {
       }
       
       // Set timer
-      timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+      timer = NSTimer.scheduledTimerWithTimeInterval(TimerTickingInterval, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
   }
   
@@ -44,7 +50,7 @@ class RapidFireViewController: UIViewController {
   
   private var count = 5 {
     didSet {
-      countDownLabel.text = count != 1 ? "\(count) seconds" : "\(count) second"
+      countDownLabel.text = count == 1 ? "\(count) second" : "\(count) seconds"
     }
   }
   
@@ -53,10 +59,19 @@ class RapidFireViewController: UIViewController {
     
     // Set background image
     view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
     
-    // Start game
-    currentLevel = 0
-    count = TimerMaxValue
+    rapidFireGame = game as! RapidFireGame
+    
+    // Checks if we have any questions available to start the game
+    if rapidFireGame!.entries.count == 0 {
+      stopGame()
+    }
+    
+    startGame()
   }
   
   func updateTimer() {
@@ -72,8 +87,14 @@ class RapidFireViewController: UIViewController {
     count -= 1
   }
   
-  func endGame() {
-    let (title, message) = (GameProgressText.title, GameProgressText.message)
+  func startGame() {
+    currentLevel = 0
+    count = TimerMaxValue
+    userScore = 0
+  }
+  
+  func stopGame() {
+    let (title, message) = (NoRFEntries.title, NoRFEntries.message)
     
     let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
     
@@ -88,18 +109,41 @@ class RapidFireViewController: UIViewController {
     presentViewController(alert, animated: true, completion: nil)
   }
   
+  func endGame() {
+    let (title, message) = (GameProgressText.title, GameProgressText.message)
+    
+    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+    
+    let backAction = UIAlertAction(title: "Back", style: UIAlertActionStyle.Default) {
+      (action:UIAlertAction!) -> Void in
+      
+      self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    alert.addAction(backAction)
+
+    let restartGameAction = UIAlertAction(title: "Restart", style: UIAlertActionStyle.Default) {
+      (action:UIAlertAction!) -> Void in
+      self.startGame()
+    }
+    
+    alert.addAction(restartGameAction)
+    
+    presentViewController(alert, animated: true, completion: nil)
+  }
+  
   func showWrongAnswerAnimation() {
-    let defaultColor = questionLabel.textColor
+    let originalColor = questionLabel.textColor
     
     let animationBlock = { () -> Void in
       self.questionLabel.textColor = UIColor.redColor()
     }
     
     let completionBlock = { (complete: Bool) in
-      self.questionLabel.textColor = defaultColor
+      self.questionLabel.textColor = originalColor
     }
     
-    UIView.transitionWithView(questionLabel, duration: 0.1,
+    UIView.transitionWithView(questionLabel, duration: 0.5,
                               options: .TransitionCrossDissolve,
                               animations: animationBlock,
                               completion: completionBlock)
@@ -121,7 +165,6 @@ class RapidFireViewController: UIViewController {
   
   @IBAction func answerPressed(sender: UIButton) {
     let correctAnswer = rapidFireGame?.entries[currentLevel].correctAnswer == sender.tag
-    
     nextQuestion(correctAnswer)
   }
   
@@ -135,12 +178,16 @@ class RapidFireViewController: UIViewController {
 extension RapidFireViewController {
   typealias AlertText = (title: String, message: String)
   
-  // Set reminder
   private var GameProgressText: AlertText {
     return ("Game over",
-            "Each 3 points mean one achievement point. You scored \(userScore / 3) "
+            "You scored \(userScore / 3) "
               + ( ((userScore / 3) == 1) ? "point." : "points.")
     )
+  }
+  
+  private var NoRFEntries: AlertText {
+    return ("Couldn't start game",
+            "There was a problem fetching the content for this game.")
   }
 }
 

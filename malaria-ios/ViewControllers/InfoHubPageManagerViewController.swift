@@ -97,7 +97,7 @@ extension InfoHubPageManagerViewController: UIPageViewControllerDataSource, UIPa
       view.pagesManager = self
       vc = view
     case .Games:
-      let view = UIStoryboard.instantiate(GamesViewController.self, fromStoryboard: "InfoHub") as GamesViewController
+      let view = UIStoryboard.instantiate(GamesListViewController.self, fromStoryboard: "InfoHub") as GamesListViewController
       vc = view
     case .Achievements:
       let view = UIStoryboard.instantiate(AchievementsViewController.self, fromStoryboard: "InfoHub") as AchievementsViewController

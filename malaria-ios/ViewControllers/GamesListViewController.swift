@@ -1,6 +1,6 @@
 import UIKit
 
-class GamesViewController: UIViewController {
+class GamesListViewController: UIViewController {
   @IBOutlet weak var collectionView: UICollectionView!
   
   private var games: [Game] = [RapidFireGame()]
@@ -11,14 +11,15 @@ class GamesViewController: UIViewController {
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if segue.identifier == "Show Rapid Fire" {
-      let gameVC = segue.destinationViewController as! RapidFireViewController
-      gameVC.rapidFireGame = games[0] as? RapidFireGame
-    }
+    let gameCellIndex: Int = sender as! Int
+    
+    let gameRulesVC = segue.destinationViewController as! GameRulesViewController
+    gameRulesVC.game = games[gameCellIndex]
   }
+  
 }
 
-extension GamesViewController: UICollectionViewDataSource {
+extension GamesListViewController: UICollectionViewDataSource {
   
   func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return games.count
@@ -50,15 +51,9 @@ extension GamesViewController: UICollectionViewDataSource {
   }
 }
 
-extension GamesViewController: UICollectionViewDelegate {
+extension GamesListViewController: UICollectionViewDelegate {
   
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-    
-    // Each position in the collection view will represent a different segue to a View Controller
-    // We switch VC's based on the index path that was selected
-    switch indexPath.row {
-    case 0: fallthrough
-    default: performSegueWithIdentifier("Show Rapid Fire", sender: self)
-    }
+    performSegueWithIdentifier("Show Game Rules", sender: indexPath.row)
   }
 }
