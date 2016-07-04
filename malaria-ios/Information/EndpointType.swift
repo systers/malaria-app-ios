@@ -43,6 +43,7 @@ public enum EndpointType : String{
     case Indicators = "indicators"
     case Objectives = "objectives"
     case Goals = "goals"
+    case RapidFireQuestions = "questions"
     
     /// Returns the full path to the endpoint
     ///

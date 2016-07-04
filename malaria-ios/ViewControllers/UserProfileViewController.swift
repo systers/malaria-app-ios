@@ -134,7 +134,7 @@ extension UserProfileViewController {
   
   @IBAction func settingsBtnHandler(sender: AnyObject) {
     dispatch_async(dispatch_get_main_queue()) {
-      let view = UIStoryboard.instantiate(viewControllerClass: SetupScreenViewController.self)
+      let view = UIStoryboard.instantiate(SetupScreenViewController.self)
       view.delegate = self
       self.presentViewController(view, animated: true, completion: nil)
     }

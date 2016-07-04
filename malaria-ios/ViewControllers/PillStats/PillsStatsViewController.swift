@@ -106,7 +106,7 @@ extension PillsStatsViewController: UITableViewDelegate, UITableViewDataSource{
   }
 
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    let monthView = UIStoryboard.instantiate(viewControllerClass: MonthlyViewController.self)
+    let monthView = UIStoryboard.instantiate(MonthlyViewController.self)
     monthView.startDay = CachedStatistics.sharedInstance.monthAdhrence[indexPath.row].0
     monthView.callback = refreshScreen
     presentViewController(

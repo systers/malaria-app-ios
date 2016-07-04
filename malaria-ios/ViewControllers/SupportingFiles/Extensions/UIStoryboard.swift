@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-extension UIStoryboard{
+extension UIStoryboard {
     ///Converts MyTarget.ClassName to ClassName
     private class func getSimpleClassName(c: AnyClass) -> String {
         return c.description().componentsSeparatedByString(".").last!
@@ -14,8 +14,8 @@ extension UIStoryboard{
     /// - parameter `C`:: Class of the view controller
     ///
     /// - returns: `C`: A new instance of the view controller
-    public static func instantiate <C:UIViewController> (named: String = "Main", viewControllerClass: C.Type) -> C {
-        let storyboard = UIStoryboard(name: named, bundle: nil)
+    public static func instantiate <C:UIViewController> (viewControllerClass: C.Type, fromStoryboard name: String = "Main") -> C {
+        let storyboard = UIStoryboard(name: name, bundle: nil)
         let storyboardId = UIStoryboard.getSimpleClassName(viewControllerClass)
         return storyboard.instantiateViewControllerWithIdentifier(storyboardId) as! C
     }

@@ -126,7 +126,7 @@ extension PlanTripViewController{
     @IBAction func settingsBtnHandler(sender: AnyObject) {
         //fix delay
         dispatch_async(dispatch_get_main_queue()) {
-            let view = UIStoryboard.instantiate(viewControllerClass: SetupScreenViewController.self)
+            let view = UIStoryboard.instantiate(SetupScreenViewController.self)
             self.presentViewController(view, animated: true, completion: nil)
         }
     }
@@ -141,7 +141,7 @@ extension PlanTripViewController{
     @IBAction func itemListBtnHandler(sender: AnyObject) {
         //fix delay
         dispatch_async(dispatch_get_main_queue()) {
-            let view = UIStoryboard.instantiate(viewControllerClass: ListItemsViewController.self)
+            let view = UIStoryboard.instantiate(ListItemsViewController.self)
             view.arrival = self.arrivalDay
             view.departure = self.departureDay
             view.listItems = self.items

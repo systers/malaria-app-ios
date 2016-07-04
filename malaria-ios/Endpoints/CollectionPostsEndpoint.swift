@@ -3,10 +3,10 @@ import SwiftyJSON
 
 /// Generic endpoint class responsible for retrieving posts and storing in the correct core data object
 public class CollectionPostsEndpoint : Endpoint{
-    public var path: String { get { fatalError("Please specify path") } }
+    public var path: String { fatalError("Please specify path") }
     
     /// subCollectionClassType: Specify the subclass of CollectionPosts
-    var subCollectionsPostsType: CollectionPosts.Type { get { fatalError("Please specify collection type") } }
+    var subCollectionsPostsType: CollectionPosts.Type { fatalError("Please specify collection type") }
     
     ///Required from `Endpoint` protocol
     public func retrieveJSONObject(data: JSON, context: NSManagedObjectContext) -> NSManagedObject?{
@@ -27,7 +27,7 @@ public class CollectionPostsEndpoint : Endpoint{
         return nil
     }
 
-    private func getPosts(data: [JSON], context: NSManagedObjectContext) -> [Post]?{
+    private func getPosts(data: [JSON], context: NSManagedObjectContext) -> [Post]? {
         var result: [Post] = []
         
         for json in data{
@@ -64,7 +64,7 @@ public class CollectionPostsEndpoint : Endpoint{
     }
     
     /// Required from `Endpoint` protocol
-    public func clearFromDatabase(context: NSManagedObjectContext){
+    public func clearFromDatabase(context: NSManagedObjectContext) {
         subCollectionsPostsType.clear(subCollectionsPostsType.self, context: context)
     }
 }

@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // setting up initial screen, can be configured in the storyboard if there is only one option but here we have more flexibility
     window = UIWindow(frame: UIScreen.mainScreen().bounds)
-    window!.rootViewController = UIStoryboard.instantiate(viewControllerClass: TabbedBarController.self)
+    window!.rootViewController = UIStoryboard.instantiate(TabbedBarController.self)
     window!.makeKeyAndVisible()
 
     return true

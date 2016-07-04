@@ -89,7 +89,7 @@ public class SyncManager : CoreDataContextManager{
                     let json = JSON(data)
                     endpoint.clearFromDatabase(self.context)
                     
-                    if let _ = endpoint.retrieveJSONObject(json, context: self.context){
+                    if endpoint.retrieveJSONObject(json, context: self.context) != nil {
                         Logger.Info("Success \(endpoint.path)")
                     }else{
                         Logger.Error("Error parsing \(endpoint.path)")

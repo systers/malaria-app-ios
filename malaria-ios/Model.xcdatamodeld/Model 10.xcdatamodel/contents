@@ -3,6 +3,9 @@
     <entity name="CollectionPosts" representedClassName="malaria_ios.CollectionPosts" isAbstract="YES" syncable="YES">
         <relationship name="posts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Post" inverseName="contained_in" inverseEntity="Post" syncable="YES"/>
     </entity>
+    <entity name="CollectionRFQuestions" representedClassName="malaria_ios.CollectionRFQuestions" isAbstract="YES" syncable="YES">
+        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RFQuestion" inverseName="contained_in" inverseEntity="RFQuestion" syncable="YES"/>
+    </entity>
     <entity name="Item" representedClassName="malaria_ios.Item" syncable="YES">
         <attribute name="check" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -33,6 +36,13 @@
         <attribute name="tookMedicine" optional="YES" attributeType="Boolean" syncable="YES"/>
         <relationship name="medicine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medicine" inverseName="registries" inverseEntity="Medicine" syncable="YES"/>
     </entity>
+    <entity name="RFQuestion" representedClassName="malaria_ios.RFQuestion" syncable="YES">
+        <attribute name="answers" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="correctAnswer" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contained_in" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="CollectionRFQuestions" inverseName="questions" inverseEntity="CollectionRFQuestions" syncable="YES"/>
+    </entity>
+    <entity name="RFQuestions" representedClassName="malaria_ios.RFQuestions" parentEntity="CollectionRFQuestions" syncable="YES"/>
     <entity name="Trip" representedClassName="malaria_ios.Trip" syncable="YES">
         <attribute name="arrival" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="departure" optional="YES" attributeType="Date" syncable="YES"/>
@@ -47,12 +57,15 @@
     </entity>
     <elements>
         <element name="CollectionPosts" positionX="-270" positionY="207" width="128" height="60"/>
+        <element name="CollectionRFQuestions" positionX="43" positionY="207" width="128" height="58"/>
         <element name="Item" positionX="-207" positionY="11" width="128" height="105"/>
         <element name="Medicine" positionX="-63" positionY="9" width="126" height="148"/>
         <element name="Post" positionX="-101" positionY="201" width="128" height="150"/>
         <element name="Posts" positionX="-270" positionY="387" width="128" height="45"/>
         <element name="Registry" positionX="214" positionY="15" width="128" height="90"/>
+        <element name="RFQuestion" positionX="214" positionY="243" width="128" height="103"/>
+        <element name="RFQuestions" positionX="45" positionY="414" width="128" height="45"/>
         <element name="Trip" positionX="-396" positionY="-18" width="128" height="135"/>
-        <element name="TripHistory" positionX="-189" positionY="135" width="128" height="75"/>
+        <element name="TripHistory" positionX="-468" positionY="177" width="128" height="75"/>
     </elements>
 </model>
