@@ -110,7 +110,7 @@ class RapidFireViewController: GameViewController {
   }
   
   func endGame() {
-    let (title, message) = (GameProgressText.title, GameProgressText.message)
+    let (title, message) = (GameOverText.title, GameOverText.message)
     
     let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
     
@@ -178,9 +178,11 @@ class RapidFireViewController: GameViewController {
 extension RapidFireViewController {
   typealias AlertText = (title: String, message: String)
   
-  private var GameProgressText: AlertText {
+  // Based on the rules, we need to divide the Rapid Fire score by 3 to get the
+  // achievements points earned.
+  private var GameOverText: AlertText {
     return ("Game over",
-            "You scored \(userScore / 3) "
+            "You gained \(userScore / 3) achievement "
               + ( ((userScore / 3) == 1) ? "point." : "points.")
     )
   }

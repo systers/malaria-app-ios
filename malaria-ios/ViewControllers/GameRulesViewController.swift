@@ -27,6 +27,8 @@ class GameRulesViewController : UIViewController {
     dismissViewControllerAnimated(true, completion: nil)
   }
   
+  // Segues must have the identifier following the naming rule: "Show " + game.name
+  // in order for a game to start
   @IBAction func startGameBtnHandler(sender: AnyObject) {
    performSegueWithIdentifier("Show " + game.name, sender: self)
   }

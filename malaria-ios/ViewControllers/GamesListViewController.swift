@@ -3,6 +3,7 @@ import UIKit
 class GamesListViewController: UIViewController {
   @IBOutlet weak var collectionView: UICollectionView!
   
+  // New games are added just by creating them and adding an instance to this array
   private var games: [Game] = [RapidFireGame()]
   
   override func viewDidLoad() {
@@ -16,7 +17,6 @@ class GamesListViewController: UIViewController {
     let gameRulesVC = segue.destinationViewController as! GameRulesViewController
     gameRulesVC.game = games[gameCellIndex]
   }
-  
 }
 
 extension GamesListViewController: UICollectionViewDataSource {
