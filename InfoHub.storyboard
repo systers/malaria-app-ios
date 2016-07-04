@@ -247,7 +247,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question 1 / 66" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVp-Km-135">
                                 <rect key="frame" x="20" y="141" width="123.5" height="20"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -646,22 +646,7 @@
                                             <constraint firstAttribute="height" constant="1" id="yK3-Aj-xXs"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6JL-fx-LZz">
-                                        <rect key="frame" x="280" y="446" width="120" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="G3q-Od-J9y"/>
-                                            <constraint firstAttribute="width" constant="120" id="XHq-60-8Cf"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
-                                        <state key="normal" title="Start Game" backgroundImage="GenerateTripButton">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="startGameBtnHandler:" destination="U92-ip-Ijb" eventType="touchUpInside" id="h3v-OT-N8W"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ui-i1-O2E">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ui-i1-O2E">
                                         <rect key="frame" x="140" y="446" width="120" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="Ias-d7-lvY"/>
@@ -672,6 +657,11 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Ias-d7-lvY"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <action selector="cancelBtnHandler:" destination="U92-ip-Ijb" eventType="touchUpInside" id="D00-1R-OcF"/>
                                         </connections>
@@ -688,6 +678,21 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6JL-fx-LZz">
+                                        <rect key="frame" x="280" y="446" width="120" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="G3q-Od-J9y"/>
+                                            <constraint firstAttribute="width" constant="120" id="XHq-60-8Cf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
+                                        <state key="normal" title="Start Game" backgroundImage="GenerateTripButton">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startGameBtnHandler:" destination="U92-ip-Ijb" eventType="touchUpInside" id="h3v-OT-N8W"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.94509803920000002" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -700,7 +705,7 @@
                                     <constraint firstItem="dBC-YO-MRA" firstAttribute="leading" secondItem="gYb-6g-UuT" secondAttribute="leading" constant="10" id="MBL-89-MqU"/>
                                     <constraint firstAttribute="centerX" secondItem="6JL-fx-LZz" secondAttribute="centerX" priority="999" constant="-70" id="PWc-IN-Z8S"/>
                                     <constraint firstAttribute="trailing" secondItem="dBC-YO-MRA" secondAttribute="trailing" constant="10" id="Wnr-kg-ozp"/>
-                                    <constraint firstItem="6JL-fx-LZz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2ui-i1-O2E" secondAttribute="trailing" constant="5" id="gHg-83-lxQ"/>
+                                    <constraint firstItem="6JL-fx-LZz" firstAttribute="leading" secondItem="2ui-i1-O2E" secondAttribute="trailing" constant="5" id="gHg-83-lxQ"/>
                                     <constraint firstAttribute="centerX" secondItem="2ui-i1-O2E" secondAttribute="centerX" priority="999" constant="70" id="gUK-kx-xXh"/>
                                     <constraint firstAttribute="bottom" secondItem="2ui-i1-O2E" secondAttribute="bottom" constant="15" id="h6N-tM-rsh"/>
                                     <constraint firstItem="IhX-cC-ZjO" firstAttribute="top" secondItem="dBC-YO-MRA" secondAttribute="bottom" constant="10" id="iIA-8a-48l"/>

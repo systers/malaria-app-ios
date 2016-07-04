@@ -93,14 +93,17 @@ extension InfoHubPageManagerViewController: UIPageViewControllerDataSource, UIPa
     
     switch value {
     case .InfoHub:
-      let view = UIStoryboard.instantiate(InfoHubViewController.self, fromStoryboard: "InfoHub") as InfoHubViewController
+      let view = UIStoryboard.instantiate(InfoHubViewController.self,
+                                          fromStoryboard: Constants.Storyboards.InfoHub) as InfoHubViewController
       view.pagesManager = self
       vc = view
     case .Games:
-      let view = UIStoryboard.instantiate(GamesListViewController.self, fromStoryboard: "InfoHub") as GamesListViewController
+      let view = UIStoryboard.instantiate(GamesListViewController.self,
+                                          fromStoryboard: Constants.Storyboards.InfoHub) as GamesListViewController
       vc = view
     case .Achievements:
-      let view = UIStoryboard.instantiate(AchievementsViewController.self, fromStoryboard: "InfoHub") as AchievementsViewController
+      let view = UIStoryboard.instantiate(AchievementsViewController.self,
+                                          fromStoryboard: Constants.Storyboards.InfoHub) as AchievementsViewController
       vc = view
     default: return nil
     }

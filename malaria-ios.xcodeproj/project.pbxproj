@@ -110,6 +110,7 @@
 		6852744B1D26D011000A8D96 /* InfoHub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6852744A1D26D011000A8D96 /* InfoHub.storyboard */; };
 		6873D0491D23003A00775757 /* GamesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6873D0481D23003A00775757 /* GamesListViewController.swift */; };
 		688240D21D243D3100C63F6C /* RapidFireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688240D11D243D3100C63F6C /* RapidFireViewController.swift */; };
+		688D0DC41D2ADE680024DD13 /* PillScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 688D0DC31D2ADE680024DD13 /* PillScreens.storyboard */; };
 		68BEC3261D270BA000FCFAF5 /* RFQuestionsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BEC3251D270BA000FCFAF5 /* RFQuestionsEndpoint.swift */; };
 		68BEC3281D270C3000FCFAF5 /* RFQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BEC3271D270C3000FCFAF5 /* RFQuestions.swift */; };
 		68BEC32A1D270C9900FCFAF5 /* CollectionRFQuestionsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BEC3291D270C9900FCFAF5 /* CollectionRFQuestionsEndpoint.swift */; };
@@ -354,6 +355,7 @@
 		6852744A1D26D011000A8D96 /* InfoHub.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = InfoHub.storyboard; path = ../../InfoHub.storyboard; sourceTree = "<group>"; };
 		6873D0481D23003A00775757 /* GamesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesListViewController.swift; sourceTree = "<group>"; };
 		688240D11D243D3100C63F6C /* RapidFireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidFireViewController.swift; sourceTree = "<group>"; };
+		688D0DC31D2ADE680024DD13 /* PillScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PillScreens.storyboard; sourceTree = "<group>"; };
 		68BEC3251D270BA000FCFAF5 /* RFQuestionsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFQuestionsEndpoint.swift; sourceTree = "<group>"; };
 		68BEC3271D270C3000FCFAF5 /* RFQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFQuestions.swift; sourceTree = "<group>"; };
 		68BEC3291D270C9900FCFAF5 /* CollectionRFQuestionsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionRFQuestionsEndpoint.swift; sourceTree = "<group>"; };
@@ -716,15 +718,12 @@
 		20FC57361B72CB3500D51801 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				203F0B0E1B45B3B900826E06 /* TabbedBarController.swift */,
 				200A18E71B64F66100EC2A65 /* SetupScreen */,
-				200A18E51B64F64200EC2A65 /* DidTakePill */,
-				200A18E41B64F62B00EC2A65 /* DailyStats */,
-				2095B8701B5A4B8500119896 /* PillStats */,
+				688D0DC21D2ADDF30024DD13 /* Take Pill Screen and Pill Stats */,
 				200A18E61B64F65A00EC2A65 /* PlanTrip */,
 				6885FB641D26E6C1006A1D84 /* Info Hub and Games */,
 				68E62F671D14617700743214 /* User Profile */,
-				200C726E1B40368600998100 /* PagesManagerViewController.swift */,
-				203F0B0E1B45B3B900826E06 /* TabbedBarController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -777,6 +776,18 @@
 				680BF7701D26E4890021353F /* AchievementsViewController.swift */,
 			);
 			name = Achievements;
+			sourceTree = "<group>";
+		};
+		688D0DC21D2ADDF30024DD13 /* Take Pill Screen and Pill Stats */ = {
+			isa = PBXGroup;
+			children = (
+				200C726E1B40368600998100 /* PagesManagerViewController.swift */,
+				688D0DC31D2ADE680024DD13 /* PillScreens.storyboard */,
+				200A18E41B64F62B00EC2A65 /* DailyStats */,
+				200A18E51B64F64200EC2A65 /* DidTakePill */,
+				2095B8701B5A4B8500119896 /* PillStats */,
+			);
+			name = "Take Pill Screen and Pill Stats";
 			sourceTree = "<group>";
 		};
 		68BEC32B1D270CDF00FCFAF5 /* Posts */ = {
@@ -1118,6 +1129,7 @@
 				203A40921B66A7BE00FCE4EE /* Settings.bundle in Resources */,
 				200C730F1B40370500998100 /* Info.plist in Resources */,
 				209F60BF1B6E4AED00EDA461 /* Sounds in Resources */,
+				688D0DC41D2ADE680024DD13 /* PillScreens.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

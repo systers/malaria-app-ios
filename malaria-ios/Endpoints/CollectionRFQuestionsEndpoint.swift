@@ -16,7 +16,7 @@ public class CollectionRFQuestionsEndpoint : Endpoint {
   }
   
   private func getQuestions(data: [JSON], context: NSManagedObjectContext) -> [RFQuestion]? {
-    var result: [RFQuestion] = []
+    let result: [RFQuestion] = []
     // TODO
     return result
   }

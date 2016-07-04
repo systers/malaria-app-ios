@@ -91,15 +91,18 @@ extension PagesManagerViewController : UIPageViewControllerDataSource, UIPageVie
         
         switch value {
         case .DailyPill:
-            let view = UIStoryboard.instantiate(DidTakePillsViewController.self) as DidTakePillsViewController
+            let view = UIStoryboard.instantiate(DidTakePillsViewController.self,
+                                                fromStoryboard: Constants.Storyboards.PillStats) as DidTakePillsViewController
             view.pagesManager = self
             vc = view
         case .DailyStates:
-            let view = UIStoryboard.instantiate(DailyStatsTableViewController.self) as DailyStatsTableViewController
+          let view = UIStoryboard.instantiate(DailyStatsTableViewController.self,
+                                              fromStoryboard: Constants.Storyboards.PillStats) as DailyStatsTableViewController
             view.pagesManager = self
             vc = view
         case .Stats:
-            let view = UIStoryboard.instantiate(PillsStatsViewController.self) as PillsStatsViewController
+          let view = UIStoryboard.instantiate(PillsStatsViewController.self,
+                                              fromStoryboard: Constants.Storyboards.PillStats) as PillsStatsViewController
             view.pagesManager = self
             vc = view
         default: return nil
