@@ -201,6 +201,7 @@ extension UILabel {
   func blink() {
     self.alpha = 1.0;
     UIView.animateWithDuration(Constants.RapidFireGame.RemainingSecondsBlinkRate,
+
       delay: 0.0,
       options: [.CurveEaseInOut, .Autoreverse],
       animations: { [weak self] in self?.alpha = 0.0 },
