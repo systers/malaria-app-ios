@@ -700,6 +700,7 @@
                                     <constraint firstItem="dBC-YO-MRA" firstAttribute="leading" secondItem="gYb-6g-UuT" secondAttribute="leading" constant="10" id="MBL-89-MqU"/>
                                     <constraint firstAttribute="centerX" secondItem="6JL-fx-LZz" secondAttribute="centerX" priority="999" constant="-70" id="PWc-IN-Z8S"/>
                                     <constraint firstAttribute="trailing" secondItem="dBC-YO-MRA" secondAttribute="trailing" constant="10" id="Wnr-kg-ozp"/>
+                                    <constraint firstItem="6JL-fx-LZz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2ui-i1-O2E" secondAttribute="trailing" constant="5" id="gHg-83-lxQ"/>
                                     <constraint firstAttribute="centerX" secondItem="2ui-i1-O2E" secondAttribute="centerX" priority="999" constant="70" id="gUK-kx-xXh"/>
                                     <constraint firstAttribute="bottom" secondItem="2ui-i1-O2E" secondAttribute="bottom" constant="15" id="h6N-tM-rsh"/>
                                     <constraint firstItem="IhX-cC-ZjO" firstAttribute="top" secondItem="dBC-YO-MRA" secondAttribute="bottom" constant="10" id="iIA-8a-48l"/>

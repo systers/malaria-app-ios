@@ -69,6 +69,7 @@ class RapidFireViewController: GameViewController {
     // Checks if we have any questions available to start the game
     if rapidFireGame!.entries.count == 0 {
       stopGame()
+      return
     }
     
     startGame()

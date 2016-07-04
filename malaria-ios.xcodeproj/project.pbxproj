@@ -721,7 +721,7 @@
 				200A18E41B64F62B00EC2A65 /* DailyStats */,
 				2095B8701B5A4B8500119896 /* PillStats */,
 				200A18E61B64F65A00EC2A65 /* PlanTrip */,
-				6885FB641D26E6C1006A1D84 /* Third Tab */,
+				6885FB641D26E6C1006A1D84 /* Info Hub and Games */,
 				68E62F671D14617700743214 /* User Profile */,
 				200C726E1B40368600998100 /* PagesManagerViewController.swift */,
 				203F0B0E1B45B3B900826E06 /* TabbedBarController.swift */,
@@ -759,7 +759,7 @@
 			name = Games;
 			sourceTree = "<group>";
 		};
-		6885FB641D26E6C1006A1D84 /* Third Tab */ = {
+		6885FB641D26E6C1006A1D84 /* Info Hub and Games */ = {
 			isa = PBXGroup;
 			children = (
 				680BF7641D26E2BF0021353F /* InfoHubPageManagerViewController.swift */,
@@ -768,7 +768,7 @@
 				68FEE3901D29918700E7DC6C /* Game List */,
 				6885FB651D26E6E9006A1D84 /* Achievements */,
 			);
-			name = "Third Tab";
+			name = "Info Hub and Games";
 			sourceTree = "<group>";
 		};
 		6885FB651D26E6E9006A1D84 /* Achievements */ = {
