@@ -10,4 +10,17 @@ class Constants {
   }
   
   static let localNotificationsArray = "Local Notifications Array"
+  
+  struct Storyboards {
+    
+    static let PillStats = "PillScreens"
+    static let InfoHub = "InfoHub"
+  }
+  
+  struct RapidFireGame {
+    
+    // How rapidly should the Remaining Seconds blink
+    // measured in seconds.
+    static let RemainingSecondsBlinkRate = 0.2
+  }
 }
