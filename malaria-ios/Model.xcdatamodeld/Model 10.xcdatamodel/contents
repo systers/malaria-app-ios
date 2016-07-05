@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="4" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Xcode 4.3">
+    <entity name="CollectionMVFStatements" representedClassName="malaria_ios.CollectionPosts" isAbstract="YES" syncable="YES">
+        <relationship name="statements" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MVFStatement" inverseName="contained_in" inverseEntity="MVFStatement" syncable="YES"/>
+    </entity>
     <entity name="CollectionPosts" representedClassName="malaria_ios.CollectionPosts" isAbstract="YES" syncable="YES">
         <relationship name="posts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Post" inverseName="contained_in" inverseEntity="Post" syncable="YES"/>
     </entity>
@@ -21,6 +24,12 @@
         <attribute name="remainingMedicine" optional="YES" attributeType="Integer 64" defaultValueString="0.0" syncable="YES"/>
         <relationship name="registries" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Registry" inverseName="medicine" inverseEntity="Registry" syncable="YES"/>
     </entity>
+    <entity name="MVFStatement" representedClassName="malaria_ios.RFQuestion" syncable="YES">
+        <attribute name="correctAnswer" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contained_in" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="CollectionMVFStatements" inverseName="statements" inverseEntity="CollectionMVFStatements" syncable="YES"/>
+    </entity>
+    <entity name="MVFStatements" representedClassName="malaria_ios.RFQuestions" parentEntity="CollectionMVFStatements" syncable="YES"/>
     <entity name="Post" representedClassName="malaria_ios.Post" syncable="YES">
         <attribute name="created_at" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
@@ -64,8 +73,11 @@
         <element name="Posts" positionX="-270" positionY="387" width="128" height="45"/>
         <element name="Registry" positionX="214" positionY="15" width="128" height="90"/>
         <element name="RFQuestion" positionX="214" positionY="243" width="128" height="103"/>
-        <element name="RFQuestions" positionX="45" positionY="414" width="128" height="45"/>
+        <element name="RFQuestions" positionX="45" positionY="360" width="128" height="45"/>
         <element name="Trip" positionX="-396" positionY="-18" width="128" height="135"/>
         <element name="TripHistory" positionX="-468" positionY="177" width="128" height="75"/>
+        <element name="CollectionMVFStatements" positionX="43" positionY="432" width="128" height="58"/>
+        <element name="MVFStatement" positionX="223" positionY="432" width="128" height="88"/>
+        <element name="MVFStatements" positionX="45" positionY="524" width="128" height="43"/>
     </elements>
 </model>

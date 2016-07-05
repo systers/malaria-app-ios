@@ -4,8 +4,8 @@ class RapidFireGame: Game {
   
   var entries: [RapidFireGameEntry] = []
   
-  static let name = "Rapid Fire"
-  static let rules = "- Answer questions quickly, under time pressure.\n\n"
+  private static let name = "Rapid Fire"
+  private static let rules = "- Answer questions quickly, under time pressure.\n\n"
     + "- Score Achievement Points for every 3 correct answers you give."
   
   init() {

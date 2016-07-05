@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -182,6 +183,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jA7-QC-0Vu">
                                 <rect key="frame" x="20" y="191" width="560" height="24.5"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -739,18 +741,226 @@
                         <outlet property="gameDescriptionLabel" destination="IhX-cC-ZjO" id="yGT-4J-dJr"/>
                         <outlet property="gameTitleLabel" destination="ZA3-EV-igJ" id="dv2-2E-jxR"/>
                         <segue destination="vA5-h3-axR" kind="show" identifier="Show Rapid Fire" id="Yqt-VR-Ska"/>
+                        <segue destination="7M5-Sm-ujZ" kind="show" identifier="Show Myth vs. Fact" id="qEW-hG-b9e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jVM-ec-nMt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1001" y="268"/>
         </scene>
+        <!--Myth Vs Fact View Controller-->
+        <scene sceneID="IKj-Ek-YA6">
+            <objects>
+                <viewController id="7M5-Sm-ujZ" customClass="MythVsFactViewController" customModule="malaria_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VpF-Il-qWx"/>
+                        <viewControllerLayoutGuide type="bottom" id="1iH-99-WaA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kRv-pZ-g5m">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="PeaceCorpsLogoBold" translatesAutoresizingMaskIntoConstraints="NO" id="fDc-wR-3qy" userLabel="Logo">
+                                <rect key="frame" x="20" y="41" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="0tK-uh-L50"/>
+                                    <constraint firstAttribute="height" constant="55" id="e4p-Ke-bRG"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UM8-bT-xHG">
+                                <rect key="frame" x="20" y="221" width="560" height="34"/>
+                                <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvo-ka-gGD">
+                                <rect key="frame" x="20" y="116" width="66" height="20"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCK-Za-NIx">
+                                <rect key="frame" x="20" y="305" width="560" height="34"/>
+                                <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWW-MS-eqw">
+                                <rect key="frame" x="20" y="211" width="560" height="33"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="23"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="dnl-D3-W8R" appends="YES" id="dtt-B7-TxN"/>
+                                </connections>
+                            </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bD-1g-kXh">
+                                <rect key="frame" x="20" y="263" width="560" height="34"/>
+                                <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggj-G5-0Cf">
+                                <rect key="frame" x="217" y="525" width="167" height="55"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
+                                <state key="normal" title="End Game" backgroundImage="GenerateTripButton">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="endGamePressed:" destination="7M5-Sm-ujZ" eventType="touchUpInside" id="BEn-aK-fQr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Statement 1 / 66" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOg-1D-p1r">
+                                <rect key="frame" x="20" y="141" width="137" height="20"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="myth Vs. Fact" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="GoW-aM-tXG" userLabel="Title">
+                                <rect key="frame" x="197" y="41" width="207" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="207" id="3ZQ-Cj-YcQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="37"/>
+                                <color key="textColor" red="0.4378715158" green="0.32177186009999997" blue="0.2744835913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="3ZQ-Cj-YcQ"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Yes" translatesAutoresizingMaskIntoConstraints="NO" id="Yax-f2-U7k">
+                                <rect key="frame" x="169" y="382" width="105" height="104"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="104" id="Axh-UQ-K7l"/>
+                                    <constraint firstAttribute="width" constant="105" id="veM-gY-4vl"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="No" translatesAutoresizingMaskIntoConstraints="NO" id="hc2-vB-KaP">
+                                <rect key="frame" x="325" y="382" width="105" height="104"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="3LU-N1-CfZ"/>
+                                    <constraint firstAttribute="height" constant="104" id="c5O-sb-Ckl"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hc2-vB-KaP" firstAttribute="leading" secondItem="Yax-f2-U7k" secondAttribute="trailing" constant="50" id="3Wk-nR-zee"/>
+                            <constraint firstItem="CCK-Za-NIx" firstAttribute="width" secondItem="UM8-bT-xHG" secondAttribute="width" id="3vo-AV-6J6"/>
+                            <constraint firstItem="hc2-vB-KaP" firstAttribute="height" secondItem="Yax-f2-U7k" secondAttribute="height" id="4kN-Am-4W9"/>
+                            <constraint firstItem="bvo-ka-gGD" firstAttribute="centerX" secondItem="kRv-pZ-g5m" secondAttribute="centerX" id="61t-kP-gYi"/>
+                            <constraint firstItem="bvo-ka-gGD" firstAttribute="top" secondItem="HWW-MS-eqw" secondAttribute="bottom" constant="5" id="AUY-7m-xhX"/>
+                            <constraint firstItem="UM8-bT-xHG" firstAttribute="top" secondItem="HWW-MS-eqw" secondAttribute="bottom" constant="30" id="Byn-dy-e7D"/>
+                            <constraint firstItem="ggj-G5-0Cf" firstAttribute="top" secondItem="hc2-vB-KaP" secondAttribute="bottom" constant="39" id="DtU-H6-m4T"/>
+                            <constraint firstItem="bOg-1D-p1r" firstAttribute="top" secondItem="bvo-ka-gGD" secondAttribute="bottom" constant="5" id="FEy-9i-wSf"/>
+                            <constraint firstItem="2bD-1g-kXh" firstAttribute="width" secondItem="UM8-bT-xHG" secondAttribute="width" id="FU5-tA-Vyq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HWW-MS-eqw" secondAttribute="trailing" id="Mmu-cC-I1n"/>
+                            <constraint firstItem="fDc-wR-3qy" firstAttribute="top" secondItem="VpF-Il-qWx" secondAttribute="bottom" constant="21" id="QWp-1u-H9i"/>
+                            <constraint firstItem="hc2-vB-KaP" firstAttribute="centerX" secondItem="kRv-pZ-g5m" secondAttribute="centerX" constant="77" id="Sd6-GL-TNq"/>
+                            <constraint firstItem="ggj-G5-0Cf" firstAttribute="top" secondItem="Yax-f2-U7k" secondAttribute="bottom" constant="39" id="TOu-Hf-2yT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UM8-bT-xHG" secondAttribute="trailing" id="Ux7-LF-10f"/>
+                            <constraint firstItem="Yax-f2-U7k" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kRv-pZ-g5m" secondAttribute="leadingMargin" constant="15" id="XnD-Le-slI"/>
+                            <constraint firstItem="UM8-bT-xHG" firstAttribute="centerX" secondItem="kRv-pZ-g5m" secondAttribute="centerX" id="ZwN-Ae-vVo"/>
+                            <constraint firstItem="CCK-Za-NIx" firstAttribute="top" secondItem="2bD-1g-kXh" secondAttribute="bottom" constant="8" id="a31-0k-E0F"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="HWW-MS-eqw" secondAttribute="leading" id="cdc-vI-dkk"/>
+                            <constraint firstItem="fDc-wR-3qy" firstAttribute="top" secondItem="GoW-aM-tXG" secondAttribute="top" id="e9E-hc-w7a"/>
+                            <constraint firstItem="GoW-aM-tXG" firstAttribute="bottom" secondItem="fDc-wR-3qy" secondAttribute="bottom" id="fB0-FB-Vby"/>
+                            <constraint firstItem="HWW-MS-eqw" firstAttribute="top" secondItem="bOg-1D-p1r" secondAttribute="bottom" constant="50" id="gjB-Vu-P6k"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="bOg-1D-p1r" secondAttribute="leading" id="iT9-cC-ZbW"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="hc2-vB-KaP" secondAttribute="trailing" constant="15" id="idh-ou-vND"/>
+                            <constraint firstItem="Yax-f2-U7k" firstAttribute="centerX" secondItem="kRv-pZ-g5m" secondAttribute="centerX" constant="70" id="jF5-cu-L81"/>
+                            <constraint firstItem="ggj-G5-0Cf" firstAttribute="centerX" secondItem="kRv-pZ-g5m" secondAttribute="centerX" id="kaT-l6-99C"/>
+                            <constraint firstItem="1iH-99-WaA" firstAttribute="top" secondItem="ggj-G5-0Cf" secondAttribute="bottom" constant="20" id="lLe-rW-5pF"/>
+                            <constraint firstItem="bvo-ka-gGD" firstAttribute="top" secondItem="fDc-wR-3qy" secondAttribute="bottom" constant="20" id="lSf-1u-qkh"/>
+                            <constraint firstItem="CCK-Za-NIx" firstAttribute="leading" secondItem="2bD-1g-kXh" secondAttribute="leading" id="mLk-DU-Nwl"/>
+                            <constraint firstItem="2bD-1g-kXh" firstAttribute="top" secondItem="UM8-bT-xHG" secondAttribute="bottom" constant="8" id="oQ9-PQ-vkC"/>
+                            <constraint firstItem="2bD-1g-kXh" firstAttribute="leading" secondItem="UM8-bT-xHG" secondAttribute="leading" id="qVf-rn-zu2"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="UM8-bT-xHG" secondAttribute="leading" id="qbc-h4-Gda"/>
+                            <constraint firstItem="fDc-wR-3qy" firstAttribute="leading" secondItem="kRv-pZ-g5m" secondAttribute="leadingMargin" id="r0z-0h-T0g"/>
+                            <constraint firstItem="Yax-f2-U7k" firstAttribute="centerY" secondItem="hc2-vB-KaP" secondAttribute="centerY" id="uTS-yx-wzc"/>
+                            <constraint firstItem="Yax-f2-U7k" firstAttribute="width" secondItem="hc2-vB-KaP" secondAttribute="width" id="uhT-zo-bYh"/>
+                            <constraint firstItem="bvo-ka-gGD" firstAttribute="leading" secondItem="fDc-wR-3qy" secondAttribute="leading" id="vHN-uD-gbY"/>
+                            <constraint firstAttribute="centerX" secondItem="GoW-aM-tXG" secondAttribute="centerX" constant="-0.5" id="vqq-to-UFg"/>
+                            <constraint firstItem="2bD-1g-kXh" firstAttribute="centerY" secondItem="kRv-pZ-g5m" secondAttribute="centerY" id="wwD-FK-2uC"/>
+                            <constraint firstItem="HWW-MS-eqw" firstAttribute="top" secondItem="bvo-ka-gGD" secondAttribute="bottom" constant="20" id="yah-e6-UWc"/>
+                            <constraint firstItem="GoW-aM-tXG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fDc-wR-3qy" secondAttribute="trailing" constant="5" id="zYV-xG-akn"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="UM8-bT-xHG"/>
+                                <exclude reference="CCK-Za-NIx"/>
+                                <exclude reference="2bD-1g-kXh"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="wwD-FK-2uC"/>
+                                <exclude reference="61t-kP-gYi"/>
+                                <exclude reference="AUY-7m-xhX"/>
+                                <exclude reference="yah-e6-UWc"/>
+                                <exclude reference="jF5-cu-L81"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="Vph-OD-TJX"/>
+                    <connections>
+                        <outlet property="noView" destination="hc2-vB-KaP" id="Lig-h0-XZb"/>
+                        <outlet property="scoreLabel" destination="bvo-ka-gGD" id="BtB-tj-AlT"/>
+                        <outlet property="statementLabel" destination="HWW-MS-eqw" id="uT5-24-gGo"/>
+                        <outlet property="statementNumberLabel" destination="bOg-1D-p1r" id="m2a-h2-sIs"/>
+                        <outlet property="yesView" destination="Yax-f2-U7k" id="2rX-5Z-IoH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QnB-lK-YFO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="dnl-D3-W8R">
+                    <connections>
+                        <action selector="pan:" destination="7M5-Sm-ujZ" id="heb-fx-Ypc"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-241" y="808"/>
+        </scene>
     </scenes>
     <resources>
         <image name="GenerateTripButton" width="167" height="55"/>
         <image name="InfoHubButton" width="147" height="82"/>
+        <image name="No" width="105" height="104"/>
         <image name="PeaceCorpsLogoBold" width="317" height="317"/>
         <image name="TabInfoHubIcon" width="55" height="56"/>
         <image name="TabInfoHubIconUnselected" width="55" height="56"/>
+        <image name="Yes" width="105" height="104"/>
     </resources>
 </document>

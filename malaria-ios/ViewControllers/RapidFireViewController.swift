@@ -5,7 +5,6 @@ class RapidFireViewController: GameViewController {
   @IBOutlet weak var questionLabel: UILabel!
   @IBOutlet var answerButtons: [UIButton]!
   @IBOutlet weak var countDownLabel: UILabel!
-  @IBOutlet weak var scoreLabel: UILabel!
   @IBOutlet weak var questionNumberLabel: UILabel!
   
   @IBInspectable let TimerBlinkAtSecond: Int = 3
@@ -18,17 +17,16 @@ class RapidFireViewController: GameViewController {
   
   private var timer: NSTimer!
   
-  private var currentLevel = 0 {
+  override var currentLevel: Int {
     didSet {
       // Check if we ran out of questions
-      if rapidFireGame!.entries.count == currentLevel {
+      if currentLevel >= rapidFireGame!.entries.count {
         endGame()
         return
       }
       
       // Set the question
       questionLabel.text = rapidFireGame?.entries[currentLevel].question
-      
       questionNumberLabel.text = "Question \(currentLevel + 1) / \(rapidFireGame!.entries.count)"
       
       // Set the answer buttons
@@ -42,37 +40,15 @@ class RapidFireViewController: GameViewController {
     }
   }
   
-  private var userScore: Int = 0 {
-    didSet {
-      scoreLabel.text = "Score: \(userScore)"
-    }
-  }
-  
   private var count = 5 {
     didSet {
       countDownLabel.text = count == 1 ? "\(count) second" : "\(count) seconds"
     }
   }
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    // Set background image
-    view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
-  }
-  
   override func viewWillAppear(animated: Bool) {
-    super.viewWillAppear(animated)
-    
     rapidFireGame = game as! RapidFireGame
-    
-    // Checks if we have any questions available to start the game
-    if rapidFireGame!.entries.count == 0 {
-      stopGame()
-      return
-    }
-    
-    startGame()
+    super.viewWillAppear(animated)
   }
   
   func updateTimer() {
@@ -88,49 +64,14 @@ class RapidFireViewController: GameViewController {
     count -= 1
   }
   
-  func startGame() {
-    currentLevel = 0
+  override func startGame() {
+    super.startGame()
     count = TimerMaxValue
-    userScore = 0
   }
   
-  func stopGame() {
-    let (title, message) = (NoRFEntries.title, NoRFEntries.message)
-    
-    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-    
-    let alertAction = UIAlertAction(title: "Back", style: UIAlertActionStyle.Default) {
-      (action:UIAlertAction!) -> Void in
-      
-      self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    alert.addAction(alertAction)
-    
-    presentViewController(alert, animated: true, completion: nil)
-  }
-  
-  func endGame() {
-    let (title, message) = (GameOverText.title, GameOverText.message)
-    
-    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-    
-    let backAction = UIAlertAction(title: "Back", style: UIAlertActionStyle.Default) {
-      (action:UIAlertAction!) -> Void in
-      
-      self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    alert.addAction(backAction)
-
-    let restartGameAction = UIAlertAction(title: "Restart", style: UIAlertActionStyle.Default) {
-      (action:UIAlertAction!) -> Void in
-      self.startGame()
-    }
-    
-    alert.addAction(restartGameAction)
-    
-    presentViewController(alert, animated: true, completion: nil)
+  override func endGame() {
+    super.endGame()
+    timer.invalidate()
   }
   
   func showWrongAnswerAnimation() {
@@ -168,30 +109,7 @@ class RapidFireViewController: GameViewController {
     let correctAnswer = rapidFireGame?.entries[currentLevel].correctAnswer == sender.tag
     nextQuestion(correctAnswer)
   }
-  
-  @IBAction func endGamePressed(sender: UIButton) {
-    self.dismissViewControllerAnimated(true, completion: nil)
-  }
-}
 
-// MARK: Messages
-
-extension RapidFireViewController {
-  typealias AlertText = (title: String, message: String)
-  
-  // Based on the rules, we need to divide the Rapid Fire score by 3 to get the
-  // achievements points earned.
-  private var GameOverText: AlertText {
-    return ("Game over",
-            "You gained \(userScore / 3) achievement "
-              + ( ((userScore / 3) == 1) ? "point." : "points.")
-    )
-  }
-  
-  private var NoRFEntries: AlertText {
-    return ("Couldn't start game",
-            "There was a problem fetching the content for this game.")
-  }
 }
 
 // MARK: Label Extension

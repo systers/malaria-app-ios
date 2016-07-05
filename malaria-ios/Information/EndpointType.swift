@@ -43,8 +43,9 @@ public enum EndpointType : String{
     case Indicators = "indicators"
     case Objectives = "objectives"
     case Goals = "goals"
-    case RapidFireQuestions = "questions"
-    
+    case RapidFireQuestions = "rf-questions"
+    case MVFStatements = "mvf-statements"
+  
     /// Returns the full path to the endpoint
     ///
     /// - returns: `String`: If BaseUrl returns the BaseUrl, fullpath otherwise

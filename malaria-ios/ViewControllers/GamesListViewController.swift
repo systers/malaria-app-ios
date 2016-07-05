@@ -4,7 +4,7 @@ class GamesListViewController: UIViewController {
   @IBOutlet weak var collectionView: UICollectionView!
   
   // New games are added just by creating them and adding an instance to this array
-  private var games: [Game] = [RapidFireGame()]
+  private var games: [Game] = [RapidFireGame(), MythVsFactGame()]
   
   override func viewDidLoad() {
     super.viewDidLoad()
