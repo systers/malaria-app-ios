@@ -20,11 +20,11 @@ class RapidFireViewController: GameViewController {
   override var currentLevel: Int {
     didSet {
       // Check if we ran out of questions
-      if currentLevel >= rapidFireGame!.entries.count {
+      if currentLevel >= game!.numberOfLevels {
         endGame()
         return
       }
-      
+
       // Set the question
       questionLabel.text = rapidFireGame?.entries[currentLevel].question
       questionNumberLabel.text = "Question \(currentLevel + 1) / \(rapidFireGame!.entries.count)"
@@ -46,11 +46,6 @@ class RapidFireViewController: GameViewController {
     }
   }
   
-  override func viewWillAppear(animated: Bool) {
-    rapidFireGame = game as! RapidFireGame
-    super.viewWillAppear(animated)
-  }
-  
   func updateTimer() {
     if count == 0 {
       nextQuestion(false)
@@ -58,10 +53,18 @@ class RapidFireViewController: GameViewController {
     }
     
     if count <= TimerBlinkAtSecond {
-      countDownLabel.blink()
+      countDownLabel.blink(withRate: Constants.RapidFireGame.RemainingSecondsBlinkRate,
+                           completion: { _ in self.countDownLabel?.alpha = 1.0 })
     }
     
     count -= 1
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    
+    rapidFireGame = game as! RapidFireGame
+    
+    super.viewWillAppear(animated)
   }
   
   override func startGame() {
@@ -77,12 +80,15 @@ class RapidFireViewController: GameViewController {
   func showWrongAnswerAnimation() {
     let originalColor = questionLabel.textColor
     
+    view.userInteractionEnabled = false
+    
     let animationBlock = { () -> Void in
       self.questionLabel.textColor = UIColor.redColor()
     }
     
     let completionBlock = { (complete: Bool) in
       self.questionLabel.textColor = originalColor
+      self.view.userInteractionEnabled = true
     }
     
     UIView.transitionWithView(questionLabel, duration: 0.5,
@@ -110,19 +116,4 @@ class RapidFireViewController: GameViewController {
     nextQuestion(correctAnswer)
   }
 
-}
-
-// MARK: Label Extension
-
-extension UILabel {
-  
-  func blink() {
-    self.alpha = 1.0;
-    UIView.animateWithDuration(Constants.RapidFireGame.RemainingSecondsBlinkRate,
-
-      delay: 0.0,
-      options: [.CurveEaseInOut, .Autoreverse],
-      animations: { [weak self] in self?.alpha = 0.0 },
-      completion: { [weak self] _ in self?.alpha = 1.0 })
-  }
 }

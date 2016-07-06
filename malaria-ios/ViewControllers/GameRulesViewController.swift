@@ -11,13 +11,13 @@ class GameRulesViewController : UIViewController {
   var game: Game!
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    print(segue.destinationViewController)
     let gameVC = segue.destinationViewController as! GameViewController
     gameVC.game = game
   }
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
-    
     gameTitleLabel.text = self.game.name
     gameDescriptionLabel.text = self.game.rules
   }

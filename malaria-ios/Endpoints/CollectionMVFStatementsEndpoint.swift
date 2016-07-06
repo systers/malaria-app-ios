@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
+// Collection for the Myth vs. Fact Endpoint
 public class CollectionMVFStatementsEndpoint : Endpoint {
   public var path: String { fatalError("Please specify path") }
   

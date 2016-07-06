@@ -1,17 +1,18 @@
 import UIKit
 
-// An abstract class that makes sure each game conforms to it
+// An abstract class that makes sure each game conforms to it.
 class GameViewController: UIViewController {
   
   @IBOutlet weak var scoreLabel: UILabel!
+
+  var game: Game!
 
   var userScore: Int = 0 {
     didSet {
       scoreLabel.text = "Score: \(userScore)"
     }
   }
-
-  var game: Game!
+  
   var currentLevel: Int = 0
   
   override func viewDidLoad() {
@@ -90,13 +91,29 @@ extension GameViewController {
   // achievements points earned.
   private var GameOverText: AlertText {
     return ("Game over",
-            "You gained \(userScore / 3) achievement "
-              + ( ((userScore / 3) == 1) ? "point." : "points.")
+            "You gained \(userScore) achievement "
+              + ( ((userScore) == 1) ? "point." : "points.")
     )
   }
   
   private var NoRFEntries: AlertText {
     return ("Couldn't start game",
             "There was a problem fetching the content for this game.")
+  }
+}
+
+
+// MARK: UIView Extension
+
+extension UIView {
+  
+  // Make views blink at a given rate
+  func blink(withRate rate: Double, completion: (Bool) -> Void) {
+    self.alpha = 1.0;
+    UIView.animateWithDuration(rate,
+                               delay: 0.0,
+                               options: [.CurveEaseInOut, .Autoreverse],
+                               animations: { [weak self] in self?.alpha = 0.0 },
+                               completion: completion)
   }
 }
