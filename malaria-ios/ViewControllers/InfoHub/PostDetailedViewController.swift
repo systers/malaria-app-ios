@@ -4,9 +4,11 @@ import UIKit
 class PostDetailedViewController : UIViewController{
     @IBOutlet weak var postTitle: UILabel!
     @IBOutlet weak var postDescription: UITextView!
+  
     var postsArray: [Post] = []
     var currentIndex: NSInteger = 0
     var post: Post!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         postDescription.clipsToBounds = true

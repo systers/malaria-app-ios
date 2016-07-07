@@ -4,18 +4,26 @@ class RapidFireGame: Game {
   
   var entries: [RapidFireGameEntry] = []
   
-  static let name = "Rapid Fire"
-  static let rules = "- Answer questions quickly, under time pressure.\n\n"
-    + "- Score Achievement Points for every 3 correct answers you give."
+  private static let name = "Rapid Fire"
+  private static let rules = "- Answer questions quickly, under time pressure.\n\n"
+    + "- Score Achievement Points for every correct answer you give."
   
   init() {
-    let entry1 = RapidFireGameEntry(question: "Question 1 (answer 2)", answers: ["Answer 1", "Answer 2", "Answer 3"], correctAnswer: 1)
-    let entry2 = RapidFireGameEntry(question: "Question 2 (answer 1)", answers: ["Answer 1", "Answer 2", "Answer 3"], correctAnswer: 0)
-    let entry3 = RapidFireGameEntry(question: "Question 3 (answer 3)", answers: ["Answer 1", "Answer 2", "Answer 3"], correctAnswer: 2)
+    let entry1 = RapidFireGameEntry(question: "Question 1 (answer 2)",
+                                    answers: ["Answer 1", "Answer 2", "Answer 3"],
+                                    correctAnswer: 1)
+    let entry2 = RapidFireGameEntry(question: "Question 2 (answer 1)",
+                                    answers: ["Answer 1", "Answer 2", "Answer 3"],
+                                    correctAnswer: 0)
+    let entry3 = RapidFireGameEntry(question: "Question 3 (answer 3)",
+                                    answers: ["Answer 1", "Answer 2", "Answer 3"],
+                                    correctAnswer: 2)
     
     entries.appendContentsOf([entry1, entry2, entry3])
     
-    super.init(numberOfLevels: entries.count, name: RapidFireGame.name, rules: RapidFireGame.rules)
+    super.init(numberOfLevels: entries.count,
+               name: RapidFireGame.name,
+               rules: RapidFireGame.rules)
   }
 }
 

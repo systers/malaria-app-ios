@@ -8,5 +8,5 @@ import CoreData
 
 public class CollectionRFQuestions: NSManagedObject {
   
-  @NSManaged public var posts: NSSet
+  @NSManaged public var questions: NSSet
 }

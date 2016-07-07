@@ -108,6 +108,13 @@
 		680BF7711D26E4890021353F /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680BF7701D26E4890021353F /* AchievementsViewController.swift */; };
 		683468CF1D2976CB000F98EA /* GameRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683468CE1D2976CB000F98EA /* GameRulesViewController.swift */; };
 		6852744B1D26D011000A8D96 /* InfoHub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6852744A1D26D011000A8D96 /* InfoHub.storyboard */; };
+		685569A31D2AF254006C9F7A /* MythVsFactGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685569A21D2AF254006C9F7A /* MythVsFactGame.swift */; };
+		685569A51D2AF375006C9F7A /* MythVsFactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685569A41D2AF375006C9F7A /* MythVsFactViewController.swift */; };
+		685569B91D2C186C006C9F7A /* CollectionMVFStatementsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685569B81D2C186C006C9F7A /* CollectionMVFStatementsEndpoint.swift */; };
+		685569BB1D2C188C006C9F7A /* MVFStatementsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685569BA1D2C188C006C9F7A /* MVFStatementsEndpoint.swift */; };
+		685569BD1D2C1915006C9F7A /* CollectionMVFStatements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685569BC1D2C1915006C9F7A /* CollectionMVFStatements.swift */; };
+		685569BF1D2C191B006C9F7A /* MVFQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685569BE1D2C191B006C9F7A /* MVFQuestions.swift */; };
+		685569C11D2C1925006C9F7A /* MVFQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685569C01D2C1925006C9F7A /* MVFQuestion.swift */; };
 		6873D0491D23003A00775757 /* GamesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6873D0481D23003A00775757 /* GamesListViewController.swift */; };
 		688240D21D243D3100C63F6C /* RapidFireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688240D11D243D3100C63F6C /* RapidFireViewController.swift */; };
 		688D0DC41D2ADE680024DD13 /* PillScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 688D0DC31D2ADE680024DD13 /* PillScreens.storyboard */; };
@@ -353,6 +360,13 @@
 		680BF7701D26E4890021353F /* AchievementsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
 		683468CE1D2976CB000F98EA /* GameRulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRulesViewController.swift; sourceTree = "<group>"; };
 		6852744A1D26D011000A8D96 /* InfoHub.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = InfoHub.storyboard; path = ../../InfoHub.storyboard; sourceTree = "<group>"; };
+		685569A21D2AF254006C9F7A /* MythVsFactGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MythVsFactGame.swift; sourceTree = "<group>"; };
+		685569A41D2AF375006C9F7A /* MythVsFactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MythVsFactViewController.swift; sourceTree = "<group>"; };
+		685569B81D2C186C006C9F7A /* CollectionMVFStatementsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionMVFStatementsEndpoint.swift; sourceTree = "<group>"; };
+		685569BA1D2C188C006C9F7A /* MVFStatementsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVFStatementsEndpoint.swift; sourceTree = "<group>"; };
+		685569BC1D2C1915006C9F7A /* CollectionMVFStatements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionMVFStatements.swift; sourceTree = "<group>"; };
+		685569BE1D2C191B006C9F7A /* MVFQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVFQuestions.swift; sourceTree = "<group>"; };
+		685569C01D2C1925006C9F7A /* MVFQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVFQuestion.swift; sourceTree = "<group>"; };
 		6873D0481D23003A00775757 /* GamesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesListViewController.swift; sourceTree = "<group>"; };
 		688240D11D243D3100C63F6C /* RapidFireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidFireViewController.swift; sourceTree = "<group>"; };
 		688D0DC31D2ADE680024DD13 /* PillScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PillScreens.storyboard; sourceTree = "<group>"; };
@@ -479,6 +493,7 @@
 			children = (
 				200C721F1B40368600998100 /* Endpoint.swift */,
 				68BEC3331D27BF0A00FCFAF5 /* Info Hub Posts */,
+				685569B71D2C184C006C9F7A /* Myth vs. Fact */,
 				68BEC3321D27BEFE00FCFAF5 /* Rapid Fire */,
 			);
 			path = Endpoints;
@@ -546,7 +561,8 @@
 		200C72451B40368600998100 /* RestAPI */ = {
 			isa = PBXGroup;
 			children = (
-				68BEC32C1D270CE900FCFAF5 /* Rapid Fire Questions */,
+				685569AA1D2C10C5006C9F7A /* Myth vs. Fact */,
+				68BEC32C1D270CE900FCFAF5 /* Rapid Fire */,
 				68BEC32B1D270CDF00FCFAF5 /* Posts */,
 			);
 			path = RestAPI;
@@ -748,12 +764,41 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		685569971D2AF140006C9F7A /* Myth vs. Fact */ = {
+			isa = PBXGroup;
+			children = (
+				685569A21D2AF254006C9F7A /* MythVsFactGame.swift */,
+				685569A41D2AF375006C9F7A /* MythVsFactViewController.swift */,
+			);
+			name = "Myth vs. Fact";
+			sourceTree = "<group>";
+		};
+		685569AA1D2C10C5006C9F7A /* Myth vs. Fact */ = {
+			isa = PBXGroup;
+			children = (
+				685569BC1D2C1915006C9F7A /* CollectionMVFStatements.swift */,
+				685569BE1D2C191B006C9F7A /* MVFQuestions.swift */,
+				685569C01D2C1925006C9F7A /* MVFQuestion.swift */,
+			);
+			name = "Myth vs. Fact";
+			sourceTree = "<group>";
+		};
+		685569B71D2C184C006C9F7A /* Myth vs. Fact */ = {
+			isa = PBXGroup;
+			children = (
+				685569B81D2C186C006C9F7A /* CollectionMVFStatementsEndpoint.swift */,
+				685569BA1D2C188C006C9F7A /* MVFStatementsEndpoint.swift */,
+			);
+			name = "Myth vs. Fact";
+			sourceTree = "<group>";
+		};
 		6873D03D1D22FFF800775757 /* Games */ = {
 			isa = PBXGroup;
 			children = (
 				68043E301D2304D700D5DBF3 /* Game.swift */,
 				68FCE59A1D2984D900D8B44B /* GameViewController.swift */,
 				68EE72BB1D26F4B2004ED3AA /* Rapid Fire */,
+				685569971D2AF140006C9F7A /* Myth vs. Fact */,
 			);
 			name = Games;
 			sourceTree = "<group>";
@@ -800,14 +845,14 @@
 			name = Posts;
 			sourceTree = "<group>";
 		};
-		68BEC32C1D270CE900FCFAF5 /* Rapid Fire Questions */ = {
+		68BEC32C1D270CE900FCFAF5 /* Rapid Fire */ = {
 			isa = PBXGroup;
 			children = (
 				68BEC3301D270D6700FCFAF5 /* CollectionRFQuestions.swift */,
 				68BEC3271D270C3000FCFAF5 /* RFQuestions.swift */,
 				68BEC32E1D270D5700FCFAF5 /* RFQuestion.swift */,
 			);
-			name = "Rapid Fire Questions";
+			name = "Rapid Fire";
 			sourceTree = "<group>";
 		};
 		68BEC3321D27BEFE00FCFAF5 /* Rapid Fire */ = {
@@ -1277,6 +1322,7 @@
 				200A18D51B64F55F00EC2A65 /* InfoHubViewController.swift in Sources */,
 				20FC56FB1B72CA1200D51801 /* UITabBarController.swift in Sources */,
 				20FC56C31B72C1BC00D51801 /* CalendarSettings.swift in Sources */,
+				685569A31D2AF254006C9F7A /* MythVsFactGame.swift in Sources */,
 				200A18C91B64F4C400EC2A65 /* MonthAdherenceCell.swift in Sources */,
 				200C727C1B40368600998100 /* Endpoint.swift in Sources */,
 				200C72F21B40368600998100 /* NSManagedObject.swift in Sources */,
@@ -1303,6 +1349,7 @@
 				68BEC3261D270BA000FCFAF5 /* RFQuestionsEndpoint.swift in Sources */,
 				200C72D21B40368600998100 /* Post.swift in Sources */,
 				200C72EE1B40368600998100 /* Int.swift in Sources */,
+				685569BB1D2C188C006C9F7A /* MVFStatementsEndpoint.swift in Sources */,
 				200C72A41B40368600998100 /* RegistriesManager.swift in Sources */,
 				200C728A1B40368600998100 /* PostsEndpoint.swift in Sources */,
 				200C72E81B40368600998100 /* TripExtension.swift in Sources */,
@@ -1330,13 +1377,16 @@
 				68BEC32F1D270D5700FCFAF5 /* RFQuestion.swift in Sources */,
 				20FC56F91B72C9FB00D51801 /* UIView.swift in Sources */,
 				68043E311D2304D700D5DBF3 /* Game.swift in Sources */,
+				685569BD1D2C1915006C9F7A /* CollectionMVFStatements.swift in Sources */,
 				68E62F751D14675600743214 /* UserProfilePillTableViewCell.swift in Sources */,
 				68BEC3281D270C3000FCFAF5 /* RFQuestions.swift in Sources */,
 				6873D0491D23003A00775757 /* GamesListViewController.swift in Sources */,
+				685569A51D2AF375006C9F7A /* MythVsFactViewController.swift in Sources */,
 				68043E3D1D23061A00D5DBF3 /* RapidFireGame.swift in Sources */,
 				E4A66DB61D09A5DB008D9B40 /* Reachability.swift in Sources */,
 				311E38EA1CA0DC400051B14E /* SocialShareable.swift in Sources */,
 				200C72F81B40368600998100 /* Logger.swift in Sources */,
+				685569BF1D2C191B006C9F7A /* MVFQuestions.swift in Sources */,
 				200C72E61B40368600998100 /* Trip.swift in Sources */,
 				20FC56F31B72C9AF00D51801 /* UIStoryboard.swift in Sources */,
 				19B10C671C8F2A7F003D4236 /* Global.swift in Sources */,
@@ -1345,6 +1395,7 @@
 				680BF7651D26E2BF0021353F /* InfoHubPageManagerViewController.swift in Sources */,
 				688240D21D243D3100C63F6C /* RapidFireViewController.swift in Sources */,
 				209F60B81B6E2AB300EDA461 /* MedicineFrontEndExtension.swift in Sources */,
+				685569C11D2C1925006C9F7A /* MVFQuestion.swift in Sources */,
 				200A18C31B64F48E00EC2A65 /* PillsStatsViewController.swift in Sources */,
 				200C72C21B40368600998100 /* CollectionPosts.swift in Sources */,
 				311E38EC1CA0DC510051B14E /* DailyStatsTableViewController+Extensions.swift in Sources */,
@@ -1357,6 +1408,7 @@
 				2027E94F1BADC71D00DA55A4 /* Array.swift in Sources */,
 				200C72EC1B40368600998100 /* CoreDataStore.swift in Sources */,
 				200A18E11B64F61000EC2A65 /* PostDetailedViewController.swift in Sources */,
+				685569B91D2C186C006C9F7A /* CollectionMVFStatementsEndpoint.swift in Sources */,
 				200A18D71B64F58F00EC2A65 /* DailyStatsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
