@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="4" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Xcode 4.3">
+    <entity name="Achievement" representedClassName=".Achievement" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isUnlocked" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tag" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="properties" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="AchievementProperty" inverseName="achievement" inverseEntity="AchievementProperty" syncable="YES"/>
+    </entity>
+    <entity name="AchievementProperty" representedClassName=".AchievementProperty" syncable="YES">
+        <attribute name="activation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="activationValue" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="currentValue" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="initialValue" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="achievement" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Achievement" inverseName="properties" inverseEntity="Achievement" syncable="YES"/>
+    </entity>
     <entity name="CollectionMVFStatements" representedClassName="malaria_ios.CollectionPosts" isAbstract="YES" syncable="YES">
         <relationship name="statements" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MVFStatement" inverseName="contained_in" inverseEntity="MVFStatement" syncable="YES"/>
     </entity>
@@ -65,19 +80,21 @@
         <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CollectionPosts" positionX="-270" positionY="207" width="128" height="60"/>
+        <element name="Achievement" positionX="-324" positionY="450" width="128" height="120"/>
+        <element name="AchievementProperty" positionX="-137" positionY="447" width="128" height="133"/>
+        <element name="CollectionMVFStatements" positionX="43" positionY="450" width="128" height="58"/>
+        <element name="CollectionPosts" positionX="-297" positionY="180" width="128" height="60"/>
         <element name="CollectionRFQuestions" positionX="43" positionY="207" width="128" height="58"/>
         <element name="Item" positionX="-207" positionY="11" width="128" height="105"/>
         <element name="Medicine" positionX="-63" positionY="9" width="126" height="148"/>
-        <element name="Post" positionX="-101" positionY="201" width="128" height="150"/>
-        <element name="Posts" positionX="-270" positionY="387" width="128" height="45"/>
+        <element name="MVFStatement" positionX="223" positionY="450" width="128" height="88"/>
+        <element name="MVFStatements" positionX="45" positionY="542" width="128" height="45"/>
+        <element name="Post" positionX="-126" positionY="201" width="128" height="150"/>
+        <element name="Posts" positionX="-297" positionY="315" width="128" height="45"/>
         <element name="Registry" positionX="214" positionY="15" width="128" height="90"/>
         <element name="RFQuestion" positionX="214" positionY="243" width="128" height="103"/>
         <element name="RFQuestions" positionX="45" positionY="360" width="128" height="45"/>
         <element name="Trip" positionX="-396" positionY="-18" width="128" height="135"/>
         <element name="TripHistory" positionX="-468" positionY="177" width="128" height="75"/>
-        <element name="CollectionMVFStatements" positionX="43" positionY="432" width="128" height="58"/>
-        <element name="MVFStatement" positionX="223" positionY="432" width="128" height="88"/>
-        <element name="MVFStatements" positionX="45" positionY="524" width="128" height="43"/>
     </elements>
 </model>

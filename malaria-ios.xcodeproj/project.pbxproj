@@ -115,6 +115,8 @@
 		685569BD1D2C1915006C9F7A /* CollectionMVFStatements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685569BC1D2C1915006C9F7A /* CollectionMVFStatements.swift */; };
 		685569BF1D2C191B006C9F7A /* MVFQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685569BE1D2C191B006C9F7A /* MVFQuestions.swift */; };
 		685569C11D2C1925006C9F7A /* MVFQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685569C01D2C1925006C9F7A /* MVFQuestion.swift */; };
+		686B0E111D3ACD0C007C2BE8 /* MedicineAchievementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B0E101D3ACD0C007C2BE8 /* MedicineAchievementManager.swift */; };
+		686B0E1F1D3AD72F007C2BE8 /* TestMedicineAchievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B0E1E1D3AD72F007C2BE8 /* TestMedicineAchievements.swift */; };
 		6873D0491D23003A00775757 /* GamesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6873D0481D23003A00775757 /* GamesListViewController.swift */; };
 		688240D21D243D3100C63F6C /* RapidFireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688240D11D243D3100C63F6C /* RapidFireViewController.swift */; };
 		688D0DC41D2ADE680024DD13 /* PillScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 688D0DC31D2ADE680024DD13 /* PillScreens.storyboard */; };
@@ -123,6 +125,10 @@
 		68BEC32A1D270C9900FCFAF5 /* CollectionRFQuestionsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BEC3291D270C9900FCFAF5 /* CollectionRFQuestionsEndpoint.swift */; };
 		68BEC32F1D270D5700FCFAF5 /* RFQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BEC32E1D270D5700FCFAF5 /* RFQuestion.swift */; };
 		68BEC3311D270D6700FCFAF5 /* CollectionRFQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BEC3301D270D6700FCFAF5 /* CollectionRFQuestions.swift */; };
+		68D7ED251D2EE219002DFE46 /* AchievementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D7ED241D2EE219002DFE46 /* AchievementManager.swift */; };
+		68D7ED381D368640002DFE46 /* AchievementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D7ED371D368640002DFE46 /* AchievementTableViewCell.swift */; };
+		68D7ED541D368DB8002DFE46 /* AchievementProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D7ED501D368DB8002DFE46 /* AchievementProperty.swift */; };
+		68D7ED561D368DB8002DFE46 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D7ED521D368DB8002DFE46 /* Achievement.swift */; };
 		68E62F731D14619A00743214 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F721D14619A00743214 /* UserProfileViewController.swift */; };
 		68E62F751D14675600743214 /* UserProfilePillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F741D14675600743214 /* UserProfilePillTableViewCell.swift */; };
 		68E62F781D191BB800743214 /* PillStatusNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F771D191BB800743214 /* PillStatusNotificationsManager.swift */; };
@@ -367,6 +373,8 @@
 		685569BC1D2C1915006C9F7A /* CollectionMVFStatements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionMVFStatements.swift; sourceTree = "<group>"; };
 		685569BE1D2C191B006C9F7A /* MVFQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVFQuestions.swift; sourceTree = "<group>"; };
 		685569C01D2C1925006C9F7A /* MVFQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVFQuestion.swift; sourceTree = "<group>"; };
+		686B0E101D3ACD0C007C2BE8 /* MedicineAchievementManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineAchievementManager.swift; sourceTree = "<group>"; };
+		686B0E1E1D3AD72F007C2BE8 /* TestMedicineAchievements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMedicineAchievements.swift; sourceTree = "<group>"; };
 		6873D0481D23003A00775757 /* GamesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesListViewController.swift; sourceTree = "<group>"; };
 		688240D11D243D3100C63F6C /* RapidFireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidFireViewController.swift; sourceTree = "<group>"; };
 		688D0DC31D2ADE680024DD13 /* PillScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PillScreens.storyboard; sourceTree = "<group>"; };
@@ -375,6 +383,10 @@
 		68BEC3291D270C9900FCFAF5 /* CollectionRFQuestionsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionRFQuestionsEndpoint.swift; sourceTree = "<group>"; };
 		68BEC32E1D270D5700FCFAF5 /* RFQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFQuestion.swift; sourceTree = "<group>"; };
 		68BEC3301D270D6700FCFAF5 /* CollectionRFQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionRFQuestions.swift; sourceTree = "<group>"; };
+		68D7ED241D2EE219002DFE46 /* AchievementManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementManager.swift; sourceTree = "<group>"; };
+		68D7ED371D368640002DFE46 /* AchievementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementTableViewCell.swift; sourceTree = "<group>"; };
+		68D7ED501D368DB8002DFE46 /* AchievementProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AchievementProperty.swift; path = ../ViewControllers/InfoHub/AchievementProperty.swift; sourceTree = "<group>"; };
+		68D7ED521D368DB8002DFE46 /* Achievement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Achievement.swift; path = ../ViewControllers/InfoHub/Achievement.swift; sourceTree = "<group>"; };
 		68E62F721D14619A00743214 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		68E62F741D14675600743214 /* UserProfilePillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfilePillTableViewCell.swift; sourceTree = "<group>"; };
 		68E62F771D191BB800743214 /* PillStatusNotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillStatusNotificationsManager.swift; sourceTree = "<group>"; };
@@ -510,6 +522,7 @@
 		200C72311B40368600998100 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				686B0E1C1D3ACEF9007C2BE8 /* Achievements */,
 				68E62F761D191B7200743214 /* UserProfileHelpers */,
 				200C72391B40368600998100 /* TripHelpers */,
 				200C72321B40368600998100 /* MedicineHelpers */,
@@ -545,6 +558,7 @@
 		200C723E1B40368600998100 /* NSManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
+				68D7ED301D2EE590002DFE46 /* Achievements */,
 				200C72451B40368600998100 /* RestAPI */,
 				200C72401B40368600998100 /* Item.swift */,
 				200C72411B40368600998100 /* ItemExtension.swift */,
@@ -656,6 +670,7 @@
 		200EE49C1B1343A60087FB24 /* malaria-iosTests */ = {
 			isa = PBXGroup;
 			children = (
+				686B0E1D1D3AD71D007C2BE8 /* Achievements */,
 				200C73421B40392A00998100 /* ApiExamples */,
 				200EE49D1B1343A60087FB24 /* Supporting Files */,
 				208FE0871B42F1A400C5F447 /* TestMedicineManager.swift */,
@@ -792,6 +807,23 @@
 			name = "Myth vs. Fact";
 			sourceTree = "<group>";
 		};
+		686B0E1C1D3ACEF9007C2BE8 /* Achievements */ = {
+			isa = PBXGroup;
+			children = (
+				68D7ED241D2EE219002DFE46 /* AchievementManager.swift */,
+				686B0E101D3ACD0C007C2BE8 /* MedicineAchievementManager.swift */,
+			);
+			name = Achievements;
+			sourceTree = "<group>";
+		};
+		686B0E1D1D3AD71D007C2BE8 /* Achievements */ = {
+			isa = PBXGroup;
+			children = (
+				686B0E1E1D3AD72F007C2BE8 /* TestMedicineAchievements.swift */,
+			);
+			name = Achievements;
+			sourceTree = "<group>";
+		};
 		6873D03D1D22FFF800775757 /* Games */ = {
 			isa = PBXGroup;
 			children = (
@@ -819,6 +851,7 @@
 			isa = PBXGroup;
 			children = (
 				680BF7701D26E4890021353F /* AchievementsViewController.swift */,
+				68D7ED371D368640002DFE46 /* AchievementTableViewCell.swift */,
 			);
 			name = Achievements;
 			sourceTree = "<group>";
@@ -871,6 +904,15 @@
 				200C72261B40368600998100 /* PostsEndpoint.swift */,
 			);
 			name = "Info Hub Posts";
+			sourceTree = "<group>";
+		};
+		68D7ED301D2EE590002DFE46 /* Achievements */ = {
+			isa = PBXGroup;
+			children = (
+				68D7ED501D368DB8002DFE46 /* AchievementProperty.swift */,
+				68D7ED521D368DB8002DFE46 /* Achievement.swift */,
+			);
+			name = Achievements;
 			sourceTree = "<group>";
 		};
 		68E62F671D14617700743214 /* User Profile */ = {
@@ -1330,9 +1372,11 @@
 				200C72A81B40368600998100 /* SyncManager.swift in Sources */,
 				311E38E91CA0DC400051B14E /* SocialMediaType.swift in Sources */,
 				200C73061B40368600998100 /* PagesManagerViewController.swift in Sources */,
+				686B0E111D3ACD0C007C2BE8 /* MedicineAchievementManager.swift in Sources */,
 				68BEC3311D270D6700FCFAF5 /* CollectionRFQuestions.swift in Sources */,
 				205E417E1B6AE74E0028A8D7 /* TripLocationHistoryPickerViewer.swift in Sources */,
 				200A18CF1B64F51300EC2A65 /* MedicinePickerViewTrip.swift in Sources */,
+				68D7ED561D368DB8002DFE46 /* Achievement.swift in Sources */,
 				68FCE59B1D2984D900D8B44B /* GameViewController.swift in Sources */,
 				200EE48A1B1343A50087FB24 /* AppDelegate.swift in Sources */,
 				200C72981B40368600998100 /* EndpointType.swift in Sources */,
@@ -1360,6 +1404,7 @@
 				683468CF1D2976CB000F98EA /* GameRulesViewController.swift in Sources */,
 				203F0B0F1B45B3B900826E06 /* TabbedBarController.swift in Sources */,
 				20FC56EB1B72C91300D51801 /* UserSettingsManager.swift in Sources */,
+				68D7ED541D368DB8002DFE46 /* AchievementProperty.swift in Sources */,
 				20FC56FF1B72CA3E00D51801 /* UITabBarItem.swift in Sources */,
 				200C72B61B40368600998100 /* ItemExtension.swift in Sources */,
 				200C72781B40368600998100 /* CollectionPostsEndpoint.swift in Sources */,
@@ -1397,6 +1442,7 @@
 				209F60B81B6E2AB300EDA461 /* MedicineFrontEndExtension.swift in Sources */,
 				685569C11D2C1925006C9F7A /* MVFQuestion.swift in Sources */,
 				200A18C31B64F48E00EC2A65 /* PillsStatsViewController.swift in Sources */,
+				68D7ED381D368640002DFE46 /* AchievementTableViewCell.swift in Sources */,
 				200C72C21B40368600998100 /* CollectionPosts.swift in Sources */,
 				311E38EC1CA0DC510051B14E /* DailyStatsTableViewController+Extensions.swift in Sources */,
 				20EA06DB1B2234DA00D6840E /* Model.xcdatamodeld in Sources */,
@@ -1404,6 +1450,7 @@
 				200C72AA1B40368600998100 /* ItemsManager.swift in Sources */,
 				200C729E1B40368600998100 /* MedicineManager.swift in Sources */,
 				200A18D91B64F5A300EC2A65 /* DailyStatsCells.swift in Sources */,
+				68D7ED251D2EE219002DFE46 /* AchievementManager.swift in Sources */,
 				200C72A61B40368600998100 /* NotificationManager.swift in Sources */,
 				2027E94F1BADC71D00DA55A4 /* Array.swift in Sources */,
 				200C72EC1B40368600998100 /* CoreDataStore.swift in Sources */,
@@ -1430,6 +1477,7 @@
 				68E62F821D1DAC7D00743214 /* TestMedicineStockManager.swift in Sources */,
 				20246D1B1B4F245300384759 /* TestMedicineRegistries.swift in Sources */,
 				209F60B61B6DA6B100EDA461 /* TestTimedInsertions.swift in Sources */,
+				686B0E1F1D3AD72F007C2BE8 /* TestMedicineAchievements.swift in Sources */,
 				20C718E51B76C28D007424F6 /* TestUserSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

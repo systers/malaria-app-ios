@@ -1,12 +1,8 @@
 import UIKit
 
-class RapidFireGame: Game {
+class RapidFireGame {
   
   var entries: [RapidFireGameEntry] = []
-  
-  private static let name = "Rapid Fire"
-  private static let rules = "- Answer questions quickly, under time pressure.\n\n"
-    + "- Score Achievement Points for every correct answer you give."
   
   init() {
     let entry1 = RapidFireGameEntry(question: "Question 1 (answer 2)",
@@ -20,11 +16,18 @@ class RapidFireGame: Game {
                                     correctAnswer: 2)
     
     entries.appendContentsOf([entry1, entry2, entry3])
-    
-    super.init(numberOfLevels: entries.count,
-               name: RapidFireGame.name,
-               rules: RapidFireGame.rules)
   }
+}
+
+extension RapidFireGame: Game {
+  
+  var numberOfLevels: Int { return entries.count }
+  var name: String { return "Rapid Fire" }
+  var rules: String { return "- Answer questions quickly, under time pressure.\n\n"
+    + "- Score Achievement Points for every correct answer you give." }
+  
+  func defineAchievements() { }
+
 }
 
 class RapidFireGameEntry {
