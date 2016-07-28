@@ -1,11 +1,11 @@
 import Foundation
 
 /// Manages trip items
-public class ItemsManager : CoreDataContextManager{
+class ItemsManager : CoreDataContextManager {
     let trip: Trip
     
     /// Init
-    public init(trip: Trip){
+    init(trip: Trip){
         self.trip = trip
         super.init(context: trip.managedObjectContext!)
     }
@@ -14,7 +14,7 @@ public class ItemsManager : CoreDataContextManager{
     ///
     /// - parameter `String`:: name of the item
     /// - parameter `Int64`:: quantity, it will be always at least 1
-    public func addItem(name: String, quantity: Int64){
+    func addItem(name: String, quantity: Int64){
         let quant = max(quantity, 1)
         
         if let i = findItem(name){
@@ -39,7 +39,7 @@ public class ItemsManager : CoreDataContextManager{
     /// - parameter `[Item]: optional` cached list of items
     ///
     /// - returns: `Item?`:
-    public func findItem(name: String, listItems: [Item]? = nil) -> Item?{
+    func findItem(name: String, listItems: [Item]? = nil) -> Item?{
         let items = listItems != nil ? listItems! : getItems()
         return items.filter({$0.name.lowercaseString == name.lowercaseString}).first
     }
@@ -47,7 +47,7 @@ public class ItemsManager : CoreDataContextManager{
     /// Checkmark the items
     ///
     /// - parameter `[String]`:: names of the items (case insensitive)
-    public func checkItem(names: [String]){
+    func checkItem(names: [String]){
         let listItems = getItems()
         names.foreach({ self.findItem($0, listItems: listItems)?.check = true })
         CoreDataHelper.sharedInstance.saveContext(self.context)
@@ -56,7 +56,7 @@ public class ItemsManager : CoreDataContextManager{
     /// Remove the checkmark
     ///
     /// - parameter `[String]`:: names of the items (case insensitive)
-    public func uncheckItem(names: [String]){
+    func uncheckItem(names: [String]){
         let listItems = getItems()
         names.foreach({ self.findItem($0, listItems: listItems)?.check = false })
         CoreDataHelper.sharedInstance.saveContext(self.context)
@@ -65,7 +65,7 @@ public class ItemsManager : CoreDataContextManager{
     /// Toggle the checkmark
     ///
     /// - parameter `[String]`:: name of the items (case insensitive)
-    public func toggleCheckItem(names: [String]){
+    func toggleCheckItem(names: [String]){
         let listItems = getItems()
         names.foreach({ self.findItem($0, listItems: listItems)?.toogle() })
         CoreDataHelper.sharedInstance.saveContext(self.context)
@@ -78,7 +78,7 @@ public class ItemsManager : CoreDataContextManager{
     ///
     /// - parameter `String`:: name of the item
     /// - parameter `Int64: optional` quantity
-    public func removeItem(name: String, quantity: Int64 = Int64.max){
+    func removeItem(name: String, quantity: Int64 = Int64.max){
         if let i = findItem(name){
             i.remove(quantity)
             if i.quantity == 0{
@@ -98,7 +98,7 @@ public class ItemsManager : CoreDataContextManager{
     /// Returns all items from the trip
     ///
     /// - returns: `[Item]`: Array of items
-    public func getItems() -> [Item]{
+    func getItems() -> [Item]{
         return trip.items.convertToArray()
     }
 }

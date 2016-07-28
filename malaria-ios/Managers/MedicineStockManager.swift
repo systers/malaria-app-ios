@@ -43,7 +43,7 @@ class MedicineStockManager: CoreDataContextManager {
       // or when we just added an entry which was a Yes (in the No case, there will be no updateStock).
       
       if (addRegistryResult.registryAdded && addRegistryResult.otherEntriesFound) ||
-      (addRegistryResult.registryAdded && !addRegistryResult.otherEntriesFound && tookMedicine) {
+        (addRegistryResult.registryAdded && !addRegistryResult.otherEntriesFound && tookMedicine) {
         updateStock(tookMedicine)
       }
       

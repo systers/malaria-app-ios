@@ -4,9 +4,9 @@ import SwiftyJSON
 /// Responsible for retrieving data for the game "Myth vs. Fact"
 /// from `EndpointType.MVFStatements`
 
-public class MVFStatementsEndpoint: CollectionMVFStatementsEndpoint {
+class MVFStatementsEndpoint: CollectionMVFStatementsEndpoint {
   /// Required from `Endpoint` protocol
-  override public var path: String {
+  override var path: String {
     return EndpointType.MVFStatements.path()
   }
   

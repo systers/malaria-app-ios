@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Games List View Controller-->
@@ -149,8 +150,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7o-yq-h2X">
-                                <rect key="frame" x="20" y="329.5" width="560" height="34"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7o-yq-h2X">
+                                <rect key="frame" x="20" y="330.5" width="560" height="34"/>
                                 <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="15"/>
                                 <state key="normal" title="Button">
@@ -172,8 +173,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVr-Xf-Cwt">
-                                <rect key="frame" x="20" y="287.5" width="560" height="34"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVr-Xf-Cwt">
+                                <rect key="frame" x="20" y="288.5" width="560" height="34"/>
                                 <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="15"/>
                                 <state key="normal" title="Button">
@@ -235,8 +236,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLj-jc-7a4">
-                                <rect key="frame" x="20" y="245" width="560" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLj-jc-7a4">
+                                <rect key="frame" x="20" y="246" width="560" height="34"/>
                                 <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="15"/>
                                 <state key="normal" title="Button">
@@ -573,14 +574,112 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DcT-qb-Ido">
+                                <rect key="frame" x="0.0" y="111" width="600" height="489"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="v6S-RC-hvi"/>
+                                </constraints>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Achievement Cell" rowHeight="75" id="jA5-ca-7Bd" customClass="AchievementTableViewCell" customModule="malaria_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jA5-ca-7Bd" id="GS3-0t-lbf">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="74.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="72g-5X-2p7">
+                                                    <rect key="frame" x="442" y="41" width="150" height="2"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="Jkc-dB-a06"/>
+                                                    </constraints>
+                                                    <color key="progressTintColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
+                                                    <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Jkc-dB-a06"/>
+                                                        </mask>
+                                                    </variation>
+                                                </progressView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Achievement Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyW-wY-wXI">
+                                                    <rect key="frame" x="8" y="8" width="134.5" height="24.5"/>
+                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                                    <color key="textColor" red="0.4378715158" green="0.32177186009999997" blue="0.2744835913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="In Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDn-iT-fcC">
+                                                    <rect key="frame" x="484" y="14" width="68" height="19"/>
+                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="13"/>
+                                                    <color key="textColor" red="0.4378715158" green="0.32177186009999997" blue="0.2744835913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Achievement Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eI-AA-Crq">
+                                                    <rect key="frame" x="8" y="40" width="429" height="20"/>
+                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="14"/>
+                                                    <color key="textColor" red="0.4378715158" green="0.32177186009999997" blue="0.2744835913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hyW-wY-wXI" firstAttribute="leading" secondItem="GS3-0t-lbf" secondAttribute="leadingMargin" id="4Yc-iE-m2e"/>
+                                                <constraint firstItem="72g-5X-2p7" firstAttribute="trailing" secondItem="GS3-0t-lbf" secondAttribute="trailingMargin" id="5PJ-HQ-uum"/>
+                                                <constraint firstItem="hyW-wY-wXI" firstAttribute="top" secondItem="GS3-0t-lbf" secondAttribute="topMargin" id="FkN-z2-hoc"/>
+                                                <constraint firstItem="72g-5X-2p7" firstAttribute="centerY" secondItem="GS3-0t-lbf" secondAttribute="centerY" constant="5" id="Rgz-6a-FOk"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="1eI-AA-Crq" secondAttribute="leading" id="Smi-ob-CaS"/>
+                                                <constraint firstItem="72g-5X-2p7" firstAttribute="top" secondItem="NDn-iT-fcC" secondAttribute="bottom" constant="8" id="X7m-EN-A8P"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="1eI-AA-Crq" secondAttribute="bottom" constant="6" id="Yxq-yA-eeK"/>
+                                                <constraint firstItem="72g-5X-2p7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hyW-wY-wXI" secondAttribute="trailing" constant="5" id="ke9-EJ-d57"/>
+                                                <constraint firstItem="1eI-AA-Crq" firstAttribute="top" secondItem="hyW-wY-wXI" secondAttribute="bottom" constant="8" id="mri-Z0-696"/>
+                                                <constraint firstItem="NDn-iT-fcC" firstAttribute="centerX" secondItem="72g-5X-2p7" secondAttribute="centerX" id="nfm-Lp-Y6X"/>
+                                                <constraint firstItem="72g-5X-2p7" firstAttribute="leading" secondItem="1eI-AA-Crq" secondAttribute="trailing" constant="5" id="wgl-98-S5S"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="ke9-EJ-d57"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="72g-5X-2p7" firstAttribute="width" secondItem="jA5-ca-7Bd" secondAttribute="width" multiplier="0.25" id="6Wi-Rr-zqT"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="achievementDescription" destination="1eI-AA-Crq" id="Ji1-Qj-kyF"/>
+                                            <outlet property="achievementName" destination="hyW-wY-wXI" id="hH8-gD-Q5D"/>
+                                            <outlet property="progressLabel" destination="NDn-iT-fcC" id="KMn-EH-9MN"/>
+                                            <outlet property="progressView" destination="72g-5X-2p7" id="JZ5-lc-wbK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="v6S-RC-hvi"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="hdF-4Z-dR0" id="Ehe-gp-RYG"/>
+                                    <outlet property="delegate" destination="hdF-4Z-dR0" id="YoE-a0-Vdr"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="DcT-qb-Ido" firstAttribute="top" secondItem="DQ0-yr-1em" secondAttribute="bottom" constant="15" id="9Iw-w0-bVq"/>
+                            <constraint firstAttribute="trailing" secondItem="DcT-qb-Ido" secondAttribute="trailing" id="BT2-F2-wUs"/>
                             <constraint firstItem="DQ0-yr-1em" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NFX-8e-Azs" secondAttribute="trailing" constant="5" id="CfU-7O-o5a"/>
                             <constraint firstItem="NFX-8e-Azs" firstAttribute="top" secondItem="5FK-ov-dac" secondAttribute="bottom" constant="21" id="FX2-fJ-WTa"/>
                             <constraint firstItem="NFX-8e-Azs" firstAttribute="leading" secondItem="tVG-R7-WDD" secondAttribute="leadingMargin" id="Lok-Sc-cRk"/>
                             <constraint firstItem="DQ0-yr-1em" firstAttribute="bottom" secondItem="NFX-8e-Azs" secondAttribute="bottom" id="ZNl-QU-Z7K"/>
                             <constraint firstAttribute="centerX" secondItem="DQ0-yr-1em" secondAttribute="centerX" constant="-13" id="cDE-LW-1u7"/>
+                            <constraint firstItem="DZs-te-8uN" firstAttribute="top" secondItem="DcT-qb-Ido" secondAttribute="bottom" id="irf-iP-m6D"/>
+                            <constraint firstItem="DcT-qb-Ido" firstAttribute="leading" secondItem="tVG-R7-WDD" secondAttribute="leading" id="wr1-bR-Jcd"/>
                             <constraint firstItem="NFX-8e-Azs" firstAttribute="top" secondItem="DQ0-yr-1em" secondAttribute="top" id="xIR-46-Iir"/>
                         </constraints>
                     </view>
@@ -590,6 +689,9 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="L0h-Ik-dvh"/>
+                    <connections>
+                        <outlet property="tableView" destination="DcT-qb-Ido" id="odv-bE-QD8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1EW-P0-5Os" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -623,8 +725,8 @@
                                             <constraint firstAttribute="height" constant="1" id="yK3-Aj-xXs"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ui-i1-O2E">
-                                        <rect key="frame" x="140" y="446" width="120" height="44"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ui-i1-O2E">
+                                        <rect key="frame" x="132.5" y="446" width="135" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="Ias-d7-lvY"/>
                                             <constraint firstAttribute="height" constant="44" id="Qau-2V-2dE"/>

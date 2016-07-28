@@ -12,10 +12,8 @@ public class WidgetHandler : NSObject {
   
   var _currentContext: NSManagedObjectContext!
   var currentContext: NSManagedObjectContext! {
-    get {
       _currentContext = CoreDataHelper.sharedInstance.createBackgroundContext()!
       return _currentContext
-    }
   }
   
   var currentMedicine: Medicine? {
@@ -24,9 +22,11 @@ public class WidgetHandler : NSObject {
   
   override init() {
     super.init()
+    
     // Needs this observer in order to immediately dismiss the widget after
     // an in-app Yes or No button was pressed. If not used, it will not have time to dismiss the widget
     // the first time the app resigns active
+    
     NSNotificationEvents.ObserveDataUpdated(self, selector: #selector(handleDataUpdated))
     NSNotificationEvents.ObserveAppWillResignActive(self, selector: #selector(handleAppWillResignActive))
     NSNotificationEvents.ObserveAppBecomeActive(self, selector: #selector(handleAppDidBecomeActive))

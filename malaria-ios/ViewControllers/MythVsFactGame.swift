@@ -4,10 +4,15 @@ class MythVsFactGame: Game {
   
   var entries: [MVFGameEntry] = []
   
-  static let name = "Myth vs. Fact"
-  static let rules = "- Decide whether the statement is correct or false by dragging in its corresponding container.\n\n"
-    + "- Score Achievement Points for every correct answer you give."
+  // MARK: Game protocol
+  var maximumScore: Int?
+
+  var numberOfLevels: Int { return entries.count }
+  var name: String { return "Myth vs. Fact" }
+  var rules: String { return "- Decide whether the statement is correct or false by dragging in its corresponding container.\n\n"
+    + "- Score Achievement Points for every correct answer you give." }
   
+
   init() {
     let entry1 = MVFGameEntry(statement: "Statement 1 (true)",
                               correctAnswer: true)
@@ -17,10 +22,6 @@ class MythVsFactGame: Game {
                               correctAnswer: false)
     
     entries.appendContentsOf([entry1, entry2, entry3])
-    
-    super.init(numberOfLevels: entries.count,
-               name: MythVsFactGame.name,
-               rules: MythVsFactGame.rules)
   }
 }
 

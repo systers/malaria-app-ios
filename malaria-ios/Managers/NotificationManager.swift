@@ -2,17 +2,17 @@ import Foundation
 import UIKit
 
 /// Abstract class for handling `UILocalNotification`
-public class NotificationManager : CoreDataContextManager {
+class NotificationManager: CoreDataContextManager {
   /// Alert category, default fatalError
-  public var category: String { get{ fatalError("No category provided")} }
+  var category: String { get{ fatalError("No category provided")} }
   
   /// Alert body, default fatalError
-  public var alertBody: String { get{ fatalError("No alertBody provided")} }
+  var alertBody: String { get{ fatalError("No alertBody provided")} }
   
   /// Alert action, default fatalError
-  public var alertAction: String { get{ fatalError("No alertAction provided")} }
+  var alertAction: String { get{ fatalError("No alertAction provided")} }
   
-  override public init(context: NSManagedObjectContext!) {
+  override init(context: NSManagedObjectContext!) {
     super.init(context: context)
   }
   
@@ -23,14 +23,14 @@ public class NotificationManager : CoreDataContextManager {
   /// All previous notifications will be unsheduled
   ///
   /// - parameter `NSDate`:: fireTime
-  public func scheduleNotification(fireTime: NSDate) {
+  func scheduleNotification(fireTime: NSDate) {
     Logger.Info("Sheduling \(category) to " + fireTime.formatWith("dd-MMMM-yyyy hh:mm"))
     let notification: UILocalNotification = createNotification(fireTime)
     UIApplication.sharedApplication().scheduleLocalNotification(notification)
   }
   
   /// Unschedule all notifications with the category
-  public func unsheduleNotification() {
+  func unsheduleNotification() {
     let localNotificationArrayData = UserSettingsManager.UserSetting.SaveLocalNotifications.getLocalNotifications()
     
     guard let data = localNotificationArrayData else {

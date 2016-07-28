@@ -1,22 +1,22 @@
 import Foundation
 
 /// Manages `Trip` core data instances
-public class TripsManager : CoreDataContextManager{
+class TripsManager : CoreDataContextManager {
     
     /// Init
-    public override init(context: NSManagedObjectContext){
+    override init(context: NSManagedObjectContext){
         super.init(context: context)
     }
     
     /// Returns the current trip if any
     ///
     /// - returns: `Trip?`
-    public func getTrip() -> Trip?{
+    func getTrip() -> Trip?{
         return Trip.retrieve(Trip.self, fetchLimit: 1, context: context).first
     }
     
     /// Clears any trip from Core Data
-    public func clearCoreData(){
+    func clearCoreData(){
         Trip.clear(Trip.self, context: context)
         TripHistory.clear(TripHistory.self, context: context)
         CoreDataHelper.sharedInstance.saveContext(context)
@@ -27,7 +27,7 @@ public class TripsManager : CoreDataContextManager{
     /// - parameter `Int: optional`: number of intended items, default is 15
     ///
     /// - returns: `[TripHistory]`: history
-    public func getHistory(limit: Int = 15) -> [TripHistory] {
+    func getHistory(limit: Int = 15) -> [TripHistory] {
         return TripHistory.retrieve(TripHistory.self, fetchLimit: limit, context: context).sort({ $0.timestamp > $1.timestamp})
     }
     
@@ -63,7 +63,7 @@ public class TripsManager : CoreDataContextManager{
     /// - parameter `NSdate`:: reminderDate
     ///
     /// :return: `Trip`: Instance of trip
-    public func createTrip(location: String, medicine: String, departure: NSDate, arrival: NSDate, timeReminder: NSDate) -> Trip{
+    func createTrip(location: String, medicine: String, departure: NSDate, arrival: NSDate, timeReminder: NSDate) -> Trip{
         func create(t: Trip) -> Trip {
             t.location = location
             t.medicine = medicine

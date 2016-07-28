@@ -1,12 +1,14 @@
 import Foundation
 
 /// Abstract class for all managers
-public class CoreDataContextManager{
+
+class CoreDataContextManager {
+  
     /// Associated NSManagedObjectContext, shared with subclasses
-    internal let context: NSManagedObjectContext
+    let context: NSManagedObjectContext
     
     /// Init
-    public init(context: NSManagedObjectContext){
+    init(context: NSManagedObjectContext){
         self.context = context
     }
 }

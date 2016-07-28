@@ -24,7 +24,7 @@ class RapidFireViewController: GameViewController {
         endGame()
         return
       }
-
+      
       // Set the question
       questionLabel.text = rapidFireGame?.entries[currentLevel].question
       questionNumberLabel.text = "Question \(currentLevel + 1) / \(rapidFireGame!.entries.count)"
@@ -61,9 +61,7 @@ class RapidFireViewController: GameViewController {
   }
   
   override func viewWillAppear(animated: Bool) {
-    
     rapidFireGame = game as! RapidFireGame
-    
     super.viewWillAppear(animated)
   }
   
@@ -73,8 +71,16 @@ class RapidFireViewController: GameViewController {
   }
   
   override func endGame() {
-    super.endGame()
+    // Save the user's final score
+    game.maximumScore = userScore
+    
+    // Send a notification that the game has finished.
+    let dict = ["game": rapidFireGame]
+    NSNotificationEvents.RFGameFinished(dict)
+    
     timer.invalidate()
+    
+    super.endGame()
   }
   
   func showWrongAnswerAnimation() {
@@ -115,5 +121,4 @@ class RapidFireViewController: GameViewController {
     let correctAnswer = rapidFireGame?.entries[currentLevel].correctAnswer == sender.tag
     nextQuestion(correctAnswer)
   }
-
 }

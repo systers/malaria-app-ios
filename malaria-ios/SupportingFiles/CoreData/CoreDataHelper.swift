@@ -1,9 +1,9 @@
 import Foundation
 
 /// Manages `NSManagedObjectContext`
-public class CoreDataHelper: NSObject {
+class CoreDataHelper: NSObject {
     /// Singleton
-    public static let sharedInstance = CoreDataHelper()
+    static let sharedInstance = CoreDataHelper()
     
     /// Init
     override init(){
@@ -32,7 +32,7 @@ public class CoreDataHelper: NSObject {
     /// Create background context to keep in sync with the database
     ///
     /// - returns: `NSManagedObjectContext`
-    public func createBackgroundContext() -> NSManagedObjectContext?{
+    func createBackgroundContext() -> NSManagedObjectContext?{
         guard CoreDataStore.sharedInstance.persistentStoreCoordinator != nil else {
             return nil
         }
@@ -45,7 +45,7 @@ public class CoreDataHelper: NSObject {
     /// Save the context
     ///
     /// - parameter `NSManagedObjectContext`:: context to be saved
-    public func saveContext (context: NSManagedObjectContext) {
+    func saveContext (context: NSManagedObjectContext) {
         if context.hasChanges {
             do {
                 try context.save()

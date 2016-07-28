@@ -2,18 +2,18 @@ import Alamofire
 import SwiftyJSON
 
 /// Responsible for syncing remote server with CoreData
-public class SyncManager : CoreDataContextManager{
+class SyncManager : CoreDataContextManager {
 
     private let user = "TestUser"
     private let password = "password"
     
     /// Init
-    public override init(context: NSManagedObjectContext!){
+    override init(context: NSManagedObjectContext!){
         super.init(context: context)        
     }
     
     /// dictionary with key full endpoint url path and object an instance of `Endpoint`
-    public var endpoints: [String : Endpoint] = [
+    var endpoints: [String : Endpoint] = [
         EndpointType.Posts.path() : PostsEndpoint(),
     ]
     
@@ -22,7 +22,7 @@ public class SyncManager : CoreDataContextManager{
     /// - parameter `String`:: full path
     /// - parameter `Bool`:: Save context after success
     /// - parameter `((url:: String, error: NSError?)->())?`: completion Handler (default nil)
-    public func sync(path: String, save: Bool = false, completionHandler: ((url: String, error: NSError?)->())? = nil){
+    func sync(path: String, save: Bool = false, completionHandler: ((url: String, error: NSError?)->())? = nil){
         func expandedCompletionHandler(url: String, error: NSError?){
             completionHandler?(url: url, error: error)
             
@@ -47,7 +47,7 @@ public class SyncManager : CoreDataContextManager{
     /// Runs the specified completion handler after syncing every endpoint.
     ///
     /// - parameter `(()->())?`:: completion handler (default nil)
-    public func syncAll(completionHandler: (()->())? = nil){
+    func syncAll(completionHandler: (()->())? = nil){
         var count = endpoints.count
         func completionHandlerExpanded(url: String, error: NSError?){
             count -= 1
