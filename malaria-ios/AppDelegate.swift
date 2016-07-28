@@ -7,7 +7,11 @@ import Crashlytics
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
+  
   let widgetHandler = WidgetHandler.sharedInstance
+  
+  let generalAchievementManager = GeneralAchievementsManager.sharedInstance
+  let rapidFireAchievementManager = RapidFireAchievementManager.sharedInstance
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
@@ -32,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window = UIWindow(frame: UIScreen.mainScreen().bounds)
     window!.rootViewController = UIStoryboard.instantiate(TabbedBarController.self)
     window!.makeKeyAndVisible()
-
+    
     return true
   }
 

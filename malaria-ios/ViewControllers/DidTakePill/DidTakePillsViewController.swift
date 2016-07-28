@@ -106,15 +106,17 @@ class DidTakePillsViewController: UIViewController {
     
     viewContext = CoreDataHelper.sharedInstance.createBackgroundContext()
     medicineManager = MedicineManager(context: viewContext)
+    
     medicine = medicineManager.getCurrentMedicine()
     if medicine == nil {
       return
     }
     
+    registriesManager = medicine!.registriesManager
+    
     // Define achievements for the medicine.
     medicine?.achievementManager.defineAchievements()
-    
-    registriesManager = medicine!.registriesManager
+
     let tookMedicineEntry = registriesManager.tookMedicine(currentDate)
     
     //if took

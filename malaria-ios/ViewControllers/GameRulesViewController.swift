@@ -11,7 +11,6 @@ class GameRulesViewController : UIViewController {
   var game: Game!
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    print(segue.destinationViewController)
     let gameVC = segue.destinationViewController as! GameViewController
     gameVC.game = game
   }
@@ -30,7 +29,7 @@ class GameRulesViewController : UIViewController {
   // Segues must have the identifier following the naming rule: "Show " + game.name
   // in order for a game to start
   @IBAction func startGameBtnHandler(sender: AnyObject) {
-   performSegueWithIdentifier("Show " + game.name, sender: self)
+    performSegueWithIdentifier("Show " + game.name, sender: self)
   }
   
 }

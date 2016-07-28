@@ -17,7 +17,6 @@ class UserProfileViewController: UIViewController {
   // height (60) and not add ~30-50 offset to it
   let CellHeightAndOffset: CGFloat = 60 + 30
   let CellReuseIdentifier = "User Profile Pill Cell Identifier"
-  let DefaultBrownTint = UIColor(red: 118.0 / 255.0, green: 80.0 / 255.0, blue: 72.0 / 255.0, alpha: 1)
   
   @IBOutlet weak var remindMeWeeksButton: UIButton!
   @IBOutlet weak var tableView: UITableView!
@@ -79,7 +78,7 @@ class UserProfileViewController: UIViewController {
     
     let shouldPresentNotification: Bool = psnm!.shouldPresentNotification(remainingPillsBasedOnTheirInterval, reminderValue: reminderValue.rawValue)
     
-       self.remainingLabel.textColor = shouldPresentNotification ? UIColor.redColor() : DefaultBrownTint
+       self.remainingLabel.textColor = shouldPresentNotification ? UIColor.redColor() : Constants.DefaultBrownTint
     
     if shouldPresentNotification {
       psnm!.scheduleNotification(NSDate())

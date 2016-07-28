@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-public extension NSManagedObject {
+extension NSManagedObject {
 
   /// Converts MyTarget.ClassName to ClassName
   private static func getSimpleClassName(c: AnyClass) -> String {
@@ -11,7 +11,7 @@ public extension NSManagedObject {
   /// Delete object from contect
   ///
   /// - parameter `NSManagedObjectContext`:
-  public func deleteFromContext(context: NSManagedObjectContext){
+  func deleteFromContext(context: NSManagedObjectContext){
     context.deleteObject(self)
   }
 
@@ -23,7 +23,7 @@ public extension NSManagedObject {
   /// - parameter `NSManagedObjectContext`:
   ///
   /// - returns: `T`: A new NSManagedObject of the type given by argument
-  public static func create<T : NSManagedObject>(entity: T.Type, context: NSManagedObjectContext) -> T{
+  static func create<T : NSManagedObject>(entity: T.Type, context: NSManagedObjectContext) -> T{
     let name = getSimpleClassName(entity)
     return NSEntityDescription.insertNewObjectForEntityForName(name, inManagedObjectContext: context) as! T
   }
@@ -34,7 +34,7 @@ public extension NSManagedObject {
   /// - parameter `NSManagedObjectContext`:
   ///
   /// - returns: `[T]`: A array of NSManagedObject of the type given by argument
-  public static func retrieve<T : NSManagedObject>(entity: T.Type, predicate: NSPredicate? = nil,
+  static func retrieve<T : NSManagedObject>(entity: T.Type, predicate: NSPredicate? = nil,
     fetchLimit: Int = Int.max, context : NSManagedObjectContext) -> [T]{
       let name = getSimpleClassName(entity)
 
@@ -57,7 +57,7 @@ public extension NSManagedObject {
   ///
   /// - parameter `T.Type`:: The class of any subclass of NSManagedObject
   /// - parameter `NSManagedObjectContext`:
-  public static func clear<T : NSManagedObject>(entity: T.Type, context : NSManagedObjectContext){
+  static func clear<T : NSManagedObject>(entity: T.Type, context : NSManagedObjectContext){
     let elements = entity.retrieve(entity, context: context)
     elements.foreach({context.deleteObject($0)})
   }

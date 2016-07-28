@@ -12,7 +12,7 @@ class GamesListViewController: UIViewController {
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    let gameCellIndex: Int = sender as! Int
+    let gameCellIndex = sender as! Int
     
     let gameRulesVC = segue.destinationViewController as! GameRulesViewController
     gameRulesVC.game = games[gameCellIndex]

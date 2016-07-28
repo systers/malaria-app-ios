@@ -1,8 +1,17 @@
 import UIKit
 
-class MythVsFactGame {
+class MythVsFactGame: Game {
   
   var entries: [MVFGameEntry] = []
+  
+  // MARK: Game protocol
+  var maximumScore: Int?
+
+  var numberOfLevels: Int { return entries.count }
+  var name: String { return "Myth vs. Fact" }
+  var rules: String { return "- Decide whether the statement is correct or false by dragging in its corresponding container.\n\n"
+    + "- Score Achievement Points for every correct answer you give." }
+  
 
   init() {
     let entry1 = MVFGameEntry(statement: "Statement 1 (true)",
@@ -14,17 +23,6 @@ class MythVsFactGame {
     
     entries.appendContentsOf([entry1, entry2, entry3])
   }
-}
-
-extension MythVsFactGame: Game {
-  
-  var numberOfLevels: Int { return entries.count }
-  var name: String { return "Myth vs. Fact" }
-  var rules: String { return "- Decide whether the statement is correct or false by dragging in its corresponding container.\n\n"
-    + "- Score Achievement Points for every correct answer you give." }
-  
-  func defineAchievements() { }
-  
 }
 
 class MVFGameEntry {

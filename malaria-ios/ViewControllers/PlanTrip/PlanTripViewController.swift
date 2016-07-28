@@ -151,6 +151,16 @@ extension PlanTripViewController{
     }
     
     @IBAction func generateTrip(sender: AnyObject) {
+        if location.text?.characters.count == 0 {
+          
+          // Show alert message.
+          UIApplication.sharedApplication().keyWindow?.rootViewController?
+             .view.superview!.makeToast("Location text can't be empty.",
+                                       duration: 3.0,
+                                       position: .Bottom)
+          return
+        }
+      
         if tripsManager.getTrip() != nil {
             let (title, message) = (UpdateTripAlertText.title, UpdateTripAlertText.message)
             let refreshAlert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
@@ -160,7 +170,7 @@ extension PlanTripViewController{
             refreshAlert.addAction(UIAlertAction(title: AlertOptions.cancel, style: .Default, handler: nil))
             
             presentViewController(refreshAlert, animated: true, completion: nil)
-        }else{
+        } else {
             self.storeTrip()
             
             let (title, message) = (SuccessAlertText.title, SuccessAlertText.message)
@@ -175,7 +185,7 @@ extension PlanTripViewController{
         }
     }
     
-    private func storeTrip(){
+    private func storeTrip() {
         let trip = tripsManager.createTrip(location.text!, medicine: medicine.name(), departure: departureDay, arrival: arrivalDay, timeReminder: reminder)
         let itemManager = trip.itemsManager
         items.foreach({ itemManager.addItem($0.0, quantity: 1) })
@@ -183,6 +193,8 @@ extension PlanTripViewController{
         
         scheduleNotifications(trip)
         prepareHistoryValuePicker()
+      
+        NSNotificationEvents.TripPlanned()
     }
     
     private func scheduleNotifications(trip: Trip) {

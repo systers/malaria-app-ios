@@ -107,6 +107,13 @@
 		680BF7651D26E2BF0021353F /* InfoHubPageManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680BF7641D26E2BF0021353F /* InfoHubPageManagerViewController.swift */; };
 		680BF7711D26E4890021353F /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680BF7701D26E4890021353F /* AchievementsViewController.swift */; };
 		683468CF1D2976CB000F98EA /* GameRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683468CE1D2976CB000F98EA /* GameRulesViewController.swift */; };
+		684D7BC81D48CCFB00BB6B64 /* RapidFireAchievementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7BC71D48CCFB00BB6B64 /* RapidFireAchievementManager.swift */; };
+		684D7BCA1D49144600BB6B64 /* GeneralAchievementsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7BC91D49144600BB6B64 /* GeneralAchievementsManager.swift */; };
+		684D7BCC1D4943DC00BB6B64 /* TestMedicineAchievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7BCB1D4943DC00BB6B64 /* TestMedicineAchievements.swift */; };
+		684D7BCE1D4943E900BB6B64 /* TestRFGameAchievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7BCD1D4943E900BB6B64 /* TestRFGameAchievements.swift */; };
+		684D7BD01D4943F100BB6B64 /* TestGeneralAchievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7BCF1D4943F100BB6B64 /* TestGeneralAchievements.swift */; };
+		684D7BD31D49650700BB6B64 /* Achievement+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7BD11D49650700BB6B64 /* Achievement+CoreDataProperties.swift */; };
+		684D7BD41D49650700BB6B64 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7BD21D49650700BB6B64 /* Achievement.swift */; };
 		6852744B1D26D011000A8D96 /* InfoHub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6852744A1D26D011000A8D96 /* InfoHub.storyboard */; };
 		685569A31D2AF254006C9F7A /* MythVsFactGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685569A21D2AF254006C9F7A /* MythVsFactGame.swift */; };
 		685569A51D2AF375006C9F7A /* MythVsFactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685569A41D2AF375006C9F7A /* MythVsFactViewController.swift */; };
@@ -116,7 +123,7 @@
 		685569BF1D2C191B006C9F7A /* MVFQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685569BE1D2C191B006C9F7A /* MVFQuestions.swift */; };
 		685569C11D2C1925006C9F7A /* MVFQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685569C01D2C1925006C9F7A /* MVFQuestion.swift */; };
 		686B0E111D3ACD0C007C2BE8 /* MedicineAchievementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B0E101D3ACD0C007C2BE8 /* MedicineAchievementManager.swift */; };
-		686B0E1F1D3AD72F007C2BE8 /* TestMedicineAchievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B0E1E1D3AD72F007C2BE8 /* TestMedicineAchievements.swift */; };
+		686B0E1F1D3AD72F007C2BE8 /* TestAchievementsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B0E1E1D3AD72F007C2BE8 /* TestAchievementsManager.swift */; };
 		6873D0491D23003A00775757 /* GamesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6873D0481D23003A00775757 /* GamesListViewController.swift */; };
 		688240D21D243D3100C63F6C /* RapidFireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688240D11D243D3100C63F6C /* RapidFireViewController.swift */; };
 		688D0DC41D2ADE680024DD13 /* PillScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 688D0DC31D2ADE680024DD13 /* PillScreens.storyboard */; };
@@ -127,8 +134,7 @@
 		68BEC3311D270D6700FCFAF5 /* CollectionRFQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BEC3301D270D6700FCFAF5 /* CollectionRFQuestions.swift */; };
 		68D7ED251D2EE219002DFE46 /* AchievementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D7ED241D2EE219002DFE46 /* AchievementManager.swift */; };
 		68D7ED381D368640002DFE46 /* AchievementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D7ED371D368640002DFE46 /* AchievementTableViewCell.swift */; };
-		68D7ED541D368DB8002DFE46 /* AchievementProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D7ED501D368DB8002DFE46 /* AchievementProperty.swift */; };
-		68D7ED561D368DB8002DFE46 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D7ED521D368DB8002DFE46 /* Achievement.swift */; };
+		68E5EBCA1D47C700008C0ED8 /* MedicineManagerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E5EBC91D47C700008C0ED8 /* MedicineManagerProvider.swift */; };
 		68E62F731D14619A00743214 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F721D14619A00743214 /* UserProfileViewController.swift */; };
 		68E62F751D14675600743214 /* UserProfilePillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F741D14675600743214 /* UserProfilePillTableViewCell.swift */; };
 		68E62F781D191BB800743214 /* PillStatusNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F771D191BB800743214 /* PillStatusNotificationsManager.swift */; };
@@ -365,6 +371,13 @@
 		680BF7641D26E2BF0021353F /* InfoHubPageManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoHubPageManagerViewController.swift; sourceTree = "<group>"; };
 		680BF7701D26E4890021353F /* AchievementsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
 		683468CE1D2976CB000F98EA /* GameRulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRulesViewController.swift; sourceTree = "<group>"; };
+		684D7BC71D48CCFB00BB6B64 /* RapidFireAchievementManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidFireAchievementManager.swift; sourceTree = "<group>"; };
+		684D7BC91D49144600BB6B64 /* GeneralAchievementsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralAchievementsManager.swift; sourceTree = "<group>"; };
+		684D7BCB1D4943DC00BB6B64 /* TestMedicineAchievements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMedicineAchievements.swift; sourceTree = "<group>"; };
+		684D7BCD1D4943E900BB6B64 /* TestRFGameAchievements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRFGameAchievements.swift; sourceTree = "<group>"; };
+		684D7BCF1D4943F100BB6B64 /* TestGeneralAchievements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestGeneralAchievements.swift; sourceTree = "<group>"; };
+		684D7BD11D49650700BB6B64 /* Achievement+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Achievement+CoreDataProperties.swift"; path = "../Achievement+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		684D7BD21D49650700BB6B64 /* Achievement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Achievement.swift; path = ../Achievement.swift; sourceTree = "<group>"; };
 		6852744A1D26D011000A8D96 /* InfoHub.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = InfoHub.storyboard; path = ../../InfoHub.storyboard; sourceTree = "<group>"; };
 		685569A21D2AF254006C9F7A /* MythVsFactGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MythVsFactGame.swift; sourceTree = "<group>"; };
 		685569A41D2AF375006C9F7A /* MythVsFactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MythVsFactViewController.swift; sourceTree = "<group>"; };
@@ -374,7 +387,7 @@
 		685569BE1D2C191B006C9F7A /* MVFQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVFQuestions.swift; sourceTree = "<group>"; };
 		685569C01D2C1925006C9F7A /* MVFQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVFQuestion.swift; sourceTree = "<group>"; };
 		686B0E101D3ACD0C007C2BE8 /* MedicineAchievementManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineAchievementManager.swift; sourceTree = "<group>"; };
-		686B0E1E1D3AD72F007C2BE8 /* TestMedicineAchievements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMedicineAchievements.swift; sourceTree = "<group>"; };
+		686B0E1E1D3AD72F007C2BE8 /* TestAchievementsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAchievementsManager.swift; sourceTree = "<group>"; };
 		6873D0481D23003A00775757 /* GamesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesListViewController.swift; sourceTree = "<group>"; };
 		688240D11D243D3100C63F6C /* RapidFireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidFireViewController.swift; sourceTree = "<group>"; };
 		688D0DC31D2ADE680024DD13 /* PillScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PillScreens.storyboard; sourceTree = "<group>"; };
@@ -385,8 +398,7 @@
 		68BEC3301D270D6700FCFAF5 /* CollectionRFQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionRFQuestions.swift; sourceTree = "<group>"; };
 		68D7ED241D2EE219002DFE46 /* AchievementManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementManager.swift; sourceTree = "<group>"; };
 		68D7ED371D368640002DFE46 /* AchievementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementTableViewCell.swift; sourceTree = "<group>"; };
-		68D7ED501D368DB8002DFE46 /* AchievementProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AchievementProperty.swift; path = ../ViewControllers/InfoHub/AchievementProperty.swift; sourceTree = "<group>"; };
-		68D7ED521D368DB8002DFE46 /* Achievement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Achievement.swift; path = ../ViewControllers/InfoHub/Achievement.swift; sourceTree = "<group>"; };
+		68E5EBC91D47C700008C0ED8 /* MedicineManagerProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MedicineManagerProvider.swift; path = ../SupportingFiles/MedicineManagerProvider.swift; sourceTree = "<group>"; };
 		68E62F721D14619A00743214 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		68E62F741D14675600743214 /* UserProfilePillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfilePillTableViewCell.swift; sourceTree = "<group>"; };
 		68E62F771D191BB800743214 /* PillStatusNotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillStatusNotificationsManager.swift; sourceTree = "<group>"; };
@@ -811,7 +823,10 @@
 			isa = PBXGroup;
 			children = (
 				68D7ED241D2EE219002DFE46 /* AchievementManager.swift */,
+				68E5EBC91D47C700008C0ED8 /* MedicineManagerProvider.swift */,
 				686B0E101D3ACD0C007C2BE8 /* MedicineAchievementManager.swift */,
+				684D7BC71D48CCFB00BB6B64 /* RapidFireAchievementManager.swift */,
+				684D7BC91D49144600BB6B64 /* GeneralAchievementsManager.swift */,
 			);
 			name = Achievements;
 			sourceTree = "<group>";
@@ -819,7 +834,10 @@
 		686B0E1D1D3AD71D007C2BE8 /* Achievements */ = {
 			isa = PBXGroup;
 			children = (
-				686B0E1E1D3AD72F007C2BE8 /* TestMedicineAchievements.swift */,
+				686B0E1E1D3AD72F007C2BE8 /* TestAchievementsManager.swift */,
+				684D7BCB1D4943DC00BB6B64 /* TestMedicineAchievements.swift */,
+				684D7BCD1D4943E900BB6B64 /* TestRFGameAchievements.swift */,
+				684D7BCF1D4943F100BB6B64 /* TestGeneralAchievements.swift */,
 			);
 			name = Achievements;
 			sourceTree = "<group>";
@@ -861,8 +879,8 @@
 			children = (
 				200C726E1B40368600998100 /* PagesManagerViewController.swift */,
 				688D0DC31D2ADE680024DD13 /* PillScreens.storyboard */,
-				200A18E41B64F62B00EC2A65 /* DailyStats */,
 				200A18E51B64F64200EC2A65 /* DidTakePill */,
+				200A18E41B64F62B00EC2A65 /* DailyStats */,
 				2095B8701B5A4B8500119896 /* PillStats */,
 			);
 			name = "Take Pill Screen and Pill Stats";
@@ -909,8 +927,8 @@
 		68D7ED301D2EE590002DFE46 /* Achievements */ = {
 			isa = PBXGroup;
 			children = (
-				68D7ED501D368DB8002DFE46 /* AchievementProperty.swift */,
-				68D7ED521D368DB8002DFE46 /* Achievement.swift */,
+				684D7BD21D49650700BB6B64 /* Achievement.swift */,
+				684D7BD11D49650700BB6B64 /* Achievement+CoreDataProperties.swift */,
 			);
 			name = Achievements;
 			sourceTree = "<group>";
@@ -1370,13 +1388,13 @@
 				200C72F21B40368600998100 /* NSManagedObject.swift in Sources */,
 				68E62F801D1C2C6B00743214 /* MedicineStockManager.swift in Sources */,
 				200C72A81B40368600998100 /* SyncManager.swift in Sources */,
+				684D7BCA1D49144600BB6B64 /* GeneralAchievementsManager.swift in Sources */,
 				311E38E91CA0DC400051B14E /* SocialMediaType.swift in Sources */,
 				200C73061B40368600998100 /* PagesManagerViewController.swift in Sources */,
 				686B0E111D3ACD0C007C2BE8 /* MedicineAchievementManager.swift in Sources */,
 				68BEC3311D270D6700FCFAF5 /* CollectionRFQuestions.swift in Sources */,
 				205E417E1B6AE74E0028A8D7 /* TripLocationHistoryPickerViewer.swift in Sources */,
 				200A18CF1B64F51300EC2A65 /* MedicinePickerViewTrip.swift in Sources */,
-				68D7ED561D368DB8002DFE46 /* Achievement.swift in Sources */,
 				68FCE59B1D2984D900D8B44B /* GameViewController.swift in Sources */,
 				200EE48A1B1343A50087FB24 /* AppDelegate.swift in Sources */,
 				200C72981B40368600998100 /* EndpointType.swift in Sources */,
@@ -1399,12 +1417,14 @@
 				200C72E81B40368600998100 /* TripExtension.swift in Sources */,
 				200A18E31B64F61F00EC2A65 /* ListItemsViewController.swift in Sources */,
 				202E18431B5AFFB3007D5194 /* NSNotificationEvents.swift in Sources */,
+				684D7BD31D49650700BB6B64 /* Achievement+CoreDataProperties.swift in Sources */,
 				20FC56C11B729F8B00D51801 /* PeaceCorpsInfo.swift in Sources */,
+				684D7BD41D49650700BB6B64 /* Achievement.swift in Sources */,
+				68E5EBCA1D47C700008C0ED8 /* MedicineManagerProvider.swift in Sources */,
 				200C72D41B40368600998100 /* Posts.swift in Sources */,
 				683468CF1D2976CB000F98EA /* GameRulesViewController.swift in Sources */,
 				203F0B0F1B45B3B900826E06 /* TabbedBarController.swift in Sources */,
 				20FC56EB1B72C91300D51801 /* UserSettingsManager.swift in Sources */,
-				68D7ED541D368DB8002DFE46 /* AchievementProperty.swift in Sources */,
 				20FC56FF1B72CA3E00D51801 /* UITabBarItem.swift in Sources */,
 				200C72B61B40368600998100 /* ItemExtension.swift in Sources */,
 				200C72781B40368600998100 /* CollectionPostsEndpoint.swift in Sources */,
@@ -1413,6 +1433,7 @@
 				200A18CD1B64F50500EC2A65 /* MedicinePickerView.swift in Sources */,
 				200C72BC1B40368600998100 /* Registry.swift in Sources */,
 				200C72F41B40368600998100 /* NSSet.swift in Sources */,
+				684D7BC81D48CCFB00BB6B64 /* RapidFireAchievementManager.swift in Sources */,
 				680BF7711D26E4890021353F /* AchievementsViewController.swift in Sources */,
 				20FC56FD1B72CA2800D51801 /* Globals.swift in Sources */,
 				200C72B81B40368600998100 /* Medicine.swift in Sources */,
@@ -1467,6 +1488,7 @@
 				209F60B51B6DA6B100EDA461 /* TestNotifications.swift in Sources */,
 				20C718E41B76C28D007424F6 /* TestMedicineManager.swift in Sources */,
 				20C718ED1B77DCB1007424F6 /* TestMonthAdherence.swift in Sources */,
+				684D7BCC1D4943DC00BB6B64 /* TestMedicineAchievements.swift in Sources */,
 				20C718E81B76C28D007424F6 /* TestMapping.swift in Sources */,
 				20E928A51B80CB8C00F3F387 /* TestSyncManager.swift in Sources */,
 				209F60B31B6DA6B100EDA461 /* TestDailyMedicineStatistics.swift in Sources */,
@@ -1477,7 +1499,9 @@
 				68E62F821D1DAC7D00743214 /* TestMedicineStockManager.swift in Sources */,
 				20246D1B1B4F245300384759 /* TestMedicineRegistries.swift in Sources */,
 				209F60B61B6DA6B100EDA461 /* TestTimedInsertions.swift in Sources */,
-				686B0E1F1D3AD72F007C2BE8 /* TestMedicineAchievements.swift in Sources */,
+				684D7BD01D4943F100BB6B64 /* TestGeneralAchievements.swift in Sources */,
+				684D7BCE1D4943E900BB6B64 /* TestRFGameAchievements.swift in Sources */,
+				686B0E1F1D3AD72F007C2BE8 /* TestAchievementsManager.swift in Sources */,
 				20C718E51B76C28D007424F6 /* TestUserSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1633,6 +1657,19 @@
 				CODE_SIGN_ENTITLEMENTS = "malaria-ios/malaria-ios.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/CVCalendar\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Charts\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/DoneToolbarSwift\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/HorizontalProgressView\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/PickerSwift\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SimpleCircleProgressView\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SwiftyJSON\"",
+					"\"${PODS_ROOT}/Crashlytics/iOS\"",
+					"\"${PODS_ROOT}/Fabric/iOS\"",
+				);
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				INFOPLIST_FILE = "malaria-ios/Info.plist";

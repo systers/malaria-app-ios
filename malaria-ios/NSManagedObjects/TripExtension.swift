@@ -1,14 +1,14 @@
 import Foundation
 import CoreData
 
-public extension Trip{
+extension Trip {
     /// Returns an object responsible for managing the items
-    public var itemsManager: ItemsManager{
+    var itemsManager: ItemsManager{
         return ItemsManager(trip: self)
     }
     
     /// Returns an object responsible for managing the notifications
-    public var notificationManager: TripNotificationsManager{
+    var notificationManager: TripNotificationsManager{
         return TripNotificationsManager(trip: self)
     }
 }

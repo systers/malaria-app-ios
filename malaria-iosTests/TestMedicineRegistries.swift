@@ -1,5 +1,5 @@
 import XCTest
-import malaria_ios
+@testable import malaria_ios
 
 class TestMedicineRegistries: XCTestCase {
 

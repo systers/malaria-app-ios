@@ -1,174 +1,70 @@
-import Foundation
+import UIKit
+import Toast_Swift
 
 /// Handles general achievement logic throughout the app.
 
-class AchievementManager {
-  static let sharedInstance = AchievementManager()
+class AchievementManager: CoreDataContextManager {
+  static var sharedInstance = AchievementManager(
+    context: CoreDataHelper.sharedInstance.createBackgroundContext()!
+  )
   
-  var context: NSManagedObjectContext! =
-    CoreDataHelper.sharedInstance.createBackgroundContext()!
+  // MARK: Properties
   
   private var achievements: [Achievement] {
-    let fetchRequest = NSFetchRequest(entityName: "Achievement")
-    
-    do {
-      let result = try context.executeFetchRequest(fetchRequest) as! [Achievement]
-      return result as [Achievement]
-    } catch let error as NSError {
-      Logger.Error("Could not fetch \(error), \(error.userInfo)")
-    }
-    return []
+    let results = Achievement.retrieve(Achievement.self, context: context)
+    return results
   }
   
-  /**
-   Each achievement has it properties that needs to be fulfilled
-   in order to unlock.
-   */
-  
-  private var properties: [AchievementProperty] {
-    let fetchRequest = NSFetchRequest(entityName: "AchievementProperty")
-    
-    do {
-      let result = try context.executeFetchRequest(fetchRequest) as! [AchievementProperty]
-      return result as [AchievementProperty]
-    } catch let error as NSError {
-      Logger.Error("Could not fetch \(error), \(error.userInfo)")
-    }
-    return []
-  }
+  // MARK: Methods
   
   func getAchievements(withTag tag: String) -> [Achievement] {
     return achievements.filter { $0.tag == tag }
   }
   
-  func defineProperty(name: String,
-                      initialValue: Int,
-                      activationMode: String,
-                      value: Int) {
-    
-    // Check for duplicate properties.
-    for property in self.properties where property.name == name {
-        return
+  func checkForDuplicateAchievements(achievementName: String) -> Bool {
+    for achievement in achievements where achievement.name == achievementName {
+      return true
     }
-    
-    let property = NSEntityDescription.insertNewObjectForEntityForName("AchievementProperty", inManagedObjectContext: context) as! AchievementProperty
-    
-    property.name = name
-    property.activation = activationMode
-    property.activationValue = value
-    property.initialValue = initialValue
-    
-    CoreDataHelper.sharedInstance.saveContext(context)
+    return false
   }
   
-  /**
-   Defines an achievement with a name, tag and defined properties name that it will use.
-   
-   Example: defineAchievement("Bounty Hunting",
-   tag: "Games",
-   ["Score 10 Points", "Score 50 Points", "Kill Boss"]
-   */
-  
-  func defineAchievement(name: String,
-                         description: String,
-                         propertyNames: [String],
-                         tag: String) {
-    
-    // Check for duplicate achievements.
-    for achievement in self.achievements {
-      if achievement.name == name {
-        return
-      }
-    }
-    
-    let achievement = NSEntityDescription.insertNewObjectForEntityForName("Achievement", inManagedObjectContext: context) as! Achievement
-    
-    // Check whether the required properties for this achievement exists.
-    let matchingProperties: [AchievementProperty]? =
-      properties.filter { propertyNames.contains($0.name!) }
-    
-    guard matchingProperties != nil else {
-      Logger.Warn("There are no matching properties for the achievement.")
+  func unlock(achievement name: String) {
+    // Check if achievement already exists.
+    guard let achievement = achievements.filter({ $0.name == name }).first else {
+      Logger.Error("Tried to unlock an achievement that doesn't exist.")
       return
     }
     
-    achievement.properties = Set(matchingProperties!)
-    achievement.name = name
-    achievement.tag = tag
-    achievement.desc = description
+    if isAchievementUnlocked(achievement: name) {
+      return
+    }
+    
+    // Unlock achievement.
+    achievement.isUnlocked = true
+    
+    Logger.Info("Unlocked achievement: \(name)")
+    
+    // Show alert message.
+    UIApplication.sharedApplication().keyWindow?.rootViewController?
+      .view.makeToast("Achievement \"\(name)\" unlocked.",
+                      duration: 3.0,
+                      position: .Bottom)
     
     CoreDataHelper.sharedInstance.saveContext(context)
   }
   
-  /// Gets the current value of a `AchievementProperty`.
+  // Check if the achievement was already unlocked and return.
   
-  func getValue(propertyName: String) -> Int {
-    return properties.filter { $0.name! == propertyName }
-      .first!
-      .currentValue as! Int
-  }
-  
-  /**
-   Sets the a new value for the `AchievementProperty`.
-   It doesn't overwrite the value if the achievementProperty will be activated.
-   */
-  
-  func setValue(propertyName: String, value: Int) {
-    
-    var value = value
-    let property = properties.filter { $0.name == propertyName }.first
-    
-    // Update value only if we achieved a better (lesser or greater, depeding on the case)
-    // value than the original one, not losing the previous achieved value.
-    
-    let currentPropertyValue = property?.currentValue! as! Int
-    
-    switch property!.activation! {
-    case ">":
-      value = value > currentPropertyValue ? value : currentPropertyValue
-    case "<":
-      value = value < currentPropertyValue ? value : currentPropertyValue
-    default: return
+  func isAchievementUnlocked(achievement name: String) -> Bool {
+    guard let achievement = achievements.filter({ $0.name == name }).first else {
+      Logger.Error("Tried to unlock an achievement that doesn't exist.")
+      return false
     }
     
-    property!.currentValue = value;
+    return achievement.isUnlocked == true
   }
   
-  /// Set the current value for multiple `AchievementProperty`.
-  
-  func setValue(properties: [AchievementProperty], value: Int) {
-    for property in properties {
-      setValue(property.name!, value: getValue(property.name!) + value)
-    }
-  }
-  
-  /**
-   Returns a list of the unlocked achievements.
-   */
-  
-  func checkAchievements() -> [Achievement] {
-    var unlockedAchievements = [Achievement]();
-    
-    for achievement in achievements {
-      
-      if achievement.isUnlocked! == false {
-        var activePropertiesCount = 0
-        
-        // Check for active properties
-        let properties = achievement.properties!
-        
-        for property in properties where property.isActive() {
-          activePropertiesCount += 1
-        }
-        
-        // If all properties are active, the achievement is unlocked
-        if activePropertiesCount == achievement.properties!.count {
-          achievement.isUnlocked = true
-          unlockedAchievements.append(achievement)
-        }
-      }
-    }
-    
-    return unlockedAchievements
+  func clearAchievements() {
+    Achievement.clear(Achievement.self, context: context)
   }
 }

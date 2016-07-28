@@ -59,15 +59,21 @@ class MythVsFactViewController: GameViewController {
   }
   
   override func viewWillAppear(animated: Bool) {
-    
     mythVsFactGame = game as! MythVsFactGame
-    
     super.viewWillAppear(animated)
   }
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
     statementLabelInitialFrame = statementLabel.frame
+  }
+  
+  override func endGame() {
+    super.endGame()
+    
+    // Send a notification that the game has finished.
+    let dict = ["game" : mythVsFactGame]
+    NSNotificationEvents.MVFGameFinished(dict)
   }
   
   @IBAction func pan(sender: UIPanGestureRecognizer) {

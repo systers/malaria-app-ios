@@ -1,8 +1,18 @@
 import UIKit
 
-class RapidFireGame {
+class RapidFireGame: Game {
   
   var entries: [RapidFireGameEntry] = []
+  
+  var achievementManager: RapidFireAchievementManager?
+
+  // MARK: Game protocol
+  var maximumScore: Int?
+  
+  var numberOfLevels: Int { return entries.count }
+  var name: String { return "Rapid Fire" }
+  var rules: String { return "- Answer questions quickly, under time pressure.\n\n"
+    + "- Score Achievement Points for every correct answer you give." }
   
   init() {
     let entry1 = RapidFireGameEntry(question: "Question 1 (answer 2)",
@@ -14,20 +24,9 @@ class RapidFireGame {
     let entry3 = RapidFireGameEntry(question: "Question 3 (answer 3)",
                                     answers: ["Answer 1", "Answer 2", "Answer 3"],
                                     correctAnswer: 2)
-    
+
     entries.appendContentsOf([entry1, entry2, entry3])
   }
-}
-
-extension RapidFireGame: Game {
-  
-  var numberOfLevels: Int { return entries.count }
-  var name: String { return "Rapid Fire" }
-  var rules: String { return "- Answer questions quickly, under time pressure.\n\n"
-    + "- Score Achievement Points for every correct answer you give." }
-  
-  func defineAchievements() { }
-
 }
 
 class RapidFireGameEntry {
