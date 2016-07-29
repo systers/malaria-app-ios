@@ -29,11 +29,14 @@ class TestGeneralAchievements: XCTestCase {
     
     XCTAssertFalse(achievementUnlocked)
 
-    tm.createTrip("dasda", medicine: "", departure: NSDate(), arrival: NSDate().dateByAddingTimeInterval(30000), timeReminder: NSDate().dateByAddingTimeInterval(2000))
+    let departure = NSDate()
+    let arrival = NSDate() + 30.day
+    let reminder = arrival - 1.day
     
-    NSNotificationEvents.TripPlanned()
-
-    print(tm.getTrip() != nil ? "cioc" : "boc")
+    tm.createTrip("dasda", medicine: "",
+                  departure: departure,
+                  arrival: arrival,
+                  timeReminder: reminder)
     
     achievementUnlocked = am.isAchievementUnlocked(achievement: Constants.Achievements.General.PlanFirstTrip)
 

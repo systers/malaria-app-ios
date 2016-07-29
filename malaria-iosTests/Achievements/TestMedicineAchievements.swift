@@ -30,16 +30,14 @@ class TestMedicineAchievements: XCTestCase {
   }
   
   func testStayingSafeAchievement() {
-    var achievementUnlocked = am.isAchievementUnlocked(achievement: Constants.Achievements.Pills.StayingSafe)
-    
+    var achievementUnlocked =
+      am.isAchievementUnlocked(achievement: Constants.Achievements.Pills.StayingSafe)
     XCTAssertFalse(achievementUnlocked)
     
     // Take medicine for today
-    
     m.getCurrentMedicine()!.registriesManager.addRegistry(NSDate(), tookMedicine: true, modifyEntry: true)
     
     achievementUnlocked = am.isAchievementUnlocked(achievement: Constants.Achievements.Pills.StayingSafe)
-    
     XCTAssertTrue(achievementUnlocked)
   }
 }

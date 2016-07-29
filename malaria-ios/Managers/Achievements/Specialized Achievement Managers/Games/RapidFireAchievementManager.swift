@@ -2,16 +2,23 @@ import Foundation
 
 /// Class that handles all the achievements related to the Rapid Fire Game.
 
-class RapidFireAchievementManager: NSObject {
+class RapidFireAchievementManager: NSObject, SpecializedAchievementManager {
   static let sharedInstance = RapidFireAchievementManager()
+  
+  private let FlawlessGameDescription =
+  "Finish a Rapid Fire game without picking any wrong answer."
   
   private var game: RapidFireGame?
   private let achievementManager = AchievementManager.sharedInstance
   
+  let tag = "Games"
+    
   override init() {
     super.init()
     
     defineAchievements()
+    
+    achievementManager.addTag(tag)
     
     NSNotificationEvents.ObserveRFGameFinished(self,
                                                selector: #selector(checkAchievements))
@@ -38,8 +45,8 @@ extension RapidFireAchievementManager {
   
   private func defineFlawlessGame() {
     Achievement.define(Constants.Achievements.RapidFireGame.FlawlessGame,
-                       description: "Finish a Rapid Fire game without picking any wrong answer.",
-                       tag: Constants.Achievements.Tags.Games)
+                       description: FlawlessGameDescription,
+                       tag: tag)
   }
 }
 

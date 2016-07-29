@@ -11,7 +11,8 @@ class RapidFireViewController: GameViewController {
   @IBInspectable let TimerMaxValue: Int = 5
   
   // Measured in seconds.
-  let TimerTickingInterval: Double = 1
+  private let TimerTickingInterval: Double = 1
+  private let RemainingSecondsBlinkRate = 0.2
   
   var rapidFireGame: RapidFireGame!
   
@@ -53,7 +54,7 @@ class RapidFireViewController: GameViewController {
     }
     
     if count <= TimerBlinkAtSecond {
-      countDownLabel.blink(withRate: Constants.RapidFireGame.RemainingSecondsBlinkRate,
+      countDownLabel.blink(withRate: RemainingSecondsBlinkRate,
                            completion: { _ in self.countDownLabel?.alpha = 1.0 })
     }
     

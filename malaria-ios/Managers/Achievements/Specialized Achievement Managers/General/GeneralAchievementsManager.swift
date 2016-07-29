@@ -1,17 +1,23 @@
 import Foundation
 
-/// Class that handles all the achievements related to the Rapid Fire Game.
+/// Class that handles the rest of the achievements throughout the app.
 
-class GeneralAchievementsManager: NSObject {
+class GeneralAchievementsManager: NSObject, SpecializedAchievementManager {
   static let sharedInstance = GeneralAchievementsManager()
-
+  
+  private let PlanFirstTripDescription = "Plan your first trip."
+  
   private let achievementManager = AchievementManager.sharedInstance
+  
+  let tag = "General"
   
   private override init() {
     super.init()
     
     defineAchievements()
-
+    
+    achievementManager.addTag(tag)
+    
     NSNotificationEvents.ObserveTripPlanned(self,
                                             selector: #selector(checkAchievements))
   }
@@ -37,8 +43,8 @@ extension GeneralAchievementsManager {
   
   private func defineFirstTrip() {
     Achievement.define(Constants.Achievements.General.PlanFirstTrip,
-                       description: "Plan your first trip!",
-                       tag: Constants.Achievements.Tags.General)
+                       description: PlanFirstTripDescription,
+                       tag: tag)
   }
 }
 
@@ -46,11 +52,11 @@ extension GeneralAchievementsManager {
 
 extension GeneralAchievementsManager {
   
-  func checkAchievements() {
-    checkFlawlessGame()
+  func checkAchievements(notification: NSNotification) {
+    checkFirstTrip()
   }
   
-  private func checkFlawlessGame() {
+  private func checkFirstTrip() {
     let context = CoreDataHelper.sharedInstance.createBackgroundContext()!
     
     if TripsManager(context: context).getTrip() != nil {

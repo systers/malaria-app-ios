@@ -26,7 +26,7 @@ class TestSetupInsertClear: XCTestCase {
     func testCurrentMedicine(){
         if let medi = m.getCurrentMedicine(){
             XCTAssertEqual(medi.name, Medicine.Pill.Malarone.name())
-            XCTAssertEqual(medi.internalInterval, 1)
+            XCTAssertEqual(medi.interval, 1)
             XCTAssertEqual(medi.registries.count, 0)
         }else{
             XCTFail("Fail initializing:")
@@ -36,7 +36,7 @@ class TestSetupInsertClear: XCTestCase {
     func testGetMedicine(){
         if let medi = m.getMedicine(currentPill.name()){
             XCTAssertEqual(medi.name, Medicine.Pill.Malarone.name())
-            XCTAssertEqual(medi.internalInterval, 1)
+            XCTAssertEqual(medi.interval, 1)
             XCTAssertEqual(medi.registries.count, 0)
         }else{
             XCTFail("Fail initializing:")
@@ -60,5 +60,4 @@ class TestSetupInsertClear: XCTestCase {
         
         XCTAssertEqual(true, m.getRegisteredMedicines().count == 0)
     }
-    
 }

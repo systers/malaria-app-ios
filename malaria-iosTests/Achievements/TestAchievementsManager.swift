@@ -44,4 +44,24 @@ class TestAchievementsManager: XCTestCase {
 
     XCTAssert(achievements.count == 1)
   }
+  
+  func testGetAchievementWithUndefinedTag() {
+    let achievements = am.getAchievements(withTag: "undefined")
+    
+    XCTAssert(achievements.count == 0)
+  }
+  
+  func testGetAchievementsWithSameTag() {
+    let tag = "Test tag"
+    
+    Achievement.define("Test achievement 3", description: "Test",
+                       tag: tag)
+
+    Achievement.define("Test achievement 4", description: "Test",
+                       tag: tag)
+
+    let achievements = am.getAchievements(withTag: tag)
+    
+    XCTAssert(achievements.count == 2)
+  }
 }
