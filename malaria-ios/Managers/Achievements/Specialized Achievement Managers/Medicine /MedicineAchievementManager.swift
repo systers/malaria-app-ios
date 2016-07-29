@@ -4,6 +4,7 @@ import Foundation
 
 class MedicineAchievementManager: NSObject, SpecializedAchievementManager {
   
+  private static let StayingSafe = "Staying safe"
   private let StayingSafeDescription = "Take your first medicine."
   
   private var medicine: Medicine
@@ -18,7 +19,7 @@ class MedicineAchievementManager: NSObject, SpecializedAchievementManager {
     
     super.init()
     
-    achievementManager.addTag(tag)
+    defineAchievements()
 
     NSNotificationEvents.ObserveDataUpdated(self,
                                             selector: #selector(checkAchievements))
@@ -35,6 +36,8 @@ class MedicineAchievementManager: NSObject, SpecializedAchievementManager {
 extension MedicineAchievementManager {
   
   func defineAchievements() {
+    achievementManager.addTag(tag)
+
     defineStayingSafe()
   }
   
@@ -45,7 +48,7 @@ extension MedicineAchievementManager {
    */
   
   private func defineStayingSafe() {
-    Achievement.define(Constants.Achievements.Pills.StayingSafe,
+    Achievement.define(MedicineAchievementManager.StayingSafe,
                        description: StayingSafeDescription,
                        tag: tag)
   }
@@ -66,7 +69,7 @@ extension MedicineAchievementManager {
     let medicine = medicineManager.getMedicine(self.medicine.name)
     
     if medicine?.registriesManager.lastPillDate() != nil {
-      achievementManager.unlock(achievement: Constants.Achievements.Pills.StayingSafe)
+      achievementManager.unlock(achievement: MedicineAchievementManager.StayingSafe)
     }
   }
 }

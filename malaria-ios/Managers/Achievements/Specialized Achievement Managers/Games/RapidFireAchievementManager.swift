@@ -5,6 +5,7 @@ import Foundation
 class RapidFireAchievementManager: NSObject, SpecializedAchievementManager {
   static let sharedInstance = RapidFireAchievementManager()
   
+  private static let FlawlessGame = "Flawless game"
   private let FlawlessGameDescription =
   "Finish a Rapid Fire game without picking any wrong answer."
   
@@ -12,13 +13,11 @@ class RapidFireAchievementManager: NSObject, SpecializedAchievementManager {
   private let achievementManager = AchievementManager.sharedInstance
   
   let tag = "Games"
-    
+
   override init() {
     super.init()
     
     defineAchievements()
-    
-    achievementManager.addTag(tag)
     
     NSNotificationEvents.ObserveRFGameFinished(self,
                                                selector: #selector(checkAchievements))
@@ -34,6 +33,8 @@ class RapidFireAchievementManager: NSObject, SpecializedAchievementManager {
 extension RapidFireAchievementManager {
   
   func defineAchievements() {
+    achievementManager.addTag(tag)
+
     defineFlawlessGame()
   }
   
@@ -44,7 +45,7 @@ extension RapidFireAchievementManager {
    */
   
   private func defineFlawlessGame() {
-    Achievement.define(Constants.Achievements.RapidFireGame.FlawlessGame,
+    Achievement.define(RapidFireAchievementManager.FlawlessGame,
                        description: FlawlessGameDescription,
                        tag: tag)
   }
@@ -63,7 +64,7 @@ extension RapidFireAchievementManager {
   
   private func checkFlawlessGame() {
     if game!.maximumScore == game!.numberOfLevels {
-      achievementManager.unlock(achievement: Constants.Achievements.RapidFireGame.FlawlessGame)
+      achievementManager.unlock(achievement: RapidFireAchievementManager.FlawlessGame)
     }
   }
 }

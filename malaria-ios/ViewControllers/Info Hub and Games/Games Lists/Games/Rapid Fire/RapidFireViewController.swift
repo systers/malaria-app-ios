@@ -112,7 +112,7 @@ class RapidFireViewController: GameViewController {
     }
     
     // Reset timer
-    count = 5
+    count = TimerMaxValue
     timer?.invalidate()
     
     currentLevel += 1

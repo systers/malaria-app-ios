@@ -8,6 +8,7 @@ class AchievementTableViewCell: UITableViewCell {
   @IBOutlet weak var progressLabel: UILabel!
   
   private let MaximumProgress: Float = 1.0
+  private let finishedAchievementTitle = "Completed"
   
   func updateCell(achievement: Achievement) {
     
@@ -15,10 +16,9 @@ class AchievementTableViewCell: UITableViewCell {
     achievementDescription.text = achievement.desc
     
     // Check if achievement is unlocked.
-    if achievement.isUnlocked == true {
+    if achievement.isUnlocked {
       progressView.setProgress(MaximumProgress, animated: true)
-      progressLabel.text = "Completed"
-      return
+      progressLabel.text = finishedAchievementTitle
     }
   }
 }

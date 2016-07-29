@@ -27,11 +27,11 @@ class TestAchievementsManager: XCTestCase {
     let achievement = Achievement.define("Test achievement 2", description: "Test",
                                          tag: "Test tag")
     
-    XCTAssert(achievement!.isUnlocked == false)
+    XCTAssert(!achievement!.isUnlocked)
     
     am.unlock(achievement: "Test achievement 2")
     
-    XCTAssert(achievement!.isUnlocked == true)
+    XCTAssert(achievement!.isUnlocked)
   }
   
   func testGetAchievements() {

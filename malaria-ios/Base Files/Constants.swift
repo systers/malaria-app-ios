@@ -2,7 +2,6 @@ import UIKit
 
 class Constants {
 
-  static let localNotificationsArray = "Local Notifications Array"
   static let DefaultBrownTint = UIColor(red: 118.0 / 255.0, green: 80.0 / 255.0, blue: 72.0 / 255.0, alpha: 1)
   static let DefaultGreenTint = UIColor(red: 133.0 / 255.0, green: 184.0 / 255.0, blue: 80.0 / 255.0, alpha: 1)
   
@@ -18,17 +17,8 @@ class Constants {
     static let InfoHub = "InfoHub"
   }
   
-  struct Achievements {
-    struct Pills {
-      static let StayingSafe = "Staying safe"
-    }
-    
-    struct RapidFireGame {
-      static let FlawlessGame = "Flawless game"
-    }
     
     struct General {
       static let PlanFirstTrip = "Plan First Trip"
     }
-  }
 }

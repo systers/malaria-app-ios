@@ -10,7 +10,7 @@ class AchievementManager: CoreDataContextManager {
   
   typealias AchievementObject = (sectionName: String, achievements: [Achievement])
   
-  private var tags: [String]? = []
+  private var tags: Set<String> = []
   
   // MARK: Properties
   
@@ -22,13 +22,13 @@ class AchievementManager: CoreDataContextManager {
   // MARK: Methods
   
   func addTag(tag: String) {
-    tags!.append(tag)
+    tags.insert(tag)
   }
   
   func getAchievements() -> [AchievementObject] {
     var results: [AchievementObject] = []
     
-    for tag in tags! {
+    for tag in tags {
       let achievementObject = (tag, achievements.filter { $0.tag == tag })
       results.append(achievementObject)
     }
@@ -73,7 +73,7 @@ class AchievementManager: CoreDataContextManager {
       return false
     }
     
-    return achievement.isUnlocked == true
+    return achievement.isUnlocked
   }
   
   func clearAchievements() {

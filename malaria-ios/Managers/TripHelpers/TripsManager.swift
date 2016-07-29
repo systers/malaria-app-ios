@@ -3,6 +3,8 @@ import Foundation
 /// Manages `Trip` core data instances
 class TripsManager : CoreDataContextManager {
   
+  private let TripHistoryLimit: Int = 15
+  
   /// Init
   override init(context: NSManagedObjectContext){
     super.init(context: context)
@@ -36,7 +38,7 @@ class TripsManager : CoreDataContextManager {
   /// - parameter `Trip`:: the trip
   private func createHistory(trip: Trip){
     let previousHistory = getHistory(Int.max)
-    if previousHistory.count >= 15 {
+    if previousHistory.count >= TripHistoryLimit {
       Logger.Warn("Deleting history to have more space")
       
       //delete oldest entry

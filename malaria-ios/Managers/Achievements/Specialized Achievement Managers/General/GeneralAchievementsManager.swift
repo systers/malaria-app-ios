@@ -5,18 +5,17 @@ import Foundation
 class GeneralAchievementsManager: NSObject, SpecializedAchievementManager {
   static let sharedInstance = GeneralAchievementsManager()
   
+  private static let PlanFirstTrip = "First Trip"
   private let PlanFirstTripDescription = "Plan your first trip."
   
   private let achievementManager = AchievementManager.sharedInstance
   
   let tag = "General"
-  
+
   private override init() {
     super.init()
     
     defineAchievements()
-    
-    achievementManager.addTag(tag)
     
     NSNotificationEvents.ObserveTripPlanned(self,
                                             selector: #selector(checkAchievements))
@@ -32,6 +31,8 @@ class GeneralAchievementsManager: NSObject, SpecializedAchievementManager {
 extension GeneralAchievementsManager {
   
   func defineAchievements() {
+    achievementManager.addTag(tag)
+
     defineFirstTrip()
   }
   
@@ -42,7 +43,7 @@ extension GeneralAchievementsManager {
    */
   
   private func defineFirstTrip() {
-    Achievement.define(Constants.Achievements.General.PlanFirstTrip,
+    Achievement.define(GeneralAchievementsManager.PlanFirstTrip,
                        description: PlanFirstTripDescription,
                        tag: tag)
   }
@@ -60,7 +61,7 @@ extension GeneralAchievementsManager {
     let context = CoreDataHelper.sharedInstance.createBackgroundContext()!
     
     if TripsManager(context: context).getTrip() != nil {
-      achievementManager.unlock(achievement: Constants.Achievements.General.PlanFirstTrip)
+      achievementManager.unlock(achievement: GeneralAchievementsManager.PlanFirstTrip)
     }    
   }
 }
