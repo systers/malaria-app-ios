@@ -4,11 +4,11 @@ import UIKit
 class GameViewController: UIViewController {
   
   @IBOutlet weak var scoreLabel: UILabel!
-
+  
   private let NotificationObjectName = "game"
   
   var game: Game!
-
+  
   var userScore: Int = 0 {
     didSet {
       scoreLabel.text = "Score: \(userScore)"

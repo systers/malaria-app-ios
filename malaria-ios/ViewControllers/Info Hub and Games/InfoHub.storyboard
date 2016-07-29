@@ -78,7 +78,7 @@
                                     <outlet property="delegate" destination="9YU-V4-hOC" id="UrR-ak-OM4"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="games" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8u-jq-2Oz" userLabel="Title">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="games" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="F8u-jq-2Oz" userLabel="Title">
                                 <rect key="frame" x="236" y="41" width="113" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="189" id="iM5-Mx-EIP"/>
@@ -102,14 +102,16 @@
                             <constraint firstAttribute="centerX" secondItem="F8u-jq-2Oz" secondAttribute="centerX" constant="7.5" id="GpH-Zd-QpG"/>
                             <constraint firstItem="DPv-M0-R7v" firstAttribute="top" secondItem="fFA-0G-Ftr" secondAttribute="bottom" constant="20" id="JyG-7D-8TC"/>
                             <constraint firstItem="fFA-0G-Ftr" firstAttribute="top" secondItem="F8u-jq-2Oz" secondAttribute="top" id="MJn-8B-PmU"/>
+                            <constraint firstItem="fFA-0G-Ftr" firstAttribute="leading" secondItem="mpF-ED-S2y" secondAttribute="leading" constant="20" id="aH0-pO-pVP"/>
                             <constraint firstItem="F8u-jq-2Oz" firstAttribute="bottom" secondItem="fFA-0G-Ftr" secondAttribute="bottom" id="ghZ-fN-WVD"/>
                             <constraint firstItem="fFA-0G-Ftr" firstAttribute="leading" secondItem="mpF-ED-S2y" secondAttribute="leadingMargin" id="hBc-Yi-qnx"/>
                             <constraint firstItem="fFA-0G-Ftr" firstAttribute="top" secondItem="pDR-Vk-PmE" secondAttribute="bottom" constant="21" id="iRO-Z8-maK"/>
                             <constraint firstAttribute="trailing" secondItem="DPv-M0-R7v" secondAttribute="trailing" id="imr-yC-hIk"/>
-                            <constraint firstItem="F8u-jq-2Oz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fFA-0G-Ftr" secondAttribute="trailing" constant="5" id="lEf-5t-CAh"/>
+                            <constraint firstItem="F8u-jq-2Oz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fFA-0G-Ftr" secondAttribute="trailing" constant="8" id="lEf-5t-CAh"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="hBc-Yi-qnx"/>
                                 <exclude reference="0Rh-Fu-qEH"/>
                                 <exclude reference="4L2-YK-nBj"/>
                             </mask>
@@ -503,7 +505,7 @@
                                     <outlet property="delegate" destination="o41-au-PMD" id="wur-cK-arb"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="info Hub" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8e-58-wHB" userLabel="Title">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="info Hub" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="V8e-58-wHB" userLabel="Title">
                                 <rect key="frame" x="198" y="41" width="189" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="189" id="P7S-ml-qtX"/>
@@ -518,16 +520,21 @@
                             <constraint firstItem="q6a-Bc-6gq" firstAttribute="bottom" secondItem="DCQ-nj-LfX" secondAttribute="top" id="BaA-lq-rsZ"/>
                             <constraint firstItem="LC6-3c-WdR" firstAttribute="leading" secondItem="Nhy-aQ-b7U" secondAttribute="leadingMargin" id="Ifn-Ni-Ov7"/>
                             <constraint firstItem="q6a-Bc-6gq" firstAttribute="top" secondItem="LC6-3c-WdR" secondAttribute="bottom" constant="20" id="Iyu-VI-Y5H"/>
+                            <constraint firstItem="LC6-3c-WdR" firstAttribute="leading" secondItem="Nhy-aQ-b7U" secondAttribute="leadingMargin" id="JDL-sk-pHh"/>
                             <constraint firstAttribute="trailing" secondItem="q6a-Bc-6gq" secondAttribute="trailing" id="XhI-xu-Xay"/>
                             <constraint firstItem="V8e-58-wHB" firstAttribute="bottom" secondItem="LC6-3c-WdR" secondAttribute="bottom" id="ZGg-xf-6e6"/>
                             <constraint firstItem="q6a-Bc-6gq" firstAttribute="leading" secondItem="Nhy-aQ-b7U" secondAttribute="leading" id="aE4-QR-UhR"/>
+                            <constraint firstItem="LC6-3c-WdR" firstAttribute="leading" secondItem="Nhy-aQ-b7U" secondAttribute="leading" constant="20" id="aTw-9n-Pao"/>
                             <constraint firstItem="LC6-3c-WdR" firstAttribute="top" secondItem="OvY-Bl-YPX" secondAttribute="bottom" constant="21" id="d4T-4p-WHv"/>
                             <constraint firstItem="DCQ-nj-LfX" firstAttribute="top" secondItem="q6a-Bc-6gq" secondAttribute="bottom" id="ddp-uF-9BW"/>
+                            <constraint firstItem="V8e-58-wHB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="LC6-3c-WdR" secondAttribute="trailing" constant="8" id="gFO-29-tza"/>
                             <constraint firstItem="LC6-3c-WdR" firstAttribute="top" secondItem="V8e-58-wHB" secondAttribute="top" id="pIK-zG-SGA"/>
                             <constraint firstAttribute="centerX" secondItem="V8e-58-wHB" secondAttribute="centerX" constant="7.5" id="t3y-Sv-Q9a"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Ifn-Ni-Ov7"/>
+                                <exclude reference="JDL-sk-pHh"/>
                                 <exclude reference="BaA-lq-rsZ"/>
                             </mask>
                         </variation>
@@ -673,15 +680,21 @@
                         <constraints>
                             <constraint firstItem="DcT-qb-Ido" firstAttribute="top" secondItem="DQ0-yr-1em" secondAttribute="bottom" constant="15" id="9Iw-w0-bVq"/>
                             <constraint firstAttribute="trailing" secondItem="DcT-qb-Ido" secondAttribute="trailing" id="BT2-F2-wUs"/>
-                            <constraint firstItem="DQ0-yr-1em" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NFX-8e-Azs" secondAttribute="trailing" constant="5" id="CfU-7O-o5a"/>
+                            <constraint firstItem="DQ0-yr-1em" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NFX-8e-Azs" secondAttribute="trailing" constant="8" id="CfU-7O-o5a"/>
                             <constraint firstItem="NFX-8e-Azs" firstAttribute="top" secondItem="5FK-ov-dac" secondAttribute="bottom" constant="21" id="FX2-fJ-WTa"/>
                             <constraint firstItem="NFX-8e-Azs" firstAttribute="leading" secondItem="tVG-R7-WDD" secondAttribute="leadingMargin" id="Lok-Sc-cRk"/>
                             <constraint firstItem="DQ0-yr-1em" firstAttribute="bottom" secondItem="NFX-8e-Azs" secondAttribute="bottom" id="ZNl-QU-Z7K"/>
                             <constraint firstAttribute="centerX" secondItem="DQ0-yr-1em" secondAttribute="centerX" constant="-13" id="cDE-LW-1u7"/>
+                            <constraint firstItem="NFX-8e-Azs" firstAttribute="leading" secondItem="tVG-R7-WDD" secondAttribute="leading" constant="20" id="gwS-13-TGT"/>
                             <constraint firstItem="DZs-te-8uN" firstAttribute="top" secondItem="DcT-qb-Ido" secondAttribute="bottom" id="irf-iP-m6D"/>
                             <constraint firstItem="DcT-qb-Ido" firstAttribute="leading" secondItem="tVG-R7-WDD" secondAttribute="leading" id="wr1-bR-Jcd"/>
                             <constraint firstItem="NFX-8e-Azs" firstAttribute="top" secondItem="DQ0-yr-1em" secondAttribute="top" id="xIR-46-Iir"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Lok-Sc-cRk"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="TabInfoHubIconUnselected" id="XOo-gm-CkZ">
                         <userDefinedRuntimeAttributes>
