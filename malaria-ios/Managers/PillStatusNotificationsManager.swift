@@ -3,7 +3,7 @@ import Foundation
 
 /// A class that handles setting notifications when the user runs out of pills.
 
-public class PillStatusNotificationsManager: NotificationManager {
+class PillStatusNotificationsManager: NotificationManager {
   
   /// The current possible values of selecting an interval to be reminded
   /// of not having enough pills.
@@ -27,33 +27,33 @@ public class PillStatusNotificationsManager: NotificationManager {
   }
   
   /// Notification category.
-  override public var category: String { get{ return "PillStatusReminder"} }
+  override var category: String { get{ return "PillStatusReminder"} }
   
   /// Notification alert body.
-  override public var alertBody: String { get{ return "You ran out of pills!"} }
+  override var alertBody: String { get{ return "You ran out of pills!"} }
   
   /// Notification alert action.
-  override public var alertAction: String { get{ return "Ok" } }
+  override var alertAction: String { get{ return "Ok" } }
   
   /// A method that checks if the user has ran out of pills for their selected ReminderInterval.
   ///
   /// - parameter `remainingPills`:: Current user medicine stock.
   /// - parameter `reminderValue`:: The current number of days (represents in a number of pills)
   /// the user set in order to be reminded of.
-  public func shouldPresentNotification(remainingPills: Int, reminderValue: Int) -> Bool {
+  func shouldPresentNotification(remainingPills: Int, reminderValue: Int) -> Bool {
     return remainingPills < reminderValue
   }
   
   /// Schedules notification.
   ///
   /// - parameter `NSDate`:: trigger time.
-  public override func scheduleNotification(fireTime: NSDate) {
+  override func scheduleNotification(fireTime: NSDate) {
     super.unsheduleNotification()
     super.scheduleNotification(fireTime)
   }
   
   /// Unschedule notification.
-  public override func unsheduleNotification(){
+  override func unsheduleNotification(){
     super.unsheduleNotification()
   }
   

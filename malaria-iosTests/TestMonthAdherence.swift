@@ -1,13 +1,5 @@
-//
-//  TestMonthAdherence.swift
-//  malaria-ios
-//
-//  Created by Bruno Henriques on 09/08/15.
-//  Copyright (c) 2015 Bruno Henriques. All rights reserved.
-//
-
 import XCTest
-import malaria_ios
+@testable import malaria_ios
 
 class TestMonthAdherence: XCTestCase {
 

@@ -2,42 +2,42 @@ import Foundation
 import UIKit
 
 /// Manages notifications for medicine
-public class MedicineNotificationsManager : NotificationManager {
+class MedicineNotificationsManager : NotificationManager {
   
     /// Notification category.
   
-    override public var category: String { get{ return MedicineNotificationsManager.NotificationCategory } }
+    override var category: String { return MedicineNotificationsManager.NotificationCategory }
 
     /// Notification alert body.
   
-    override public var alertBody: String { get{
+    override var alertBody: String { get{
         let medicineName = MedicineManager(context: context).getCurrentMedicine()!.name
         return "Did you take \(medicineName) today?" }
     }
     
     /// Notification alert action.
-    override public var alertAction: String { get{ return "Take pill"} }
+    override var alertAction: String { get{ return "Take pill"} }
     
     private let medicine: Medicine
   
     /// If for Yes in interactive notifications.
-    public static let TookPillId = "TookPill"
+    static let TookPillId = "TookPill"
   
     /// Yes action string for interactive notifications.
-    public static let TookPillTitle = "Yes"
+     static let TookPillTitle = "Yes"
   
     /// Id for No in interactive notifications.
-    public static let DidNotTakePillId = "DidNotTakePillId"
+     static let DidNotTakePillId = "DidNotTakePillId"
   
     /// No action string for interactive notifications.
-    public static let DidNotTakePillTitle = "No"
+     static let DidNotTakePillTitle = "No"
   
     /// Notification's category.
-    public static let NotificationCategory = "PILL_REMINDER"
+    static let NotificationCategory = "PILL_REMINDER"
     
     /// Init 
   
-    public init(medicine: Medicine){
+     init(medicine: Medicine){
         self.medicine = medicine
         super.init(context: medicine.managedObjectContext!)
     }
@@ -46,7 +46,7 @@ public class MedicineNotificationsManager : NotificationManager {
     ///
     /// - parameter `NSDate`:: trigger time
   
-    public override func scheduleNotification(fireTime: NSDate) {
+     override func scheduleNotification(fireTime: NSDate) {
         medicine.notificationTime = fireTime
         CoreDataHelper.sharedInstance.saveContext(self.context)
         super.unsheduleNotification()
@@ -55,7 +55,7 @@ public class MedicineNotificationsManager : NotificationManager {
     
     /// Unschedule notification and sets the fireTime in medicine object as nil.
   
-    public override func unsheduleNotification(){
+     override func unsheduleNotification(){
         super.unsheduleNotification()
         
         medicine.notificationTime = nil
@@ -68,7 +68,7 @@ public class MedicineNotificationsManager : NotificationManager {
     ///
     /// - returns: `NSDate`: Next reminder time.
   
-    public func reshedule() -> NSDate?{
+    func reshedule() -> NSDate?{
         if var nextTime = medicine.notificationTime{
             nextTime += medicine.interval.day
             medicine.notificationTime = nextTime
@@ -86,7 +86,7 @@ public class MedicineNotificationsManager : NotificationManager {
     ///
     /// - returns: `UIMutableUserNotificationCategory`: Configuration
   
-    public static func setup() -> UIMutableUserNotificationCategory {
+     static func setup() -> UIMutableUserNotificationCategory {
         let notificationActionOk = UIMutableUserNotificationAction()
         notificationActionOk.identifier = TookPillId
         notificationActionOk.title = TookPillTitle

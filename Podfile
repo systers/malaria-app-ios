@@ -9,6 +9,7 @@ def pods
 	pod 'SwiftyJSON', '~> 2.3.1'
 	pod 'Charts', '~> 2.1.6'
 	pod 'CVCalendar', '~> 1.2.8'
+	pod 'Toast-Swift', '~> 1.3.0'
 
 	pod 'SimpleCircleProgressView', '~> 1.0.3'
 	pod 'HorizontalProgressView', '~> 0.9.5'

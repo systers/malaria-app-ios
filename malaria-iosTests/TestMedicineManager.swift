@@ -1,6 +1,6 @@
 import UIKit
 import XCTest
-import malaria_ios
+@testable import malaria_ios
 
 class TestSetupInsertClear: XCTestCase {
 
@@ -60,5 +60,4 @@ class TestSetupInsertClear: XCTestCase {
         
         XCTAssertEqual(true, m.getRegisteredMedicines().count == 0)
     }
-    
 }

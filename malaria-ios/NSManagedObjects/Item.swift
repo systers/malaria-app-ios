@@ -2,11 +2,10 @@ import Foundation
 import CoreData
 
 /// Trip Item
-public class Item: NSManagedObject {
+class Item: NSManagedObject {
 
-    @NSManaged public var check: Bool
-    @NSManaged public var name: String
-    @NSManaged public var quantity: Int64
-    @NSManaged public var associated_with: Trip
-
+    @NSManaged var check: Bool
+    @NSManaged var name: String
+    @NSManaged var quantity: Int64
+    @NSManaged var associated_with: Trip
 }

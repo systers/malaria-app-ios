@@ -1,7 +1,7 @@
 import Foundation
 
 /// Decoupled from the backend. This enum is only relevant for the frontend
-public extension Medicine{
+extension Medicine{
     
     /// Types of pills:
     ///
@@ -18,14 +18,14 @@ public extension Medicine{
         /// Returns the interval of the pill. 7 if Mefloquine, 1 otherwise
         ///
         /// - returns: `Int`: the pill interval
-        public func interval() -> Int {
+        func interval() -> Int {
             return self == Medicine.Pill.Mefloquine ? 7 : 1
         }
         
         /// Returns the name of the pill
         ///
         /// - returns: `String`: the name of the pill
-        public func name() -> String{
+        func name() -> String{
             return self.rawValue
         }
     }
