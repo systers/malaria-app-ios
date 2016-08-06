@@ -3,9 +3,9 @@ import SwiftyJSON
 
 /// Responsible for retrieving data from `EndpointType.RFQuestions`
 
-public class RFQuestionsEndpoint: CollectionRFQuestionsEndpoint {
+class RFQuestionsEndpoint: CollectionRFQuestionsEndpoint {
   /// Required from `Endpoint` protocol
-  override public var path: String {
+  override var path: String {
     return EndpointType.RapidFireQuestions.path()
   }
   

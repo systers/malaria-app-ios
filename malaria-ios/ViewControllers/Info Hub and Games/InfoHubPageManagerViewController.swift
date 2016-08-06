@@ -14,7 +14,7 @@ class InfoHubPageManagerViewController : UIViewController {
   private var _dict: [UIViewController: InfoHubPagesVCHomePage] = [:]
   
   var currentViewController: PresentsModalityDelegate!
-  
+    
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -40,12 +40,11 @@ class InfoHubPageManagerViewController : UIViewController {
     view.bringSubviewToFront(settingsBtn)
   }
   
-  
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
     
     if !UserSettingsManager.UserSetting.DidConfiguredMedicine.getBool() {
-      presentSetupScreen()
+      appDelegate.presentInitialSetupScreen(withDelegate: currentViewController)
     }
   }
   
@@ -57,16 +56,7 @@ class InfoHubPageManagerViewController : UIViewController {
   }
   
   @IBAction func settingsButtonHandler() {
-    presentSetupScreen()
-  }
-  
-  func presentSetupScreen() {
-    //fix delay
-    dispatch_async(dispatch_get_main_queue()) {
-      let view = UIStoryboard.instantiate(SetupScreenViewController.self) as SetupScreenViewController
-      view.delegate = self.currentViewController
-      self.presentViewController(view, animated: true, completion: nil)
-    }
+    appDelegate.presentSetupScreen(withDelegate: currentViewController)
   }
 }
 
@@ -97,18 +87,21 @@ extension InfoHubPageManagerViewController: UIPageViewControllerDataSource, UIPa
                                           fromStoryboard: Constants.Storyboards.InfoHub) as InfoHubViewController
       view.pagesManager = self
       vc = view
+      
     case .Games:
       let view = UIStoryboard.instantiate(GamesListViewController.self,
                                           fromStoryboard: Constants.Storyboards.InfoHub) as GamesListViewController
+      view.pagesManager = self
       vc = view
     case .Achievements:
       let view = UIStoryboard.instantiate(AchievementsViewController.self,
                                           fromStoryboard: Constants.Storyboards.InfoHub) as AchievementsViewController
+      view.pagesManager = self
       vc = view
     default: return nil
     }
     
-    // store relative enum to view controller
+    // Store relative enum to view controller.
     _dict[vc!] = value
     return vc!
   }
@@ -133,5 +126,4 @@ enum InfoHubPagesVCHomePage: Int {
     if value > InfoHubPagesVCHomePage.allValues.count - 1 { value = Nil.rawValue }
     return InfoHubPagesVCHomePage(rawValue: value)!
   }
-  
 }

@@ -19,6 +19,13 @@ class MedicineStockManager: CoreDataContextManager {
     CoreDataHelper.sharedInstance.saveContext(context)
   }
   
+  func updateStock(newStock: Int) {
+    medicine.remainingMedicine = Int64(newStock)
+    
+    CoreDataHelper.sharedInstance.saveContext(context)
+    NSNotificationEvents.DataUpdated(nil)
+  }
+  
   /// A wrapper method of addRegistry() that will first check whether the user can modify / add an entry
   /// before adding it.
   

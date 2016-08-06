@@ -8,11 +8,11 @@ import CoreData
  - `correctAnswer`: The correct answer's index in the `answers` array.
  */
 
-public class RFQuestion: NSManagedObject {
+class RFQuestion: NSManagedObject {
   
-  @NSManaged public var answers: [String]
-  @NSManaged public var title: String
-  @NSManaged public var correctAnswer: Int
+  @NSManaged var answers: [String]
+  @NSManaged var title: String
+  @NSManaged var correctAnswer: Int
   
-  @NSManaged public var contained_in: CollectionRFQuestions
+  @NSManaged var contained_in: CollectionRFQuestions
 }

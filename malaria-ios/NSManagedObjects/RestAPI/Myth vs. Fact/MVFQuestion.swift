@@ -7,10 +7,10 @@ import CoreData
  - `correctAnswer`: A bool representing if the statement was correct or not.
  */
 
-public class MVFStatement: NSManagedObject {
+class MVFStatement: NSManagedObject {
   
-  @NSManaged public var title: String
-  @NSManaged public var correctAnswer: Bool
+  @NSManaged var title: String
+  @NSManaged var correctAnswer: Bool
   
-  @NSManaged public var contained_in: CollectionMVFStatements
+  @NSManaged var contained_in: CollectionMVFStatements
 }

@@ -14,7 +14,7 @@ class TestSetupInsertClear: XCTestCase {
         
         currentContext = CoreDataHelper.sharedInstance.createBackgroundContext()
         m = MedicineManager(context: currentContext)
-        m.registerNewMedicine(currentPill.name(), interval: currentPill.interval())
+        m.registerNewMedicine(currentPill.name(), interval: currentPill.interval(), 0)
         m.setCurrentPill(currentPill.name())
     }
     

@@ -1,7 +1,9 @@
 import Foundation
 
-/// contains generic peace corps info
-public class PeaceCorpsInfo {
-    /// email address
-    public static let mail = "systers-keeper@systers.org"
+/// Contains generic Peace Corps info.
+
+class PeaceCorpsInfo {
+  
+  /// Email address.
+  static let mail = "systers-keeper@systers.org"
 }

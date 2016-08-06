@@ -16,9 +16,4 @@ class Constants {
     static let PillStats = "PillScreens"
     static let InfoHub = "InfoHub"
   }
-  
-    
-    struct General {
-      static let PlanFirstTrip = "Plan First Trip"
-    }
 }
