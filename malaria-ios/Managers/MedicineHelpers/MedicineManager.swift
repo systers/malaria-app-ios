@@ -24,7 +24,9 @@ class MedicineManager: CoreDataContextManager {
    - returns: `Bool`:  true if success. false if not.
    */
   
-  func registerNewMedicine(name: String, interval: Int, remainingMedicine: Int) -> Bool {
+  func registerNewMedicine(name: String,
+                           interval: Int,
+                           remainingMedicine: Int = 0) -> Bool {
     if getMedicine(name) != nil {
       return false
     }

@@ -5,7 +5,7 @@ import Foundation
 class RapidFireAchievementManager: NSObject, SpecializedAchievementManager {
   static let sharedInstance = RapidFireAchievementManager()
   
-  private static let FlawlessGame = "Flawless game"
+  static let FlawlessGame = "Flawless game"
   private let FlawlessGameDescription =
   "Finish a Rapid Fire game without picking any wrong answer."
   

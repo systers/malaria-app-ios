@@ -5,7 +5,7 @@ import Foundation
 class GeneralAchievementsManager: NSObject, SpecializedAchievementManager {
   static let sharedInstance = GeneralAchievementsManager()
   
-  private static let PlanFirstTrip = "First Trip"
+  static let PlanFirstTrip = "First Trip"
   private let PlanFirstTripDescription = "Plan your first trip."
   
   private let achievementManager = AchievementManager.sharedInstance

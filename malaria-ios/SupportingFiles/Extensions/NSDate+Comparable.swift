@@ -36,9 +36,7 @@ func ==(a: NSDate, b: NSDate) -> Bool {
   return a === b || a.compare(b) == NSComparisonResult.OrderedSame
 }
 
-extension NSDate : Comparable {}
-
-extension NSDate{
+extension NSDate {
   
   /// Retrieves the month.
   var month: Int {
@@ -235,7 +233,7 @@ extension NSDate{
 func - (toDate: NSDate, fromDate: NSDate) -> Int {
   let calendar: NSCalendar = NSCalendar.currentCalendar()
   
-  // Replace the hour (time) of both dates with 00:00 to take into account different timezones
+  // Replace the hour (time) of both dates with 00:00 to take into account different timezones.
   let toDateNormalized = calendar.startOfDayForDate(toDate)
   let fromDateNormalized = calendar.startOfDayForDate(fromDate)
   

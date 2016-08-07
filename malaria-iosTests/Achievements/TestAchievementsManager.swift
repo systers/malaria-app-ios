@@ -6,6 +6,11 @@ class TestAchievementsManager: XCTestCase {
   
   let am = AchievementManager.sharedInstance
 
+  override func setUp() {
+    super.setUp()
+    am.clearAchievements()
+  }
+  
   override func tearDown() {
     super.tearDown()
     am.clearAchievements()
@@ -40,28 +45,11 @@ class TestAchievementsManager: XCTestCase {
     Achievement.define("Test achievement", description: "Test",
                                          tag: tag)
     
-    let achievements = am.getAchievements(withTag: tag)
+    am.addTag(tag)
+
+    let achievements = am.getAchievements()
 
     XCTAssert(achievements.count == 1)
   }
   
-  func testGetAchievementWithUndefinedTag() {
-    let achievements = am.getAchievements(withTag: "undefined")
-    
-    XCTAssert(achievements.count == 0)
-  }
-  
-  func testGetAchievementsWithSameTag() {
-    let tag = "Test tag"
-    
-    Achievement.define("Test achievement 3", description: "Test",
-                       tag: tag)
-
-    Achievement.define("Test achievement 4", description: "Test",
-                       tag: tag)
-
-    let achievements = am.getAchievements(withTag: tag)
-    
-    XCTAssert(achievements.count == 2)
-  }
 }

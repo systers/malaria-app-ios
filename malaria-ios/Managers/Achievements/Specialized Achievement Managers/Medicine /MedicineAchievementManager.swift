@@ -4,7 +4,7 @@ import Foundation
 
 class MedicineAchievementManager: NSObject, SpecializedAchievementManager {
   
-  private static let StayingSafe = "Staying safe"
+  static let StayingSafe = "Staying safe"
   private let StayingSafeDescription = "Take your first medicine."
   
   private var medicine: Medicine

@@ -1,9 +1,5 @@
 import Foundation
 
-extension String : CustomStringConvertible {
-  public var description: String { get { return self }}
-}
-
 /// Logging mechanism.
 
 class Logger {

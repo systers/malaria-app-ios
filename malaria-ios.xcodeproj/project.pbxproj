@@ -88,6 +88,12 @@
 		680A6A1D1D5227F2009FB6B0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A6A1B1D5227F2009FB6B0 /* User.swift */; };
 		680A6A211D522AF5009FB6B0 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A6A201D522AF5009FB6B0 /* User+CoreDataProperties.swift */; };
 		682DB0E81D54D26C0050547B /* UIViewController+AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682DB0E71D54D26C0050547B /* UIViewController+AppDelegate.swift */; };
+		682DB0E91D568CA40050547B /* UserSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC56EA1B72C91300D51801 /* UserSettingsManager.swift */; };
+		682DB0EC1D568DD90050547B /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200C72611B40368600998100 /* Int.swift */; };
+		682DB0ED1D568F550050547B /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200C72661B40368600998100 /* Logger.swift */; };
+		682DB0EF1D568FCC0050547B /* StringInternalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682DB0EE1D568FCC0050547B /* StringInternalExtensions.swift */; };
+		682DB0F11D56901E0050547B /* NSDateInternalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682DB0F01D56901E0050547B /* NSDateInternalExtensions.swift */; };
+		682DB0F21D56915B0050547B /* NSDate+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200C72621B40368600998100 /* NSDate+Comparable.swift */; };
 		684D7BD71D4B7DAD00BB6B64 /* ToastHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7BD61D4B7DAD00BB6B64 /* ToastHelper.swift */; };
 		684D7BF01D4BA33100BB6B64 /* TestAchievementsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7BEC1D4BA33100BB6B64 /* TestAchievementsManager.swift */; };
 		684D7BF11D4BA33100BB6B64 /* TestGeneralAchievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7BED1D4BA33100BB6B64 /* TestGeneralAchievements.swift */; };
@@ -355,6 +361,8 @@
 		680A6A1B1D5227F2009FB6B0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
 		680A6A201D522AF5009FB6B0 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "../User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		682DB0E71D54D26C0050547B /* UIViewController+AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+AppDelegate.swift"; sourceTree = "<group>"; };
+		682DB0EE1D568FCC0050547B /* StringInternalExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringInternalExtensions.swift; sourceTree = "<group>"; };
+		682DB0F01D56901E0050547B /* NSDateInternalExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateInternalExtensions.swift; sourceTree = "<group>"; };
 		684D7BD61D4B7DAD00BB6B64 /* ToastHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastHelper.swift; sourceTree = "<group>"; };
 		684D7BEC1D4BA33100BB6B64 /* TestAchievementsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAchievementsManager.swift; sourceTree = "<group>"; };
 		684D7BED1D4BA33100BB6B64 /* TestGeneralAchievements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestGeneralAchievements.swift; sourceTree = "<group>"; };
@@ -612,6 +620,8 @@
 				200C72641B40368600998100 /* NSSet.swift */,
 				2027E94E1BADC71D00DA55A4 /* Array.swift */,
 				68E62F791D19BA0500743214 /* StringExtensions.swift */,
+				682DB0EE1D568FCC0050547B /* StringInternalExtensions.swift */,
+				682DB0F01D56901E0050547B /* NSDateInternalExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1472,6 +1482,7 @@
 				684D7C0B1D4BA41B00BB6B64 /* CalendarSettings.swift in Sources */,
 				684D7C451D4BA75C00BB6B64 /* GeneralAchievementsManager.swift in Sources */,
 				684D7C461D4BA75C00BB6B64 /* MedicineAchievementManager.swift in Sources */,
+				682DB0EF1D568FCC0050547B /* StringInternalExtensions.swift in Sources */,
 				200A18CF1B64F51300EC2A65 /* MedicinePickerViewTrip.swift in Sources */,
 				684D7C661D4BA80700BB6B64 /* Global.swift in Sources */,
 				684D7C271D4BA50A00BB6B64 /* RapidFireGame.swift in Sources */,
@@ -1481,6 +1492,7 @@
 				200C72AC1B40368600998100 /* TripNotificationsManager.swift in Sources */,
 				684D7C5C1D4BA79E00BB6B64 /* RFQuestion.swift in Sources */,
 				68E62F7A1D19BA0500743214 /* StringExtensions.swift in Sources */,
+				682DB0F11D56901E0050547B /* NSDateInternalExtensions.swift in Sources */,
 				684D7C231D4BA50A00BB6B64 /* Game.swift in Sources */,
 				684D7C321D4BA53D00BB6B64 /* AchievementTableViewCell.swift in Sources */,
 				200C72F01B40368600998100 /* NSDate+Comparable.swift in Sources */,
@@ -1567,8 +1579,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				209F60B51B6DA6B100EDA461 /* TestNotifications.swift in Sources */,
+				682DB0ED1D568F550050547B /* Logger.swift in Sources */,
 				684D7C691D4BA8EF00BB6B64 /* Constants.swift in Sources */,
 				684D7BF31D4BA33100BB6B64 /* TestRFGameAchievements.swift in Sources */,
+				682DB0E91D568CA40050547B /* UserSettingsManager.swift in Sources */,
 				684D7BF21D4BA33100BB6B64 /* TestMedicineAchievements.swift in Sources */,
 				20C718E41B76C28D007424F6 /* TestMedicineManager.swift in Sources */,
 				684D7BF11D4BA33100BB6B64 /* TestGeneralAchievements.swift in Sources */,
@@ -1578,9 +1592,11 @@
 				209F60B31B6DA6B100EDA461 /* TestDailyMedicineStatistics.swift in Sources */,
 				209F60B41B6DA6B100EDA461 /* TestWeeklyMedicineStatistics.swift in Sources */,
 				20C718E61B76C28D007424F6 /* TestNSDateExtensions.swift in Sources */,
+				682DB0F21D56915B0050547B /* NSDate+Comparable.swift in Sources */,
 				684D7BF01D4BA33100BB6B64 /* TestAchievementsManager.swift in Sources */,
 				20C718E71B76C28D007424F6 /* TestPlanTrip.swift in Sources */,
 				2027E9501BADC71D00DA55A4 /* Array.swift in Sources */,
+				682DB0EC1D568DD90050547B /* Int.swift in Sources */,
 				68E62F821D1DAC7D00743214 /* TestMedicineStockManager.swift in Sources */,
 				20246D1B1B4F245300384759 /* TestMedicineRegistries.swift in Sources */,
 				209F60B61B6DA6B100EDA461 /* TestTimedInsertions.swift in Sources */,
@@ -1804,7 +1820,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "anita-borg.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/bridging_header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Base Files/bridging_header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/malaria-ios.app/malaria-ios";
 			};
 			name = Debug;
@@ -1824,7 +1840,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "anita-borg.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/bridging_header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Base Files/bridging_header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/malaria-ios.app/malaria-ios";
 			};
 			name = Release;
