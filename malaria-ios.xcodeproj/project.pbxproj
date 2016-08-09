@@ -94,6 +94,8 @@
 		682DB0EF1D568FCC0050547B /* StringInternalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682DB0EE1D568FCC0050547B /* StringInternalExtensions.swift */; };
 		682DB0F11D56901E0050547B /* NSDateInternalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682DB0F01D56901E0050547B /* NSDateInternalExtensions.swift */; };
 		682DB0F21D56915B0050547B /* NSDate+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200C72621B40368600998100 /* NSDate+Comparable.swift */; };
+		682E90281D59016300BF7F8F /* LocationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E90271D59016300BF7F8F /* LocationTextField.swift */; };
+		682E90351D59266500BF7F8F /* GenderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E90341D59266500BF7F8F /* GenderTextField.swift */; };
 		684D7BD71D4B7DAD00BB6B64 /* ToastHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7BD61D4B7DAD00BB6B64 /* ToastHelper.swift */; };
 		684D7BF01D4BA33100BB6B64 /* TestAchievementsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7BEC1D4BA33100BB6B64 /* TestAchievementsManager.swift */; };
 		684D7BF11D4BA33100BB6B64 /* TestGeneralAchievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7BED1D4BA33100BB6B64 /* TestGeneralAchievements.swift */; };
@@ -363,6 +365,8 @@
 		682DB0E71D54D26C0050547B /* UIViewController+AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+AppDelegate.swift"; sourceTree = "<group>"; };
 		682DB0EE1D568FCC0050547B /* StringInternalExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringInternalExtensions.swift; sourceTree = "<group>"; };
 		682DB0F01D56901E0050547B /* NSDateInternalExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateInternalExtensions.swift; sourceTree = "<group>"; };
+		682E90271D59016300BF7F8F /* LocationTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTextField.swift; sourceTree = "<group>"; };
+		682E90341D59266500BF7F8F /* GenderTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderTextField.swift; sourceTree = "<group>"; };
 		684D7BD61D4B7DAD00BB6B64 /* ToastHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastHelper.swift; sourceTree = "<group>"; };
 		684D7BEC1D4BA33100BB6B64 /* TestAchievementsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAchievementsManager.swift; sourceTree = "<group>"; };
 		684D7BED1D4BA33100BB6B64 /* TestGeneralAchievements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestGeneralAchievements.swift; sourceTree = "<group>"; };
@@ -501,6 +505,7 @@
 		200A18E91B64F6BC00EC2A65 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				682E90361D5927BF00BF7F8F /* Custom Text Fields */,
 				20FC56F11B72C98800D51801 /* Extensions */,
 				209F60BE1B6E4AED00EDA461 /* Sounds */,
 				203F0B251B481CB900826E06 /* ValuePickers */,
@@ -786,6 +791,15 @@
 				680A6A201D522AF5009FB6B0 /* User+CoreDataProperties.swift */,
 			);
 			name = "User Profile";
+			sourceTree = "<group>";
+		};
+		682E90361D5927BF00BF7F8F /* Custom Text Fields */ = {
+			isa = PBXGroup;
+			children = (
+				682E90271D59016300BF7F8F /* LocationTextField.swift */,
+				682E90341D59266500BF7F8F /* GenderTextField.swift */,
+			);
+			name = "Custom Text Fields";
 			sourceTree = "<group>";
 		};
 		684D7BEB1D4BA33100BB6B64 /* Achievements */ = {
@@ -1502,6 +1516,7 @@
 				200C72EA1B40368600998100 /* CoreDataHelper.swift in Sources */,
 				68E62F7C1D1AC1B100743214 /* WidgetSettingsManager.swift in Sources */,
 				68BEC32A1D270C9900FCFAF5 /* CollectionRFQuestionsEndpoint.swift in Sources */,
+				682E90351D59266500BF7F8F /* GenderTextField.swift in Sources */,
 				684D7C551D4BA79E00BB6B64 /* CollectionMVFStatements.swift in Sources */,
 				684D7C471D4BA75C00BB6B64 /* MedicineManagerProvider.swift in Sources */,
 				68BEC3261D270BA000FCFAF5 /* RFQuestionsEndpoint.swift in Sources */,
@@ -1535,6 +1550,7 @@
 				200C72BC1B40368600998100 /* Registry.swift in Sources */,
 				200C72F41B40368600998100 /* NSSet.swift in Sources */,
 				20FC56FD1B72CA2800D51801 /* Globals.swift in Sources */,
+				682E90281D59016300BF7F8F /* LocationTextField.swift in Sources */,
 				200C72B81B40368600998100 /* Medicine.swift in Sources */,
 				200C72B41B40368600998100 /* Item.swift in Sources */,
 				680A6A211D522AF5009FB6B0 /* User+CoreDataProperties.swift in Sources */,

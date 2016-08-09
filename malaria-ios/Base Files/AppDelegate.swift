@@ -3,7 +3,6 @@ import GoogleMaps
 import Fabric
 import Crashlytics
 
-/// AppDelegate
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?

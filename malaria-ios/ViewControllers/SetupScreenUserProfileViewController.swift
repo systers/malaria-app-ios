@@ -1,4 +1,5 @@
 import UIKit
+import DoneToolbarSwift
 
 class SetupScreenUserProfileViewController: UIViewController {
   
@@ -12,11 +13,28 @@ class SetupScreenUserProfileViewController: UIViewController {
   
   @IBOutlet weak var scrollView: UIScrollView!
   
-  // Provided by `PagesManagerViewController`
+  // Provided by `PagesManagerViewController`.
   var delegate: PresentsModalityDelegate!
   
-  override func viewDidAppear(animated: Bool) {
-    super.viewDidAppear(animated)
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    let toolBar = ToolbarWithDone(viewsWithToolbar: [
+      firstNameField,
+      lastNameField,
+      genderField,
+      ageField,
+      locationField,
+      emailField,
+      phoneField])
+
+    firstNameField.inputAccessoryView = toolBar
+    lastNameField.inputAccessoryView = toolBar
+    genderField.inputAccessoryView = toolBar
+    ageField.inputAccessoryView = toolBar
+    locationField.inputAccessoryView = toolBar
+    emailField.inputAccessoryView = toolBar
+    phoneField.inputAccessoryView = toolBar
     
     if User.isUserAlreadyCreated() {
       presentNextSetupScreen()
@@ -37,17 +55,22 @@ class SetupScreenUserProfileViewController: UIViewController {
     let email = emailField.text
     let location = locationField.text
     
-    // Try to create the user
-    let userCreationResult = User.define(firstName,
-                                         lastName: lastName,
-                                         age: age,
-                                         email: email,
-                                         gender: gender,
-                                         location: location,
-                                         phone: phone)
-    
-    if let error = userCreationResult.error {
+    // Try to create the user.
+    do {
+      try User.define(firstName!,
+                      lastName: lastName!,
+                      age: age!,
+                      email: email!,
+                      gender: gender,
+                      location: location,
+                      phone: phone)
+    }
+    catch let error as User.UserValidationError {
       ToastHelper.makeToast(error.rawValue, viewController: self)
+      return
+    }
+    catch {
+      Logger.Error("Undefined error when trying to validate user.")
       return
     }
     
@@ -57,15 +80,11 @@ class SetupScreenUserProfileViewController: UIViewController {
   @IBAction func sendFeedback(sender: UIButton) {
     openUrl(NSURL(string: "mailto:\(PeaceCorpsInfo.mail)"))
   }
-  
 }
 
+// MARK: Text Field Delegate
+
 extension SetupScreenUserProfileViewController: UITextFieldDelegate {
-  
-  func textFieldShouldReturn(textField: UITextField) -> Bool {
-    self.view.endEditing(true)
-    return false
-  }
   
   func textFieldDidBeginEditing(textField: UITextField) {
     let newOffset = CGPointMake(0, textField.frame.origin.y - 30)

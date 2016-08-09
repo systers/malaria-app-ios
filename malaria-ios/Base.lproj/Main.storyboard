@@ -401,23 +401,22 @@
                                             <action selector="historyButtonHandler:" destination="cfZ-pD-OHm" eventType="touchUpInside" id="dJ5-Rr-4rx"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wsy-a8-zYC" userLabel="LocationInput">
-                                        <rect key="frame" x="128" y="8" width="392" height="30"/>
-                                        <color key="backgroundColor" red="0.52156862745098043" green="0.72156862745098038" blue="0.31372549019607843" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="autocompleteClicked:" destination="cfZ-pD-OHm" eventType="editingDidBegin" id="C5e-9X-mW1"/>
-                                            <action selector="locationEditingChangedHandler:" destination="cfZ-pD-OHm" eventType="editingChanged" id="ErV-5l-RdV"/>
-                                        </connections>
-                                    </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="buv-20-bVO" userLabel="dayInput">
                                         <rect key="frame" x="128" y="53" width="424" height="30"/>
                                         <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wsy-a8-zYC" userLabel="LocationInput" customClass="LocationTextField" customModule="malaria_ios" customModuleProvider="target">
+                                        <rect key="frame" x="128" y="8" width="392" height="30"/>
+                                        <color key="backgroundColor" red="0.52156862745098043" green="0.72156862745098038" blue="0.31372549019607843" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="locationEditingChangedHandler:" destination="cfZ-pD-OHm" eventType="editingDidEnd" id="G4I-f1-noW"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -502,7 +501,7 @@
                         <outlet property="generateTripBtn" destination="w6B-Dp-svL" id="fqp-Hy-7GM"/>
                         <outlet property="historyBtn" destination="BNH-Wo-4uw" id="vYe-5q-GzQ"/>
                         <outlet property="historyTextField" destination="OzI-n5-rw0" id="Ipr-fb-qkx"/>
-                        <outlet property="location" destination="wsy-a8-zYC" id="4pc-k4-OmW"/>
+                        <outlet property="location" destination="wsy-a8-zYC" id="eFk-du-iyT"/>
                         <outlet property="packingList" destination="yRe-ea-anp" id="CSd-DD-adG"/>
                         <outlet property="reminderTime" destination="FYx-2W-myp" id="ahK-zG-o7h"/>
                     </connections>
@@ -1041,7 +1040,7 @@
                                                 </constraints>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numbersAndPunctuation"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="5p7-9L-nGd" id="4ef-sZ-gxV"/>
                                                 </connections>
@@ -1064,7 +1063,7 @@
                                                 <color key="textColor" red="0.4378715158" green="0.32177186009999997" blue="0.2744835913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="59a-Pe-EqF" userLabel="medicineInput">
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="59a-Pe-EqF" userLabel="medicineInput" customClass="GenderTextField" customModule="malaria_ios" customModuleProvider="target">
                                                 <rect key="frame" x="149" y="121" width="392" height="30"/>
                                                 <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -1075,19 +1074,6 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="5p7-9L-nGd" id="Fnf-dg-ePk"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ab3-Dr-YqI" userLabel="medicineInput">
-                                                <rect key="frame" x="149" y="162" width="392" height="30"/>
-                                                <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="0m0-9e-Y9Y"/>
-                                                </constraints>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numbersAndPunctuation"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="5p7-9L-nGd" id="vkK-MC-ohI"/>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MQa-zu-z3t" userLabel="medicineInput">
@@ -1103,7 +1089,7 @@
                                                     <outlet property="delegate" destination="5p7-9L-nGd" id="R5s-b3-ugA"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gae-9B-Gmu" userLabel="medicineInput">
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gae-9B-Gmu" userLabel="medicineInput" customClass="LocationTextField" customModule="malaria_ios" customModuleProvider="target">
                                                 <rect key="frame" x="149" y="203" width="392" height="30"/>
                                                 <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -1112,9 +1098,6 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="5p7-9L-nGd" id="nZz-ms-m2C"/>
-                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="My Pills:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfz-QL-sBb">
                                                 <rect key="frame" x="8" y="333" width="74" height="25.5"/>
@@ -1145,8 +1128,8 @@
                                                 <nil key="highlightedColor"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="9To-1A-dKV"/>
                                                         <exclude reference="8aG-jr-AOf"/>
+                                                        <exclude reference="9To-1A-dKV"/>
                                                     </mask>
                                                 </variation>
                                             </label>
@@ -1161,6 +1144,19 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="5p7-9L-nGd" id="hW9-qW-aBi"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ab3-Dr-YqI" userLabel="medicineInput">
+                                                <rect key="frame" x="149" y="162" width="392" height="30"/>
+                                                <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="0m0-9e-Y9Y"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="5p7-9L-nGd" id="vkK-MC-ohI"/>
                                                 </connections>
                                             </textField>
                                         </subviews>
@@ -1326,13 +1322,13 @@
                                 <exclude reference="k4H-de-DN2"/>
                                 <exclude reference="uZa-jf-yEa"/>
                                 <exclude reference="vAD-bZ-Nb6"/>
+                                <exclude reference="gxf-ag-FiH"/>
                                 <exclude reference="20w-lV-v7p"/>
                                 <exclude reference="ETn-8y-i1l"/>
                                 <exclude reference="evD-q7-9Zd"/>
                                 <exclude reference="js8-wz-P8L"/>
                                 <exclude reference="7Qt-57-uN3"/>
                                 <exclude reference="gbJ-NM-ukO"/>
-                                <exclude reference="gxf-ag-FiH"/>
                             </mask>
                         </variation>
                     </view>
@@ -1580,7 +1576,7 @@
                                                         </constraints>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numbersAndPunctuation"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="zfy-Ec-Q4e" id="AEP-HU-zMc"/>
                                                         </connections>
@@ -1603,7 +1599,7 @@
                                                         <color key="textColor" red="0.4378715158" green="0.32177186009999997" blue="0.2744835913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MTS-sy-GQh" userLabel="medicineInput">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MTS-sy-GQh" userLabel="medicineInput" customClass="GenderTextField" customModule="malaria_ios" customModuleProvider="target">
                                                         <rect key="frame" x="138" y="110" width="392" height="30"/>
                                                         <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -1629,7 +1625,7 @@
                                                             <outlet property="delegate" destination="zfy-Ec-Q4e" id="CO8-O0-aXh"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r8q-Ac-fCj" userLabel="medicineInput">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r8q-Ac-fCj" userLabel="medicineInput" customClass="LocationTextField" customModule="malaria_ios" customModuleProvider="target">
                                                         <rect key="frame" x="138" y="192" width="392" height="30"/>
                                                         <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -1650,7 +1646,7 @@
                                                         </constraints>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardType="numbersAndPunctuation"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardType="decimalPad"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="zfy-Ec-Q4e" id="1Mi-fv-TG9"/>
                                                         </connections>

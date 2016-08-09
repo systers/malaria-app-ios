@@ -1,4 +1,5 @@
 import UIKit
+import DoneToolbarSwift
 
 // MARK: - Protocol
 
@@ -12,8 +13,10 @@ protocol SaveRemainingPillsProtocol: class {
 
 class UserProfileViewController: UIViewController {
   
-  // We found a problem that didn't allow us to click on the table view's cell if we only set the cell
-  // height (60) and not add ~30-50 offset to it
+  /*
+   We found a problem that didn't allow us to click on the table view's cell if we only set the cell
+   height (60) and not add ~30-50 offset to it.
+   */
   
   let CellHeightAndOffset: CGFloat = 60 + 30
   let CellReuseIdentifier = "User Profile Pill Cell Identifier"
@@ -25,7 +28,7 @@ class UserProfileViewController: UIViewController {
   @IBOutlet weak var remainingLabel: UILabel!
   @IBOutlet weak var editProfileButton: UIButton!
   
-  // User Profile
+  // User Profile.
   
   @IBOutlet weak var firstNameField: UITextField!
   @IBOutlet weak var lastNameField: UITextField!
@@ -60,6 +63,8 @@ class UserProfileViewController: UIViewController {
   private var medicineStock: Int?
   private var timeMeasuringUnit: String?
   
+  private var didComeBackFromLocationAutocomplete: Bool = false
+  
   // Core Data
   
   private var context: NSManagedObjectContext?
@@ -79,10 +84,41 @@ class UserProfileViewController: UIViewController {
     remindMeWeeksButton.setTitle(value, forState: .Normal)
     
     reminderValue = value.toReminderValue()
+    
+    let toolBar = ToolbarWithDone(viewsWithToolbar: [
+      firstNameField,
+      lastNameField,
+      genderField,
+      ageField,
+      locationField,
+      emailField,
+      phoneField])
+    
+    firstNameField.inputAccessoryView = toolBar
+    lastNameField.inputAccessoryView = toolBar
+    genderField.inputAccessoryView = toolBar
+    ageField.inputAccessoryView = toolBar
+    locationField.inputAccessoryView = toolBar
+    emailField.inputAccessoryView = toolBar
+    phoneField.inputAccessoryView = toolBar
+    
+    locationField.addTarget(self,
+                            action: #selector(locationAutocompleteCallback),
+                            forControlEvents: UIControlEvents.EditingDidEnd)
   }
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
+    
+    /*
+     We want not to refresh the screen when the user gets back from the Google Places
+     search when pressing on the location field.
+     */
+    
+    if didComeBackFromLocationAutocomplete {
+      didComeBackFromLocationAutocomplete = false
+      return
+    }
     
     editProfileButton.selected = false
     toggleUserInteraction(enableFields: editProfileButton.selected)
@@ -120,7 +156,7 @@ class UserProfileViewController: UIViewController {
     context = CoreDataHelper.sharedInstance.createBackgroundContext()!
     medicineManager = MedicineManager(context: context!)
     psnm = PillStatusNotificationsManager(context: context!)
-
+    
     // Get the current medicine stock.
     guard let medicine = medicineManager!.getCurrentMedicine() else {
       return
@@ -167,18 +203,24 @@ class UserProfileViewController: UIViewController {
       let email = emailField.text
       let location = locationField.text
       
-      let userCreationResult = User.define(firstName,
-                                           lastName: lastName,
-                                           age: age,
-                                           email: email,
-                                           gender: gender,
-                                           location: location,
-                                           phone: phone)
-      
-      if let error = userCreationResult.error {
+      do {
+        try User.define(firstName!,
+                        lastName: lastName!,
+                        age: age!,
+                        email: email!,
+                        gender: gender,
+                        location: location,
+                        phone: phone)
+      }
+      catch let error as User.UserValidationError {
         ToastHelper.makeToast(error.rawValue, viewController: self)
         return
       }
+      catch {
+        Logger.Error("Undefined error when trying to validate user.")
+        return
+      }
+      
     }
     
     editProfileButton.selected = !editProfileButton.selected
@@ -198,6 +240,10 @@ class UserProfileViewController: UIViewController {
     tableView.userInteractionEnabled = value
     
     remindMeWeeksButton.userInteractionEnabled = value
+  }
+  
+  func locationAutocompleteCallback() {
+    didComeBackFromLocationAutocomplete = true
   }
 }
 
@@ -291,8 +337,9 @@ extension UserProfileViewController: PresentsModalityDelegate {
 extension UserProfileViewController: SaveRemainingPillsProtocol {
   
   func saveRemainingPills(textField: UITextField) {
+    
     // Save new value in Core Data
-    medicines[textField.tag].remainingMedicine = Int64(textField.text!)!
+    medicines[textField.tag].currentStock = Int(textField.text!)!
     medicines[textField.tag].lastStockRefill = NSDate()
     
     CoreDataHelper.sharedInstance.saveContext(context!)
@@ -305,11 +352,6 @@ extension UserProfileViewController: SaveRemainingPillsProtocol {
 // MARK: Text Field Delegate
 
 extension UserProfileViewController: UITextFieldDelegate {
-  
-  func textFieldShouldReturn(textField: UITextField) -> Bool {
-    self.view.endEditing(true)
-    return false
-  }
   
   func textFieldDidBeginEditing(textField: UITextField) {
     let newOffset = CGPointMake(0, textField.frame.origin.y - 30)

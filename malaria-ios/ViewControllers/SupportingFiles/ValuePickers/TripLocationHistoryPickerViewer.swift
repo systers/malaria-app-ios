@@ -8,10 +8,10 @@ class TripLocationHistoryPickerViewer : UIPickerView {
   
   private var pcLocationsPickerProvider: PickerProvider!
   
-  /// Locations
+  /// Locations.
   var locations = [String]()
   
-  /// Selected value
+  /// Selected value.
   var selectedValue = ""
   
   private var tripsManager: TripsManager!
