@@ -206,7 +206,7 @@ extension UserProfileViewController: UITableViewDelegate {
 extension UserProfileViewController: PresentsModalityDelegate {
   
   /// Method called when the Setup screen is dismissed.
-  func OnDismiss() {
+  func onDismiss() {
     getRegisteredMedicine()
     recalculateTableHeight()
     refreshData()

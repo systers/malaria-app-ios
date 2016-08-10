@@ -2,78 +2,43 @@ import UIKit
 
 class MythVsFactViewController: GameViewController {
   
+  // MARK: Constants
+  
+  @IBInspectable let CorrectAnswerBlinkRate: Double = 1
+  
+  // MARK: Outlets.
+  
   @IBOutlet weak var statementNumberLabel: UILabel!
   @IBOutlet weak var statementLabel: UILabel!
-  
   @IBOutlet weak var yesView: UIImageView!
   @IBOutlet weak var noView: UIImageView!
   
+  // MARK: Controller.
+  
+  private var mythVsFactGameHandler: MVFGameHandler! {
+      get {
+        return gameHandler as! MVFGameHandler
+      }
+      set {
+        gameHandler = newValue
+      }
+  }
+  
+  // MARK: Properties.
+  
   var statementLabelInitialFrame: CGRect!
   
-  var mythVsFactGame: MythVsFactGame!
+  // MARK: Methods.
   
-  let CorrectAnswerBlinkRate: Double = 1
-
-  override var currentLevel: Int {
-    didSet {
-      
-      // Check if we are at first level
-      if currentLevel == 0 {
-        setNextStametent()
-        return
-      }
-      
-      // Else, show the previous correct answer first then set the label
-      let completion: (Bool) -> () = {
-        _ in
-        self.yesView?.alpha = CGFloat(1.0)
-        self.noView?.alpha = CGFloat(1.0)
-        
-        self.view.userInteractionEnabled = true
-
-        // Check if the game finished
-        if self.currentLevel == self.game!.numberOfLevels {
-          self.endGame()
-          return
-        }
-        
-        self.setNextStametent()
-      }
-      
-      view.userInteractionEnabled = false
-      
-      if mythVsFactGame.entries[currentLevel - 1].correctAnswer {
-        yesView.blink(withRate: CorrectAnswerBlinkRate, completion: completion)
-      }
-      else {
-        noView.blink(withRate: CorrectAnswerBlinkRate, completion: completion)
-      }
-    }
-  }
-  
-  func setNextStametent() {
-    // Just show the statement
-    statementLabel.text = mythVsFactGame?.entries[currentLevel].statement
-    
-    statementNumberLabel.text = "Statement \(currentLevel + 1) / \(mythVsFactGame!.entries.count)"
-  }
-  
-  override func viewWillAppear(animated: Bool) {
-    mythVsFactGame = game as! MythVsFactGame
-    super.viewWillAppear(animated)
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    mythVsFactGameHandler = MythVsFactController()
+    mythVsFactGameHandler?.delegate = self
   }
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
     statementLabelInitialFrame = statementLabel.frame
-  }
-  
-  override func endGame() {
-    super.endGame()
-    
-    // Send a notification that the game has finished.
-    let dict = ["game" : mythVsFactGame]
-    NSNotificationEvents.MVFGameFinished(dict)
   }
   
   @IBAction func pan(sender: UIPanGestureRecognizer) {
@@ -86,32 +51,20 @@ class MythVsFactViewController: GameViewController {
     switch sender.state {
       
     case .Changed:
+      
       sender.view!.alpha = 0.5
       
     case .Ended:
       
-      // Keeping currentLevel at the corespondent scope because we don't want to increase
-      // the it if the user drags the laben outside of the two zones.
-      
       if yesView.frame.contains(sender.view!.center) {
-        
-        if mythVsFactGame.entries[currentLevel].correctAnswer {
-          userScore += 1
-        }
-        
-        currentLevel += 1
+        mythVsFactGameHandler.checkAnswer(true)
       }
       
       if noView.frame.contains(sender.view!.center) {
-        
-        if !mythVsFactGame.entries[currentLevel].correctAnswer {
-          userScore += 1
-        }
-        
-        currentLevel += 1
+        mythVsFactGameHandler.checkAnswer(false)
       }
       
-      // Refresh the statement label to its default state
+      // Refresh the statement label to its default state.
       statementLabel.alpha = 1
       statementLabel.textColor = UIColor.blackColor()
       statementLabel.frame = statementLabelInitialFrame
@@ -121,9 +74,34 @@ class MythVsFactViewController: GameViewController {
   }
 }
 
-class InsetLabel: UILabel {
+extension MythVsFactViewController: MVFGameDelegate {
   
-  override func drawTextInRect(rect: CGRect) {
-    super.drawTextInRect(UIEdgeInsetsInsetRect(rect, UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)))
+  func questionDidChangeWith(correctAnswer answer: Bool) {
+    
+    self.view.userInteractionEnabled = false
+    
+    // Show the previous correct answer first then set the label.
+    let completion: (Bool) -> () = {
+      _ in
+      self.yesView?.alpha = CGFloat(1.0)
+      self.noView?.alpha = CGFloat(1.0)
+      
+      self.view.userInteractionEnabled = true
+      
+      self.mythVsFactGameHandler.setNextStametent()
+    }
+    
+    if answer {
+      yesView.blink(withRate: CorrectAnswerBlinkRate, completion: completion)
+    } else {
+      noView.blink(withRate: CorrectAnswerBlinkRate, completion: completion)
+    }
+  }
+  
+  func setNextStatementText(labelText: String,
+                            numberLabelText: String) {
+    
+    statementLabel.text = labelText
+    statementNumberLabel.text = numberLabelText
   }
 }

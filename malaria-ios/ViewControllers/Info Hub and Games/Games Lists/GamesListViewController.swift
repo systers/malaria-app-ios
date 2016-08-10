@@ -1,34 +1,49 @@
 import UIKit
 
+typealias GameInfo = (name: String, rules: String)
+
 class GamesListViewController: UIViewController {
+  
   @IBOutlet weak var collectionView: UICollectionView!
   
   // New games are added just by creating them and adding an instance to this array
-  private var games: [Game] = [RapidFireGame(), MythVsFactGame()]
+  private var gamesInfo: [GameInfo] = [
+    (RapidFireGame.name, RapidFireGame.rules),
+    (MythVsFactGame.name, MythVsFactGame.rules)
+  ]
   
+  var pagesManager: InfoHubPageManagerViewController!
+
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+  }
+  
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    pagesManager.currentViewController = self
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     let gameCellIndex = sender as! Int
     
     let gameRulesVC = segue.destinationViewController as! GameRulesViewController
-    gameRulesVC.game = games[gameCellIndex]
+    gameRulesVC.gameInfo = gamesInfo[gameCellIndex]
   }
 }
+
+// MARK: Collection View Data Source
 
 extension GamesListViewController: UICollectionViewDataSource {
   
   func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return games.count
+    return gamesInfo.count
   }
   
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Games Collection View Cell", forIndexPath: indexPath) as! PeaceCorpsMessageCollectionViewCell
     
-    cell.postTitle.text = games[indexPath.row].name
+    cell.postTitle.text = gamesInfo[indexPath.row].name
     
     return cell
   }
@@ -51,9 +66,19 @@ extension GamesListViewController: UICollectionViewDataSource {
   }
 }
 
+// MARK: Collection View Delegate.
+
 extension GamesListViewController: UICollectionViewDelegate {
   
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
     performSegueWithIdentifier("Show Game Rules", sender: indexPath.row)
   }
+}
+
+// MARK: Presents Modality Delegate.
+
+// We need to respect this protocol in order to support the Settings button.
+
+extension GamesListViewController: PresentsModalityDelegate {
+  func onDismiss() { }
 }

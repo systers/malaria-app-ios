@@ -214,7 +214,7 @@ extension PillsStatsViewController : PresentsModalityDelegate{
     pagesManager.currentViewController = self
   }
 
-  func OnDismiss() {
+  func onDismiss() {
     refreshScreen()
   }
 }

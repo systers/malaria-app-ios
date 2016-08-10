@@ -1,19 +1,12 @@
 import UIKit
 
-class RapidFireGame: Game {
+// The Rapid Fire game model.
+
+class RapidFireGame {
   
   var entries: [RapidFireGameEntry] = []
-  
-  var achievementManager: RapidFireAchievementManager?
+  var _maximumScore: Int?
 
-  // MARK: Game protocol
-  var maximumScore: Int?
-  
-  var numberOfLevels: Int { return entries.count }
-  var name: String { return "Rapid Fire" }
-  var rules: String { return "- Answer questions quickly, under time pressure.\n\n"
-    + "- Score Achievement Points for every correct answer you give." }
-  
   init() {
     let entry1 = RapidFireGameEntry(question: "Question 1 (answer 2)",
                                     answers: ["Answer 1", "Answer 2", "Answer 3"],
@@ -24,9 +17,30 @@ class RapidFireGame: Game {
     let entry3 = RapidFireGameEntry(question: "Question 3 (answer 3)",
                                     answers: ["Answer 1", "Answer 2", "Answer 3"],
                                     correctAnswer: 2)
-
+    
     entries.appendContentsOf([entry1, entry2, entry3])
   }
+}
+
+// MARK: Game protocol.
+
+extension RapidFireGame: Game {
+  
+  var maximumScore: Int? {
+    get {
+      return _maximumScore
+    }
+    set {
+      _maximumScore = newValue
+    }
+  }
+  
+  static var name: String { return "Rapid Fire" }
+  static var rules: String { return "- Answer questions quickly, under time pressure.\n\n"
+    + "- Score Achievement Points for every correct answer you give." }
+  
+  var numberOfLevels: Int { return entries.count }
+
 }
 
 class RapidFireGameEntry {

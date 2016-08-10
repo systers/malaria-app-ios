@@ -46,7 +46,7 @@ class DailyStatsTableViewController : UITableViewController{
 
 //MARK: PresentsModalityDelegate
 extension DailyStatsTableViewController : PresentsModalityDelegate{
-  func OnDismiss() {
+  func onDismiss() {
     refreshScreen()
   }
 }

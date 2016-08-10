@@ -5,10 +5,17 @@ class AchievementsViewController: UIViewController {
   
   private let cellIdentifier = "Achievement Cell"
   
+  var pagesManager: InfoHubPageManagerViewController!
+  
   @IBOutlet weak var tableView: UITableView!
   
   // The array that will hold each section's name and its achievements.
   var allAchievements: [AchievementObject] = []
+  
+  override func viewDidAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    pagesManager.currentViewController = self
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -29,26 +36,14 @@ class AchievementsViewController: UIViewController {
     
     let achievementManager = AchievementManager.sharedInstance
     
-    let gamesAchievements =
-      achievementManager.getAchievements(withTag: Constants.Achievements.Tags.Games)
-    appendToModel(Constants.Achievements.Tags.Games, array: gamesAchievements)
-
-    let pillsAchievements =
-      achievementManager.getAchievements(withTag: Constants.Achievements.Tags.Pills)
-    appendToModel(Constants.Achievements.Tags.Pills, array: pillsAchievements)
-
-    let generalAppAchievements =
-      achievementManager.getAchievements(withTag: Constants.Achievements.Tags.General)
-    appendToModel(Constants.Achievements.Tags.General, array: generalAppAchievements)
-
+    for (tag, achievements) in achievementManager.getAchievements()
+      where achievements.count > 0 {
+        allAchievements.append((tag, achievements))
+    }
+    
     tableView.reloadData()
   }
   
-  func appendToModel(tag: String, array: [Achievement]) {
-    if array.count > 0 {
-      allAchievements.append((tag, array))
-    }
-  }
 }
 
 extension AchievementsViewController: UITableViewDataSource {
@@ -96,4 +91,12 @@ extension AchievementsViewController: UITableViewDelegate {
   func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
     cell.backgroundColor = UIColor.clearColor()
   }
+}
+
+// MARK: Presents Modality Delegate.
+
+// We need to respect this protocol in order to support the Settings button.
+
+extension AchievementsViewController: PresentsModalityDelegate {
+  func onDismiss() { }
 }

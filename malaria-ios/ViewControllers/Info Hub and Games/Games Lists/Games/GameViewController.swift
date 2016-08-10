@@ -1,51 +1,48 @@
 import UIKit
 
 // An abstract class that makes sure each game conforms to it.
+
 class GameViewController: UIViewController {
+  
+  // MARK: Outlets.
   
   @IBOutlet weak var scoreLabel: UILabel!
   
-  private let NotificationObjectName = "game"
+  // MARK: Controller.
   
-  var game: Game!
-  
-  var userScore: Int = 0 {
-    didSet {
-      scoreLabel.text = "Score: \(userScore)"
-    }
-  }
-  
-  var currentLevel: Int = 0
-  
+  var gameHandler: GameHandler? = nil
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Set background image
+    // Set background image.
     view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
   }
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
-    
-    if game.numberOfLevels == 0 {
-      stopGame()
-      return
-    }
-    
-    startGame()
+    gameHandler!.startGame()
   }
   
-  func startGame() {
-    currentLevel = 0
-    userScore = 0
+  @IBAction func endGamePressed(sender: UIButton) {
+    gameHandler!.endGame()
+  }
+}
+
+extension GameViewController: GameDelegate {
+  
+  func setScoreLabelTextTo(newText: String) {
+    scoreLabel.text = newText
   }
   
-  func stopGame() {
-    let (title, message) = (NoRFEntries.title, NoRFEntries.message)
+  func showStopGameAlert(text: AlertText) {
     
-    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+    let alert = UIAlertController(title: text.title,
+                                  message: text.message,
+                                  preferredStyle: UIAlertControllerStyle.Alert)
     
-    let alertAction = UIAlertAction(title: "Back", style: UIAlertActionStyle.Default) {
+    let alertAction = UIAlertAction(title: "Back",
+                                    style: UIAlertActionStyle.Default)
+    {
       (action:UIAlertAction!) -> Void in
       
       self.dismissViewControllerAnimated(true, completion: nil)
@@ -56,12 +53,15 @@ class GameViewController: UIViewController {
     presentViewController(alert, animated: true, completion: nil)
   }
   
-  func endGame() {
-    let (title, message) = (GameOverText.title, GameOverText.message)
+  func showEndGameAlert(text: AlertText) {
     
-    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+    let alert = UIAlertController(title: text.title,
+                                  message: text.message,
+                                  preferredStyle: UIAlertControllerStyle.Alert)
     
-    let backAction = UIAlertAction(title: "Back", style: UIAlertActionStyle.Default) {
+    let backAction = UIAlertAction(title: "Back",
+                                   style: UIAlertActionStyle.Default)
+    {
       (action:UIAlertAction!) -> Void in
       
       self.dismissViewControllerAnimated(true, completion: nil)
@@ -69,53 +69,15 @@ class GameViewController: UIViewController {
     
     alert.addAction(backAction)
     
-    let restartGameAction = UIAlertAction(title: "Restart", style: UIAlertActionStyle.Default) {
+    let restartGameAction = UIAlertAction(title: "Restart",
+                                          style: UIAlertActionStyle.Default)
+    {
       (action:UIAlertAction!) -> Void in
-      self.startGame()
+      self.gameHandler!.startGame()
     }
     
     alert.addAction(restartGameAction)
     
     presentViewController(alert, animated: true, completion: nil)
-  }
-  
-  @IBAction func endGamePressed(sender: UIButton) {
-    endGame()
-  }
-}
-
-// MARK: Messages
-
-extension GameViewController {
-  typealias AlertText = (title: String, message: String)
-  
-  // Based on the rules, we need to divide the Rapid Fire score by 3 to get the
-  // achievements points earned.
-  private var GameOverText: AlertText {
-    return ("Game over",
-            "You gained \(userScore) achievement "
-              + ( ((userScore) == 1) ? "point." : "points.")
-    )
-  }
-  
-  private var NoRFEntries: AlertText {
-    return ("Couldn't start game",
-            "There was a problem fetching the content for this game.")
-  }
-}
-
-
-// MARK: UIView Extension
-
-extension UIView {
-  
-  // Make views blink at a given rate
-  func blink(withRate rate: Double, completion: (Bool) -> Void) {
-    self.alpha = 1.0;
-    UIView.animateWithDuration(rate,
-                               delay: 0.0,
-                               options: [.CurveEaseInOut, .Autoreverse],
-                               animations: { [weak self] in self?.alpha = 0.0 },
-                               completion: completion)
   }
 }
