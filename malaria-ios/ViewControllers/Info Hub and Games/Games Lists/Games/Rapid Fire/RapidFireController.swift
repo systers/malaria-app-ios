@@ -1,0 +1,139 @@
+protocol RFGameHandler: GameHandler {
+  func nextQuestion(responseIndex: Int)
+}
+
+protocol RFGameDelegate: GameDelegate {
+  
+  func setCountdownLabelTextTo(text: String)
+  func setAnswerButtonsTitlesBasedOn(answers: [String])
+  func makeCountDownLabelBlinkAtRate(rate: Double)
+  func showWrongAnswerAnimation()
+  func setNextQuestionText(labelText: String,
+                           numberLabelText: String)
+}
+
+/// Concrete mediator between the RFViewController (the View) and the model (RFGame).
+
+final class RapidFireController: GameController<RapidFireGame> {
+  
+  // MARK: Constants.
+  
+  let TimerBlinkAtSecond: Int = 3
+  let TimerMaxValue: Int = 5
+  
+  private let TimerTickingSecondsInterval: Double = 1
+  private let RemainingSecondsBlinkRate = 0.2
+  
+  // MARK: Properties.
+  
+  private var rapidFireDelegate: RFGameDelegate? {
+    
+    guard let delegate = delegate as? RFGameDelegate else {
+      fatalError("Did you forget to set the delegate?")
+    }
+    
+    return delegate
+  }
+  
+  private var timer: NSTimer!
+  
+  private var count = 5 {
+    didSet {
+      let newText = count == 1 ? "\(count) second" : "\(count) seconds"
+      rapidFireDelegate!.setCountdownLabelTextTo(newText)
+    }
+  }
+  
+  override var currentLevel: Int {
+    
+    didSet {
+      // Check if we ran out of questions
+      if currentLevel >= game!.numberOfLevels {
+        endGame()
+        return
+      }
+      
+      let labelText = game?.entries[currentLevel].question
+      let numberLabelText = "Question \(currentLevel + 1) / \(game!.entries.count)"
+      
+      rapidFireDelegate!.setNextQuestionText(labelText!,
+                                             numberLabelText: numberLabelText)
+      
+      let answers = game?.entries[currentLevel].answers
+      rapidFireDelegate!.setAnswerButtonsTitlesBasedOn(answers!)
+      
+      // Set timer
+      resetTimer()
+      timer = NSTimer.scheduledTimerWithTimeInterval(TimerTickingSecondsInterval,
+                                                     target: self,
+                                                     selector:#selector(updateTimer),
+                                                     userInfo: nil,
+                                                     repeats: true)
+    }
+  }
+  
+  // MARK: Methods
+  
+  override func startGame() {
+    game = RapidFireGame()
+    
+    super.startGame()
+    
+    count = TimerMaxValue
+  }
+  
+  override func stopGame() {
+    timer.invalidate()
+
+    super.stopGame()
+  }
+  
+  override func endGame() {
+    // Save the user's final score
+    game.maximumScore = userScore
+    
+    timer.invalidate()
+    
+    super.endGame()
+  }
+  
+  // @objc is required due to error.
+  
+  @objc func updateTimer() {
+    
+    if count == 0 {
+      currentLevel += 1
+      return
+    }
+    
+    if count <= TimerBlinkAtSecond {
+      rapidFireDelegate!.makeCountDownLabelBlinkAtRate(RemainingSecondsBlinkRate)
+    }
+    
+    count -= 1
+  }
+  
+  func resetTimer() {
+    count = TimerMaxValue
+    timer?.invalidate()
+  }
+}
+
+extension RapidFireController: RFGameHandler {
+  
+  func nextQuestion(responseIndex: Int) {
+    
+    // Check if answer was correct.
+    
+    let correctAnswer =
+      game?.entries[currentLevel].correctAnswer == responseIndex
+    
+    if correctAnswer {
+      userScore += 1
+    } else {
+      rapidFireDelegate!.showWrongAnswerAnimation()
+    }
+    
+    currentLevel += 1
+  }
+}

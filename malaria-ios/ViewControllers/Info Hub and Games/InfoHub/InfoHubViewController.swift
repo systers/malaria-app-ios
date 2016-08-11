@@ -105,7 +105,7 @@ class InfoHubViewController : UIViewController{
 
 // MARK: PresentsModalityDelegate
 extension InfoHubViewController : PresentsModalityDelegate{
-  func OnDismiss() {
+  func onDismiss() {
     refreshScreen()
   }
 }

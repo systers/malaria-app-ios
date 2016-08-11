@@ -1,6 +1,8 @@
 import Foundation
 import UIKit
 
+typealias AlertText = (title: String, message: String)
+
 class Global {
     
     //Methods: To get the system information 

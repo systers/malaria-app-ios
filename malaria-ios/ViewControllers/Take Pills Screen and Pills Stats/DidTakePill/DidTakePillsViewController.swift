@@ -206,7 +206,7 @@ extension DidTakePillsViewController: PresentsModalityDelegate {
     pagesManager.currentViewController = self
   }
   
-  func OnDismiss() {
+  func onDismiss() {
     refreshScreen()
   }
 }
