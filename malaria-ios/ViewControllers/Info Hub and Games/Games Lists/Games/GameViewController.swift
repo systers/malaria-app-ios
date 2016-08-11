@@ -11,7 +11,7 @@ class GameViewController: UIViewController {
   // MARK: Controller.
   
   var gameHandler: GameHandler? = nil
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Set background image.
@@ -40,7 +40,7 @@ extension GameViewController: GameDelegate {
                                   message: text.message,
                                   preferredStyle: UIAlertControllerStyle.Alert)
     
-    let alertAction = UIAlertAction(title: "Back",
+    let alertAction = UIAlertAction(title: BackButtonAlertText.title,
                                     style: UIAlertActionStyle.Default)
     {
       (action:UIAlertAction!) -> Void in
@@ -59,7 +59,7 @@ extension GameViewController: GameDelegate {
                                   message: text.message,
                                   preferredStyle: UIAlertControllerStyle.Alert)
     
-    let backAction = UIAlertAction(title: "Back",
+    let backAction = UIAlertAction(title: BackButtonAlertText.title,
                                    style: UIAlertActionStyle.Default)
     {
       (action:UIAlertAction!) -> Void in
@@ -69,7 +69,7 @@ extension GameViewController: GameDelegate {
     
     alert.addAction(backAction)
     
-    let restartGameAction = UIAlertAction(title: "Restart",
+    let restartGameAction = UIAlertAction(title: RestartButtonAlertText.title,
                                           style: UIAlertActionStyle.Default)
     {
       (action:UIAlertAction!) -> Void in
@@ -79,5 +79,18 @@ extension GameViewController: GameDelegate {
     alert.addAction(restartGameAction)
     
     presentViewController(alert, animated: true, completion: nil)
+  }
+}
+
+// MARK: Messages.
+
+extension GameViewController {
+  
+  private var BackButtonAlertText: AlertText {
+    return ("Back", "")
+  }
+  
+  private var RestartButtonAlertText: AlertText {
+    return ("Restart", "")
   }
 }

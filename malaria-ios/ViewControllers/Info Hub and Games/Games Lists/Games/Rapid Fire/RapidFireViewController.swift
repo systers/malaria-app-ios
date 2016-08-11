@@ -59,7 +59,6 @@ extension RapidFireViewController: RFGameDelegate {
       self.questionLabel.textColor = UIColor.redColor()
     }
     
-    
     let completionBlock = { (complete: Bool) in
       self.questionLabel.textColor = originalColor
       self.view.userInteractionEnabled = true

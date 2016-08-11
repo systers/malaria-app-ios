@@ -1,5 +1,5 @@
 protocol RFGameHandler: GameHandler {
-  func nextQuestion(pressedButtonIndex: Int)
+  func nextQuestion(responseIndex: Int)
 }
 
 protocol RFGameDelegate: GameDelegate {
@@ -121,12 +121,12 @@ final class RapidFireController: GameController<RapidFireGame> {
 
 extension RapidFireController: RFGameHandler {
   
-  func nextQuestion(pressedButtonIndex: Int) {
+  func nextQuestion(responseIndex: Int) {
     
     // Check if answer was correct.
     
     let correctAnswer =
-      game?.entries[currentLevel].correctAnswer == pressedButtonIndex
+      game?.entries[currentLevel].correctAnswer == responseIndex
     
     if correctAnswer {
       userScore += 1

@@ -5,7 +5,7 @@ import UIKit
 class RapidFireGame {
   
   var entries: [RapidFireGameEntry] = []
-  var _maximumScore: Int?
+  var _maximumScore: Int = 0
 
   init() {
     let entry1 = RapidFireGameEntry(question: "Question 1 (answer 2)",
@@ -26,7 +26,7 @@ class RapidFireGame {
 
 extension RapidFireGame: Game {
   
-  var maximumScore: Int? {
+  var maximumScore: Int {
     get {
       return _maximumScore
     }

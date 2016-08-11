@@ -232,7 +232,8 @@ extension PlanTripViewController{
   
   
   @IBAction func autocompleteClicked(sender: AnyObject) {
-    if Global.SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO("9.0") && Reachability.isConnectedToNetwork() {
+    if Global.SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO("9.0")
+      && Reachability.isConnectedToNetwork() {
       let autocompleteController = GMSAutocompleteViewController()
       autocompleteController.delegate = self
       self.presentViewController(autocompleteController, animated: true, completion: nil)

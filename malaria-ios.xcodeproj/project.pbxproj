@@ -356,13 +356,13 @@
 		682E90B51D5A2E3300BF7F8F /* AchievementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementTableViewCell.swift; sourceTree = "<group>"; };
 		682E90B91D5A2E7400BF7F8F /* GameRulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRulesViewController.swift; sourceTree = "<group>"; };
 		682E90BB1D5A2E7400BF7F8F /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		682E90BC1D5A2E7400BF7F8F /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		682E90BC1D5A2E7400BF7F8F /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameController.swift; path = "../ViewControllers/Info Hub and Games/Games Lists/Games/GameController.swift"; sourceTree = "<group>"; };
 		682E90BD1D5A2E7400BF7F8F /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		682E90BF1D5A2E7400BF7F8F /* InsetLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsetLabel.swift; sourceTree = "<group>"; };
-		682E90C01D5A2E7400BF7F8F /* MythVsFactController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MythVsFactController.swift; sourceTree = "<group>"; };
+		682E90BF1D5A2E7400BF7F8F /* InsetLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InsetLabel.swift; path = "Info Hub and Games/Games Lists/Games/Myth vs. Fact/InsetLabel.swift"; sourceTree = "<group>"; };
+		682E90C01D5A2E7400BF7F8F /* MythVsFactController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MythVsFactController.swift; path = "../ViewControllers/Info Hub and Games/Games Lists/Games/Myth vs. Fact/MythVsFactController.swift"; sourceTree = "<group>"; };
 		682E90C11D5A2E7400BF7F8F /* MythVsFactGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MythVsFactGame.swift; sourceTree = "<group>"; };
 		682E90C21D5A2E7400BF7F8F /* MythVsFactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MythVsFactViewController.swift; sourceTree = "<group>"; };
-		682E90C41D5A2E7400BF7F8F /* RapidFireController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidFireController.swift; sourceTree = "<group>"; };
+		682E90C41D5A2E7400BF7F8F /* RapidFireController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RapidFireController.swift; path = "../ViewControllers/Info Hub and Games/Games Lists/Games/Rapid Fire/RapidFireController.swift"; sourceTree = "<group>"; };
 		682E90C51D5A2E7400BF7F8F /* RapidFireGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidFireGame.swift; sourceTree = "<group>"; };
 		682E90C61D5A2E7400BF7F8F /* RapidFireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidFireViewController.swift; sourceTree = "<group>"; };
 		682E90C71D5A2E7400BF7F8F /* GamesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesListViewController.swift; sourceTree = "<group>"; };
@@ -505,6 +505,7 @@
 				20FC56BC1B71951300D51801 /* PresentsModalityDelegate.swift */,
 				E4C20AF41C8C4BD000B686F4 /* WidgetHandler.swift */,
 				E4A66DB51D09A5DB008D9B40 /* Reachability.swift */,
+				682E90BF1D5A2E7400BF7F8F /* InsetLabel.swift */,
 			);
 			name = SupportingFiles;
 			sourceTree = "<group>";
@@ -531,6 +532,7 @@
 		200C72311B40368600998100 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				68C456A71D5D209400A8F566 /* Games */,
 				684D7C371D4BA75C00BB6B64 /* Achievements */,
 				68E62F761D191B7200743214 /* UserProfileHelpers */,
 				200C72391B40368600998100 /* TripHelpers */,
@@ -792,7 +794,6 @@
 			isa = PBXGroup;
 			children = (
 				682E90BB1D5A2E7400BF7F8F /* Game.swift */,
-				682E90BC1D5A2E7400BF7F8F /* GameController.swift */,
 				682E90BD1D5A2E7400BF7F8F /* GameViewController.swift */,
 				682E90C31D5A2E7400BF7F8F /* Rapid Fire */,
 				682E90BE1D5A2E7400BF7F8F /* Myth vs. Fact */,
@@ -803,8 +804,6 @@
 		682E90BE1D5A2E7400BF7F8F /* Myth vs. Fact */ = {
 			isa = PBXGroup;
 			children = (
-				682E90BF1D5A2E7400BF7F8F /* InsetLabel.swift */,
-				682E90C01D5A2E7400BF7F8F /* MythVsFactController.swift */,
 				682E90C11D5A2E7400BF7F8F /* MythVsFactGame.swift */,
 				682E90C21D5A2E7400BF7F8F /* MythVsFactViewController.swift */,
 			);
@@ -814,7 +813,6 @@
 		682E90C31D5A2E7400BF7F8F /* Rapid Fire */ = {
 			isa = PBXGroup;
 			children = (
-				682E90C41D5A2E7400BF7F8F /* RapidFireController.swift */,
 				682E90C51D5A2E7400BF7F8F /* RapidFireGame.swift */,
 				682E90C61D5A2E7400BF7F8F /* RapidFireViewController.swift */,
 			);
@@ -1012,6 +1010,16 @@
 				200C72261B40368600998100 /* PostsEndpoint.swift */,
 			);
 			name = "Info Hub Posts";
+			sourceTree = "<group>";
+		};
+		68C456A71D5D209400A8F566 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				682E90BC1D5A2E7400BF7F8F /* GameController.swift */,
+				682E90C41D5A2E7400BF7F8F /* RapidFireController.swift */,
+				682E90C01D5A2E7400BF7F8F /* MythVsFactController.swift */,
+			);
+			name = Games;
 			sourceTree = "<group>";
 		};
 		68E62F671D14617700743214 /* User Profile */ = {

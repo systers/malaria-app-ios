@@ -16,12 +16,12 @@ class MythVsFactViewController: GameViewController {
   // MARK: Controller.
   
   private var mythVsFactGameHandler: MVFGameHandler! {
-      get {
-        return gameHandler as! MVFGameHandler
-      }
-      set {
-        gameHandler = newValue
-      }
+    get {
+      return gameHandler as! MVFGameHandler
+    }
+    set {
+      gameHandler = newValue
+    }
   }
   
   // MARK: Properties.
@@ -91,11 +91,8 @@ extension MythVsFactViewController: MVFGameDelegate {
       self.mythVsFactGameHandler.setNextStametent()
     }
     
-    if answer {
-      yesView.blink(withRate: CorrectAnswerBlinkRate, completion: completion)
-    } else {
-      noView.blink(withRate: CorrectAnswerBlinkRate, completion: completion)
-    }
+    let targetView = answer ? yesView : noView
+    targetView.blink(withRate: CorrectAnswerBlinkRate, completion: completion)
   }
   
   func setNextStatementText(labelText: String,

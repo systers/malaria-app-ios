@@ -35,7 +35,6 @@ class GameController<T: Game>: GameHandler {
   
   // MARK: Properties.
   var _delegate: GameDelegate?
-  
   var delegate: GameDelegate? {
     get {
       return _delegate
@@ -57,8 +56,7 @@ class GameController<T: Game>: GameHandler {
   }
   
   /*
-   TODO: Create an extension that encapsulates this methods when Swift allows
-   overriding extension methods, because now this is not allowed.
+   TODO: (Update this in Swift 3) Create an extension that encapsulates this methods when Swift allows overriding extension methods, because now the compiler doesn't allow it.
    */
   
   // MARK: Game Handler Methods

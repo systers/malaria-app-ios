@@ -5,7 +5,8 @@ import UIKit
 class MythVsFactGame {
   
   var entries: [MVFGameEntry] = []
-  
+  var _maximumScore: Int = 0
+
   init() {
     let entry1 = MVFGameEntry(statement: "Statement 1 (true)",
                               correctAnswer: true)
@@ -22,12 +23,12 @@ class MythVsFactGame {
 
 extension MythVsFactGame: Game {
   
-  var maximumScore: Int? {
+  var maximumScore: Int {
     get {
-      return self.maximumScore
+      return _maximumScore
     }
     set {
-      self.maximumScore = newValue
+      _maximumScore = newValue
     }
   }
   
@@ -37,7 +38,6 @@ extension MythVsFactGame: Game {
     + "- Score Achievement Points for every correct answer you give." }
   
   var numberOfLevels: Int { return entries.count }
- 
 }
 
 class MVFGameEntry {
