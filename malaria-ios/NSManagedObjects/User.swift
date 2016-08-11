@@ -8,18 +8,13 @@ class User: NSManagedObject {
   static private let MaximumVolunteerAge = 90
   
   enum UserValidationError: String, ErrorType {
-    case NoFirstNameProvided = "Please insert your first name."
-    case NoLastNameProvided = "Please insert your last name."
-    case NoAgeProvided = "Please insert your age."
-    case NoEmailProvided = "Please insert your email."
-    
     case FirstNameLength = "First name must have minimum two characters."
     case LastNameLength = "Last name must have minimum two characters."
     case LocationLength = "Location must have minimum two characters."
     case PhoneLength = "Phone must have minimum two characters."
     case GenderLength = "Gender must have minimum two characters."
     
-    case InvalidAge = "Please insert real age."
+    case InvalidAge = "Please insert your age correctly."
     case InvalidEmail = "Please insert a valid email."
     case InvalidPhone = "Please insert a valid phone number."
   }
@@ -36,26 +31,21 @@ class User: NSManagedObject {
    if the user creation failed, the corespondent error as `String`.
    */
   
-  static func define(firstName: String?,
-                     lastName: String?,
-                     age: String?,
-                     email: String?,
+  static func define(firstName: String,
+                     lastName: String,
+                     age: String,
+                     email: String,
                      gender: String?,
                      location: String?,
                      phone: String?) throws -> User {
     
-    do {
-      try validateData(firstName,
+     try validateData(firstName,
                        lastName: lastName,
                        age: age,
-                       location: location,
                        email: email,
                        gender: gender,
+                       location: location,
                        phone: phone)
-    }
-    catch let error as UserValidationError {
-      throw error
-    }
     
     let newContext = CoreDataHelper.sharedInstance.createBackgroundContext()
     
@@ -63,13 +53,14 @@ class User: NSManagedObject {
     
     let user = User.create(User.self, context: newContext!)
     
-    user.firstName = firstName!
-    user.lastName  = lastName!
-    user.age = Int64(age!)!
+    user.firstName = firstName
+    user.lastName  = lastName
+    user.age = Int64(age)!
+    user.email = email
+
     user.location = location!
     user.gender = gender!
     user.phone = phone!
-    user.email = email!
     
     CoreDataHelper.sharedInstance.saveContext(newContext!)
     
@@ -78,22 +69,14 @@ class User: NSManagedObject {
     return user
   }
   
-  static private func validateData(firstName: String?,
-                                   lastName: String?,
-                                   age: String?,
-                                   location: String?,
-                                   email: String?,
+  static private func validateData(firstName: String,
+                                   lastName: String,
+                                   age: String,
+                                   email: String,
                                    gender: String?,
+                                   location: String?,
                                    phone: String?)
     throws -> Bool {
-      
-      guard let firstName = firstName else {
-        throw UserValidationError.NoFirstNameProvided
-      }
-      
-      guard let lastName = lastName else {
-        throw UserValidationError.NoLastNameProvided
-      }
       
       if firstName.characters.count < MinimumCharacterLength {
         throw UserValidationError.FirstNameLength
@@ -107,16 +90,12 @@ class User: NSManagedObject {
         throw UserValidationError.GenderLength
       }
       
-      guard let age = Int(age!) else {
-        throw UserValidationError.NoAgeProvided
+      guard let age = Int(age) else {
+        throw UserValidationError.InvalidAge
       }
       
       if age < MinimumVolunteerAge || age > MaximumVolunteerAge  {
         throw UserValidationError.InvalidAge
-      }
-      
-      guard let email = email else {
-        throw UserValidationError.NoEmailProvided
       }
       
       if !email.isValidEmail() {

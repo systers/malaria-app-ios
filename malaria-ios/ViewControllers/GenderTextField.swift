@@ -35,7 +35,7 @@ class GenderTextField: UITextField {
     
     picker.delegate = genderPickerProvider
     
-    if text == "" {
+    if text!.isEmpty {
       text = genderValues[0]
     } else {
       let row = genderValues.indexOf(text!)
