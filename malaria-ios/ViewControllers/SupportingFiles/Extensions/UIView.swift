@@ -2,8 +2,10 @@ import Foundation
 import UIKit
 
 @IBDesignable extension UIView {
-    /// Sets corner radius. Specify half width to make a full circle
-    @IBInspectable public var cornerRadius: CGFloat {
+  
+    /// Sets corner radius. Specify half width to make a full circle.
+  
+    @IBInspectable  var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
         }
@@ -13,8 +15,8 @@ import UIKit
         }
     }
     
-    /// Border width
-    @IBInspectable public var borderWidth: CGFloat {
+    /// Border width.
+    @IBInspectable  var borderWidth: CGFloat {
         get {
             return layer.borderWidth
         }
@@ -24,12 +26,11 @@ import UIKit
         }
     }
     
-    /// Border color
-    @IBInspectable public var borderColor: UIColor? {
+    /// Border color.
+    @IBInspectable  var borderColor: UIColor? {
         get {
             return UIColor(CGColor: layer.borderColor!)
         }
-        
         set(value) {
             layer.borderColor = value?.CGColor
         }

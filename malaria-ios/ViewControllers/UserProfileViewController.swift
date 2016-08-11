@@ -13,25 +13,57 @@ protocol SaveRemainingPillsProtocol: class {
 
 class UserProfileViewController: UIViewController {
   
-  // We found a problem that didn't allow us to click on the table view's cell if we only set the cell
-  // height (60) and not add ~30-50 offset to it
+  /*
+   We found a problem that didn't allow us to click on the table view's cell if we only set the cell
+   height (60) and not add ~30-50 offset to it.
+   */
+  
   let CellHeightAndOffset: CGFloat = 60 + 30
   let CellReuseIdentifier = "User Profile Pill Cell Identifier"
   
+  @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var remindMeWeeksButton: UIButton!
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var remainingLabel: UILabel!
+  @IBOutlet weak var editProfileButton: UIButton!
   
-  private var medicine: [Medicine] = []
+  // User Profile.
+  
+  @IBOutlet weak var firstNameField: UITextField!
+  @IBOutlet weak var lastNameField: UITextField!
+  @IBOutlet weak var genderField: UITextField!
+  @IBOutlet weak var ageField: UITextField!
+  @IBOutlet weak var locationField: UITextField!
+  @IBOutlet weak var emailField: UITextField!
+  @IBOutlet weak var phoneField: UITextField!
+  
+  private var user: User! {
+    didSet {
+      // Refresh the user info
+      firstNameField.text = user.firstName
+      lastNameField.text = user.lastName
+      ageField.text = String(user.age)
+      genderField.text = user.gender
+      emailField.text = user.email
+      locationField.text = user.location
+      phoneField.text = user.phone
+    }
+  }
+  
   private var reminderValue: PillStatusNotificationsManager.ReminderInterval = .OneWeek {
     didSet {
       remindMeWeeksButton.setTitle(reminderValue.toString(), forState: .Normal)
     }
   }
   
+  // It's an array for letting the Table View to support multiple medicines.
+  private var medicines: [Medicine] = []
+  
   private var medicineStock: Int?
   private var timeMeasuringUnit: String?
+  
+  private var didComeBackFromLocationAutocomplete: Bool = false
   
   // Core Data
   
@@ -51,79 +83,167 @@ class UserProfileViewController: UIViewController {
     
     remindMeWeeksButton.setTitle(value, forState: .Normal)
     
-    self.reminderValue = value.toReminderValue()
+    reminderValue = value.toReminderValue()
+    
+    let toolBar = ToolbarWithDone(viewsWithToolbar: [
+      firstNameField,
+      lastNameField,
+      genderField,
+      ageField,
+      locationField,
+      emailField,
+      phoneField])
+    
+    firstNameField.inputAccessoryView = toolBar
+    lastNameField.inputAccessoryView = toolBar
+    genderField.inputAccessoryView = toolBar
+    ageField.inputAccessoryView = toolBar
+    locationField.inputAccessoryView = toolBar
+    emailField.inputAccessoryView = toolBar
+    phoneField.inputAccessoryView = toolBar
+    
+    locationField.addTarget(self,
+                            action: #selector(locationAutocompleteCallback),
+                            forControlEvents: UIControlEvents.EditingDidEnd)
   }
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
     
-    context = CoreDataHelper.sharedInstance.createBackgroundContext()!
-    medicineManager = MedicineManager(context: context!)
-    psnm = PillStatusNotificationsManager(context: context!)
+    /*
+     We want not to refresh the screen when the user gets back from the Google Places
+     search when pressing on the location field.
+     */
     
-    getRegisteredMedicine()
-    recalculateTableHeight()
+    if didComeBackFromLocationAutocomplete {
+      didComeBackFromLocationAutocomplete = false
+      return
+    }
+    
+    editProfileButton.selected = false
+    toggleUserInteraction(enableFields: editProfileButton.selected)
+    
     refreshData()
     refreshUI()
   }
   
   func refreshUI() {
+    
+    // Recalculate Table View Height
+    tableViewHeightConstraint.constant = CGFloat(medicines.count) * CellHeightAndOffset
+    
     tableView.reloadData()
     
     remainingLabel.text = "You have \(medicineStock!) \(timeMeasuringUnit!) of \(currentMedicine!.name) left."
     
     // Check if we need to refresh notification
-    
     let remainingPillsBasedOnTheirInterval = medicineStock! * currentMedicine!.interval
     
     let shouldPresentNotification: Bool = psnm!.shouldPresentNotification(remainingPillsBasedOnTheirInterval, reminderValue: reminderValue.rawValue)
     
-       self.remainingLabel.textColor = shouldPresentNotification ? UIColor.redColor() : Constants.DefaultBrownTint
+    self.remainingLabel.textColor = shouldPresentNotification ? UIColor.redColor() : Constants.DefaultBrownTint
     
     if shouldPresentNotification {
       psnm!.scheduleNotification(NSDate())
-    }
-    else {
+    } else {
       psnm!.unsheduleNotification()
     }
   }
   
+  // Calculate medicine left
+  
   func refreshData() {
-    // Calculate medicine left
+    context = CoreDataHelper.sharedInstance.createBackgroundContext()!
+    medicineManager = MedicineManager(context: context!)
+    psnm = PillStatusNotificationsManager(context: context!)
+    
+    // Get the current medicine stock.
+    guard let medicine = medicineManager!.getCurrentMedicine() else {
+      return
+    }
+    
+    currentMedicine = medicine
+    medicines = [currentMedicine!]
     
     // The result if floored.
     medicineStock = Int(currentMedicine!.remainingMedicine)
     
     if medicineStock == 1 {
       timeMeasuringUnit = (currentMedicine!.interval == 7) ? "week" : "day"
-    }
-    else {
+    } else {
       timeMeasuringUnit = (currentMedicine!.interval == 7) ? "weeks" : "days"
     }
     
-    // Save the results for the widget (TODO)
+    // Get the current user from Core Data.
+    let results = User.retrieve(User.self, context: context!)
+    print("Got the following users:", results)
+    user = results.first
     
+    // TODO: Save the results for the widget.
     WidgetSettingsManager.WidgetSetting.RemainingPills.setObject(medicineStock ?? 0)
     WidgetSettingsManager.WidgetSetting.RemainingPillsMeasuringUnit.setObject(timeMeasuringUnit ?? "days")
   }
   
-  /// Gets the current medicine the user uses.
-  /// To get a list of all the medicine use:
-  /// medicine = medicineManager!.getRegisteredMedicines()
+  /*
+   Enabling or disabling editing on views in order to know when the user really
+   wants to save the changes
+   */
   
-  func getRegisteredMedicine() {
-    guard let medicine = medicineManager!.getCurrentMedicine() else {
-      return
+  @IBAction func editPressed(sender: UIButton) {
+    
+    // If the user presses the button to save the data.
+    if sender.selected {
+      
+      // Try to update the user.
+      let firstName = firstNameField.text
+      let lastName = lastNameField.text
+      let age = ageField.text
+      let phone = phoneField.text
+      let gender = genderField.text
+      let email = emailField.text
+      let location = locationField.text
+      
+      do {
+        try User.define(firstName!,
+                        lastName: lastName!,
+                        age: age!,
+                        email: email!,
+                        gender: gender,
+                        location: location,
+                        phone: phone)
+      }
+      catch let error as User.UserValidationError {
+        ToastHelper.makeToast(error.rawValue, viewController: self)
+        return
+      }
+      catch {
+        Logger.Error("Undefined error when trying to validate user.")
+        return
+      }
+      
     }
     
-    self.currentMedicine = medicine
-    self.medicine = [currentMedicine!]
+    editProfileButton.selected = !editProfileButton.selected
+    
+    toggleUserInteraction(enableFields: sender.selected)
   }
   
-  /// Calculates a new table height that will be as tall as the number of cells in the table.
+  func toggleUserInteraction(enableFields value: Bool) {
+    firstNameField.userInteractionEnabled = value
+    lastNameField.userInteractionEnabled = value
+    ageField.userInteractionEnabled = value
+    genderField.userInteractionEnabled = value
+    emailField.userInteractionEnabled = value
+    locationField.userInteractionEnabled = value
+    phoneField.userInteractionEnabled = value
+    
+    tableView.userInteractionEnabled = value
+    
+    remindMeWeeksButton.userInteractionEnabled = value
+  }
   
-  func recalculateTableHeight() {
-    tableViewHeightConstraint.constant = CGFloat(medicine.count) * CellHeightAndOffset
+  func locationAutocompleteCallback() {
+    didComeBackFromLocationAutocomplete = true
   }
 }
 
@@ -171,14 +291,14 @@ extension UserProfileViewController {
 extension UserProfileViewController: UITableViewDataSource {
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return medicine.count
+    return medicines.count
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier(CellReuseIdentifier, forIndexPath: indexPath) as! UserProfilePillTableViewCell
     
-    let name = medicine[indexPath.row].name
-    let remainingMedicine = medicine[indexPath.row].remainingMedicine
+    let name = medicines[indexPath.row].name
+    let remainingMedicine = medicines[indexPath.row].remainingMedicine
     
     cell.updateCell(self, name: name,
                     remainingMedicine: remainingMedicine,
@@ -206,9 +326,7 @@ extension UserProfileViewController: UITableViewDelegate {
 extension UserProfileViewController: PresentsModalityDelegate {
   
   /// Method called when the Setup screen is dismissed.
-  func OnDismiss() {
-    getRegisteredMedicine()
-    recalculateTableHeight()
+  func onDismiss() {
     refreshData()
     refreshUI()
   }
@@ -219,14 +337,30 @@ extension UserProfileViewController: PresentsModalityDelegate {
 extension UserProfileViewController: SaveRemainingPillsProtocol {
   
   func saveRemainingPills(textField: UITextField) {
+    
     // Save new value in Core Data
-    medicine[textField.tag].remainingMedicine = Int64(textField.text!)!
-    medicine[textField.tag].lastStockRefill = NSDate()
+    medicines[textField.tag].currentStock = Int(textField.text!)!
+    medicines[textField.tag].lastStockRefill = NSDate()
     
     CoreDataHelper.sharedInstance.saveContext(context!)
     
     refreshData()
     refreshUI()
+  }
+}
+
+// MARK: Text Field Delegate
+
+extension UserProfileViewController: UITextFieldDelegate {
+  
+  func textFieldDidBeginEditing(textField: UITextField) {
+    let newOffset = CGPointMake(0, textField.frame.origin.y - 30)
+    scrollView.setContentOffset(newOffset, animated: true)
+  }
+  
+  func textFieldDidEndEditing(textField: UITextField) {
+    let newOffset = CGPointMake(0, 0)
+    scrollView.setContentOffset(newOffset, animated: true)
   }
 }
 

@@ -24,7 +24,9 @@ class MedicineManager: CoreDataContextManager {
    - returns: `Bool`:  true if success. false if not.
    */
   
-  func registerNewMedicine(name: String, interval: Int) -> Bool {
+  func registerNewMedicine(name: String,
+                           interval: Int,
+                           remainingMedicine: Int = 0) -> Bool {
     if getMedicine(name) != nil {
       return false
     }
@@ -32,7 +34,7 @@ class MedicineManager: CoreDataContextManager {
     let medicine = Medicine.create(Medicine.self, context: context)
     medicine.name = name
     medicine.interval = max(1, interval)
-    medicine.remainingMedicine = 0
+    medicine.remainingMedicine = Int64(remainingMedicine)
     
     CoreDataHelper.sharedInstance.saveContext(context)
     

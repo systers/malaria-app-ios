@@ -2,12 +2,14 @@ import Foundation
 import UIKit
 
 /// Presents game rules.
+
 class GameRulesViewController : UIViewController {
   
   @IBOutlet weak var gameTitleLabel: UILabel!
   @IBOutlet weak var gameDescriptionLabel: UILabel!
   
-  // Provided by previous viewController
+  // Provided by the `GamesListViewController`.
+  
   var game: Game!
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -26,10 +28,12 @@ class GameRulesViewController : UIViewController {
     dismissViewControllerAnimated(true, completion: nil)
   }
   
-  // Segues must have the identifier following the naming rule: "Show " + game.name
-  // in order for a game to start
+  /*
+   Segues must have the identifier following the naming rule: "Show " + game.name
+   in order for a game to start.
+   */
+  
   @IBAction func startGameBtnHandler(sender: AnyObject) {
     performSegueWithIdentifier("Show " + game.name, sender: self)
   }
-  
 }

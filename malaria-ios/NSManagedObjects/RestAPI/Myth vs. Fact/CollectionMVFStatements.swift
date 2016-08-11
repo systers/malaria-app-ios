@@ -6,7 +6,7 @@ import CoreData
  Myth vs. Fact game.
  */
 
-public class CollectionMVFStatements: NSManagedObject {
+class CollectionMVFStatements: NSManagedObject {
   
-  @NSManaged public var statements: NSSet
+  @NSManaged var statements: NSSet
 }

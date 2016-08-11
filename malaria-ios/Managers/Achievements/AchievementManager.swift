@@ -29,8 +29,11 @@ class AchievementManager: CoreDataContextManager {
     var results: [AchievementObject] = []
     
     for tag in tags {
-      let achievementObject = (tag, achievements.filter { $0.tag == tag })
-      results.append(achievementObject)
+      let achievementObject = AchievementObject(tag, achievements.filter { $0.tag == tag })
+      
+      if achievementObject.achievements.count > 0 {
+        results.append(achievementObject)
+      }
     }
     
     return results

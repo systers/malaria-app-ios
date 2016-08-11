@@ -2,15 +2,15 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
-public class CollectionRFQuestionsEndpoint : Endpoint {
-  public var path: String { fatalError("Please specify path") }
+class CollectionRFQuestionsEndpoint : Endpoint {
+  var path: String { fatalError("Please specify path.") }
   
   /// subCollectionClassType: Specify the subclass of CollectionPosts
   var subCollectionsPostsType: CollectionRFQuestions.Type {
-    fatalError("Please specify collection type")
+    fatalError("Please specify collection type.")
   }
   
-  public func retrieveJSONObject(data: JSON, context: NSManagedObjectContext) -> NSManagedObject? {
+  func retrieveJSONObject(data: JSON, context: NSManagedObjectContext) -> NSManagedObject? {
     // TODO
     return nil
   }
@@ -22,7 +22,7 @@ public class CollectionRFQuestionsEndpoint : Endpoint {
   }
   
   /// Required from `Endpoint` protocol
-  public func clearFromDatabase(context: NSManagedObjectContext) {
+  func clearFromDatabase(context: NSManagedObjectContext) {
     subCollectionsPostsType.clear(subCollectionsPostsType.self, context: context)
   }
   

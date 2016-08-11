@@ -6,9 +6,16 @@ class GamesListViewController: UIViewController {
   // New games are added just by creating them and adding an instance to this array
   private var games: [Game] = [RapidFireGame(), MythVsFactGame()]
   
+  var pagesManager: InfoHubPageManagerViewController!
+
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+  }
+  
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    pagesManager.currentViewController = self
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -18,6 +25,8 @@ class GamesListViewController: UIViewController {
     gameRulesVC.game = games[gameCellIndex]
   }
 }
+
+// MARK: Collection View Data Source
 
 extension GamesListViewController: UICollectionViewDataSource {
   
@@ -51,9 +60,19 @@ extension GamesListViewController: UICollectionViewDataSource {
   }
 }
 
+// MARK: Collection View Delegate.
+
 extension GamesListViewController: UICollectionViewDelegate {
   
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
     performSegueWithIdentifier("Show Game Rules", sender: indexPath.row)
   }
+}
+
+// MARK: Presents Modality Delegate.
+
+// We need to respect this protocol in order to support the Settings button.
+
+extension GamesListViewController: PresentsModalityDelegate {
+  func onDismiss() { }
 }

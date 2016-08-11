@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 /// Responsible for keep a cache of the data and avoid repeating computations after every view controller transition
-public class CachedStatistics : NSObject{
+ class CachedStatistics : NSObject{
     /// Singleton
     static let sharedInstance = CachedStatistics()
 
@@ -32,7 +32,7 @@ public class CachedStatistics : NSObject{
     var todaysAdherence: Float = 0
     
     /// Init
-    override public init(){
+    override  init(){
         super.init()
         NSNotificationEvents.ObserveDataUpdated(self, selector: #selector(resetFlags))
         NSNotificationEvents.ObserveEnteredForeground(self, selector: #selector(resetFlags))
@@ -50,7 +50,7 @@ public class CachedStatistics : NSObject{
     }
     
     /// Call this to refresh the context. Don't forget to call desired methods to keep internal cache updated
-    public func refreshContext(){
+     func refreshContext(){
         self.context = CoreDataHelper.sharedInstance.createBackgroundContext()!
         
         medicine = MedicineManager(context: context).getCurrentMedicine()
@@ -61,7 +61,7 @@ public class CachedStatistics : NSObject{
     }
     
     /// Updates internal cache
-    public func setupBeforeCaching() {
+     func setupBeforeCaching() {
         registries = registriesManager.getRegistries(mostRecentFirst: false)
     }
 }
@@ -70,7 +70,7 @@ extension CachedStatistics {
     /// Retrieves daily stats
     ///
     /// - parameter `(): -> ()`: completion handler to be executed in the UI thread
-    public func retrieveDailyStats(completion: () -> ()){
+     func retrieveDailyStats(completion: () -> ()){
         lastMedicine = nil
         todaysPillStreak = 0
         todaysAdherence = 0
@@ -95,7 +95,7 @@ extension CachedStatistics {
     ///
     /// - parameter `NSDate`:: Desired month
     /// - parameter `(): -> ()`: completion handler to be executed in the UI thread
-    public func retrieveMonthsData(numberMonths: Int, completion : () -> ()) {
+     func retrieveMonthsData(numberMonths: Int, completion : () -> ()) {
         monthAdhrence.removeAll()
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
@@ -114,7 +114,7 @@ extension CachedStatistics {
     }
     
     /// Retrieves took medicine stats. Useful in a calendar view
-    public func retrieveTookMedicineStats(){
+     func retrieveTookMedicineStats(){
         
         tookMedicine.removeAll()
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
@@ -140,7 +140,7 @@ extension CachedStatistics {
     ///
     /// - parameter `NSDate`:: The day to be updated
     /// - parameter `(): -> ()`: Progress handler to be executed in the UI thread
-    public func updateTookMedicineStats(at: NSDate, progress: (day: NSDate, remove: Bool) -> ()){
+     func updateTookMedicineStats(at: NSDate, progress: (day: NSDate, remove: Bool) -> ()){
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             
             self.refreshContext()
@@ -184,7 +184,7 @@ extension CachedStatistics {
     ///
     /// - parameter `(progress:: Float) -> ()`: Progress handler to be executed in the UI thread. Usually a progress bar
     /// - parameter `(): -> ()`: completion handler to be executed in the UI after finishing processing
-    public func retrieveCachedStatistics(progress: (progress: Float) -> (), completion : () -> ()) {
+     func retrieveCachedStatistics(progress: (progress: Float) -> (), completion : () -> ()) {
         adherencesPerDay.removeAll()
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {

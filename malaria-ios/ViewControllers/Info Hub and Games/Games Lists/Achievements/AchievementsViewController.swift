@@ -10,6 +10,9 @@ class AchievementsViewController: UIViewController {
   // The array that will hold each section's name and its achievements.
   var allAchievements: [AchievementObject] = []
   
+  // The parent page manager.
+  var pagesManager: InfoHubPageManagerViewController!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -21,6 +24,7 @@ class AchievementsViewController: UIViewController {
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
+    pagesManager.currentViewController = self
     updateModel()
   }
   
@@ -38,6 +42,8 @@ class AchievementsViewController: UIViewController {
   }
 
 }
+
+// MARK: Table View Data Source.
 
 extension AchievementsViewController: UITableViewDataSource {
   
@@ -66,6 +72,8 @@ extension AchievementsViewController: UITableViewDataSource {
   }
 }
 
+// MARK: Table View Delegate.
+
 extension AchievementsViewController: UITableViewDelegate {
   
   func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -84,4 +92,12 @@ extension AchievementsViewController: UITableViewDelegate {
   func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
     cell.backgroundColor = UIColor.clearColor()
   }
+}
+
+// MARK: Presents Modality Delegate.
+
+// We need to respect this protocol in order to support the Settings button.
+
+extension AchievementsViewController: PresentsModalityDelegate {
+  func onDismiss() { }
 }

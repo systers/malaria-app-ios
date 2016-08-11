@@ -84,6 +84,18 @@
 		311E38EA1CA0DC400051B14E /* SocialShareable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E38E81CA0DC400051B14E /* SocialShareable.swift */; };
 		311E38EC1CA0DC510051B14E /* DailyStatsTableViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E38EB1CA0DC510051B14E /* DailyStatsTableViewController+Extensions.swift */; };
 		311E38EE1CA0DC540051B14E /* Stat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E38ED1CA0DC540051B14E /* Stat+Extensions.swift */; };
+		680A6A0B1D522288009FB6B0 /* SetupScreenUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A6A0A1D522288009FB6B0 /* SetupScreenUserProfileViewController.swift */; };
+		680A6A1D1D5227F2009FB6B0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A6A1B1D5227F2009FB6B0 /* User.swift */; };
+		680A6A211D522AF5009FB6B0 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A6A201D522AF5009FB6B0 /* User+CoreDataProperties.swift */; };
+		682DB0E81D54D26C0050547B /* UIViewController+AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682DB0E71D54D26C0050547B /* UIViewController+AppDelegate.swift */; };
+		682DB0E91D568CA40050547B /* UserSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC56EA1B72C91300D51801 /* UserSettingsManager.swift */; };
+		682DB0EC1D568DD90050547B /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200C72611B40368600998100 /* Int.swift */; };
+		682DB0ED1D568F550050547B /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200C72661B40368600998100 /* Logger.swift */; };
+		682DB0EF1D568FCC0050547B /* StringInternalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682DB0EE1D568FCC0050547B /* StringInternalExtensions.swift */; };
+		682DB0F11D56901E0050547B /* NSDateInternalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682DB0F01D56901E0050547B /* NSDateInternalExtensions.swift */; };
+		682DB0F21D56915B0050547B /* NSDate+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200C72621B40368600998100 /* NSDate+Comparable.swift */; };
+		682E90281D59016300BF7F8F /* LocationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E90271D59016300BF7F8F /* LocationTextField.swift */; };
+		682E90351D59266500BF7F8F /* GenderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E90341D59266500BF7F8F /* GenderTextField.swift */; };
 		684D7BD71D4B7DAD00BB6B64 /* ToastHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7BD61D4B7DAD00BB6B64 /* ToastHelper.swift */; };
 		684D7BF01D4BA33100BB6B64 /* TestAchievementsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7BEC1D4BA33100BB6B64 /* TestAchievementsManager.swift */; };
 		684D7BF11D4BA33100BB6B64 /* TestGeneralAchievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7BED1D4BA33100BB6B64 /* TestGeneralAchievements.swift */; };
@@ -132,7 +144,6 @@
 		684D7C641D4BA80700BB6B64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C5E1D4BA80700BB6B64 /* AppDelegate.swift */; };
 		684D7C651D4BA80700BB6B64 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C601D4BA80700BB6B64 /* Constants.swift */; };
 		684D7C661D4BA80700BB6B64 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C611D4BA80700BB6B64 /* Global.swift */; };
-		684D7C671D4BA80700BB6B64 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 684D7C621D4BA80700BB6B64 /* Info.plist */; };
 		684D7C691D4BA8EF00BB6B64 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C601D4BA80700BB6B64 /* Constants.swift */; };
 		684D7C6A1D4BA90200BB6B64 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C601D4BA80700BB6B64 /* Constants.swift */; };
 		684D7C781D4BA9C800BB6B64 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C6B1D4BA9C800BB6B64 /* Model.xcdatamodeld */; };
@@ -348,6 +359,14 @@
 		3D7B46AD1C33A45365CF16ED /* Pods-malaria-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-malaria-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-malaria-iosTests/Pods-malaria-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		405E616ADFDE4FA92F463F95 /* Pods-malaria-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-malaria-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-malaria-ios/Pods-malaria-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		5ED16CF6D98BC35F9510D8F3 /* Pods_malaria_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_malaria_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		680A6A0A1D522288009FB6B0 /* SetupScreenUserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupScreenUserProfileViewController.swift; sourceTree = "<group>"; };
+		680A6A1B1D5227F2009FB6B0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		680A6A201D522AF5009FB6B0 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "../User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		682DB0E71D54D26C0050547B /* UIViewController+AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+AppDelegate.swift"; sourceTree = "<group>"; };
+		682DB0EE1D568FCC0050547B /* StringInternalExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringInternalExtensions.swift; sourceTree = "<group>"; };
+		682DB0F01D56901E0050547B /* NSDateInternalExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateInternalExtensions.swift; sourceTree = "<group>"; };
+		682E90271D59016300BF7F8F /* LocationTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTextField.swift; sourceTree = "<group>"; };
+		682E90341D59266500BF7F8F /* GenderTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderTextField.swift; sourceTree = "<group>"; };
 		684D7BD61D4B7DAD00BB6B64 /* ToastHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastHelper.swift; sourceTree = "<group>"; };
 		684D7BEC1D4BA33100BB6B64 /* TestAchievementsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAchievementsManager.swift; sourceTree = "<group>"; };
 		684D7BED1D4BA33100BB6B64 /* TestGeneralAchievements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestGeneralAchievements.swift; sourceTree = "<group>"; };
@@ -477,6 +496,7 @@
 		200A18E71B64F66100EC2A65 /* SetupScreen */ = {
 			isa = PBXGroup;
 			children = (
+				680A6A0A1D522288009FB6B0 /* SetupScreenUserProfileViewController.swift */,
 				200A18DE1B64F60200EC2A65 /* SetupScreenViewController.swift */,
 			);
 			name = SetupScreen;
@@ -485,6 +505,7 @@
 		200A18E91B64F6BC00EC2A65 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				682E90361D5927BF00BF7F8F /* Custom Text Fields */,
 				20FC56F11B72C98800D51801 /* Extensions */,
 				209F60BE1B6E4AED00EDA461 /* Sounds */,
 				203F0B251B481CB900826E06 /* ValuePickers */,
@@ -558,6 +579,7 @@
 		200C723E1B40368600998100 /* NSManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
+				680A6A171D52268C009FB6B0 /* User Profile */,
 				684D7BF41D4BA36500BB6B64 /* Achievements */,
 				684D7C481D4BA79E00BB6B64 /* RestAPI */,
 				200C72401B40368600998100 /* Item.swift */,
@@ -603,6 +625,8 @@
 				200C72641B40368600998100 /* NSSet.swift */,
 				2027E94E1BADC71D00DA55A4 /* Array.swift */,
 				68E62F791D19BA0500743214 /* StringExtensions.swift */,
+				682DB0EE1D568FCC0050547B /* StringInternalExtensions.swift */,
+				682DB0F01D56901E0050547B /* NSDateInternalExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -709,6 +733,7 @@
 				20FC56F41B72C9CF00D51801 /* UIColor.swift */,
 				20FC56F21B72C9AF00D51801 /* UIStoryboard.swift */,
 				20EF684F1B72DF1600286A0F /* UIButton.swift */,
+				682DB0E71D54D26C0050547B /* UIViewController+AppDelegate.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -759,6 +784,24 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		680A6A171D52268C009FB6B0 /* User Profile */ = {
+			isa = PBXGroup;
+			children = (
+				680A6A1B1D5227F2009FB6B0 /* User.swift */,
+				680A6A201D522AF5009FB6B0 /* User+CoreDataProperties.swift */,
+			);
+			name = "User Profile";
+			sourceTree = "<group>";
+		};
+		682E90361D5927BF00BF7F8F /* Custom Text Fields */ = {
+			isa = PBXGroup;
+			children = (
+				682E90271D59016300BF7F8F /* LocationTextField.swift */,
+				682E90341D59266500BF7F8F /* GenderTextField.swift */,
+			);
+			name = "Custom Text Fields";
+			sourceTree = "<group>";
+		};
 		684D7BEB1D4BA33100BB6B64 /* Achievements */ = {
 			isa = PBXGroup;
 			children = (
@@ -773,8 +816,8 @@
 		684D7BF41D4BA36500BB6B64 /* Achievements */ = {
 			isa = PBXGroup;
 			children = (
-				684D7BF51D4BA36500BB6B64 /* Achievement+CoreDataProperties.swift */,
 				684D7BF61D4BA36500BB6B64 /* Achievement.swift */,
+				684D7BF51D4BA36500BB6B64 /* Achievement+CoreDataProperties.swift */,
 			);
 			path = Achievements;
 			sourceTree = "<group>";
@@ -834,8 +877,8 @@
 		684D7C111D4BA50A00BB6B64 /* Games Lists */ = {
 			isa = PBXGroup;
 			children = (
-				684D7C121D4BA50A00BB6B64 /* GameRulesViewController.swift */,
 				684D7C1C1D4BA50A00BB6B64 /* GamesListViewController.swift */,
+				684D7C121D4BA50A00BB6B64 /* GameRulesViewController.swift */,
 				684D7C131D4BA50A00BB6B64 /* Games */,
 			);
 			path = "Games Lists";
@@ -1285,7 +1328,6 @@
 			files = (
 				200EE4AF1B1349D40087FB24 /* ImagesAssets.xcassets in Resources */,
 				200EE48F1B1343A50087FB24 /* Main.storyboard in Resources */,
-				684D7C671D4BA80700BB6B64 /* Info.plist in Resources */,
 				200C73431B40392A00998100 /* ApiExamples in Resources */,
 				200EE4941B1343A50087FB24 /* LaunchScreen.xib in Resources */,
 				203A40921B66A7BE00FCE4EE /* Settings.bundle in Resources */,
@@ -1454,6 +1496,7 @@
 				684D7C0B1D4BA41B00BB6B64 /* CalendarSettings.swift in Sources */,
 				684D7C451D4BA75C00BB6B64 /* GeneralAchievementsManager.swift in Sources */,
 				684D7C461D4BA75C00BB6B64 /* MedicineAchievementManager.swift in Sources */,
+				682DB0EF1D568FCC0050547B /* StringInternalExtensions.swift in Sources */,
 				200A18CF1B64F51300EC2A65 /* MedicinePickerViewTrip.swift in Sources */,
 				684D7C661D4BA80700BB6B64 /* Global.swift in Sources */,
 				684D7C271D4BA50A00BB6B64 /* RapidFireGame.swift in Sources */,
@@ -1463,6 +1506,7 @@
 				200C72AC1B40368600998100 /* TripNotificationsManager.swift in Sources */,
 				684D7C5C1D4BA79E00BB6B64 /* RFQuestion.swift in Sources */,
 				68E62F7A1D19BA0500743214 /* StringExtensions.swift in Sources */,
+				682DB0F11D56901E0050547B /* NSDateInternalExtensions.swift in Sources */,
 				684D7C231D4BA50A00BB6B64 /* Game.swift in Sources */,
 				684D7C321D4BA53D00BB6B64 /* AchievementTableViewCell.swift in Sources */,
 				200C72F01B40368600998100 /* NSDate+Comparable.swift in Sources */,
@@ -1472,6 +1516,7 @@
 				200C72EA1B40368600998100 /* CoreDataHelper.swift in Sources */,
 				68E62F7C1D1AC1B100743214 /* WidgetSettingsManager.swift in Sources */,
 				68BEC32A1D270C9900FCFAF5 /* CollectionRFQuestionsEndpoint.swift in Sources */,
+				682E90351D59266500BF7F8F /* GenderTextField.swift in Sources */,
 				684D7C551D4BA79E00BB6B64 /* CollectionMVFStatements.swift in Sources */,
 				684D7C471D4BA75C00BB6B64 /* MedicineManagerProvider.swift in Sources */,
 				68BEC3261D270BA000FCFAF5 /* RFQuestionsEndpoint.swift in Sources */,
@@ -1480,8 +1525,10 @@
 				684D7C641D4BA80700BB6B64 /* AppDelegate.swift in Sources */,
 				200C72A41B40368600998100 /* RegistriesManager.swift in Sources */,
 				200C728A1B40368600998100 /* PostsEndpoint.swift in Sources */,
+				682DB0E81D54D26C0050547B /* UIViewController+AppDelegate.swift in Sources */,
 				200C72E81B40368600998100 /* TripExtension.swift in Sources */,
 				200A18E31B64F61F00EC2A65 /* ListItemsViewController.swift in Sources */,
+				680A6A1D1D5227F2009FB6B0 /* User.swift in Sources */,
 				684D7C311D4BA53D00BB6B64 /* AchievementsViewController.swift in Sources */,
 				202E18431B5AFFB3007D5194 /* NSNotificationEvents.swift in Sources */,
 				684D7BF71D4BA36500BB6B64 /* Achievement+CoreDataProperties.swift in Sources */,
@@ -1503,8 +1550,10 @@
 				200C72BC1B40368600998100 /* Registry.swift in Sources */,
 				200C72F41B40368600998100 /* NSSet.swift in Sources */,
 				20FC56FD1B72CA2800D51801 /* Globals.swift in Sources */,
+				682E90281D59016300BF7F8F /* LocationTextField.swift in Sources */,
 				200C72B81B40368600998100 /* Medicine.swift in Sources */,
 				200C72B41B40368600998100 /* Item.swift in Sources */,
+				680A6A211D522AF5009FB6B0 /* User+CoreDataProperties.swift in Sources */,
 				20FC56BD1B71951300D51801 /* PresentsModalityDelegate.swift in Sources */,
 				200A18DD1B64F5F300EC2A65 /* PlanTripViewController.swift in Sources */,
 				684D7C091D4BA41B00BB6B64 /* PagesManagerViewController.swift in Sources */,
@@ -1526,6 +1575,7 @@
 				200A18DF1B64F60200EC2A65 /* SetupScreenViewController.swift in Sources */,
 				684D7C781D4BA9C800BB6B64 /* Model.xcdatamodeld in Sources */,
 				200C72BA1B40368600998100 /* MedicineExtension.swift in Sources */,
+				680A6A0B1D522288009FB6B0 /* SetupScreenUserProfileViewController.swift in Sources */,
 				209F60B81B6E2AB300EDA461 /* MedicineFrontEndExtension.swift in Sources */,
 				311E38EC1CA0DC510051B14E /* DailyStatsTableViewController+Extensions.swift in Sources */,
 				20FC56F51B72C9CF00D51801 /* UIColor.swift in Sources */,
@@ -1545,8 +1595,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				209F60B51B6DA6B100EDA461 /* TestNotifications.swift in Sources */,
+				682DB0ED1D568F550050547B /* Logger.swift in Sources */,
 				684D7C691D4BA8EF00BB6B64 /* Constants.swift in Sources */,
 				684D7BF31D4BA33100BB6B64 /* TestRFGameAchievements.swift in Sources */,
+				682DB0E91D568CA40050547B /* UserSettingsManager.swift in Sources */,
 				684D7BF21D4BA33100BB6B64 /* TestMedicineAchievements.swift in Sources */,
 				20C718E41B76C28D007424F6 /* TestMedicineManager.swift in Sources */,
 				684D7BF11D4BA33100BB6B64 /* TestGeneralAchievements.swift in Sources */,
@@ -1556,9 +1608,11 @@
 				209F60B31B6DA6B100EDA461 /* TestDailyMedicineStatistics.swift in Sources */,
 				209F60B41B6DA6B100EDA461 /* TestWeeklyMedicineStatistics.swift in Sources */,
 				20C718E61B76C28D007424F6 /* TestNSDateExtensions.swift in Sources */,
+				682DB0F21D56915B0050547B /* NSDate+Comparable.swift in Sources */,
 				684D7BF01D4BA33100BB6B64 /* TestAchievementsManager.swift in Sources */,
 				20C718E71B76C28D007424F6 /* TestPlanTrip.swift in Sources */,
 				2027E9501BADC71D00DA55A4 /* Array.swift in Sources */,
+				682DB0EC1D568DD90050547B /* Int.swift in Sources */,
 				68E62F821D1DAC7D00743214 /* TestMedicineStockManager.swift in Sources */,
 				20246D1B1B4F245300384759 /* TestMedicineRegistries.swift in Sources */,
 				209F60B61B6DA6B100EDA461 /* TestTimedInsertions.swift in Sources */,
@@ -1782,7 +1836,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "anita-borg.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/bridging_header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Base Files/bridging_header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/malaria-ios.app/malaria-ios";
 			};
 			name = Debug;
@@ -1802,7 +1856,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "anita-borg.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/bridging_header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Base Files/bridging_header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/malaria-ios.app/malaria-ios";
 			};
 			name = Release;

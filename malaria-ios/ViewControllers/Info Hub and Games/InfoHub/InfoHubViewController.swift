@@ -59,7 +59,7 @@ class InfoHubViewController : UIViewController{
                     self.presentViewController(confirmAlert, animated: true, completion: nil)
                 }
                 
-            }else{
+            } else {
                 self.refreshFromCoreData()
             }
         }
@@ -104,12 +104,12 @@ class InfoHubViewController : UIViewController{
 }
 
 // MARK: PresentsModalityDelegate
-extension InfoHubViewController : PresentsModalityDelegate{
-  func OnDismiss() {
+
+extension InfoHubViewController: PresentsModalityDelegate {
+  func onDismiss() {
     refreshScreen()
   }
 }
-
 
 extension InfoHubViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -125,7 +125,7 @@ extension InfoHubViewController : UICollectionViewDelegate, UICollectionViewData
         return cell
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
-        let postView = UIStoryboard.instantiate(PostDetailedViewController.self)
+        let postView = UIStoryboard.instantiate(PostDetailedViewController.self, fromStoryboard: Constants.Storyboards.InfoHub)
         postView.post = posts[indexPath.row]
         
         postView.currentIndex = indexPath.row
