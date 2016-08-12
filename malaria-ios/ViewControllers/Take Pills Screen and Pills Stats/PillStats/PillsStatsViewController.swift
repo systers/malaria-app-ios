@@ -106,7 +106,7 @@ extension PillsStatsViewController: UITableViewDelegate, UITableViewDataSource{
   }
 
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    let monthView = UIStoryboard.instantiate(MonthlyViewController.self)
+    let monthView = UIStoryboard.instantiate(MonthlyViewController.self, fromStoryboard: Constants.Storyboards.PillStats)
     monthView.startDay = CachedStatistics.sharedInstance.monthAdhrence[indexPath.row].0
     monthView.callback = refreshScreen
     presentViewController(
@@ -208,7 +208,7 @@ extension PillsStatsViewController{
 }
 
 //MARK: PresentsModalityDelegate
-extension PillsStatsViewController : PresentsModalityDelegate{
+extension PillsStatsViewController : PresentsModalityDelegate {
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
     pagesManager.currentViewController = self

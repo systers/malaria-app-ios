@@ -16,7 +16,7 @@ class InfoHubPageManagerViewController : UIViewController {
   private var _dict: [UIViewController: InfoHubPagesVCHomePage] = [:]
   
   var currentViewController: PresentsModalityDelegate!
-  
+    
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -45,6 +45,9 @@ class InfoHubPageManagerViewController : UIViewController {
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
     
+    if !UserSettingsManager.UserSetting.DidConfiguredMedicine.getBool() {
+      appDelegate.presentInitialSetupScreen(withDelegate: currentViewController)
+    }
   }
   
   private func setupUIPageControl() {

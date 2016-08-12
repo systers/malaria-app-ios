@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="4" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Xcode 4.3">
+<model userDefinedModelVersionIdentifier="4" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Xcode 4.3">
     <entity name="Achievement" representedClassName=".Achievement" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String" minValueString="2" syncable="YES"/>
         <attribute name="isUnlocked" attributeType="Boolean" syncable="YES"/>
@@ -70,6 +70,15 @@
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
+    <entity name="User" representedClassName=".User" syncable="YES">
+        <attribute name="age" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="email" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" attributeType="String" minValueString="2" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" attributeType="String" minValueString="2" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" minValueString="2" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Achievement" positionX="-200" positionY="432" width="128" height="105"/>
         <element name="CollectionMVFStatements" positionX="43" positionY="450" width="128" height="58"/>
@@ -86,5 +95,6 @@
         <element name="RFQuestions" positionX="45" positionY="360" width="128" height="45"/>
         <element name="Trip" positionX="-396" positionY="-18" width="128" height="135"/>
         <element name="TripHistory" positionX="-468" positionY="177" width="128" height="75"/>
+        <element name="User" positionX="-261" positionY="135" width="128" height="150"/>
     </elements>
 </model>

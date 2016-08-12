@@ -14,7 +14,7 @@ protocol RFGameDelegate: GameDelegate {
 
 /// Concrete mediator between the RFViewController (the View) and the model (RFGame).
 
-final class RapidFireController: GameController<RapidFireGame> {
+final class RapidFireController: GameController<RapidFireGame>, RFGameHandler {
   
   // MARK: Constants.
   
@@ -84,7 +84,7 @@ final class RapidFireController: GameController<RapidFireGame> {
   
   override func stopGame() {
     timer.invalidate()
-
+    
     super.stopGame()
   }
   
@@ -117,9 +117,6 @@ final class RapidFireController: GameController<RapidFireGame> {
     count = TimerMaxValue
     timer?.invalidate()
   }
-}
-
-extension RapidFireController: RFGameHandler {
   
   func nextQuestion(responseIndex: Int) {
     

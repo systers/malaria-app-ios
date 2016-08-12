@@ -1,7 +1,8 @@
 import Alamofire
 import SwiftyJSON
 
-/// Responsible for syncing remote server with CoreData
+/// Responsible for syncing remote server with CoreData.
+
 class SyncManager : CoreDataContextManager {
 
     private let user = "TestUser"
@@ -74,7 +75,6 @@ class SyncManager : CoreDataContextManager {
         
         return ["Authorization":"Basic \(base64LoginString)"]
     }
-    
     
     private func remoteFetch(endpoint: Endpoint, save: Bool = false, completion: ((url: String, error: NSError?)->())? = nil){
         Logger.Info("Syncing: \(endpoint.path)")

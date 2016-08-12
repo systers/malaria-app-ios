@@ -26,7 +26,7 @@ class TestRFGameAchievements: XCTestCase {
     var dict = ["game": rapidFireGame]
     NSNotificationEvents.RFGameFinished(dict)
     
-    var achievementUnlocked = am.isAchievementUnlocked(achievement: Constants.Achievements.RapidFireGame.FlawlessGame)
+    var achievementUnlocked = am.isAchievementUnlocked(achievement: RapidFireAchievementManager.FlawlessGame)
     
     XCTAssertFalse(achievementUnlocked)
     
@@ -39,7 +39,7 @@ class TestRFGameAchievements: XCTestCase {
     dict = ["game": rapidFireGame]
     NSNotificationEvents.RFGameFinished(dict)
     
-    achievementUnlocked = am.isAchievementUnlocked(achievement: Constants.Achievements.RapidFireGame.FlawlessGame)
+    achievementUnlocked = am.isAchievementUnlocked(achievement: RapidFireAchievementManager.FlawlessGame)
     
     XCTAssertTrue(achievementUnlocked)
   }

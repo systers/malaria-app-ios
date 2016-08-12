@@ -1,6 +1,6 @@
 import SystemConfiguration
 
-public class Reachability {
+class Reachability {
   
   class func isConnectedToNetwork() -> Bool {
     var zeroAddress = sockaddr_in()

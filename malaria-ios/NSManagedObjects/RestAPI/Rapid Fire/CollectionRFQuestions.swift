@@ -6,7 +6,7 @@ import CoreData
  Rapid Fire game.
  */
 
-public class CollectionRFQuestions: NSManagedObject {
+class CollectionRFQuestions: NSManagedObject {
   
-  @NSManaged public var questions: NSSet
+  @NSManaged var questions: NSSet
 }

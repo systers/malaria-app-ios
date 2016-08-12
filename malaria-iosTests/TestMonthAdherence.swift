@@ -14,11 +14,12 @@ class TestMonthAdherence: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        
+      
         currentContext = CoreDataHelper.sharedInstance.createBackgroundContext()
         m = MedicineManager(context: currentContext)
         
-        m.registerNewMedicine(currentPill.name(), interval: currentPill.interval())
+        m.registerNewMedicine(currentPill.name(),
+                              interval: currentPill.interval())
         m.setCurrentPill(currentPill.name())
         
         md = m.getCurrentMedicine()!

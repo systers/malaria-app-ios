@@ -36,11 +36,13 @@ class GamesListViewController: UIViewController {
 
 extension GamesListViewController: UICollectionViewDataSource {
   
-  func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+  func collectionView(collectionView: UICollectionView,
+                      numberOfItemsInSection section: Int) -> Int {
     return gamesInfo.count
   }
   
-  func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+  func collectionView(collectionView: UICollectionView,
+                      cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Games Collection View Cell", forIndexPath: indexPath) as! PeaceCorpsMessageCollectionViewCell
     
     cell.postTitle.text = gamesInfo[indexPath.row].name

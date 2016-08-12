@@ -1,7 +1,8 @@
 import UIKit
 import AVFoundation
 
-/// `DidTakePillsViewController` where the user can track his today's/ weekly medicine
+/// Controller where the user can track his today's / weekly medicine.
+
 class DidTakePillsViewController: UIViewController {
   @IBOutlet weak var dayOfTheWeekLbl: UILabel!
   @IBOutlet weak var fullDateLbl: UILabel!
@@ -16,14 +17,14 @@ class DidTakePillsViewController: UIViewController {
   
   private var currentDate: NSDate = NSDate()
   
-  //managers
+  // Managers.
   private var viewContext: NSManagedObjectContext!
   private var medicineManager: MedicineManager!
   private var registriesManager: RegistriesManager!
   private var medicine: Medicine?
   var pagesManager: PagesManagerViewController!
   
-  //Sound effects
+  // Sound effects.
   private let TookPillSoundPath = NSBundle.mainBundle().pathForResource("correct", ofType: "aiff", inDirectory: "Sounds")
   private let DidNotTakePillSoundPath = NSBundle.mainBundle().pathForResource("incorrect", ofType: "aiff", inDirectory: "Sounds")
   private var tookPillPlayer: AVAudioPlayer!
@@ -32,7 +33,7 @@ class DidTakePillsViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // check if we refill the pill stock in UserProfileVC
+    // Check if we refill the pill stock in `UserProfileViewController`.
     NSNotificationEvents.ObserveDataUpdated(self, selector: #selector(refreshScreen))
     NSNotificationEvents.ObserveAppBecomeActive(self, selector: #selector(refreshScreen))
     
@@ -65,7 +66,7 @@ class DidTakePillsViewController: UIViewController {
         return false
       }
       
-      //get ellaped days
+      // Get ellapsed days.
       if let mostRecent = m.registriesManager.mostRecentEntry() {
         if registriesManager.tookMedicine(mostRecent.date) != nil {
           return (currentDate - (mostRecent.date + interval.day)) >= interval
@@ -79,11 +80,11 @@ class DidTakePillsViewController: UIViewController {
     return false
   }
   
-  private func reset(){
+  private func reset() {
     let (title, message) = (ResheduleNotificationAlertText.title, ResheduleNotificationAlertText.message)
     let resheduleAlert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
     resheduleAlert.addAction(UIAlertAction(title: AlertOptions.yes, style: .Default, handler: { _ in
-      self.pagesManager.presentSetupScreen()
+      self.appDelegate.presentSetupScreen(withDelegate: self.pagesManager.currentViewController)
     }))
     
     resheduleAlert.addAction(UIAlertAction(title: AlertOptions.no, style: .Default, handler: nil))
@@ -93,7 +94,7 @@ class DidTakePillsViewController: UIViewController {
     }
   }
   
-  func refreshScreen(){
+  func refreshScreen() {
     Logger.Info("Refreshing TOOK PILL")
     
     currentDate = NSDate()
@@ -116,29 +117,31 @@ class DidTakePillsViewController: UIViewController {
     
     // Define achievements for the medicine.
     medicine?.achievementManager.defineAchievements()
-
+    
     let tookMedicineEntry = registriesManager.tookMedicine(currentDate)
     
-    //if took
+    // If took
     if tookMedicineEntry != nil {
       Logger.Info("Took medicine today")
       didNotTookPillBtn.enabled = false
       tookPillBtn.enabled = true
     } else {
-      //didn't took because there is no information
+      // Didn't took because there is no information.
       if registriesManager.allRegistriesInPeriod(currentDate).entries.count == 0 {
         Logger.Info("No information")
         didNotTookPillBtn.enabled = true
         tookPillBtn.enabled = medicine?.medicineStockManager.hasEnoughPills() == true
       } else {
-        //or there is and he didn't took the medicine yet
-        //check if he already registered today
+        /* 
+         Or there is and he didn't took the medicine yet
+         check if he already registered today.
+         */
         if registriesManager.findRegistry(currentDate) != nil {
           Logger.Info("Didn't took today")
           didNotTookPillBtn.enabled = true
           tookPillBtn.enabled = false
         } else {
-          // there are no entries for today, so he still has the opportunity to change that
+          // There are no entries for today, so he still has the opportunity to change that.
           tookPillBtn.enabled = medicine?.medicineStockManager.hasEnoughPills() == true
           didNotTookPillBtn.enabled = true
         }
@@ -151,7 +154,7 @@ class DidTakePillsViewController: UIViewController {
         dayOfTheWeekLbl.textColor = SeveralDaysRowMissedEntriesTextColor
         fullDateLbl.textColor = SeveralDaysRowMissedEntriesTextColor
         
-        //reset configuration so that the user can reshedule the time
+        // Reset configuration so that the user can reshedule the time.
         reset()
       } else if medicine!.notificationTime != nil
         && !currentDate.sameDayAs(medicine!.notificationTime!)
@@ -168,8 +171,10 @@ class DidTakePillsViewController: UIViewController {
   }
 }
 
-///IBActions
+// MARK: IBActions
+
 extension DidTakePillsViewController {
+  
   @IBAction func didNotTookMedicineBtnHandler(sender: AnyObject) {
     if let m = medicine {
       if (tookPillBtn.enabled && didNotTookPillBtn.enabled && m.medicineStockManager.addRegistry(currentDate, tookMedicine: false)){
@@ -193,11 +198,13 @@ extension DidTakePillsViewController {
   private func reshedule(notificationManager: MedicineNotificationsManager) {
     if UserSettingsManager.UserSetting.MedicineReminderSwitch.getBool(true){
       notificationManager.reshedule()
-    }else {
+    } else {
       Logger.Error("Medicine Notifications are not enabled")
     }
   }
 }
+
+// MARK: Present Modality Delegate
 
 extension DidTakePillsViewController: PresentsModalityDelegate {
   override func viewDidAppear(animated: Bool) {
@@ -211,16 +218,17 @@ extension DidTakePillsViewController: PresentsModalityDelegate {
   }
 }
 
-//alert messages
+// MARK: Alert Messages
+
 extension DidTakePillsViewController {
   typealias AlertText = (title: String, message: String)
   
-  //existing medicine configured
+  // Existing medicine configured.
   private var ResheduleNotificationAlertText: AlertText {get {
     return ("You forgot your medicine for quite a while", "Would you like to change your reminder time?")
     }}
   
-  //type of alerts options
+  // Type of alerts options.
   private var AlertOptions: (yes: String, no: String) {get {
     return ("Yes", "No")
     }}

@@ -25,7 +25,7 @@ class TestGeneralAchievements: XCTestCase {
   }
   
   func testFirstTrip() {
-    var achievementUnlocked = am.isAchievementUnlocked(achievement: Constants.Achievements.General.PlanFirstTrip)
+    var achievementUnlocked = am.isAchievementUnlocked(achievement: GeneralAchievementsManager.PlanFirstTrip)
     
     XCTAssertFalse(achievementUnlocked)
 
@@ -38,7 +38,7 @@ class TestGeneralAchievements: XCTestCase {
                   arrival: arrival,
                   timeReminder: reminder)
     
-    achievementUnlocked = am.isAchievementUnlocked(achievement: Constants.Achievements.General.PlanFirstTrip)
+    achievementUnlocked = am.isAchievementUnlocked(achievement: GeneralAchievementsManager.PlanFirstTrip)
 
     XCTAssert(achievementUnlocked)
   }
