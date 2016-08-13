@@ -89,6 +89,7 @@ final class RapidFireController: GameController<RapidFireGame>, RFGameHandler {
   }
   
   override func endGame() {
+    
     // Save the user's final score
     game.maximumScore = userScore
     
@@ -97,7 +98,10 @@ final class RapidFireController: GameController<RapidFireGame>, RFGameHandler {
     super.endGame()
   }
   
-  // @objc is required due to error.
+  /*
+   @objc is required due to "Argument of #selector referts to a method that is
+   not exposed to Objective-C.
+   */
   
   @objc func updateTimer() {
     
@@ -118,9 +122,12 @@ final class RapidFireController: GameController<RapidFireGame>, RFGameHandler {
     timer?.invalidate()
   }
   
+  /**
+   Check if user's answer is correct and either increments his score or presents
+   a "Wrong answer" animation
+   */
+  
   func nextQuestion(responseIndex: Int) {
-    
-    // Check if answer was correct.
     
     let correctAnswer =
       game?.entries[currentLevel].correctAnswer == responseIndex

@@ -1,6 +1,7 @@
 import Social
 
 extension DailyStatsTableViewController: SocialMediaController {
+  
     func share(socialItem: SocialShareable, toMedia: SocialMediaType) {
         
         Logger.Info("User wants to share to \(toMedia.rawValue)")
@@ -19,8 +20,7 @@ extension DailyStatsTableViewController: SocialMediaController {
             
             self.presentViewController(controller, animated: true, completion: nil)
         } else {
-            Logger.Error("\(toMedia.rawValue) is not avaliable")
+            Logger.Error("\(toMedia.rawValue) is not available")
         }
-        
     }
 }
