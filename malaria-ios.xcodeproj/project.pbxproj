@@ -112,20 +112,10 @@
 		684D7C0C1D4BA41B00BB6B64 /* MonthAdherenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C031D4BA41B00BB6B64 /* MonthAdherenceCell.swift */; };
 		684D7C0D1D4BA41B00BB6B64 /* MonthyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C041D4BA41B00BB6B64 /* MonthyViewController.swift */; };
 		684D7C0E1D4BA41B00BB6B64 /* PillsStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C051D4BA41B00BB6B64 /* PillsStatsViewController.swift */; };
-		684D7C221D4BA50A00BB6B64 /* GameRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C121D4BA50A00BB6B64 /* GameRulesViewController.swift */; };
-		684D7C231D4BA50A00BB6B64 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C141D4BA50A00BB6B64 /* Game.swift */; };
-		684D7C241D4BA50A00BB6B64 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C151D4BA50A00BB6B64 /* GameViewController.swift */; };
-		684D7C251D4BA50A00BB6B64 /* MythVsFactGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C171D4BA50A00BB6B64 /* MythVsFactGame.swift */; };
-		684D7C261D4BA50A00BB6B64 /* MythVsFactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C181D4BA50A00BB6B64 /* MythVsFactViewController.swift */; };
-		684D7C271D4BA50A00BB6B64 /* RapidFireGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C1A1D4BA50A00BB6B64 /* RapidFireGame.swift */; };
-		684D7C281D4BA50A00BB6B64 /* RapidFireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C1B1D4BA50A00BB6B64 /* RapidFireViewController.swift */; };
-		684D7C291D4BA50A00BB6B64 /* GamesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C1C1D4BA50A00BB6B64 /* GamesListViewController.swift */; };
 		684D7C2A1D4BA50A00BB6B64 /* InfoHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C1E1D4BA50A00BB6B64 /* InfoHubViewController.swift */; };
 		684D7C2B1D4BA50A00BB6B64 /* PostDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C1F1D4BA50A00BB6B64 /* PostDetailedViewController.swift */; };
 		684D7C2C1D4BA50A00BB6B64 /* InfoHub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684D7C201D4BA50A00BB6B64 /* InfoHub.storyboard */; };
 		684D7C2D1D4BA50A00BB6B64 /* InfoHubPageManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C211D4BA50A00BB6B64 /* InfoHubPageManagerViewController.swift */; };
-		684D7C311D4BA53D00BB6B64 /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C2F1D4BA53D00BB6B64 /* AchievementsViewController.swift */; };
-		684D7C321D4BA53D00BB6B64 /* AchievementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C301D4BA53D00BB6B64 /* AchievementTableViewCell.swift */; };
 		684D7C421D4BA75C00BB6B64 /* AchievementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C381D4BA75C00BB6B64 /* AchievementManager.swift */; };
 		684D7C431D4BA75C00BB6B64 /* AchievementManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C3A1D4BA75C00BB6B64 /* AchievementManagerProtocol.swift */; };
 		684D7C441D4BA75C00BB6B64 /* RapidFireAchievementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C3C1D4BA75C00BB6B64 /* RapidFireAchievementManager.swift */; };
@@ -152,6 +142,20 @@
 		685569BB1D2C188C006C9F7A /* MVFStatementsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685569BA1D2C188C006C9F7A /* MVFStatementsEndpoint.swift */; };
 		68BEC3261D270BA000FCFAF5 /* RFQuestionsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BEC3251D270BA000FCFAF5 /* RFQuestionsEndpoint.swift */; };
 		68BEC32A1D270C9900FCFAF5 /* CollectionRFQuestionsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BEC3291D270C9900FCFAF5 /* CollectionRFQuestionsEndpoint.swift */; };
+		68C456D01D5E27F900A8F566 /* GameRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456BE1D5E27F900A8F566 /* GameRulesViewController.swift */; };
+		68C456D11D5E27F900A8F566 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456C01D5E27F900A8F566 /* Game.swift */; };
+		68C456D21D5E27F900A8F566 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456C11D5E27F900A8F566 /* GameController.swift */; };
+		68C456D31D5E27F900A8F566 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456C21D5E27F900A8F566 /* GameViewController.swift */; };
+		68C456D41D5E27F900A8F566 /* InsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456C41D5E27F900A8F566 /* InsetLabel.swift */; };
+		68C456D51D5E27F900A8F566 /* MythVsFactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456C51D5E27F900A8F566 /* MythVsFactController.swift */; };
+		68C456D61D5E27F900A8F566 /* MythVsFactGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456C61D5E27F900A8F566 /* MythVsFactGame.swift */; };
+		68C456D71D5E27F900A8F566 /* MythVsFactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456C71D5E27F900A8F566 /* MythVsFactViewController.swift */; };
+		68C456D81D5E27F900A8F566 /* RapidFireController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456C91D5E27F900A8F566 /* RapidFireController.swift */; };
+		68C456D91D5E27F900A8F566 /* RapidFireGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456CA1D5E27F900A8F566 /* RapidFireGame.swift */; };
+		68C456DA1D5E27F900A8F566 /* RapidFireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456CB1D5E27F900A8F566 /* RapidFireViewController.swift */; };
+		68C456DB1D5E27F900A8F566 /* GamesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456CC1D5E27F900A8F566 /* GamesListViewController.swift */; };
+		68C456EA1D5E283000A8F566 /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456E81D5E283000A8F566 /* AchievementsViewController.swift */; };
+		68C456EB1D5E283000A8F566 /* AchievementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456E91D5E283000A8F566 /* AchievementTableViewCell.swift */; };
 		68E62F731D14619A00743214 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F721D14619A00743214 /* UserProfileViewController.swift */; };
 		68E62F751D14675600743214 /* UserProfilePillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F741D14675600743214 /* UserProfilePillTableViewCell.swift */; };
 		68E62F781D191BB800743214 /* PillStatusNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F771D191BB800743214 /* PillStatusNotificationsManager.swift */; };
@@ -367,7 +371,7 @@
 		682DB0F01D56901E0050547B /* NSDateInternalExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateInternalExtensions.swift; sourceTree = "<group>"; };
 		682E90271D59016300BF7F8F /* LocationTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTextField.swift; sourceTree = "<group>"; };
 		682E90341D59266500BF7F8F /* GenderTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderTextField.swift; sourceTree = "<group>"; };
-		684D7BD61D4B7DAD00BB6B64 /* ToastHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastHelper.swift; sourceTree = "<group>"; };
+		684D7BD61D4B7DAD00BB6B64 /* ToastHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToastHelper.swift; path = ../SupportingFiles/ToastHelper.swift; sourceTree = "<group>"; };
 		684D7BEC1D4BA33100BB6B64 /* TestAchievementsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAchievementsManager.swift; sourceTree = "<group>"; };
 		684D7BED1D4BA33100BB6B64 /* TestGeneralAchievements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestGeneralAchievements.swift; sourceTree = "<group>"; };
 		684D7BEE1D4BA33100BB6B64 /* TestMedicineAchievements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMedicineAchievements.swift; sourceTree = "<group>"; };
@@ -383,20 +387,10 @@
 		684D7C031D4BA41B00BB6B64 /* MonthAdherenceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthAdherenceCell.swift; sourceTree = "<group>"; };
 		684D7C041D4BA41B00BB6B64 /* MonthyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthyViewController.swift; sourceTree = "<group>"; };
 		684D7C051D4BA41B00BB6B64 /* PillsStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillsStatsViewController.swift; sourceTree = "<group>"; };
-		684D7C121D4BA50A00BB6B64 /* GameRulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRulesViewController.swift; sourceTree = "<group>"; };
-		684D7C141D4BA50A00BB6B64 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		684D7C151D4BA50A00BB6B64 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		684D7C171D4BA50A00BB6B64 /* MythVsFactGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MythVsFactGame.swift; sourceTree = "<group>"; };
-		684D7C181D4BA50A00BB6B64 /* MythVsFactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MythVsFactViewController.swift; sourceTree = "<group>"; };
-		684D7C1A1D4BA50A00BB6B64 /* RapidFireGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidFireGame.swift; sourceTree = "<group>"; };
-		684D7C1B1D4BA50A00BB6B64 /* RapidFireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidFireViewController.swift; sourceTree = "<group>"; };
-		684D7C1C1D4BA50A00BB6B64 /* GamesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesListViewController.swift; sourceTree = "<group>"; };
 		684D7C1E1D4BA50A00BB6B64 /* InfoHubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoHubViewController.swift; sourceTree = "<group>"; };
 		684D7C1F1D4BA50A00BB6B64 /* PostDetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailedViewController.swift; sourceTree = "<group>"; };
 		684D7C201D4BA50A00BB6B64 /* InfoHub.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InfoHub.storyboard; sourceTree = "<group>"; };
 		684D7C211D4BA50A00BB6B64 /* InfoHubPageManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoHubPageManagerViewController.swift; sourceTree = "<group>"; };
-		684D7C2F1D4BA53D00BB6B64 /* AchievementsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
-		684D7C301D4BA53D00BB6B64 /* AchievementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementTableViewCell.swift; sourceTree = "<group>"; };
 		684D7C381D4BA75C00BB6B64 /* AchievementManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementManager.swift; sourceTree = "<group>"; };
 		684D7C3A1D4BA75C00BB6B64 /* AchievementManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementManagerProtocol.swift; sourceTree = "<group>"; };
 		684D7C3C1D4BA75C00BB6B64 /* RapidFireAchievementManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidFireAchievementManager.swift; sourceTree = "<group>"; };
@@ -434,6 +428,20 @@
 		685569BA1D2C188C006C9F7A /* MVFStatementsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVFStatementsEndpoint.swift; sourceTree = "<group>"; };
 		68BEC3251D270BA000FCFAF5 /* RFQuestionsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFQuestionsEndpoint.swift; sourceTree = "<group>"; };
 		68BEC3291D270C9900FCFAF5 /* CollectionRFQuestionsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionRFQuestionsEndpoint.swift; sourceTree = "<group>"; };
+		68C456BE1D5E27F900A8F566 /* GameRulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRulesViewController.swift; sourceTree = "<group>"; };
+		68C456C01D5E27F900A8F566 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		68C456C11D5E27F900A8F566 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameController.swift; path = "../ViewControllers/Info Hub and Games/Games Lists/Games/GameController.swift"; sourceTree = "<group>"; };
+		68C456C21D5E27F900A8F566 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		68C456C41D5E27F900A8F566 /* InsetLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsetLabel.swift; sourceTree = "<group>"; };
+		68C456C51D5E27F900A8F566 /* MythVsFactController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MythVsFactController.swift; path = "../ViewControllers/Info Hub and Games/Games Lists/Games/Myth vs. Fact/MythVsFactController.swift"; sourceTree = "<group>"; };
+		68C456C61D5E27F900A8F566 /* MythVsFactGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MythVsFactGame.swift; sourceTree = "<group>"; };
+		68C456C71D5E27F900A8F566 /* MythVsFactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MythVsFactViewController.swift; sourceTree = "<group>"; };
+		68C456C91D5E27F900A8F566 /* RapidFireController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RapidFireController.swift; path = "../ViewControllers/Info Hub and Games/Games Lists/Games/Rapid Fire/RapidFireController.swift"; sourceTree = "<group>"; };
+		68C456CA1D5E27F900A8F566 /* RapidFireGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidFireGame.swift; sourceTree = "<group>"; };
+		68C456CB1D5E27F900A8F566 /* RapidFireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidFireViewController.swift; sourceTree = "<group>"; };
+		68C456CC1D5E27F900A8F566 /* GamesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesListViewController.swift; sourceTree = "<group>"; };
+		68C456E81D5E283000A8F566 /* AchievementsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
+		68C456E91D5E283000A8F566 /* AchievementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementTableViewCell.swift; sourceTree = "<group>"; };
 		68E62F721D14619A00743214 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		68E62F741D14675600743214 /* UserProfilePillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfilePillTableViewCell.swift; sourceTree = "<group>"; };
 		68E62F771D191BB800743214 /* PillStatusNotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillStatusNotificationsManager.swift; sourceTree = "<group>"; };
@@ -509,6 +517,7 @@
 				20FC56F11B72C98800D51801 /* Extensions */,
 				209F60BE1B6E4AED00EDA461 /* Sounds */,
 				203F0B251B481CB900826E06 /* ValuePickers */,
+				684D7BD61D4B7DAD00BB6B64 /* ToastHelper.swift */,
 				20FC56EA1B72C91300D51801 /* UserSettingsManager.swift */,
 				68E62F7B1D1AC1B100743214 /* WidgetSettingsManager.swift */,
 				20FC56C01B729F8B00D51801 /* PeaceCorpsInfo.swift */,
@@ -543,6 +552,7 @@
 		200C72311B40368600998100 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				68C456A71D5D209400A8F566 /* Games */,
 				684D7C371D4BA75C00BB6B64 /* Achievements */,
 				68E62F761D191B7200743214 /* UserProfileHelpers */,
 				200C72391B40368600998100 /* TripHelpers */,
@@ -601,7 +611,6 @@
 				200C72601B40368600998100 /* Extensions */,
 				200C72661B40368600998100 /* Logger.swift */,
 				202E18421B5AFFB3007D5194 /* NSNotificationEvents.swift */,
-				684D7BD61D4B7DAD00BB6B64 /* ToastHelper.swift */,
 				203A40911B66A7BE00FCE4EE /* Settings.bundle */,
 			);
 			path = SupportingFiles;
@@ -867,50 +876,11 @@
 			children = (
 				684D7C211D4BA50A00BB6B64 /* InfoHubPageManagerViewController.swift */,
 				684D7C201D4BA50A00BB6B64 /* InfoHub.storyboard */,
+				68C456E71D5E283000A8F566 /* Achievements */,
+				68C456BB1D5E27F900A8F566 /* Games Lists */,
 				684D7C1D1D4BA50A00BB6B64 /* InfoHub */,
-				684D7C111D4BA50A00BB6B64 /* Games Lists */,
-				684D7C2E1D4BA53D00BB6B64 /* Achievements */,
 			);
 			path = "Info Hub and Games";
-			sourceTree = "<group>";
-		};
-		684D7C111D4BA50A00BB6B64 /* Games Lists */ = {
-			isa = PBXGroup;
-			children = (
-				684D7C1C1D4BA50A00BB6B64 /* GamesListViewController.swift */,
-				684D7C121D4BA50A00BB6B64 /* GameRulesViewController.swift */,
-				684D7C131D4BA50A00BB6B64 /* Games */,
-			);
-			path = "Games Lists";
-			sourceTree = "<group>";
-		};
-		684D7C131D4BA50A00BB6B64 /* Games */ = {
-			isa = PBXGroup;
-			children = (
-				684D7C141D4BA50A00BB6B64 /* Game.swift */,
-				684D7C151D4BA50A00BB6B64 /* GameViewController.swift */,
-				684D7C191D4BA50A00BB6B64 /* Rapid Fire */,
-				684D7C161D4BA50A00BB6B64 /* Myth vs. Fact */,
-			);
-			path = Games;
-			sourceTree = "<group>";
-		};
-		684D7C161D4BA50A00BB6B64 /* Myth vs. Fact */ = {
-			isa = PBXGroup;
-			children = (
-				684D7C171D4BA50A00BB6B64 /* MythVsFactGame.swift */,
-				684D7C181D4BA50A00BB6B64 /* MythVsFactViewController.swift */,
-			);
-			path = "Myth vs. Fact";
-			sourceTree = "<group>";
-		};
-		684D7C191D4BA50A00BB6B64 /* Rapid Fire */ = {
-			isa = PBXGroup;
-			children = (
-				684D7C1A1D4BA50A00BB6B64 /* RapidFireGame.swift */,
-				684D7C1B1D4BA50A00BB6B64 /* RapidFireViewController.swift */,
-			);
-			path = "Rapid Fire";
 			sourceTree = "<group>";
 		};
 		684D7C1D1D4BA50A00BB6B64 /* InfoHub */ = {
@@ -920,16 +890,6 @@
 				684D7C1F1D4BA50A00BB6B64 /* PostDetailedViewController.swift */,
 			);
 			path = InfoHub;
-			sourceTree = "<group>";
-		};
-		684D7C2E1D4BA53D00BB6B64 /* Achievements */ = {
-			isa = PBXGroup;
-			children = (
-				684D7C2F1D4BA53D00BB6B64 /* AchievementsViewController.swift */,
-				684D7C301D4BA53D00BB6B64 /* AchievementTableViewCell.swift */,
-			);
-			name = Achievements;
-			path = "Games Lists/Achievements";
 			sourceTree = "<group>";
 		};
 		684D7C371D4BA75C00BB6B64 /* Achievements */ = {
@@ -1042,6 +1002,65 @@
 				200C72261B40368600998100 /* PostsEndpoint.swift */,
 			);
 			name = "Info Hub Posts";
+			sourceTree = "<group>";
+		};
+		68C456A71D5D209400A8F566 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				68C456C11D5E27F900A8F566 /* GameController.swift */,
+				68C456C51D5E27F900A8F566 /* MythVsFactController.swift */,
+				68C456C91D5E27F900A8F566 /* RapidFireController.swift */,
+			);
+			name = Games;
+			sourceTree = "<group>";
+		};
+		68C456BB1D5E27F900A8F566 /* Games Lists */ = {
+			isa = PBXGroup;
+			children = (
+				68C456BE1D5E27F900A8F566 /* GameRulesViewController.swift */,
+				68C456CC1D5E27F900A8F566 /* GamesListViewController.swift */,
+				68C456BF1D5E27F900A8F566 /* Games */,
+			);
+			path = "Games Lists";
+			sourceTree = "<group>";
+		};
+		68C456BF1D5E27F900A8F566 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				68C456C01D5E27F900A8F566 /* Game.swift */,
+				68C456C21D5E27F900A8F566 /* GameViewController.swift */,
+				68C456C31D5E27F900A8F566 /* Myth vs. Fact */,
+				68C456C81D5E27F900A8F566 /* Rapid Fire */,
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
+		68C456C31D5E27F900A8F566 /* Myth vs. Fact */ = {
+			isa = PBXGroup;
+			children = (
+				68C456C41D5E27F900A8F566 /* InsetLabel.swift */,
+				68C456C61D5E27F900A8F566 /* MythVsFactGame.swift */,
+				68C456C71D5E27F900A8F566 /* MythVsFactViewController.swift */,
+			);
+			path = "Myth vs. Fact";
+			sourceTree = "<group>";
+		};
+		68C456C81D5E27F900A8F566 /* Rapid Fire */ = {
+			isa = PBXGroup;
+			children = (
+				68C456CA1D5E27F900A8F566 /* RapidFireGame.swift */,
+				68C456CB1D5E27F900A8F566 /* RapidFireViewController.swift */,
+			);
+			path = "Rapid Fire";
+			sourceTree = "<group>";
+		};
+		68C456E71D5E283000A8F566 /* Achievements */ = {
+			isa = PBXGroup;
+			children = (
+				68C456E81D5E283000A8F566 /* AchievementsViewController.swift */,
+				68C456E91D5E283000A8F566 /* AchievementTableViewCell.swift */,
+			);
+			path = Achievements;
 			sourceTree = "<group>";
 		};
 		68E62F671D14617700743214 /* User Profile */ = {
@@ -1470,12 +1489,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				684D7C061D4BA41B00BB6B64 /* DailyStatsCells.swift in Sources */,
+				68C456EB1D5E283000A8F566 /* AchievementTableViewCell.swift in Sources */,
+				68C456D21D5E27F900A8F566 /* GameController.swift in Sources */,
 				68E62F731D14619A00743214 /* UserProfileViewController.swift in Sources */,
 				200C72A21B40368600998100 /* MedicineStats.swift in Sources */,
 				20246D151B4F1BA000384759 /* CoreDataManager.swift in Sources */,
 				311E38E61CA0DC340051B14E /* SocialMediaController.swift in Sources */,
 				684D7C561D4BA79E00BB6B64 /* MVFQuestion.swift in Sources */,
-				684D7C281D4BA50A00BB6B64 /* RapidFireViewController.swift in Sources */,
 				205E417C1B6AE4A70028A8D7 /* TripHistory.swift in Sources */,
 				684D7C441D4BA75C00BB6B64 /* RapidFireAchievementManager.swift in Sources */,
 				200C72AE1B40368600998100 /* TripsManager.swift in Sources */,
@@ -1499,7 +1519,7 @@
 				682DB0EF1D568FCC0050547B /* StringInternalExtensions.swift in Sources */,
 				200A18CF1B64F51300EC2A65 /* MedicinePickerViewTrip.swift in Sources */,
 				684D7C661D4BA80700BB6B64 /* Global.swift in Sources */,
-				684D7C271D4BA50A00BB6B64 /* RapidFireGame.swift in Sources */,
+				68C456DA1D5E27F900A8F566 /* RapidFireViewController.swift in Sources */,
 				200C72981B40368600998100 /* EndpointType.swift in Sources */,
 				20EF68501B72DF1600286A0F /* UIButton.swift in Sources */,
 				684D7C0D1D4BA41B00BB6B64 /* MonthyViewController.swift in Sources */,
@@ -1507,15 +1527,16 @@
 				684D7C5C1D4BA79E00BB6B64 /* RFQuestion.swift in Sources */,
 				68E62F7A1D19BA0500743214 /* StringExtensions.swift in Sources */,
 				682DB0F11D56901E0050547B /* NSDateInternalExtensions.swift in Sources */,
-				684D7C231D4BA50A00BB6B64 /* Game.swift in Sources */,
-				684D7C321D4BA53D00BB6B64 /* AchievementTableViewCell.swift in Sources */,
 				200C72F01B40368600998100 /* NSDate+Comparable.swift in Sources */,
 				68E62F781D191BB800743214 /* PillStatusNotificationsManager.swift in Sources */,
-				684D7C221D4BA50A00BB6B64 /* GameRulesViewController.swift in Sources */,
 				311E38EE1CA0DC540051B14E /* Stat+Extensions.swift in Sources */,
 				200C72EA1B40368600998100 /* CoreDataHelper.swift in Sources */,
 				68E62F7C1D1AC1B100743214 /* WidgetSettingsManager.swift in Sources */,
+				68C456D61D5E27F900A8F566 /* MythVsFactGame.swift in Sources */,
 				68BEC32A1D270C9900FCFAF5 /* CollectionRFQuestionsEndpoint.swift in Sources */,
+				68C456D81D5E27F900A8F566 /* RapidFireController.swift in Sources */,
+				68C456D01D5E27F900A8F566 /* GameRulesViewController.swift in Sources */,
+				68C456D71D5E27F900A8F566 /* MythVsFactViewController.swift in Sources */,
 				682E90351D59266500BF7F8F /* GenderTextField.swift in Sources */,
 				684D7C551D4BA79E00BB6B64 /* CollectionMVFStatements.swift in Sources */,
 				684D7C471D4BA75C00BB6B64 /* MedicineManagerProvider.swift in Sources */,
@@ -1527,13 +1548,13 @@
 				200C728A1B40368600998100 /* PostsEndpoint.swift in Sources */,
 				682DB0E81D54D26C0050547B /* UIViewController+AppDelegate.swift in Sources */,
 				200C72E81B40368600998100 /* TripExtension.swift in Sources */,
+				68C456DB1D5E27F900A8F566 /* GamesListViewController.swift in Sources */,
 				200A18E31B64F61F00EC2A65 /* ListItemsViewController.swift in Sources */,
 				680A6A1D1D5227F2009FB6B0 /* User.swift in Sources */,
-				684D7C311D4BA53D00BB6B64 /* AchievementsViewController.swift in Sources */,
+				68C456D31D5E27F900A8F566 /* GameViewController.swift in Sources */,
 				202E18431B5AFFB3007D5194 /* NSNotificationEvents.swift in Sources */,
 				684D7BF71D4BA36500BB6B64 /* Achievement+CoreDataProperties.swift in Sources */,
 				684D7C5B1D4BA79E00BB6B64 /* CollectionRFQuestions.swift in Sources */,
-				684D7C261D4BA50A00BB6B64 /* MythVsFactViewController.swift in Sources */,
 				20FC56C11B729F8B00D51801 /* PeaceCorpsInfo.swift in Sources */,
 				684D7BF81D4BA36500BB6B64 /* Achievement.swift in Sources */,
 				684D7C0C1D4BA41B00BB6B64 /* MonthAdherenceCell.swift in Sources */,
@@ -1555,6 +1576,7 @@
 				200C72B41B40368600998100 /* Item.swift in Sources */,
 				680A6A211D522AF5009FB6B0 /* User+CoreDataProperties.swift in Sources */,
 				20FC56BD1B71951300D51801 /* PresentsModalityDelegate.swift in Sources */,
+				68C456D91D5E27F900A8F566 /* RapidFireGame.swift in Sources */,
 				200A18DD1B64F5F300EC2A65 /* PlanTripViewController.swift in Sources */,
 				684D7C091D4BA41B00BB6B64 /* PagesManagerViewController.swift in Sources */,
 				20FC56F91B72C9FB00D51801 /* UIView.swift in Sources */,
@@ -1564,15 +1586,15 @@
 				E4A66DB61D09A5DB008D9B40 /* Reachability.swift in Sources */,
 				684D7BD71D4B7DAD00BB6B64 /* ToastHelper.swift in Sources */,
 				311E38EA1CA0DC400051B14E /* SocialShareable.swift in Sources */,
+				68C456D41D5E27F900A8F566 /* InsetLabel.swift in Sources */,
 				684D7C2D1D4BA50A00BB6B64 /* InfoHubPageManagerViewController.swift in Sources */,
 				200C72F81B40368600998100 /* Logger.swift in Sources */,
-				684D7C241D4BA50A00BB6B64 /* GameViewController.swift in Sources */,
 				684D7C5D1D4BA79E00BB6B64 /* RFQuestions.swift in Sources */,
 				200C72E61B40368600998100 /* Trip.swift in Sources */,
 				684D7C2B1D4BA50A00BB6B64 /* PostDetailedViewController.swift in Sources */,
-				684D7C251D4BA50A00BB6B64 /* MythVsFactGame.swift in Sources */,
 				20FC56F31B72C9AF00D51801 /* UIStoryboard.swift in Sources */,
 				200A18DF1B64F60200EC2A65 /* SetupScreenViewController.swift in Sources */,
+				68C456D51D5E27F900A8F566 /* MythVsFactController.swift in Sources */,
 				684D7C781D4BA9C800BB6B64 /* Model.xcdatamodeld in Sources */,
 				200C72BA1B40368600998100 /* MedicineExtension.swift in Sources */,
 				680A6A0B1D522288009FB6B0 /* SetupScreenUserProfileViewController.swift in Sources */,
@@ -1581,11 +1603,12 @@
 				20FC56F51B72C9CF00D51801 /* UIColor.swift in Sources */,
 				200C72AA1B40368600998100 /* ItemsManager.swift in Sources */,
 				684D7C571D4BA79E00BB6B64 /* MVFQuestions.swift in Sources */,
-				684D7C291D4BA50A00BB6B64 /* GamesListViewController.swift in Sources */,
 				200C729E1B40368600998100 /* MedicineManager.swift in Sources */,
+				68C456D11D5E27F900A8F566 /* Game.swift in Sources */,
 				200C72A61B40368600998100 /* NotificationManager.swift in Sources */,
 				2027E94F1BADC71D00DA55A4 /* Array.swift in Sources */,
 				200C72EC1B40368600998100 /* CoreDataStore.swift in Sources */,
+				68C456EA1D5E283000A8F566 /* AchievementsViewController.swift in Sources */,
 				685569B91D2C186C006C9F7A /* CollectionMVFStatementsEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

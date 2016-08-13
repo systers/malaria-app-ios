@@ -10,17 +10,16 @@ class GameRulesViewController : UIViewController {
   
   // Provided by the `GamesListViewController`.
   
-  var game: Game!
+  var gameInfo: GameInfo!
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    let gameVC = segue.destinationViewController as! GameViewController
-    gameVC.game = game
+    segue.destinationViewController as! GameViewController
   }
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
-    gameTitleLabel.text = self.game.name
-    gameDescriptionLabel.text = self.game.rules
+    gameTitleLabel.text = self.gameInfo.name
+    gameDescriptionLabel.text = self.gameInfo.rules
   }
   
   @IBAction func cancelBtnHandler(sender: AnyObject) {
@@ -34,6 +33,6 @@ class GameRulesViewController : UIViewController {
    */
   
   @IBAction func startGameBtnHandler(sender: AnyObject) {
-    performSegueWithIdentifier("Show " + game.name, sender: self)
+    performSegueWithIdentifier("Show " + gameInfo.name, sender: self)
   }
 }

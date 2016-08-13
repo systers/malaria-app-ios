@@ -32,6 +32,11 @@ class ToastHelper {
       vc = UIApplication.sharedApplication().keyWindow?.rootViewController
     }
     
+    // Reach the top of the views stack.
+    while vc?.presentedViewController != nil {
+        vc = vc?.presentedViewController
+    }
+    
     vc!.view.makeToast(message,
                        duration: duration,
                        position: position,

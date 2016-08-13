@@ -18,8 +18,10 @@ class UserProfileViewController: UIViewController {
    height (60) and not add ~30-50 offset to it.
    */
   
-  let CellHeightAndOffset: CGFloat = 60 + 30
-  let CellReuseIdentifier = "User Profile Pill Cell Identifier"
+  private let CellHeightAndOffset: CGFloat = 60 + 30
+  private let CellReuseIdentifier = "User Profile Pill Cell Identifier"
+  private let ScrollViewEnabledAlpha: CGFloat = 1
+  private let ScrollViewDisabledAlpha: CGFloat = 0.8
   
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var remindMeWeeksButton: UIButton!
@@ -213,14 +215,13 @@ class UserProfileViewController: UIViewController {
                         phone: phone)
       }
       catch let error as User.UserValidationError {
-        ToastHelper.makeToast(error.rawValue, viewController: self)
+        ToastHelper.makeToast(error.rawValue)
         return
       }
       catch {
         Logger.Error("Undefined error when trying to validate user.")
         return
       }
-      
     }
     
     editProfileButton.selected = !editProfileButton.selected
@@ -229,6 +230,7 @@ class UserProfileViewController: UIViewController {
   }
   
   func toggleUserInteraction(enableFields value: Bool) {
+    
     firstNameField.userInteractionEnabled = value
     lastNameField.userInteractionEnabled = value
     ageField.userInteractionEnabled = value
@@ -240,6 +242,13 @@ class UserProfileViewController: UIViewController {
     tableView.userInteractionEnabled = value
     
     remindMeWeeksButton.userInteractionEnabled = value
+    
+    if value {
+      firstNameField.becomeFirstResponder()
+      scrollView.alpha = ScrollViewEnabledAlpha
+    } else {
+      scrollView.alpha = ScrollViewDisabledAlpha
+    }
   }
   
   func locationAutocompleteCallback() {

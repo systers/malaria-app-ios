@@ -14,7 +14,7 @@ class User: NSManagedObject {
     case PhoneLength = "Phone must have minimum two characters."
     case GenderLength = "Gender must have minimum two characters."
     
-    case InvalidAge = "Please insert your age correctly."
+    case InvalidAge = "Please insert your real age."
     case InvalidEmail = "Please insert a valid email."
     case InvalidPhone = "Please insert a valid phone number."
   }

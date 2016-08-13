@@ -817,12 +817,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="my Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Rdi-4G-gzq" userLabel="Title">
-                                <rect key="frame" x="80" y="41" width="471.5" height="55"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="35"/>
-                                <color key="textColor" red="0.4378715158" green="0.32177186009999997" blue="0.2744835913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhq-rN-fLa" userLabel="GenerateTrip">
                                 <rect key="frame" x="216" y="492" width="169" height="44"/>
                                 <constraints>
@@ -864,7 +858,7 @@
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="71b-u0-MeU">
-                                <rect key="frame" x="20" y="121" width="560" height="363"/>
+                                <rect key="frame" x="20" y="111" width="560" height="373"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97d-O4-I6r" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="558.5"/>
@@ -1288,6 +1282,12 @@
                                     </mask>
                                 </variation>
                             </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="my Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Rdi-4G-gzq" userLabel="Title">
+                                <rect key="frame" x="83" y="41" width="471.5" height="55"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="35"/>
+                                <color key="textColor" red="0.4378715158" green="0.32177186009999997" blue="0.2744835913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1307,7 +1307,7 @@
                             <constraint firstAttribute="leadingMargin" secondItem="71b-u0-MeU" secondAttribute="leading" id="evD-q7-9Zd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="97d-O4-I6r" secondAttribute="trailing" id="gbJ-NM-ukO"/>
                             <constraint firstItem="Rdi-4G-gzq" firstAttribute="leading" secondItem="3oP-NJ-ef1" secondAttribute="trailing" constant="5" id="gxf-ag-FiH"/>
-                            <constraint firstItem="71b-u0-MeU" firstAttribute="top" secondItem="Rdi-4G-gzq" secondAttribute="bottom" constant="25" id="h21-Ay-axO"/>
+                            <constraint firstItem="71b-u0-MeU" firstAttribute="top" secondItem="Rdi-4G-gzq" secondAttribute="bottom" constant="15" id="h21-Ay-axO"/>
                             <constraint firstItem="71b-u0-MeU" firstAttribute="centerX" secondItem="luw-lc-BBe" secondAttribute="centerX" id="js8-wz-P8L"/>
                             <constraint firstItem="3oP-NJ-ef1" firstAttribute="leading" secondItem="97d-O4-I6r" secondAttribute="leading" id="k4H-de-DN2"/>
                             <constraint firstItem="e7d-oc-ZXG" firstAttribute="top" secondItem="yhq-rN-fLa" secondAttribute="bottom" constant="15" id="lwx-Mo-0Ln"/>

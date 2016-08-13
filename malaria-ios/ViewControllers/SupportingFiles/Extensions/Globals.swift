@@ -24,7 +24,7 @@ func openUrl(url: NSURL!) -> Bool {
     Logger.Error("Can't open Url \(url)")
     return false
   }
-  
+
   UIApplication.sharedApplication().openURL(url)
   return true
 }

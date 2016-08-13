@@ -1,8 +1,10 @@
 import Foundation
 import UIKit
 
-/// `InfoHubPageManagerViewController` encapsulates a paged view controller
+/// `InfoHubPageManagerViewController` encapsulates a paged view controller.
+
 class InfoHubPageManagerViewController : UIViewController {
+  
   @IBOutlet weak var settingsBtn: UIButton!
   @IBOutlet weak var content: UIView!
   
