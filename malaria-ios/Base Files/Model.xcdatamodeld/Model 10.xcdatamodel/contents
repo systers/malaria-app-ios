@@ -76,7 +76,7 @@
         <attribute name="firstName" attributeType="String" minValueString="2" syncable="YES"/>
         <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" attributeType="String" minValueString="2" syncable="YES"/>
-        <attribute name="location" optional="YES" attributeType="String" minValueString="2" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>

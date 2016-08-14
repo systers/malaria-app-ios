@@ -92,33 +92,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
   }
   
-//  /**
-//   A method which presents the setup screen on the first run of the app.
-//   
-//   - parameter delegate: A ViewController that implements
-//   the `PresentsModalityDelegate` delegate.
-//   */
-//  
-//  func presentInitialSetupScreen(withDelegate delegate: PresentsModalityDelegate) {
-//    
-//    // `dispatch_async` fixes the view controller presentation delay.
-//    dispatch_async(dispatch_get_main_queue()) {
-//      let view = UIStoryboard.instantiate(SetupScreenUserProfileViewController.self) as SetupScreenUserProfileViewController
-//      
-//      view.delegate = delegate
-//      
-//      /*
-//       We can make this cast because only ViewControllers will implement the
-//       PresentsModalityDelegate in this app.
-//       
-//       i.e PresentsModalityDelegate and ViewController are interchangable.
-//       */
-//      
-//      let viewController = delegate as! UIViewController
-//      viewController.presentViewController(view, animated: true, completion: nil)
-//    }
-//  }
-  
   func applicationWillResignActive(application: UIApplication) {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

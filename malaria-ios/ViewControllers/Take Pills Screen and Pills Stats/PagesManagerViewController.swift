@@ -38,15 +38,6 @@ class PagesManagerViewController : UIViewController {
     pageViewController.didMoveToParentViewController(self)
   }
   
-  
-  override func viewDidAppear(animated: Bool) {
-    super.viewDidAppear(animated)
-    
-//    if !UserSettingsManager.UserSetting.DidConfiguredMedicine.getBool() {
-//      appDelegate.presentInitialSetupScreen(withDelegate: currentViewController)
-//    }
-  }
-  
   private func setupUIPageControl() {
     let appearance = UIPageControl.appearance()
     appearance.pageIndicatorTintColor = PageIndicatorTintColor

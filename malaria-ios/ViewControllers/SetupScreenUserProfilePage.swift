@@ -15,7 +15,7 @@ class SetupScreenUserProfilePage: SetupScreenPage {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     let toolBar = ToolbarWithDone(viewsWithToolbar: [
       firstNameField,
       lastNameField,
@@ -71,6 +71,11 @@ class SetupScreenUserProfilePage: SetupScreenPage {
 extension SetupScreenUserProfilePage: UITextFieldDelegate {
   
   func textFieldDidBeginEditing(textField: UITextField) {
+    
+    if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+      return
+    }
+    
     let newOffset = CGPointMake(0, textField.frame.origin.y - 30)
     scrollView.setContentOffset(newOffset, animated: true)
   }

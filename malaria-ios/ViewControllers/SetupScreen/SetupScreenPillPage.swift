@@ -217,9 +217,8 @@ extension SetupScreenPillPage {
   
   // Type of alerts options.
   
-  private var AlertOptions: (ok: String, cancel: String) {get {
+  private var AlertOptions: (ok: String, cancel: String) {
     return ("Ok", "Cancel")
-    }
   }
   
   // The message presented when running out of pills.

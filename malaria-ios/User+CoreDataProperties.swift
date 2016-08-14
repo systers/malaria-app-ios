@@ -11,12 +11,12 @@ import CoreData
 
 extension User {
 
-    @NSManaged var firstName: String
-    @NSManaged var lastName: String
-    @NSManaged var gender: String
     @NSManaged var age: Int64
-    @NSManaged var location: String?
     @NSManaged var email: String
+    @NSManaged var firstName: String
+    @NSManaged var gender: String?
+    @NSManaged var lastName: String
+    @NSManaged var location: String?
     @NSManaged var phone: String?
 
 }

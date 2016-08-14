@@ -351,8 +351,7 @@ extension PlanTripViewController {
   }
   
   // Type of alerts options.
-  private var AlertOptions: (ok: String, cancel: String) {get {
+  private var AlertOptions: (ok: String, cancel: String) {
     return ("Ok", "Cancel")
     }
-  }
 }

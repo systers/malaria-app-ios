@@ -86,7 +86,6 @@
 		311E38EE1CA0DC540051B14E /* Stat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E38ED1CA0DC540051B14E /* Stat+Extensions.swift */; };
 		680A6A0B1D522288009FB6B0 /* SetupScreenUserProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A6A0A1D522288009FB6B0 /* SetupScreenUserProfilePage.swift */; };
 		680A6A1D1D5227F2009FB6B0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A6A1B1D5227F2009FB6B0 /* User.swift */; };
-		680A6A211D522AF5009FB6B0 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A6A201D522AF5009FB6B0 /* User+CoreDataProperties.swift */; };
 		682DB0E81D54D26C0050547B /* UIViewController+AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682DB0E71D54D26C0050547B /* UIViewController+AppDelegate.swift */; };
 		682DB0E91D568CA40050547B /* UserSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC56EA1B72C91300D51801 /* UserSettingsManager.swift */; };
 		682DB0EC1D568DD90050547B /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200C72611B40368600998100 /* Int.swift */; };
@@ -161,6 +160,7 @@
 		68C456FE1D5F558200A8F566 /* SetupScreenMalariaPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456FD1D5F558200A8F566 /* SetupScreenMalariaPage.swift */; };
 		68C457001D5F5A3C00A8F566 /* SetupScreenContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456FF1D5F5A3C00A8F566 /* SetupScreenContainerViewController.swift */; };
 		68C457021D60CE1900A8F566 /* SetupScreenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C457011D60CE1900A8F566 /* SetupScreenPage.swift */; };
+		68C457081D611E2300A8F566 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C457061D611E2300A8F566 /* User+CoreDataProperties.swift */; };
 		68E62F731D14619A00743214 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F721D14619A00743214 /* UserProfileViewController.swift */; };
 		68E62F751D14675600743214 /* UserProfilePillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F741D14675600743214 /* UserProfilePillTableViewCell.swift */; };
 		68E62F781D191BB800743214 /* PillStatusNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F771D191BB800743214 /* PillStatusNotificationsManager.swift */; };
@@ -370,7 +370,6 @@
 		5ED16CF6D98BC35F9510D8F3 /* Pods_malaria_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_malaria_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		680A6A0A1D522288009FB6B0 /* SetupScreenUserProfilePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupScreenUserProfilePage.swift; sourceTree = "<group>"; };
 		680A6A1B1D5227F2009FB6B0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		680A6A201D522AF5009FB6B0 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "../User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		682DB0E71D54D26C0050547B /* UIViewController+AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+AppDelegate.swift"; sourceTree = "<group>"; };
 		682DB0EE1D568FCC0050547B /* StringInternalExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringInternalExtensions.swift; sourceTree = "<group>"; };
 		682DB0F01D56901E0050547B /* NSDateInternalExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateInternalExtensions.swift; sourceTree = "<group>"; };
@@ -452,6 +451,7 @@
 		68C456FD1D5F558200A8F566 /* SetupScreenMalariaPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupScreenMalariaPage.swift; sourceTree = "<group>"; };
 		68C456FF1D5F5A3C00A8F566 /* SetupScreenContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupScreenContainerViewController.swift; sourceTree = "<group>"; };
 		68C457011D60CE1900A8F566 /* SetupScreenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupScreenPage.swift; sourceTree = "<group>"; };
+		68C457061D611E2300A8F566 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "../User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		68E62F721D14619A00743214 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		68E62F741D14675600743214 /* UserProfilePillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfilePillTableViewCell.swift; sourceTree = "<group>"; };
 		68E62F771D191BB800743214 /* PillStatusNotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillStatusNotificationsManager.swift; sourceTree = "<group>"; };
@@ -809,7 +809,7 @@
 			isa = PBXGroup;
 			children = (
 				680A6A1B1D5227F2009FB6B0 /* User.swift */,
-				680A6A201D522AF5009FB6B0 /* User+CoreDataProperties.swift */,
+				68C457061D611E2300A8F566 /* User+CoreDataProperties.swift */,
 			);
 			name = "User Profile";
 			sourceTree = "<group>";
@@ -1592,6 +1592,7 @@
 				20FC56FF1B72CA3E00D51801 /* UITabBarItem.swift in Sources */,
 				200C72B61B40368600998100 /* ItemExtension.swift in Sources */,
 				200C72781B40368600998100 /* CollectionPostsEndpoint.swift in Sources */,
+				68C457081D611E2300A8F566 /* User+CoreDataProperties.swift in Sources */,
 				E4C20AF51C8C4BD000B686F4 /* WidgetHandler.swift in Sources */,
 				684D7C2A1D4BA50A00BB6B64 /* InfoHubViewController.swift in Sources */,
 				200A18CD1B64F50500EC2A65 /* MedicinePickerView.swift in Sources */,
@@ -1601,7 +1602,6 @@
 				682E90281D59016300BF7F8F /* LocationTextField.swift in Sources */,
 				200C72B81B40368600998100 /* Medicine.swift in Sources */,
 				200C72B41B40368600998100 /* Item.swift in Sources */,
-				680A6A211D522AF5009FB6B0 /* User+CoreDataProperties.swift in Sources */,
 				20FC56BD1B71951300D51801 /* PresentsModalityDelegate.swift in Sources */,
 				68C456D91D5E27F900A8F566 /* RapidFireGame.swift in Sources */,
 				200A18DD1B64F5F300EC2A65 /* PlanTripViewController.swift in Sources */,

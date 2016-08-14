@@ -86,12 +86,6 @@ class User: NSManagedObject {
         throw UserValidationError.LastNameLength
       }
       
-      if let gender = gender {
-        if gender.characters.count < MinimumCharacterLength {
-          throw UserValidationError.GenderLength
-        }
-      }
-      
       guard let age = Int(age) else {
         throw UserValidationError.InvalidAge
       }
@@ -104,18 +98,18 @@ class User: NSManagedObject {
         throw UserValidationError.InvalidEmail
       }
       
-      if let location = location {
-        if location.characters.count < MinimumCharacterLength {
+      if !location!.isEmpty {
+        if location!.characters.count < MinimumCharacterLength {
           throw UserValidationError.LocationLength
         }
       }
       
-      if let phone = phone {
-        if phone.characters.count < MinimumCharacterLength {
+      if !phone!.isEmpty {
+        if phone!.characters.count < MinimumCharacterLength {
           throw UserValidationError.PhoneLength
         }
         
-        if phone.isNumber() == false {
+        if !phone!.isNumber() {
           throw UserValidationError.InvalidPhone
         }
       }

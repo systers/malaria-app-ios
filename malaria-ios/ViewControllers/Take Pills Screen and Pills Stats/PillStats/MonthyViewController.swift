@@ -279,13 +279,13 @@ extension MonthlyViewController {
     }
     
     //did take pill alert text
-    private var TookMedicineAlertActionText: (did: String, didNot: String) {get {
+    private var TookMedicineAlertActionText: (did: String, didNot: String) {
         return ("Yes, I did", "No, I didn't")
-    }}
+    }
     
     //type of alerts options
-    private var AlertOptions: (ok: String, cancel: String, dismiss: String) {get {
+    private var AlertOptions: (ok: String, cancel: String, dismiss: String) {
         return ("Ok", "Cancel", "Dismiss")
-    }}
+    }
 }
 
