@@ -45,9 +45,9 @@ class InfoHubPageManagerViewController : UIViewController {
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
     
-    if !UserSettingsManager.UserSetting.DidConfiguredMedicine.getBool() {
-      appDelegate.presentInitialSetupScreen(withDelegate: currentViewController)
-    }
+//    if !UserSettingsManager.UserSetting.DidConfiguredMedicine.getBool() {
+//      appDelegate.presentInitialSetupScreen(withDelegate: currentViewController)
+//    }
   }
   
   private func setupUIPageControl() {
@@ -58,7 +58,7 @@ class InfoHubPageManagerViewController : UIViewController {
   }
   
   @IBAction func settingsButtonHandler() {
-    appDelegate.presentSetupScreen(withDelegate: currentViewController)
+    appDelegate.presentSetupPillScreen(withDelegate: currentViewController)
   }
 }
 

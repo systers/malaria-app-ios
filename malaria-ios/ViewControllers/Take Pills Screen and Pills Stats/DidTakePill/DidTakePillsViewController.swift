@@ -84,7 +84,7 @@ class DidTakePillsViewController: UIViewController {
     let (title, message) = (ResheduleNotificationAlertText.title, ResheduleNotificationAlertText.message)
     let resheduleAlert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
     resheduleAlert.addAction(UIAlertAction(title: AlertOptions.yes, style: .Default, handler: { _ in
-      self.appDelegate.presentSetupScreen(withDelegate: self.pagesManager.currentViewController)
+      self.appDelegate.presentSetupPillScreen(withDelegate: self.pagesManager.currentViewController)
     }))
     
     resheduleAlert.addAction(UIAlertAction(title: AlertOptions.no, style: .Default, handler: nil))

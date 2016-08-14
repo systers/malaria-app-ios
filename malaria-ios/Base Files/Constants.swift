@@ -15,5 +15,6 @@ class Constants {
   struct Storyboards {
     static let PillStats = "PillScreens"
     static let InfoHub = "InfoHub"
+    static let InitialSetup = "InitialSetup"
   }
 }

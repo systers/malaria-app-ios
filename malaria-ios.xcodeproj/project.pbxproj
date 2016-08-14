@@ -12,7 +12,7 @@
 		200A18CD1B64F50500EC2A65 /* MedicinePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A18CC1B64F50500EC2A65 /* MedicinePickerView.swift */; };
 		200A18CF1B64F51300EC2A65 /* MedicinePickerViewTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A18CE1B64F51300EC2A65 /* MedicinePickerViewTrip.swift */; };
 		200A18DD1B64F5F300EC2A65 /* PlanTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A18DC1B64F5F300EC2A65 /* PlanTripViewController.swift */; };
-		200A18DF1B64F60200EC2A65 /* SetupScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A18DE1B64F60200EC2A65 /* SetupScreenViewController.swift */; };
+		200A18DF1B64F60200EC2A65 /* SetupScreenPillPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A18DE1B64F60200EC2A65 /* SetupScreenPillPage.swift */; };
 		200A18E31B64F61F00EC2A65 /* ListItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A18E21B64F61F00EC2A65 /* ListItemsViewController.swift */; };
 		200C72781B40368600998100 /* CollectionPostsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200C721D1B40368600998100 /* CollectionPostsEndpoint.swift */; };
 		200C727C1B40368600998100 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200C721F1B40368600998100 /* Endpoint.swift */; };
@@ -84,7 +84,7 @@
 		311E38EA1CA0DC400051B14E /* SocialShareable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E38E81CA0DC400051B14E /* SocialShareable.swift */; };
 		311E38EC1CA0DC510051B14E /* DailyStatsTableViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E38EB1CA0DC510051B14E /* DailyStatsTableViewController+Extensions.swift */; };
 		311E38EE1CA0DC540051B14E /* Stat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E38ED1CA0DC540051B14E /* Stat+Extensions.swift */; };
-		680A6A0B1D522288009FB6B0 /* SetupScreenUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A6A0A1D522288009FB6B0 /* SetupScreenUserProfileViewController.swift */; };
+		680A6A0B1D522288009FB6B0 /* SetupScreenUserProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A6A0A1D522288009FB6B0 /* SetupScreenUserProfilePage.swift */; };
 		680A6A1D1D5227F2009FB6B0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A6A1B1D5227F2009FB6B0 /* User.swift */; };
 		680A6A211D522AF5009FB6B0 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A6A201D522AF5009FB6B0 /* User+CoreDataProperties.swift */; };
 		682DB0E81D54D26C0050547B /* UIViewController+AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682DB0E71D54D26C0050547B /* UIViewController+AppDelegate.swift */; };
@@ -156,6 +156,11 @@
 		68C456DB1D5E27F900A8F566 /* GamesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456CC1D5E27F900A8F566 /* GamesListViewController.swift */; };
 		68C456EA1D5E283000A8F566 /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456E81D5E283000A8F566 /* AchievementsViewController.swift */; };
 		68C456EB1D5E283000A8F566 /* AchievementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456E91D5E283000A8F566 /* AchievementTableViewCell.swift */; };
+		68C456EF1D5F3DBA00A8F566 /* InitialSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68C456EE1D5F3DBA00A8F566 /* InitialSetup.storyboard */; };
+		68C456FC1D5F3EFB00A8F566 /* SetupPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456FB1D5F3EFB00A8F566 /* SetupPageViewController.swift */; };
+		68C456FE1D5F558200A8F566 /* SetupScreenMalariaPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456FD1D5F558200A8F566 /* SetupScreenMalariaPage.swift */; };
+		68C457001D5F5A3C00A8F566 /* SetupScreenContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456FF1D5F5A3C00A8F566 /* SetupScreenContainerViewController.swift */; };
+		68C457021D60CE1900A8F566 /* SetupScreenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C457011D60CE1900A8F566 /* SetupScreenPage.swift */; };
 		68E62F731D14619A00743214 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F721D14619A00743214 /* UserProfileViewController.swift */; };
 		68E62F751D14675600743214 /* UserProfilePillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F741D14675600743214 /* UserProfilePillTableViewCell.swift */; };
 		68E62F781D191BB800743214 /* PillStatusNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F771D191BB800743214 /* PillStatusNotificationsManager.swift */; };
@@ -288,7 +293,7 @@
 		200A18CC1B64F50500EC2A65 /* MedicinePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MedicinePickerView.swift; path = SupportingFiles/ValuePickers/MedicinePickerView.swift; sourceTree = "<group>"; };
 		200A18CE1B64F51300EC2A65 /* MedicinePickerViewTrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MedicinePickerViewTrip.swift; path = SupportingFiles/ValuePickers/MedicinePickerViewTrip.swift; sourceTree = "<group>"; };
 		200A18DC1B64F5F300EC2A65 /* PlanTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanTripViewController.swift; path = PlanTrip/PlanTripViewController.swift; sourceTree = "<group>"; };
-		200A18DE1B64F60200EC2A65 /* SetupScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetupScreenViewController.swift; path = SetupScreen/SetupScreenViewController.swift; sourceTree = "<group>"; };
+		200A18DE1B64F60200EC2A65 /* SetupScreenPillPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetupScreenPillPage.swift; path = SetupScreen/SetupScreenPillPage.swift; sourceTree = "<group>"; };
 		200A18E21B64F61F00EC2A65 /* ListItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListItemsViewController.swift; path = PlanTrip/ListItemsViewController.swift; sourceTree = "<group>"; };
 		200C721D1B40368600998100 /* CollectionPostsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionPostsEndpoint.swift; sourceTree = "<group>"; };
 		200C721F1B40368600998100 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -363,7 +368,7 @@
 		3D7B46AD1C33A45365CF16ED /* Pods-malaria-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-malaria-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-malaria-iosTests/Pods-malaria-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		405E616ADFDE4FA92F463F95 /* Pods-malaria-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-malaria-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-malaria-ios/Pods-malaria-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		5ED16CF6D98BC35F9510D8F3 /* Pods_malaria_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_malaria_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		680A6A0A1D522288009FB6B0 /* SetupScreenUserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupScreenUserProfileViewController.swift; sourceTree = "<group>"; };
+		680A6A0A1D522288009FB6B0 /* SetupScreenUserProfilePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupScreenUserProfilePage.swift; sourceTree = "<group>"; };
 		680A6A1B1D5227F2009FB6B0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		680A6A201D522AF5009FB6B0 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "../User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		682DB0E71D54D26C0050547B /* UIViewController+AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+AppDelegate.swift"; sourceTree = "<group>"; };
@@ -442,6 +447,11 @@
 		68C456CC1D5E27F900A8F566 /* GamesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesListViewController.swift; sourceTree = "<group>"; };
 		68C456E81D5E283000A8F566 /* AchievementsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
 		68C456E91D5E283000A8F566 /* AchievementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementTableViewCell.swift; sourceTree = "<group>"; };
+		68C456EE1D5F3DBA00A8F566 /* InitialSetup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InitialSetup.storyboard; sourceTree = "<group>"; };
+		68C456FB1D5F3EFB00A8F566 /* SetupPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupPageViewController.swift; sourceTree = "<group>"; };
+		68C456FD1D5F558200A8F566 /* SetupScreenMalariaPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupScreenMalariaPage.swift; sourceTree = "<group>"; };
+		68C456FF1D5F5A3C00A8F566 /* SetupScreenContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupScreenContainerViewController.swift; sourceTree = "<group>"; };
+		68C457011D60CE1900A8F566 /* SetupScreenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupScreenPage.swift; sourceTree = "<group>"; };
 		68E62F721D14619A00743214 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		68E62F741D14675600743214 /* UserProfilePillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfilePillTableViewCell.swift; sourceTree = "<group>"; };
 		68E62F771D191BB800743214 /* PillStatusNotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillStatusNotificationsManager.swift; sourceTree = "<group>"; };
@@ -501,13 +511,14 @@
 			name = PlanTrip;
 			sourceTree = "<group>";
 		};
-		200A18E71B64F66100EC2A65 /* SetupScreen */ = {
+		200A18E71B64F66100EC2A65 /* Initial Setup */ = {
 			isa = PBXGroup;
 			children = (
-				680A6A0A1D522288009FB6B0 /* SetupScreenUserProfileViewController.swift */,
-				200A18DE1B64F60200EC2A65 /* SetupScreenViewController.swift */,
+				68C456FF1D5F5A3C00A8F566 /* SetupScreenContainerViewController.swift */,
+				68C456FB1D5F3EFB00A8F566 /* SetupPageViewController.swift */,
+				68C457031D60CEBB00A8F566 /* Pages */,
 			);
-			name = SetupScreen;
+			name = "Initial Setup";
 			sourceTree = "<group>";
 		};
 		200A18E91B64F6BC00EC2A65 /* SupportingFiles */ = {
@@ -643,8 +654,8 @@
 		200C72681B40368600998100 /* Frontend */ = {
 			isa = PBXGroup;
 			children = (
-				200A18E91B64F6BC00EC2A65 /* SupportingFiles */,
 				20FC57361B72CB3500D51801 /* ViewControllers */,
+				200A18E91B64F6BC00EC2A65 /* SupportingFiles */,
 			);
 			name = Frontend;
 			path = ViewControllers;
@@ -678,6 +689,7 @@
 				20FC57351B72CB0C00D51801 /* Backend */,
 				200C72681B40368600998100 /* Frontend */,
 				200EE48D1B1343A50087FB24 /* Main.storyboard */,
+				68C456EE1D5F3DBA00A8F566 /* InitialSetup.storyboard */,
 				200EE4921B1343A50087FB24 /* LaunchScreen.xib */,
 				684D7C5E1D4BA80700BB6B64 /* AppDelegate.swift */,
 				684D7C5F1D4BA80700BB6B64 /* bridging_header.h */,
@@ -764,7 +776,7 @@
 			isa = PBXGroup;
 			children = (
 				203F0B0E1B45B3B900826E06 /* TabbedBarController.swift */,
-				200A18E71B64F66100EC2A65 /* SetupScreen */,
+				200A18E71B64F66100EC2A65 /* Initial Setup */,
 				684D7BF91D4BA41B00BB6B64 /* Take Pills Screen and Pills Stats */,
 				200A18E61B64F65A00EC2A65 /* PlanTrip */,
 				684D7C0F1D4BA50A00BB6B64 /* Info Hub and Games */,
@@ -1063,6 +1075,17 @@
 			path = Achievements;
 			sourceTree = "<group>";
 		};
+		68C457031D60CEBB00A8F566 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				68C457011D60CE1900A8F566 /* SetupScreenPage.swift */,
+				68C456FD1D5F558200A8F566 /* SetupScreenMalariaPage.swift */,
+				680A6A0A1D522288009FB6B0 /* SetupScreenUserProfilePage.swift */,
+				200A18DE1B64F60200EC2A65 /* SetupScreenPillPage.swift */,
+			);
+			name = Pages;
+			sourceTree = "<group>";
+		};
 		68E62F671D14617700743214 /* User Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -1346,6 +1369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				200EE4AF1B1349D40087FB24 /* ImagesAssets.xcassets in Resources */,
+				68C456EF1D5F3DBA00A8F566 /* InitialSetup.storyboard in Resources */,
 				200EE48F1B1343A50087FB24 /* Main.storyboard in Resources */,
 				200C73431B40392A00998100 /* ApiExamples in Resources */,
 				200EE4941B1343A50087FB24 /* LaunchScreen.xib in Resources */,
@@ -1488,6 +1512,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68C456FE1D5F558200A8F566 /* SetupScreenMalariaPage.swift in Sources */,
 				684D7C061D4BA41B00BB6B64 /* DailyStatsCells.swift in Sources */,
 				68C456EB1D5E283000A8F566 /* AchievementTableViewCell.swift in Sources */,
 				68C456D21D5E27F900A8F566 /* GameController.swift in Sources */,
@@ -1533,6 +1558,7 @@
 				200C72EA1B40368600998100 /* CoreDataHelper.swift in Sources */,
 				68E62F7C1D1AC1B100743214 /* WidgetSettingsManager.swift in Sources */,
 				68C456D61D5E27F900A8F566 /* MythVsFactGame.swift in Sources */,
+				68C457021D60CE1900A8F566 /* SetupScreenPage.swift in Sources */,
 				68BEC32A1D270C9900FCFAF5 /* CollectionRFQuestionsEndpoint.swift in Sources */,
 				68C456D81D5E27F900A8F566 /* RapidFireController.swift in Sources */,
 				68C456D01D5E27F900A8F566 /* GameRulesViewController.swift in Sources */,
@@ -1553,6 +1579,7 @@
 				680A6A1D1D5227F2009FB6B0 /* User.swift in Sources */,
 				68C456D31D5E27F900A8F566 /* GameViewController.swift in Sources */,
 				202E18431B5AFFB3007D5194 /* NSNotificationEvents.swift in Sources */,
+				68C457001D5F5A3C00A8F566 /* SetupScreenContainerViewController.swift in Sources */,
 				684D7BF71D4BA36500BB6B64 /* Achievement+CoreDataProperties.swift in Sources */,
 				684D7C5B1D4BA79E00BB6B64 /* CollectionRFQuestions.swift in Sources */,
 				20FC56C11B729F8B00D51801 /* PeaceCorpsInfo.swift in Sources */,
@@ -1593,11 +1620,11 @@
 				200C72E61B40368600998100 /* Trip.swift in Sources */,
 				684D7C2B1D4BA50A00BB6B64 /* PostDetailedViewController.swift in Sources */,
 				20FC56F31B72C9AF00D51801 /* UIStoryboard.swift in Sources */,
-				200A18DF1B64F60200EC2A65 /* SetupScreenViewController.swift in Sources */,
+				200A18DF1B64F60200EC2A65 /* SetupScreenPillPage.swift in Sources */,
 				68C456D51D5E27F900A8F566 /* MythVsFactController.swift in Sources */,
 				684D7C781D4BA9C800BB6B64 /* Model.xcdatamodeld in Sources */,
 				200C72BA1B40368600998100 /* MedicineExtension.swift in Sources */,
-				680A6A0B1D522288009FB6B0 /* SetupScreenUserProfileViewController.swift in Sources */,
+				680A6A0B1D522288009FB6B0 /* SetupScreenUserProfilePage.swift in Sources */,
 				209F60B81B6E2AB300EDA461 /* MedicineFrontEndExtension.swift in Sources */,
 				311E38EC1CA0DC510051B14E /* DailyStatsTableViewController+Extensions.swift in Sources */,
 				20FC56F51B72C9CF00D51801 /* UIColor.swift in Sources */,
@@ -1609,6 +1636,7 @@
 				2027E94F1BADC71D00DA55A4 /* Array.swift in Sources */,
 				200C72EC1B40368600998100 /* CoreDataStore.swift in Sources */,
 				68C456EA1D5E283000A8F566 /* AchievementsViewController.swift in Sources */,
+				68C456FC1D5F3EFB00A8F566 /* SetupPageViewController.swift in Sources */,
 				685569B91D2C186C006C9F7A /* CollectionMVFStatementsEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

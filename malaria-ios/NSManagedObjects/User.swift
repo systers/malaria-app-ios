@@ -39,13 +39,13 @@ class User: NSManagedObject {
                      location: String?,
                      phone: String?) throws -> User {
     
-     try validateData(firstName,
-                       lastName: lastName,
-                       age: age,
-                       email: email,
-                       gender: gender,
-                       location: location,
-                       phone: phone)
+    try validateData(firstName,
+                     lastName: lastName,
+                     age: age,
+                     email: email,
+                     gender: gender,
+                     location: location,
+                     phone: phone)
     
     let newContext = CoreDataHelper.sharedInstance.createBackgroundContext()
     
@@ -57,7 +57,7 @@ class User: NSManagedObject {
     user.lastName  = lastName
     user.age = Int64(age)!
     user.email = email
-
+    
     user.location = location!
     user.gender = gender!
     user.phone = phone!
@@ -86,8 +86,10 @@ class User: NSManagedObject {
         throw UserValidationError.LastNameLength
       }
       
-      if gender?.characters.count < MinimumCharacterLength {
-        throw UserValidationError.GenderLength
+      if let gender = gender {
+        if gender.characters.count < MinimumCharacterLength {
+          throw UserValidationError.GenderLength
+        }
       }
       
       guard let age = Int(age) else {
@@ -102,16 +104,20 @@ class User: NSManagedObject {
         throw UserValidationError.InvalidEmail
       }
       
-      if location?.characters.count < MinimumCharacterLength {
-        throw UserValidationError.LocationLength
+      if let location = location {
+        if location.characters.count < MinimumCharacterLength {
+          throw UserValidationError.LocationLength
+        }
       }
       
-      if phone?.characters.count < MinimumCharacterLength {
-        throw UserValidationError.PhoneLength
-      }
-      
-      if phone?.isNumber() == false {
-        throw UserValidationError.InvalidPhone
+      if let phone = phone {
+        if phone.characters.count < MinimumCharacterLength {
+          throw UserValidationError.PhoneLength
+        }
+        
+        if phone.isNumber() == false {
+          throw UserValidationError.InvalidPhone
+        }
       }
       
       return true

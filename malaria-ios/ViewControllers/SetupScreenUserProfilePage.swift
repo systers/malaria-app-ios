@@ -1,7 +1,7 @@
 import UIKit
 import DoneToolbarSwift
 
-class SetupScreenUserProfileViewController: UIViewController {
+class SetupScreenUserProfilePage: SetupScreenPage {
   
   @IBOutlet weak var firstNameField: UITextField!
   @IBOutlet weak var lastNameField: UITextField!
@@ -12,9 +12,6 @@ class SetupScreenUserProfileViewController: UIViewController {
   @IBOutlet weak var phoneField: UITextField!
   
   @IBOutlet weak var scrollView: UIScrollView!
-  
-  // Provided by `PagesManagerViewController`.
-  var delegate: PresentsModalityDelegate!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -35,15 +32,6 @@ class SetupScreenUserProfileViewController: UIViewController {
     locationField.inputAccessoryView = toolBar
     emailField.inputAccessoryView = toolBar
     phoneField.inputAccessoryView = toolBar
-    
-    if User.isUserAlreadyCreated() {
-      presentNextSetupScreen()
-    }
-  }
-  
-  func presentNextSetupScreen() {
-    appDelegate.presentSetupScreen(withDelegate: delegate)
-    dismissViewControllerAnimated(true, completion: nil)
   }
   
   @IBAction func nextPressed(sender: UIButton) {
@@ -66,7 +54,7 @@ class SetupScreenUserProfileViewController: UIViewController {
                       phone: phone)
     }
     catch let error as User.UserValidationError {
-      ToastHelper.makeToast(error.rawValue, viewController: self)
+      ToastHelper.makeToast(error.rawValue)
       return
     }
     catch {
@@ -74,17 +62,13 @@ class SetupScreenUserProfileViewController: UIViewController {
       return
     }
     
-    presentNextSetupScreen()
-  }
-  
-  @IBAction func sendFeedback(sender: UIButton) {
-    openUrl(NSURL(string: "mailto:\(PeaceCorpsInfo.mail)"))
+    pageViewDelegate!.changePage()
   }
 }
 
 // MARK: Text Field Delegate
 
-extension SetupScreenUserProfileViewController: UITextFieldDelegate {
+extension SetupScreenUserProfilePage: UITextFieldDelegate {
   
   func textFieldDidBeginEditing(textField: UITextField) {
     let newOffset = CGPointMake(0, textField.frame.origin.y - 30)

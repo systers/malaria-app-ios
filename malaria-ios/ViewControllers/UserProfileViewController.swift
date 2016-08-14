@@ -20,8 +20,8 @@ class UserProfileViewController: UIViewController {
   
   private let CellHeightAndOffset: CGFloat = 60 + 30
   private let CellReuseIdentifier = "User Profile Pill Cell Identifier"
-  private let ScrollViewEnabledAlpha: CGFloat = 1
-  private let ScrollViewDisabledAlpha: CGFloat = 0.8
+  private let ViewEnabledAlpha: CGFloat = 1
+  private let ViewDisabledAlpha: CGFloat = 0.8
   
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var remindMeWeeksButton: UIButton!
@@ -39,6 +39,8 @@ class UserProfileViewController: UIViewController {
   @IBOutlet weak var locationField: UITextField!
   @IBOutlet weak var emailField: UITextField!
   @IBOutlet weak var phoneField: UITextField!
+  
+  @IBOutlet var textFieldsArray: [UITextField]!
   
   private var user: User! {
     didSet {
@@ -96,13 +98,9 @@ class UserProfileViewController: UIViewController {
       emailField,
       phoneField])
     
-    firstNameField.inputAccessoryView = toolBar
-    lastNameField.inputAccessoryView = toolBar
-    genderField.inputAccessoryView = toolBar
-    ageField.inputAccessoryView = toolBar
-    locationField.inputAccessoryView = toolBar
-    emailField.inputAccessoryView = toolBar
-    phoneField.inputAccessoryView = toolBar
+    for textField in textFieldsArray {
+      textField.inputAccessoryView = toolBar
+    }
     
     locationField.addTarget(self,
                             action: #selector(locationAutocompleteCallback),
@@ -231,24 +229,22 @@ class UserProfileViewController: UIViewController {
   
   func toggleUserInteraction(enableFields value: Bool) {
     
-    firstNameField.userInteractionEnabled = value
-    lastNameField.userInteractionEnabled = value
-    ageField.userInteractionEnabled = value
-    genderField.userInteractionEnabled = value
-    emailField.userInteractionEnabled = value
-    locationField.userInteractionEnabled = value
-    phoneField.userInteractionEnabled = value
+    for textField in textFieldsArray {
+      textField.userInteractionEnabled = value
+    }
     
     tableView.userInteractionEnabled = value
     
     remindMeWeeksButton.userInteractionEnabled = value
     
-    if value {
-      firstNameField.becomeFirstResponder()
-      scrollView.alpha = ScrollViewEnabledAlpha
-    } else {
-      scrollView.alpha = ScrollViewDisabledAlpha
+    // Change views alpha.
+    
+    for textField in textFieldsArray {
+      textField.alpha = value ? ViewEnabledAlpha : ViewDisabledAlpha
     }
+    
+    tableView.alpha = value ? ViewEnabledAlpha : ViewDisabledAlpha
+    remindMeWeeksButton.alpha = value ? ViewEnabledAlpha : ViewDisabledAlpha
   }
   
   func locationAutocompleteCallback() {
@@ -262,8 +258,8 @@ extension UserProfileViewController {
   
   @IBAction func settingsBtnHandler(sender: AnyObject) {
     dispatch_async(dispatch_get_main_queue()) {
-      let view = UIStoryboard.instantiate(SetupScreenViewController.self)
-      view.delegate = self
+      let view = UIStoryboard.instantiate(SetupScreenPillPage.self)
+      view.popupDelegate = self
       self.presentViewController(view, animated: true, completion: nil)
     }
   }
