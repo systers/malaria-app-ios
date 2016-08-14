@@ -293,6 +293,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aEx-jR-M42" firstAttribute="trailing" secondItem="ivX-md-p2t" secondAttribute="trailingMargin" id="0Le-GL-a28"/>
+                            <constraint firstItem="qdc-Ua-tsy" firstAttribute="centerY" secondItem="vS7-WU-xrN" secondAttribute="centerY" id="9YH-g3-zGt"/>
                             <constraint firstItem="qdc-Ua-tsy" firstAttribute="top" secondItem="7gc-SS-cEZ" secondAttribute="bottom" constant="21" id="Qay-bU-oa1"/>
                             <constraint firstItem="gqA-48-mWq" firstAttribute="top" secondItem="w6B-Dp-svL" secondAttribute="bottom" constant="15" id="Rl0-1J-q5e"/>
                             <constraint firstItem="w6B-Dp-svL" firstAttribute="top" secondItem="aEx-jR-M42" secondAttribute="bottom" constant="23" id="TNo-X4-7wJ"/>
@@ -307,6 +308,12 @@
                             <constraint firstItem="qdc-Ua-tsy" firstAttribute="top" secondItem="vS7-WU-xrN" secondAttribute="top" id="yfJ-nf-huu"/>
                             <constraint firstItem="PFh-kn-Gcg" firstAttribute="trailing" secondItem="ivX-md-p2t" secondAttribute="trailingMargin" id="z5y-f6-QXa"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="bFh-yA-nqS"/>
+                                <exclude reference="yfJ-nf-huu"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="PlanTripIconUnselected" id="YVj-9J-zFH">
                         <userDefinedRuntimeAttributes>
