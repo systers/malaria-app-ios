@@ -20,17 +20,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="s2x-lR-2d9">
-                                <rect key="frame" x="281" y="550" width="39" height="37"/>
-                                <color key="pageIndicatorTintColor" red="0.69803921568627447" green="0.74901960784313726" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.61960784313725492" green="0.70980392156862748" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
-                            </pageControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6xY-ba-oab">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <connections>
                                     <segue destination="nA7-Sc-fq6" kind="embed" id="4Db-lq-WtS"/>
                                 </connections>
                             </containerView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="s2x-lR-2d9">
+                                <rect key="frame" x="281" y="550" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.69803921568627447" green="0.74901960784313726" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.61960784313725492" green="0.70980392156862748" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

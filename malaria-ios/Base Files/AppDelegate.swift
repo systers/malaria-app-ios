@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     if !UserSettingsManager.UserSetting.DidConfiguredMedicine.getBool() {
       window!.rootViewController =
         UIStoryboard.instantiate(SetupScreenContainerViewController.self,
-                                                            fromStoryboard: Constants.Storyboards.InitialSetup)
+                                 fromStoryboard: Constants.Storyboards.InitialSetup)
     } else {
       window!.rootViewController = UIStoryboard.instantiate(TabbedBarController.self)
     }

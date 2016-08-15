@@ -232,9 +232,6 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="locationEditingChangedHandler:" destination="cfZ-pD-OHm" eventType="editingDidEnd" id="G4I-f1-noW"/>
-                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -282,6 +279,7 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="bUx-rk-ej4"/>
                                         <exclude reference="I5y-FZ-Mlw"/>
                                         <exclude reference="ejD-TA-npe"/>
                                         <exclude reference="h0k-ye-uaE"/>
@@ -293,15 +291,17 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aEx-jR-M42" firstAttribute="trailing" secondItem="ivX-md-p2t" secondAttribute="trailingMargin" id="0Le-GL-a28"/>
+                            <constraint firstItem="qdc-Ua-tsy" firstAttribute="top" secondItem="vS7-WU-xrN" secondAttribute="top" id="3Fo-MK-GRE"/>
                             <constraint firstItem="qdc-Ua-tsy" firstAttribute="centerY" secondItem="vS7-WU-xrN" secondAttribute="centerY" id="9YH-g3-zGt"/>
+                            <constraint firstItem="aEx-jR-M42" firstAttribute="top" secondItem="qdc-Ua-tsy" secondAttribute="bottom" constant="25" id="JXv-nf-n8W"/>
                             <constraint firstItem="qdc-Ua-tsy" firstAttribute="top" secondItem="7gc-SS-cEZ" secondAttribute="bottom" constant="21" id="Qay-bU-oa1"/>
                             <constraint firstItem="gqA-48-mWq" firstAttribute="top" secondItem="w6B-Dp-svL" secondAttribute="bottom" constant="15" id="Rl0-1J-q5e"/>
                             <constraint firstItem="w6B-Dp-svL" firstAttribute="top" secondItem="aEx-jR-M42" secondAttribute="bottom" constant="23" id="TNo-X4-7wJ"/>
                             <constraint firstItem="aEx-jR-M42" firstAttribute="leading" secondItem="qdc-Ua-tsy" secondAttribute="leading" id="YmO-nX-aDZ"/>
                             <constraint firstItem="qdc-Ua-tsy" firstAttribute="bottom" secondItem="vS7-WU-xrN" secondAttribute="bottom" id="bFh-yA-nqS"/>
                             <constraint firstItem="vS7-WU-xrN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qdc-Ua-tsy" secondAttribute="trailing" constant="5" id="bo9-qJ-LKA"/>
+                            <constraint firstItem="qdc-Ua-tsy" firstAttribute="bottom" secondItem="vS7-WU-xrN" secondAttribute="bottom" id="dDa-Jf-0Vx"/>
                             <constraint firstItem="aEx-jR-M42" firstAttribute="centerX" secondItem="w6B-Dp-svL" secondAttribute="centerX" id="dyj-xS-Qnq"/>
-                            <constraint firstItem="aEx-jR-M42" firstAttribute="top" secondItem="vS7-WU-xrN" secondAttribute="bottom" constant="25" id="fCQ-3B-ydn"/>
                             <constraint firstAttribute="centerX" secondItem="vS7-WU-xrN" secondAttribute="centerX" constant="-15.5" id="oBK-SM-boh"/>
                             <constraint firstItem="PFh-kn-Gcg" firstAttribute="top" secondItem="7gc-SS-cEZ" secondAttribute="bottom" constant="8" symbolic="YES" id="rk2-xK-Wsc"/>
                             <constraint firstItem="aEx-jR-M42" firstAttribute="leading" secondItem="ivX-md-p2t" secondAttribute="leadingMargin" id="sFj-3b-mvO"/>
@@ -310,6 +310,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="9YH-g3-zGt"/>
                                 <exclude reference="bFh-yA-nqS"/>
                                 <exclude reference="yfJ-nf-huu"/>
                             </mask>

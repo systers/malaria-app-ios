@@ -221,7 +221,6 @@ extension DidTakePillsViewController: PresentsModalityDelegate {
 // MARK: Alert Messages
 
 extension DidTakePillsViewController {
-  typealias AlertText = (title: String, message: String)
   
   // Existing medicine configured.
   private var ResheduleNotificationAlertText: AlertText {get {

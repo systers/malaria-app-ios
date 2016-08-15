@@ -107,7 +107,7 @@ class PlanTripViewController: UIViewController {
     prepareHistoryValuePicker()
   }
   
-  func prepareHistoryValuePicker(){
+  func prepareHistoryValuePicker() {
     tripLocationHistoryPickerViewer = TripLocationHistoryPickerViewer(context: viewContext, selectCallback: {(object: String) in
       self.generateTripBtn.enabled = !object.isEmpty
       
@@ -129,17 +129,11 @@ class PlanTripViewController: UIViewController {
 extension PlanTripViewController {
   
   @IBAction func settingsBtnHandler(sender: AnyObject) {
-    //fix delay
+    
+    // Fixes delay.
     dispatch_async(dispatch_get_main_queue()) {
       let view = UIStoryboard.instantiate(SetupScreenPillPage.self)
       self.presentViewController(view, animated: true, completion: nil)
-    }
-  }
-  
-  @IBAction func locationEditingChangedHandler(sender: AnyObject) {
-    if let loc = location.text {
-      generateTripBtn.enabled = !loc.isEmpty
-      tripLocation = loc
     }
   }
   
@@ -159,7 +153,6 @@ extension PlanTripViewController {
   @IBAction func generateTrip(sender: AnyObject) {
     
     if location.text?.characters.count == 0 {
-      
       // Show alert message.
       ToastHelper.makeToast("Location text can't be empty.")
       return
@@ -318,7 +311,6 @@ extension PlanTripViewController {
 // MARK: Messages.
 
 extension PlanTripViewController {
-  typealias AlertText = (title: String, message: String)
   
   // Update trip.
   private var UpdateTripAlertText: AlertText {get {
