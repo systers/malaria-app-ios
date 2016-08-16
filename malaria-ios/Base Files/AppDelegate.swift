@@ -31,9 +31,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     readApplicationSettings()
     
-    // setting up initial screen, can be configured in the storyboard if there is only one option but here we have more flexibility
+    // Setting up initial screen, can be wconfigured in the storyboard if there is only one option but here we have more flexibility.
     window = UIWindow(frame: UIScreen.mainScreen().bounds)
-    window!.rootViewController = UIStoryboard.instantiate(TabbedBarController.self)
+    
+    // Check if we need to show the initial setup screen or if the user already
+    // configured everything.
+    
+    if !UserSettingsManager.UserSetting.DidConfiguredMedicine.getBool() {
+      window!.rootViewController =
+        UIStoryboard.instantiate(SetupScreenContainerViewController.self,
+                                 fromStoryboard: Constants.Storyboards.InitialSetup)
+    } else {
+      window!.rootViewController = UIStoryboard.instantiate(TabbedBarController.self)
+    }
+    
     window!.makeKeyAndVisible()
     
     return true
@@ -61,40 +72,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    the `PresentsModalityDelegate` delegate.
    */
   
-  func presentSetupScreen(withDelegate delegate: PresentsModalityDelegate) {
+  func presentSetupPillScreen(withDelegate delegate: PresentsModalityDelegate) {
     
     // `dispatch_async` fixes the view controller presentation delay.
     dispatch_async(dispatch_get_main_queue()) {
-      let view = UIStoryboard.instantiate(SetupScreenViewController.self) as SetupScreenViewController
+      let view = UIStoryboard.instantiate(SetupScreenPillPage.self) as SetupScreenPillPage
       
-      view.delegate = delegate
-      
-      /*
-       We can make this cast because only ViewControllers will implement the
-       PresentsModalityDelegate in this app.
-       
-       i.e PresentsModalityDelegate and ViewController are interchangable.
-       */
-      
-      let viewController = delegate as! UIViewController
-      viewController.presentViewController(view, animated: true, completion: nil)
-    }
-  }
-  
-  /**
-   A method which presents the setup screen on the first run of the app.
-   
-   - parameter delegate: A ViewController that implements
-   the `PresentsModalityDelegate` delegate.
-   */
-  
-  func presentInitialSetupScreen(withDelegate delegate: PresentsModalityDelegate) {
-    
-    // `dispatch_async` fixes the view controller presentation delay.
-    dispatch_async(dispatch_get_main_queue()) {
-      let view = UIStoryboard.instantiate(SetupScreenUserProfileViewController.self) as SetupScreenUserProfileViewController
-      
-      view.delegate = delegate
+      view.popupDelegate = delegate
       
       /*
        We can make this cast because only ViewControllers will implement the

@@ -84,7 +84,7 @@ class DidTakePillsViewController: UIViewController {
     let (title, message) = (ResheduleNotificationAlertText.title, ResheduleNotificationAlertText.message)
     let resheduleAlert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
     resheduleAlert.addAction(UIAlertAction(title: AlertOptions.yes, style: .Default, handler: { _ in
-      self.appDelegate.presentSetupScreen(withDelegate: self.pagesManager.currentViewController)
+      self.appDelegate.presentSetupPillScreen(withDelegate: self.pagesManager.currentViewController)
     }))
     
     resheduleAlert.addAction(UIAlertAction(title: AlertOptions.no, style: .Default, handler: nil))
@@ -221,7 +221,6 @@ extension DidTakePillsViewController: PresentsModalityDelegate {
 // MARK: Alert Messages
 
 extension DidTakePillsViewController {
-  typealias AlertText = (title: String, message: String)
   
   // Existing medicine configured.
   private var ResheduleNotificationAlertText: AlertText {get {

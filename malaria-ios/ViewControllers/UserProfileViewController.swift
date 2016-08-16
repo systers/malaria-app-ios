@@ -1,7 +1,7 @@
 import UIKit
 import DoneToolbarSwift
 
-// MARK: - Protocol
+// MARK: Protocol.
 
 protocol SaveRemainingPillsProtocol: class {
   func saveRemainingPills(textField: UITextField)
@@ -9,10 +9,10 @@ protocol SaveRemainingPillsProtocol: class {
 
 /// A class that stores all the user information and sets up the Pill Taking mechanism.
 
-// MARK: - Table View controller
-
 class UserProfileViewController: UIViewController {
   
+  // MARK: Properties.
+
   /*
    We found a problem that didn't allow us to click on the table view's cell if we only set the cell
    height (60) and not add ~30-50 offset to it.
@@ -20,8 +20,8 @@ class UserProfileViewController: UIViewController {
   
   private let CellHeightAndOffset: CGFloat = 60 + 30
   private let CellReuseIdentifier = "User Profile Pill Cell Identifier"
-  private let ScrollViewEnabledAlpha: CGFloat = 1
-  private let ScrollViewDisabledAlpha: CGFloat = 0.8
+  private let ViewEnabledAlpha: CGFloat = 1
+  private let ViewDisabledAlpha: CGFloat = 0.8
   
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var remindMeWeeksButton: UIButton!
@@ -40,7 +40,10 @@ class UserProfileViewController: UIViewController {
   @IBOutlet weak var emailField: UITextField!
   @IBOutlet weak var phoneField: UITextField!
   
+  @IBOutlet var textFieldsArray: [UITextField]!
+  
   private var user: User! {
+    
     didSet {
       // Refresh the user info
       firstNameField.text = user.firstName
@@ -54,6 +57,7 @@ class UserProfileViewController: UIViewController {
   }
   
   private var reminderValue: PillStatusNotificationsManager.ReminderInterval = .OneWeek {
+    
     didSet {
       remindMeWeeksButton.setTitle(reminderValue.toString(), forState: .Normal)
     }
@@ -73,6 +77,8 @@ class UserProfileViewController: UIViewController {
   private var medicineManager: MedicineManager?
   private var psnm: PillStatusNotificationsManager?
   private var currentMedicine: Medicine?
+  
+  // MARK: Methods.
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -96,13 +102,9 @@ class UserProfileViewController: UIViewController {
       emailField,
       phoneField])
     
-    firstNameField.inputAccessoryView = toolBar
-    lastNameField.inputAccessoryView = toolBar
-    genderField.inputAccessoryView = toolBar
-    ageField.inputAccessoryView = toolBar
-    locationField.inputAccessoryView = toolBar
-    emailField.inputAccessoryView = toolBar
-    phoneField.inputAccessoryView = toolBar
+    for textField in textFieldsArray {
+      textField.inputAccessoryView = toolBar
+    }
     
     locationField.addTarget(self,
                             action: #selector(locationAutocompleteCallback),
@@ -152,8 +154,6 @@ class UserProfileViewController: UIViewController {
     }
   }
   
-  // Calculate medicine left
-  
   func refreshData() {
     context = CoreDataHelper.sharedInstance.createBackgroundContext()!
     medicineManager = MedicineManager(context: context!)
@@ -178,7 +178,6 @@ class UserProfileViewController: UIViewController {
     
     // Get the current user from Core Data.
     let results = User.retrieve(User.self, context: context!)
-    print("Got the following users:", results)
     user = results.first
     
     // TODO: Save the results for the widget.
@@ -231,24 +230,22 @@ class UserProfileViewController: UIViewController {
   
   func toggleUserInteraction(enableFields value: Bool) {
     
-    firstNameField.userInteractionEnabled = value
-    lastNameField.userInteractionEnabled = value
-    ageField.userInteractionEnabled = value
-    genderField.userInteractionEnabled = value
-    emailField.userInteractionEnabled = value
-    locationField.userInteractionEnabled = value
-    phoneField.userInteractionEnabled = value
+    for textField in textFieldsArray {
+      textField.userInteractionEnabled = value
+    }
     
     tableView.userInteractionEnabled = value
     
     remindMeWeeksButton.userInteractionEnabled = value
     
-    if value {
-      firstNameField.becomeFirstResponder()
-      scrollView.alpha = ScrollViewEnabledAlpha
-    } else {
-      scrollView.alpha = ScrollViewDisabledAlpha
+    // Change views alpha.
+    
+    for textField in textFieldsArray {
+      textField.alpha = value ? ViewEnabledAlpha : ViewDisabledAlpha
     }
+    
+    tableView.alpha = value ? ViewEnabledAlpha : ViewDisabledAlpha
+    remindMeWeeksButton.alpha = value ? ViewEnabledAlpha : ViewDisabledAlpha
   }
   
   func locationAutocompleteCallback() {
@@ -256,14 +253,14 @@ class UserProfileViewController: UIViewController {
   }
 }
 
-// MARK: IBActions and helpers
+// MARK: IBActions and helpers.
 
 extension UserProfileViewController {
   
   @IBAction func settingsBtnHandler(sender: AnyObject) {
     dispatch_async(dispatch_get_main_queue()) {
-      let view = UIStoryboard.instantiate(SetupScreenViewController.self)
-      view.delegate = self
+      let view = UIStoryboard.instantiate(SetupScreenPillPage.self)
+      view.popupDelegate = self
       self.presentViewController(view, animated: true, completion: nil)
     }
   }
@@ -295,7 +292,7 @@ extension UserProfileViewController {
   }
 }
 
-// MARK: Table View Data Source
+// MARK: Table View Data Source.
 
 extension UserProfileViewController: UITableViewDataSource {
   
@@ -318,7 +315,7 @@ extension UserProfileViewController: UITableViewDataSource {
   }
 }
 
-// MARK: Table View Delegate
+// MARK: Table View Delegate.
 
 extension UserProfileViewController: UITableViewDelegate {
   
@@ -330,7 +327,7 @@ extension UserProfileViewController: UITableViewDelegate {
   }
 }
 
-// MARK: Setup Screen Dismiss Delegate
+// MARK: Setup Screen Dismiss Delegate.
 
 extension UserProfileViewController: PresentsModalityDelegate {
   
@@ -341,7 +338,7 @@ extension UserProfileViewController: PresentsModalityDelegate {
   }
 }
 
-// MARK: Save Remaining Pills Protocol
+// MARK: Save Remaining Pills Protocol.
 
 extension UserProfileViewController: SaveRemainingPillsProtocol {
   
@@ -358,7 +355,7 @@ extension UserProfileViewController: SaveRemainingPillsProtocol {
   }
 }
 
-// MARK: Text Field Delegate
+// MARK: Text Field Delegate.
 
 extension UserProfileViewController: UITextFieldDelegate {
   
@@ -373,15 +370,12 @@ extension UserProfileViewController: UITextFieldDelegate {
   }
 }
 
-// MARK: Messages
+// MARK: Messages.
 
 extension UserProfileViewController {
-  typealias AlertText = (title: String, message: String)
   
-  // Set reminder
+  // Set reminder.
   private var SetReminderText: AlertText {
-    get {
-      return ("Set reminder for:", "")
-    }
+    return ("Set reminder for:", "")
   }
 }
