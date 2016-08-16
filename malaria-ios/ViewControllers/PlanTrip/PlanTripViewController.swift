@@ -151,7 +151,6 @@ extension PlanTripViewController {
   }
   
   @IBAction func generateTrip(sender: AnyObject) {
-    
     if location.text?.characters.count == 0 {
       // Show alert message.
       ToastHelper.makeToast("Location text can't be empty.")
