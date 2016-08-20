@@ -16,13 +16,7 @@ class MedicineManagerProvider {
   var currentMedicineManager: MedicineAchievementManager!
   
   func getManagerFor(medicine: Medicine) -> MedicineAchievementManager {
-    
-    //    // Check if a manager exists, if not, create one.
-    //    guard let manager = medicineAchievementManagers[medicine] else {
     currentMedicineManager = MedicineAchievementManager(medicine: medicine)
     return currentMedicineManager
-    //    }
-    //
-    //    return manager
   }
 }
