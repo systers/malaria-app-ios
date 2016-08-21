@@ -1,5 +1,5 @@
-workspace 'malaria-ios-workspace'
-xcodeproj 'malaria-ios.xcodeproj'
+workspace 'Malaria Prevention App'
+xcodeproj 'Malaria Prevention App.xcodeproj'
 
 platform :ios, '8.0'
 use_frameworks!
@@ -15,16 +15,16 @@ def pods
 	pod 'HorizontalProgressView', '~> 0.9.5'
 	pod 'PickerSwift', '~> 0.9.3'
 	pod 'DoneToolbarSwift', '~> 1.0.0'
-	pod 'GoogleMaps'
+	pod 'GoogleMaps', '~> 1.11'
 
-	pod 'Fabric'
-	pod 'Crashlytics'
+	pod 'Fabric', '~> 1.6.7'
+	pod 'Crashlytics', '~> 3.7.1'
 end
  
-target 'malaria-ios' do
+target 'Malaria Prevention App' do
     pods
 end
 
-target 'malaria-iosTests' do
+target 'Malaria Prevention AppTests' do
     	pod 'SwiftyJSON', '~> 2.3.1'
 end
