@@ -62,7 +62,8 @@ class WidgetHandler : NSObject {
   // Check is user pressed Did Take Pill in the widget.
   
   func checkIfUserPressedButtonInWidget() -> Bool {
-    return NSUserDefaults(suiteName: Constants.Widget.AppGroupBundleID)!.objectForKey(Constants.Widget.didTakePillForToday) != nil
+    return NSUserDefaults(suiteName: Constants.Widget.AppGroupBundleID)!.objectForKey(Constants.Widget.didTakePillForToday)
+      != nil
   }
   
   func addAppPillEntry() {
@@ -80,6 +81,7 @@ class WidgetHandler : NSObject {
   
   func deleteCurrentDayData() {
     WidgetSettingsManager.WidgetSetting.didTakePillForToday.removeKey()
+    NSUserDefaults(suiteName: Constants.Widget.AppGroupBundleID)!.removeObjectForKey(Constants.Widget.didTakePillForToday)
   }
   
   func handleAppDidBecomeActive() {

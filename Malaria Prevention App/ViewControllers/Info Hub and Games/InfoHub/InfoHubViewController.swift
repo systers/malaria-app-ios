@@ -171,7 +171,7 @@ extension InfoHubViewController : UICollectionViewDelegate, UICollectionViewData
     return determineSpacing()
   }
   
-  private func determineSpacing() -> CGFloat{
+  private func determineSpacing() -> CGFloat {
     let screenWidth = UIScreen.mainScreen().bounds.size.width
     let numberItems = min(floor(screenWidth/PeaceCorpsMessageCollectionViewCell.CellWidth), 4)
     let remainingScreen = screenWidth - numberItems*PeaceCorpsMessageCollectionViewCell.CellWidth
@@ -185,19 +185,19 @@ extension InfoHubViewController : UICollectionViewDelegate, UICollectionViewData
 extension InfoHubViewController {
   
   private var NoInformationAvailableAlertText: AlertText {
-    return ("No available message from Peace Corps", "")
+    return ("No available message from Peace Corps.", "")
   }
   
   private var CantUpdateFromPeaceCorpsAlertText: AlertText  {
-    return ("Couldn't update Peace Corps messages", "Please try again later")
+    return ("Couldn't update Peace Corps messages", "Please try again later.")
   }
   
   private var NoInternetConnectionAlertText: AlertText {
-    return ("Couldn't update Peace Corps messages", "No available internet connection. Please try again later")
+    return ("Couldn't update Peace Corps messages.", "No available internet connection. Please try again later.")
   }
   
   private var AlertOptions: (ok: String, cancel: String, settings: String) {
-    return ("ok", "Cancel", "Settings")
+    return ("Ok", "Cancel", "Settings")
   }
   
 }

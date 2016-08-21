@@ -306,7 +306,7 @@ extension UserProfileViewController: UITableViewDataSource {
     let cell = tableView.dequeueReusableCellWithIdentifier(CellReuseIdentifier, forIndexPath: indexPath) as! UserProfilePillTableViewCell
     
     let name = medicines[indexPath.row].name
-    let remainingMedicine = medicines[indexPath.row].remainingMedicine
+    let remainingMedicine = medicines[indexPath.row].currentStock
     
     cell.updateCell(self, name: name,
                     remainingMedicine: remainingMedicine,

@@ -200,6 +200,7 @@ extension SetupScreenPillPage {
         
     let currentPill = medicineManager.getCurrentMedicine()!
     currentPill.currentStock = remainingPills
+    currentPill.lastStockRefill = NSDate()
     
     UserSettingsManager.UserSetting.didConfigureMedicine.setBool(true)
     

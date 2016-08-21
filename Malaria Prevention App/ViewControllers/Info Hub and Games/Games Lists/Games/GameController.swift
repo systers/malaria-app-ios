@@ -34,6 +34,7 @@ class GameController<T: Game>: GameHandler {
   var game: T!
   
   // MARK: Properties.
+  
   var _delegate: GameDelegate?
   var delegate: GameDelegate? {
     get {
@@ -49,7 +50,7 @@ class GameController<T: Game>: GameHandler {
   // When the userScore changes, we need to modify the label in the View.
   var userScore: Int = 0 {
     didSet {
-      guard let delegate = self.delegate else { fatalError("Did you forget to set the delegate?")}
+      guard let delegate = self.delegate else { fatalError("Did you forget to set the delegate?") }
       
       delegate.setScoreLabelTextTo("Score: \(userScore)")
     }
@@ -59,8 +60,7 @@ class GameController<T: Game>: GameHandler {
    TODO: (Update this in Swift 3) Create an extension that encapsulates this methods when Swift allows overriding extension methods, because now the compiler doesn't allow it.
    */
   
-  // MARK: Game Handler Methods
-  
+  // MARK: Game Handler Methods.
 
   /// Method that starts the game if the game has any levels.
   

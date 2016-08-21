@@ -8,7 +8,7 @@ class NSNotificationEvents {
   /**
    List of events
    
-   - dateUpdated: When medicine is changed or if there was a change in the entries.
+   - dataUpdated: When medicine is changed or if there was a change in the entries.
    - UIApplicationWillEnterForegroundNotification: When application enters foreground.
    - UIApplicationDidBecomeActiveNotification: When application becomes active.
    - UIApplicationWillResignActiveNotification: When application stops being active.
@@ -17,7 +17,7 @@ class NSNotificationEvents {
   // TODO: Replace `UIApplication` enums with lowercase initials when Swift 3 will require them.
   
   enum Events: String {
-    case dateUpdated
+    case dataUpdated
     case RFGameFinished
     case MVFGameFinished
     case tripPlanned
@@ -100,7 +100,7 @@ class NSNotificationEvents {
    */
   
   static func ObserveDataUpdated(observer: NSObject, selector: Selector) {
-    NSNotificationEvents.observe(Events.dateUpdated.rawValue, observer, selector)
+    NSNotificationEvents.observe(Events.dataUpdated.rawValue, observer, selector)
   }
   
   /**
@@ -109,8 +109,8 @@ class NSNotificationEvents {
    - parameter object: The attached object.
    */
   
-  static func dateUpdated(object: AnyObject?) {
-    NSNotificationEvents.post(Events.dateUpdated.rawValue, object)
+  static func dataUpdated(object: AnyObject?) {
+    NSNotificationEvents.post(Events.dataUpdated.rawValue, object)
   }
   
   /**

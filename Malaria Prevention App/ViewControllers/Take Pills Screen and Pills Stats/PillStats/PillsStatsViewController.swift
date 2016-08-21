@@ -33,7 +33,7 @@ class PillsStatsViewController : UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     NSNotificationEvents.ObserveAppBecomeActive(self, selector: #selector(refreshScreen))
-    NSNotificationEvents.ObserveDataUpdated(self, selector: #selector(refreshScreen))
+    NSNotificationEvents.ObserveDataUpdated(self, selector: #selector(refreshCachedStatisticsContext))
 
     configureChart()
   }
@@ -55,12 +55,17 @@ class PillsStatsViewController : UIViewController {
 
     if !isPillStatsUpdated {
       refreshData()
-    }else{
+    } else {
       configureData(CachedStatistics.sharedInstance.adherencesPerDay)
       adherenceSliderTable.reloadData()
     }
   }
 
+  func refreshCachedStatisticsContext() {
+    let cachedStats = CachedStatistics.sharedInstance
+    cachedStats.refreshContext()
+  }
+  
   func refreshData() {
     graphFrame.bringSubviewToFront(loadingGraphView)
 

@@ -24,7 +24,7 @@ class MedicineStockManager: CoreDataContextManager {
   
   func updateStock(tookMedicine: Bool) {
     Logger.Info("Updating stock.")
-    medicine.remainingMedicine += tookMedicine ? -1 : 1
+    medicine.currentStock += tookMedicine ? -1 : 1
     CoreDataHelper.sharedInstance.saveContext(context)
   }
   
@@ -35,9 +35,9 @@ class MedicineStockManager: CoreDataContextManager {
    */
   
   func updateStock(newStock: Int) {
-    medicine.remainingMedicine = Int64(newStock)
+    medicine.currentStock = newStock
     CoreDataHelper.sharedInstance.saveContext(context)
-    NSNotificationEvents.dateUpdated(nil)
+    NSNotificationEvents.dataUpdated(nil)
   }
   
   /**
@@ -89,7 +89,7 @@ class MedicineStockManager: CoreDataContextManager {
   
   func hasEnoughPills() -> Bool {
     // Check if the user has enough pills left.
-    if medicine.remainingMedicine <= 0 {
+    if medicine.currentStock <= 0 {
       Logger.Warn("User doesn't have enough pills to add an entry.")
       return false
     }

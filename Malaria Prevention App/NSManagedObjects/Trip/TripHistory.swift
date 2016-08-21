@@ -4,6 +4,12 @@ import CoreData
 
 class TripHistory: NSManagedObject {
 
-    @NSManaged var location: String
-    @NSManaged var timestamp: NSDate
+  var timestamp: NSDate {
+    get {
+      return NSDate(timeIntervalSinceReferenceDate: internalTimestamp)
+    }
+    set {
+      internalTimestamp = newValue.timeIntervalSinceReferenceDate
+    }
+  }
 }

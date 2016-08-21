@@ -91,6 +91,6 @@ class MedicineManager: CoreDataContextManager {
     getMedicine(name)!.isCurrent = true
     
     CoreDataHelper.sharedInstance.saveContext(context)
-    NSNotificationEvents.dateUpdated(nil)
+    NSNotificationEvents.dataUpdated(nil)
   }
 }
