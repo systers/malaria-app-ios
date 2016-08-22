@@ -14,7 +14,7 @@ protocol Endpoint {
    Keep in mind that the object is created in the CoreData,
    therefore any deletion must be done explicitly.
    
-   - parameter data: Json data.
+   - parameter data: JSON data.
    - parameter context: The current context.
    
    - returns: The parsed object or `nil` if parse failed.
@@ -30,6 +30,3 @@ protocol Endpoint {
   
   func clearFromDatabase(context: NSManagedObjectContext)
 }
-
-
-

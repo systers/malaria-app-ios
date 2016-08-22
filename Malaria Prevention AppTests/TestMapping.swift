@@ -61,7 +61,8 @@ class TestMapping: XCTestCase {
   }
   
   func testPosts() {
-    if let posts = endpoints[EndpointType.Posts.path()]!.retrieveJSONObject(getJSON("posts"), context: self.currentContext) as? Posts{
+    if let posts = endpoints[EndpointType.Posts.path()]!
+      .retrieveJSONObject(getJSON("posts"), context: self.currentContext) as? Posts {
       var results: [Post] = posts.posts.convertToArray()
       
       // Objects retrived may be unsorted.

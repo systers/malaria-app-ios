@@ -48,16 +48,15 @@ sudo gem install jazzy
 
 2. Generate documentation:
 ```sh
-jazzy -c --skip-undocumented
+
 ```
 
 3. Open docs/index.html
 
-### Troublshooting:
+### Troubleshooting:
 If the build fails because pod modules are not identified:
 
-1. In the project settings, find the target malaria.ios
-
+1. In the project settings, find the target "Malaria Prevention App".
 2. Under "Linked Frameworks and Libraries," add Pods/Pods.xcodeproj
 
 
@@ -75,4 +74,6 @@ Existing dependencies taken from Podfile:
 - 'HorizontalProgressView', '~> 0.9.5'
 - 'PickerSwift', '~> 0.9.3'
 - 'DoneToolbarSwift', '~> 1.0.0'
-- 'GoogleMaps', '~> 1.12.3'
+- 'GoogleMaps', '~> 1.11'
+- 'Fabric', '~> 1.6.7'
+- 'Crashlytics', '~> 3.7.1'
