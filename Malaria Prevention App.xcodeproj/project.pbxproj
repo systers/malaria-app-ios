@@ -75,6 +75,22 @@
 		311E38EC1CA0DC510051B14E /* DailyStatsTableViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E38EB1CA0DC510051B14E /* DailyStatsTableViewController+Extensions.swift */; };
 		311E38EE1CA0DC540051B14E /* Stat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E38ED1CA0DC540051B14E /* Stat+Extensions.swift */; };
 		680669451D68B3820059D688 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200C72611B40368600998100 /* Int.swift */; };
+		680669861D68FD340059D688 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680669851D68FD340059D688 /* Item+CoreDataProperties.swift */; };
+		680669881D68FD760059D688 /* Medicine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680669871D68FD760059D688 /* Medicine+CoreDataProperties.swift */; };
+		6806698A1D68FDE40059D688 /* Registry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680669891D68FDE40059D688 /* Registry+CoreDataProperties.swift */; };
+		680669A41D68FF1F0059D688 /* CollectionMVFStatements+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6806699F1D68FF1F0059D688 /* CollectionMVFStatements+CoreDataProperties.swift */; };
+		680669A51D68FF1F0059D688 /* MVFStatement+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680669A01D68FF1F0059D688 /* MVFStatement+CoreDataProperties.swift */; };
+		680669A61D68FF1F0059D688 /* MVFStatement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680669A11D68FF1F0059D688 /* MVFStatement.swift */; };
+		680669A71D68FF1F0059D688 /* MVFStatements+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680669A21D68FF1F0059D688 /* MVFStatements+CoreDataProperties.swift */; };
+		680669A81D68FF1F0059D688 /* MVFStatements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680669A31D68FF1F0059D688 /* MVFStatements.swift */; };
+		680669AD1D69000D0059D688 /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680669AA1D69000D0059D688 /* Post+CoreDataProperties.swift */; };
+		680669AE1D69000D0059D688 /* Posts+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680669AB1D69000D0059D688 /* Posts+CoreDataProperties.swift */; };
+		680669AF1D69000D0059D688 /* CollectionPosts+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680669AC1D69000D0059D688 /* CollectionPosts+CoreDataProperties.swift */; };
+		680669B41D69004B0059D688 /* RFQuestions+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680669B11D69004B0059D688 /* RFQuestions+CoreDataProperties.swift */; };
+		680669B51D69004B0059D688 /* RFQuestion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680669B21D69004B0059D688 /* RFQuestion+CoreDataProperties.swift */; };
+		680669B61D69004B0059D688 /* CollectionRFQuestions+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680669B31D69004B0059D688 /* CollectionRFQuestions+CoreDataProperties.swift */; };
+		680669B91D6900AB0059D688 /* Trip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680669B71D6900AB0059D688 /* Trip+CoreDataProperties.swift */; };
+		680669BA1D6900AB0059D688 /* TripHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680669B81D6900AB0059D688 /* TripHistory+CoreDataProperties.swift */; };
 		682DB0E81D54D26C0050547B /* UIViewController+AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682DB0E71D54D26C0050547B /* UIViewController+AppDelegate.swift */; };
 		682DB0E91D568CA40050547B /* UserSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC56EA1B72C91300D51801 /* UserSettingsManager.swift */; };
 		682DB0EC1D568DD90050547B /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200C72611B40368600998100 /* Int.swift */; };
@@ -117,14 +133,10 @@
 		685569BB1D2C188C006C9F7A /* MVFStatementsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685569BA1D2C188C006C9F7A /* MVFStatementsEndpoint.swift */; };
 		687F05F81D6618C1004038F4 /* Achievement+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F05DA1D6618C0004038F4 /* Achievement+CoreDataProperties.swift */; };
 		687F05F91D6618C1004038F4 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F05DB1D6618C0004038F4 /* Achievement.swift */; };
-		687F05FA1D6618C1004038F4 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F05DD1D6618C0004038F4 /* Item.swift */; };
-		687F05FB1D6618C1004038F4 /* ItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F05DE1D6618C0004038F4 /* ItemExtension.swift */; };
-		687F05FC1D6618C1004038F4 /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F05E01D6618C1004038F4 /* Medicine.swift */; };
-		687F05FD1D6618C1004038F4 /* MedicineExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F05E11D6618C1004038F4 /* MedicineExtension.swift */; };
+		687F05FB1D6618C1004038F4 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F05DE1D6618C0004038F4 /* Item.swift */; };
+		687F05FD1D6618C1004038F4 /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F05E11D6618C1004038F4 /* Medicine.swift */; };
 		687F05FE1D6618C1004038F4 /* Registry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F05E31D6618C1004038F4 /* Registry.swift */; };
 		687F05FF1D6618C1004038F4 /* CollectionMVFStatements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F05E61D6618C1004038F4 /* CollectionMVFStatements.swift */; };
-		687F06001D6618C1004038F4 /* MVFQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F05E71D6618C1004038F4 /* MVFQuestion.swift */; };
-		687F06011D6618C1004038F4 /* MVFQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F05E81D6618C1004038F4 /* MVFQuestions.swift */; };
 		687F06021D6618C1004038F4 /* CollectionPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F05EA1D6618C1004038F4 /* CollectionPosts.swift */; };
 		687F06031D6618C1004038F4 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F05EB1D6618C1004038F4 /* Post.swift */; };
 		687F06041D6618C1004038F4 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F05EC1D6618C1004038F4 /* Posts.swift */; };
@@ -132,7 +144,6 @@
 		687F06061D6618C1004038F4 /* RFQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F05EF1D6618C1004038F4 /* RFQuestion.swift */; };
 		687F06071D6618C1004038F4 /* RFQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F05F01D6618C1004038F4 /* RFQuestions.swift */; };
 		687F06081D6618C1004038F4 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F05F21D6618C1004038F4 /* Trip.swift */; };
-		687F06091D6618C1004038F4 /* TripExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F05F31D6618C1004038F4 /* TripExtension.swift */; };
 		687F060A1D6618C1004038F4 /* TripHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F05F41D6618C1004038F4 /* TripHistory.swift */; };
 		687F060B1D6618C1004038F4 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F05F61D6618C1004038F4 /* User+CoreDataProperties.swift */; };
 		687F060C1D6618C1004038F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F05F71D6618C1004038F4 /* User.swift */; };
@@ -336,7 +347,7 @@
 		20C718EC1B77DCB1007424F6 /* TestMonthAdherence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMonthAdherence.swift; sourceTree = "<group>"; };
 		20E6DC3A1B38B53C0003B777 /* TestPlanTrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPlanTrip.swift; sourceTree = "<group>"; };
 		20EA07061B23258900D6840E /* TestNSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNSDateExtensions.swift; sourceTree = "<group>"; };
-		20EA07081B237D4900D6840E /* TestMedicineRegistries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMedicineRegistries.swift; sourceTree = "<group>"; };
+		20EA07081B237D4900D6840E /* TestMedicineRegistries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestMedicineRegistries.swift; path = "Malaria Prevention AppTests/TestMedicineRegistries.swift"; sourceTree = SOURCE_ROOT; };
 		20EA070A1B2394EB00D6840E /* TestDailyMedicineStatistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDailyMedicineStatistics.swift; sourceTree = "<group>"; };
 		20EA070C1B23AD9F00D6840E /* TestNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNotifications.swift; sourceTree = "<group>"; };
 		20EE2E451B28AC7900948240 /* TestTimedInsertions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTimedInsertions.swift; sourceTree = "<group>"; };
@@ -358,6 +369,22 @@
 		311E38ED1CA0DC540051B14E /* Stat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stat+Extensions.swift"; path = "SocialMedia/Stat+Extensions.swift"; sourceTree = "<group>"; };
 		3E2B4033AAF9D803773B7ECB /* Pods-Malaria Prevention App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Malaria Prevention App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Malaria Prevention App/Pods-Malaria Prevention App.release.xcconfig"; sourceTree = "<group>"; };
 		435D68C3391FDBE054AD193A /* Pods_Malaria_Prevention_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Malaria_Prevention_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		680669851D68FD340059D688 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataProperties.swift"; path = "Malaria Prevention App/NSManagedObjects/Item/Item+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		680669871D68FD760059D688 /* Medicine+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Medicine+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		680669891D68FDE40059D688 /* Registry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Registry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6806699F1D68FF1F0059D688 /* CollectionMVFStatements+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionMVFStatements+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		680669A01D68FF1F0059D688 /* MVFStatement+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MVFStatement+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		680669A11D68FF1F0059D688 /* MVFStatement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVFStatement.swift; sourceTree = "<group>"; };
+		680669A21D68FF1F0059D688 /* MVFStatements+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MVFStatements+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		680669A31D68FF1F0059D688 /* MVFStatements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVFStatements.swift; sourceTree = "<group>"; };
+		680669AA1D69000D0059D688 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		680669AB1D69000D0059D688 /* Posts+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Posts+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		680669AC1D69000D0059D688 /* CollectionPosts+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionPosts+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		680669B11D69004B0059D688 /* RFQuestions+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RFQuestions+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		680669B21D69004B0059D688 /* RFQuestion+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RFQuestion+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		680669B31D69004B0059D688 /* CollectionRFQuestions+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionRFQuestions+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		680669B71D6900AB0059D688 /* Trip+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		680669B81D6900AB0059D688 /* TripHistory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TripHistory+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		682DB0E71D54D26C0050547B /* UIViewController+AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+AppDelegate.swift"; path = "SupportingFiles/Extensions/UIViewController+AppDelegate.swift"; sourceTree = "<group>"; };
 		682DB0EE1D568FCC0050547B /* StringInternalExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringInternalExtensions.swift; sourceTree = "<group>"; };
 		682DB0F01D56901E0050547B /* NSDateInternalExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateInternalExtensions.swift; sourceTree = "<group>"; };
@@ -407,14 +434,10 @@
 		685569BA1D2C188C006C9F7A /* MVFStatementsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVFStatementsEndpoint.swift; sourceTree = "<group>"; };
 		687F05DA1D6618C0004038F4 /* Achievement+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Achievement+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		687F05DB1D6618C0004038F4 /* Achievement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
-		687F05DD1D6618C0004038F4 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		687F05DE1D6618C0004038F4 /* ItemExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemExtension.swift; sourceTree = "<group>"; };
-		687F05E01D6618C1004038F4 /* Medicine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
-		687F05E11D6618C1004038F4 /* MedicineExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineExtension.swift; sourceTree = "<group>"; };
+		687F05DE1D6618C0004038F4 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		687F05E11D6618C1004038F4 /* Medicine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
 		687F05E31D6618C1004038F4 /* Registry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registry.swift; sourceTree = "<group>"; };
 		687F05E61D6618C1004038F4 /* CollectionMVFStatements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionMVFStatements.swift; sourceTree = "<group>"; };
-		687F05E71D6618C1004038F4 /* MVFQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVFQuestion.swift; sourceTree = "<group>"; };
-		687F05E81D6618C1004038F4 /* MVFQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVFQuestions.swift; sourceTree = "<group>"; };
 		687F05EA1D6618C1004038F4 /* CollectionPosts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionPosts.swift; sourceTree = "<group>"; };
 		687F05EB1D6618C1004038F4 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		687F05EC1D6618C1004038F4 /* Posts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
@@ -422,7 +445,6 @@
 		687F05EF1D6618C1004038F4 /* RFQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFQuestion.swift; sourceTree = "<group>"; };
 		687F05F01D6618C1004038F4 /* RFQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFQuestions.swift; sourceTree = "<group>"; };
 		687F05F21D6618C1004038F4 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
-		687F05F31D6618C1004038F4 /* TripExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripExtension.swift; sourceTree = "<group>"; };
 		687F05F41D6618C1004038F4 /* TripHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripHistory.swift; sourceTree = "<group>"; };
 		687F05F61D6618C1004038F4 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		687F05F71D6618C1004038F4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -678,7 +700,6 @@
 				208FE0871B42F1A400C5F447 /* TestMedicineManager.swift */,
 				200EE49F1B1343A60087FB24 /* TestUserSettings.swift */,
 				20EA07061B23258900D6840E /* TestNSDateExtensions.swift */,
-				20EA07081B237D4900D6840E /* TestMedicineRegistries.swift */,
 				20EA070A1B2394EB00D6840E /* TestDailyMedicineStatistics.swift */,
 				20C20FEE1B39D828007A7414 /* TestWeeklyMedicineStatistics.swift */,
 				20EA070C1B23AD9F00D6840E /* TestNotifications.swift */,
@@ -695,6 +716,7 @@
 		200EE49D1B1343A60087FB24 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				20EA07081B237D4900D6840E /* TestMedicineRegistries.swift */,
 				200EE49E1B1343A60087FB24 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -924,8 +946,8 @@
 		687F05DC1D6618C0004038F4 /* Item */ = {
 			isa = PBXGroup;
 			children = (
-				687F05DD1D6618C0004038F4 /* Item.swift */,
-				687F05DE1D6618C0004038F4 /* ItemExtension.swift */,
+				687F05DE1D6618C0004038F4 /* Item.swift */,
+				680669851D68FD340059D688 /* Item+CoreDataProperties.swift */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -933,8 +955,8 @@
 		687F05DF1D6618C1004038F4 /* Medicine */ = {
 			isa = PBXGroup;
 			children = (
-				687F05E01D6618C1004038F4 /* Medicine.swift */,
-				687F05E11D6618C1004038F4 /* MedicineExtension.swift */,
+				687F05E11D6618C1004038F4 /* Medicine.swift */,
+				680669871D68FD760059D688 /* Medicine+CoreDataProperties.swift */,
 			);
 			path = Medicine;
 			sourceTree = "<group>";
@@ -943,6 +965,7 @@
 			isa = PBXGroup;
 			children = (
 				687F05E31D6618C1004038F4 /* Registry.swift */,
+				680669891D68FDE40059D688 /* Registry+CoreDataProperties.swift */,
 			);
 			path = Registry;
 			sourceTree = "<group>";
@@ -961,8 +984,11 @@
 			isa = PBXGroup;
 			children = (
 				687F05E61D6618C1004038F4 /* CollectionMVFStatements.swift */,
-				687F05E71D6618C1004038F4 /* MVFQuestion.swift */,
-				687F05E81D6618C1004038F4 /* MVFQuestions.swift */,
+				6806699F1D68FF1F0059D688 /* CollectionMVFStatements+CoreDataProperties.swift */,
+				680669A11D68FF1F0059D688 /* MVFStatement.swift */,
+				680669A01D68FF1F0059D688 /* MVFStatement+CoreDataProperties.swift */,
+				680669A31D68FF1F0059D688 /* MVFStatements.swift */,
+				680669A21D68FF1F0059D688 /* MVFStatements+CoreDataProperties.swift */,
 			);
 			path = "Myth vs. Fact";
 			sourceTree = "<group>";
@@ -971,8 +997,11 @@
 			isa = PBXGroup;
 			children = (
 				687F05EA1D6618C1004038F4 /* CollectionPosts.swift */,
+				680669AC1D69000D0059D688 /* CollectionPosts+CoreDataProperties.swift */,
 				687F05EB1D6618C1004038F4 /* Post.swift */,
+				680669AA1D69000D0059D688 /* Post+CoreDataProperties.swift */,
 				687F05EC1D6618C1004038F4 /* Posts.swift */,
+				680669AB1D69000D0059D688 /* Posts+CoreDataProperties.swift */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -981,8 +1010,11 @@
 			isa = PBXGroup;
 			children = (
 				687F05EE1D6618C1004038F4 /* CollectionRFQuestions.swift */,
+				680669B31D69004B0059D688 /* CollectionRFQuestions+CoreDataProperties.swift */,
 				687F05EF1D6618C1004038F4 /* RFQuestion.swift */,
+				680669B21D69004B0059D688 /* RFQuestion+CoreDataProperties.swift */,
 				687F05F01D6618C1004038F4 /* RFQuestions.swift */,
+				680669B11D69004B0059D688 /* RFQuestions+CoreDataProperties.swift */,
 			);
 			path = "Rapid Fire";
 			sourceTree = "<group>";
@@ -991,8 +1023,9 @@
 			isa = PBXGroup;
 			children = (
 				687F05F21D6618C1004038F4 /* Trip.swift */,
-				687F05F31D6618C1004038F4 /* TripExtension.swift */,
+				680669B71D6900AB0059D688 /* Trip+CoreDataProperties.swift */,
 				687F05F41D6618C1004038F4 /* TripHistory.swift */,
+				680669B81D6900AB0059D688 /* TripHistory+CoreDataProperties.swift */,
 			);
 			path = Trip;
 			sourceTree = "<group>";
@@ -1558,12 +1591,14 @@
 				687F05FF1D6618C1004038F4 /* CollectionMVFStatements.swift in Sources */,
 				684D7C061D4BA41B00BB6B64 /* DailyStatsCells.swift in Sources */,
 				687F06191D6619F2004038F4 /* SetupScreenUserProfilePage.swift in Sources */,
+				680669A41D68FF1F0059D688 /* CollectionMVFStatements+CoreDataProperties.swift in Sources */,
 				68C456EB1D5E283000A8F566 /* AchievementTableViewCell.swift in Sources */,
 				68C456D21D5E27F900A8F566 /* GameController.swift in Sources */,
-				687F06001D6618C1004038F4 /* MVFQuestion.swift in Sources */,
 				200C72A21B40368600998100 /* MedicineStats.swift in Sources */,
+				680669B41D69004B0059D688 /* RFQuestions+CoreDataProperties.swift in Sources */,
 				20246D151B4F1BA000384759 /* CoreDataManager.swift in Sources */,
 				311E38E61CA0DC340051B14E /* SocialMediaController.swift in Sources */,
+				680669AE1D69000D0059D688 /* Posts+CoreDataProperties.swift in Sources */,
 				684D7C441D4BA75C00BB6B64 /* RapidFireAchievementManager.swift in Sources */,
 				200C72AE1B40368600998100 /* TripsManager.swift in Sources */,
 				684D7C071D4BA41B00BB6B64 /* DailyStatsTableViewController.swift in Sources */,
@@ -1574,6 +1609,7 @@
 				20FC56FB1B72CA1200D51801 /* UITabBarController.swift in Sources */,
 				200C727C1B40368600998100 /* Endpoint.swift in Sources */,
 				200C72F21B40368600998100 /* NSManagedObject.swift in Sources */,
+				6806698A1D68FDE40059D688 /* Registry+CoreDataProperties.swift in Sources */,
 				684D7C651D4BA80700BB6B64 /* Constants.swift in Sources */,
 				68E62F801D1C2C6B00743214 /* MedicineStockManager.swift in Sources */,
 				200C72A81B40368600998100 /* SyncManager.swift in Sources */,
@@ -1582,12 +1618,15 @@
 				684D7C421D4BA75C00BB6B64 /* AchievementManager.swift in Sources */,
 				684D7C0B1D4BA41B00BB6B64 /* CalendarSettings.swift in Sources */,
 				687F06241D661AB1004038F4 /* LocationTextField.swift in Sources */,
+				680669B51D69004B0059D688 /* RFQuestion+CoreDataProperties.swift in Sources */,
 				684D7C451D4BA75C00BB6B64 /* GeneralAchievementsManager.swift in Sources */,
 				684D7C461D4BA75C00BB6B64 /* MedicineAchievementManager.swift in Sources */,
 				682DB0EF1D568FCC0050547B /* StringInternalExtensions.swift in Sources */,
 				200A18CF1B64F51300EC2A65 /* MedicinePickerViewTrip.swift in Sources */,
+				680669A51D68FF1F0059D688 /* MVFStatement+CoreDataProperties.swift in Sources */,
 				684D7C661D4BA80700BB6B64 /* Global.swift in Sources */,
 				68C456DA1D5E27F900A8F566 /* RapidFireViewController.swift in Sources */,
+				680669AD1D69000D0059D688 /* Post+CoreDataProperties.swift in Sources */,
 				200C72981B40368600998100 /* EndpointType.swift in Sources */,
 				20EF68501B72DF1600286A0F /* UIButton.swift in Sources */,
 				684D7C0D1D4BA41B00BB6B64 /* MonthyViewController.swift in Sources */,
@@ -1595,17 +1634,19 @@
 				68E62F7A1D19BA0500743214 /* StringExtensions.swift in Sources */,
 				682DB0F11D56901E0050547B /* NSDateInternalExtensions.swift in Sources */,
 				200C72F01B40368600998100 /* NSDate+Comparable.swift in Sources */,
-				687F05FC1D6618C1004038F4 /* Medicine.swift in Sources */,
 				68E62F781D191BB800743214 /* PillStatusNotificationsManager.swift in Sources */,
-				687F05FD1D6618C1004038F4 /* MedicineExtension.swift in Sources */,
+				680669B91D6900AB0059D688 /* Trip+CoreDataProperties.swift in Sources */,
+				687F05FD1D6618C1004038F4 /* Medicine.swift in Sources */,
+				680669BA1D6900AB0059D688 /* TripHistory+CoreDataProperties.swift in Sources */,
 				311E38EE1CA0DC540051B14E /* Stat+Extensions.swift in Sources */,
 				200C72EA1B40368600998100 /* CoreDataHelper.swift in Sources */,
 				68E62F7C1D1AC1B100743214 /* WidgetSettingsManager.swift in Sources */,
 				68C456D61D5E27F900A8F566 /* MythVsFactGame.swift in Sources */,
-				687F05FB1D6618C1004038F4 /* ItemExtension.swift in Sources */,
+				687F05FB1D6618C1004038F4 /* Item.swift in Sources */,
 				68BEC32A1D270C9900FCFAF5 /* CollectionRFQuestionsEndpoint.swift in Sources */,
 				68C456D81D5E27F900A8F566 /* RapidFireController.swift in Sources */,
 				687F06081D6618C1004038F4 /* Trip.swift in Sources */,
+				680669881D68FD760059D688 /* Medicine+CoreDataProperties.swift in Sources */,
 				68C456D01D5E27F900A8F566 /* GameRulesViewController.swift in Sources */,
 				68C456D71D5E27F900A8F566 /* MythVsFactViewController.swift in Sources */,
 				687F06231D661AB1004038F4 /* GenderTextField.swift in Sources */,
@@ -1626,11 +1667,11 @@
 				200A18E31B64F61F00EC2A65 /* ListItemsViewController.swift in Sources */,
 				68C456D31D5E27F900A8F566 /* GameViewController.swift in Sources */,
 				202E18431B5AFFB3007D5194 /* NSNotificationEvents.swift in Sources */,
+				680669A71D68FF1F0059D688 /* MVFStatements+CoreDataProperties.swift in Sources */,
 				20FC56C11B729F8B00D51801 /* PeaceCorpsInfo.swift in Sources */,
 				687F05FE1D6618C1004038F4 /* Registry.swift in Sources */,
 				687F06031D6618C1004038F4 /* Post.swift in Sources */,
 				684D7C0C1D4BA41B00BB6B64 /* MonthAdherenceCell.swift in Sources */,
-				687F05FA1D6618C1004038F4 /* Item.swift in Sources */,
 				203F0B0F1B45B3B900826E06 /* TabbedBarController.swift in Sources */,
 				684D7C081D4BA41B00BB6B64 /* DidTakePillsViewController.swift in Sources */,
 				687F06021D6618C1004038F4 /* CollectionPosts.swift in Sources */,
@@ -1640,12 +1681,15 @@
 				E4C20AF51C8C4BD000B686F4 /* WidgetHandler.swift in Sources */,
 				684D7C2A1D4BA50A00BB6B64 /* InfoHubViewController.swift in Sources */,
 				200A18CD1B64F50500EC2A65 /* MedicinePickerView.swift in Sources */,
+				680669B61D69004B0059D688 /* CollectionRFQuestions+CoreDataProperties.swift in Sources */,
 				200C72F41B40368600998100 /* NSSet.swift in Sources */,
 				687F05F91D6618C1004038F4 /* Achievement.swift in Sources */,
 				20FC56FD1B72CA2800D51801 /* Globals.swift in Sources */,
 				20FC56BD1B71951300D51801 /* PresentsModalityDelegate.swift in Sources */,
 				68C456D91D5E27F900A8F566 /* RapidFireGame.swift in Sources */,
 				687F06181D6619F2004038F4 /* SetupScreenPillPage.swift in Sources */,
+				680669A61D68FF1F0059D688 /* MVFStatement.swift in Sources */,
+				680669A81D68FF1F0059D688 /* MVFStatements.swift in Sources */,
 				200A18DD1B64F5F300EC2A65 /* PlanTripViewController.swift in Sources */,
 				684D7C091D4BA41B00BB6B64 /* PagesManagerViewController.swift in Sources */,
 				20FC56F91B72C9FB00D51801 /* UIView.swift in Sources */,
@@ -1655,7 +1699,6 @@
 				684D7BD71D4B7DAD00BB6B64 /* ToastHelper.swift in Sources */,
 				311E38EA1CA0DC400051B14E /* SocialShareable.swift in Sources */,
 				68C456D41D5E27F900A8F566 /* InsetLabel.swift in Sources */,
-				687F06091D6618C1004038F4 /* TripExtension.swift in Sources */,
 				684D7C2D1D4BA50A00BB6B64 /* InfoHubPageManagerViewController.swift in Sources */,
 				687F061F1D661A1D004038F4 /* UserProfilePillTableViewCell.swift in Sources */,
 				200C72F81B40368600998100 /* Logger.swift in Sources */,
@@ -1667,7 +1710,6 @@
 				687F060B1D6618C1004038F4 /* User+CoreDataProperties.swift in Sources */,
 				209F60B81B6E2AB300EDA461 /* MedicineFrontEndExtension.swift in Sources */,
 				311E38EC1CA0DC510051B14E /* DailyStatsTableViewController+Extensions.swift in Sources */,
-				687F06011D6618C1004038F4 /* MVFQuestions.swift in Sources */,
 				20FC56F51B72C9CF00D51801 /* UIColor.swift in Sources */,
 				200C72AA1B40368600998100 /* ItemsManager.swift in Sources */,
 				200C729E1B40368600998100 /* MedicineManager.swift in Sources */,
@@ -1675,7 +1717,9 @@
 				68C456D11D5E27F900A8F566 /* Game.swift in Sources */,
 				687F06071D6618C1004038F4 /* RFQuestions.swift in Sources */,
 				200C72A61B40368600998100 /* NotificationManager.swift in Sources */,
+				680669AF1D69000D0059D688 /* CollectionPosts+CoreDataProperties.swift in Sources */,
 				2027E94F1BADC71D00DA55A4 /* Array.swift in Sources */,
+				680669861D68FD340059D688 /* Item+CoreDataProperties.swift in Sources */,
 				200C72EC1B40368600998100 /* CoreDataStore.swift in Sources */,
 				68C456EA1D5E283000A8F566 /* AchievementsViewController.swift in Sources */,
 				685569B91D2C186C006C9F7A /* CollectionMVFStatementsEndpoint.swift in Sources */,

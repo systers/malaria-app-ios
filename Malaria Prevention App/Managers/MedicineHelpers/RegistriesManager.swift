@@ -140,18 +140,7 @@ class RegistriesManager: CoreDataContextManager {
     -> (registryAdded: Bool, otherEntriesFound: Bool) {
       if date > NSDate() {
         Logger.Error("Cannot change entries in the future")
-        return (false, true)
-      }
-      
-      // Check if there is already a registry.
-      var registry : Registry? = findRegistry(date)
-      
-      defer {
-        CoreDataHelper.sharedInstance.saveContext(context)
-        
-        if let registry = registry {
-          NSNotificationEvents.dateUpdated(registry)
-        }
+        return (false, false)
       }
       
       if let conflitingTookMedicineEntry = self.tookMedicine(date) {
@@ -177,6 +166,8 @@ class RegistriesManager: CoreDataContextManager {
           var newRegistries: [Registry] = medicine.registries.convertToArray()
           newRegistries.append(registry)
           medicine.registries = NSSet(array: newRegistries)
+          CoreDataHelper.sharedInstance.saveContext(context)
+          NSNotificationEvents.dataUpdated(registry)
           
           return (true, true)
         }
@@ -186,17 +177,23 @@ class RegistriesManager: CoreDataContextManager {
         return (false, false)
       }
       
+      // Check if there is already a registry.
+      var registry: Registry? = findRegistry(date)
+      
       if let r = registry {
         if r.tookMedicine && tookMedicine || !r.tookMedicine && !tookMedicine {
           Logger.Warn("Found equivalent entry")
           return (false, true)
         } else if !modifyEntry {
           Logger.Info("Can't modify entry. Aborting")
-          return (false, false)
+          return (false, true)
         }
         
         Logger.Info("Found entry same date. Modifying entry")
         r.tookMedicine = tookMedicine
+        
+        CoreDataHelper.sharedInstance.saveContext(context)
+        NSNotificationEvents.dataUpdated(registry)
         
         return (true, true)
       } else {
@@ -210,6 +207,8 @@ class RegistriesManager: CoreDataContextManager {
         medicine.registries = NSSet(array: newRegistries)
       }
       
+      CoreDataHelper.sharedInstance.saveContext(context)
+      NSNotificationEvents.dataUpdated(registry)
       return (true, false)
   }
   
@@ -317,9 +316,9 @@ class RegistriesManager: CoreDataContextManager {
       entry.deleteFromContext(context)
       CoreDataHelper.sharedInstance.saveContext(context)
       
-      NSNotificationEvents.dateUpdated(nil)
+      NSNotificationEvents.dataUpdated(nil)
     } else {
-      Logger.Error("Removing entry: entry not found!!!")
+      Logger.Error("Removing entry: entry not found!")
     }
   }
 }

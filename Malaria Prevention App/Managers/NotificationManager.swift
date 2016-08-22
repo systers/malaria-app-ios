@@ -20,7 +20,8 @@ class NotificationManager: CoreDataContextManager {
   
   private var scheduledNotifications = [UILocalNotification]()
   
-  /** Schedule a notification at the `fireTime` given by argument.
+  /**
+   Schedule a notification at the `fireTime` given by argument.
    
    All previous notifications will be unsheduled.
    
@@ -28,6 +29,11 @@ class NotificationManager: CoreDataContextManager {
    */
   
   func scheduleNotification(fireTime: NSDate) {
+    
+    if fireTime < NSDate() {
+      return
+    }
+    
     Logger.Info("Sheduling \(category) to " + fireTime.formatWith("dd-MMMM-yyyy hh:mm"))
     let notification: UILocalNotification = createNotification(fireTime)
     UIApplication.sharedApplication().scheduleLocalNotification(notification)

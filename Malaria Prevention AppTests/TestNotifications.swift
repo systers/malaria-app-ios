@@ -53,12 +53,27 @@ class TestNotifications: XCTestCase {
     mdDailyNotifManager.reshedule()
     XCTAssertTrue(mdDaily.notificationTime!.sameDayAs(d1 + 1.day))
     
-    // Since mdWeekly is not currentPill, this should return nil.
-    XCTAssertNil(mdWeekly.notificationTime)
+    /* 
+     medicine.notificationTime == nil
+     
+     Is the same thing as:
+     
+     medicine.internalNotificationTime == 0.0
+     
+     Due to the fact that we couldn't use optional NSTimeInterval, we had to
+     somehow save a 'nil' date in Core Data. A 'nil' date was replaced with saving
+     `NSDate().timeSinceReferenceDate` in the internalNotificationTime setter and
+     therefore, the two equations above are equal.
+     */
     
-    // cetCurrentPill, current trigger time is not defined yet.
+    // Since mdWeekly is not currentPill, the notification should be nil and we
+    // are using the equivalent equation described above to check it.
+    XCTAssertEqual(mdWeekly.internalNotificationTime, 0.0)
+    
+    // Current trigger time is not defined yet and the
+    // notificationTime should still be nil.
     m.setCurrentPill(weeklyPill.name())
-    XCTAssertNil(mdWeekly.notificationTime)
+    XCTAssertEqual(mdWeekly.internalNotificationTime, 0.0)
     
     // Define currentTime.
     mdWeeklyNotifManager.scheduleNotification(d1)

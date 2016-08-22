@@ -34,7 +34,7 @@ class MedicineStats : CoreDataContextManager {
   
   /**
    Returns the number of pills that the user should have taken between two dates.
-   Uses static func numberNeededPills internally
+   Uses static func numberNeededPills internally.
    
    - parameter date1: (optional) The first date (by default is NSDate.min).
    - parameter date2: (optional) The second date (by default is NSDate.max).
@@ -43,7 +43,8 @@ class MedicineStats : CoreDataContextManager {
    - returns: The numbers of supposed pills to be taken in the interval.
    */
   
-  func numberSupposedPills(date1: NSDate = NSDate.min, date2: NSDate = NSDate.max,
+  func numberSupposedPills(date1: NSDate = NSDate.min,
+                           date2: NSDate = NSDate.max,
                            registries: [Registry]? = nil) -> Int {
     if date1 > date2 {
       return numberSupposedPills(date2, date2: date1, registries: registries)
@@ -54,7 +55,7 @@ class MedicineStats : CoreDataContextManager {
     if date1 == NSDate.min || date2 == NSDate.max {
       if let r = registries {
         if let oldest = r.first,
-          recent = r.last{
+          recent = r.last {
           d1 = d1 == NSDate.min ? oldest.date : d1
           d2 = d2 == NSDate.max ? recent.date : d2
         } else {
@@ -107,7 +108,7 @@ class MedicineStats : CoreDataContextManager {
                      registries: [Registry]? = nil) -> Float {
     let supposedPills = numberSupposedPills(date1, date2: date2, registries: registries)
     
-    if(supposedPills == 0) {
+    if supposedPills == 0 {
       return 1.0
     }
     

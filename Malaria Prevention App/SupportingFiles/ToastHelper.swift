@@ -11,7 +11,7 @@ class ToastHelper {
    - parameter duration: The time duration of the toast.
    - parameter title: The title of the toast.
    - parameter image: An icon for the toast.
-   - parameter style: Defined a ToastStyle (font etc).
+   - parameter style: Defined a ToastStyle. Default, text alignment on the middle.
    - parameter completion: Callback block when toast finishes.
    - parameter viewController: The View Controller that will present the Toast.
    (application's `RootViewController` by default)
@@ -27,6 +27,7 @@ class ToastHelper {
                         completion: ToastCompletion? = nil) {
     
     var vc = viewController
+    var defaultStyle = style
     
     if vc == nil {
       vc = UIApplication.sharedApplication().keyWindow?.rootViewController
@@ -37,12 +38,17 @@ class ToastHelper {
         vc = vc?.presentedViewController
     }
     
+    if defaultStyle == nil {
+      defaultStyle = ToastStyle()
+      defaultStyle!.messageAlignment = .Center
+    }
+    
     vc!.view.makeToast(message,
                        duration: duration,
                        position: position,
                        title: title,
                        image: image,
-                       style: style,
+                       style: defaultStyle   ,
                        completion: completion)
   }
 }

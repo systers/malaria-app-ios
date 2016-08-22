@@ -1,11 +1,32 @@
-import CoreData
+import Foundation
 
-/// Trip Item.
+/// Trip item.
 
 class Item: NSManagedObject {
   
-  @NSManaged var check: Bool
-  @NSManaged var name: String
-  @NSManaged var quantity: Int64
-  @NSManaged var associated_with: Trip
+  /**
+   Increase number of items. Never greater than `Int64.max`
+   
+   - parameter number: The quantity.
+   */
+  
+  func add(number: Int64) {
+    self.quantity = (self.quantity + number) % Int64.max
+  }
+  
+  /**
+   Decrease number of items.
+   
+   - parameter number: The quantity always equal or greated than 0.
+   */
+  
+  func remove(number: Int64) {
+    self.quantity = max(self.quantity - number, 0)
+  }
+  
+  /// Toggle check item.
+  
+  func toogle() {
+    self.check = !self.check
+  }
 }

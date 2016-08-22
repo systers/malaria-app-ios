@@ -31,7 +31,7 @@ class UserProfilePillTableViewCell: UITableViewCell {
   
   func updateCell(delegate: SaveRemainingPillsProtocol,
                                 name: String,
-                                remainingMedicine: Int64,
+                                remainingMedicine: Int,
                                 indexPath: NSIndexPath) {
     pillName.text = name
     quantityTextField.text = String(remainingMedicine)
