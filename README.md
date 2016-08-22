@@ -48,7 +48,7 @@ sudo gem install jazzy
 
 2. Generate documentation:
 ```sh
-
+jazzy -c --skip-undocumented —-min-acl internal -m Malaria_Prevention_App
 ```
 
 3. Open docs/index.html
