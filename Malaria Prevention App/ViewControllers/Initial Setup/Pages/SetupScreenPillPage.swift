@@ -74,7 +74,7 @@ class SetupScreenPillPage: SetupScreenPage {
         self.numberOfPillsField.text = String(medicine.remainingMedicine)
       } else {
         self.reminderTimeField.text = NSDate().formatWith(self.reminderTimeFormat)
-
+        
         self.medicineNameField.text = medicineName
         self.numberOfPillsField.text = self.DefaultMedicineStockString
       }
@@ -114,7 +114,9 @@ extension SetupScreenPillPage {
     let remainingPills = Int(numberOfPillsField.text!)
     
     if remainingPills == nil || remainingPills! == 0 {
-      ToastHelper.makeToast(OutOfPills.title, duration: 4)
+      ToastHelper.makeToast(
+        NSLocalizedString("You need to refill your pill stock from the User Profile.",
+          comment: "Appears when the user has zero pills on himself."), duration: 4)
     }
   }
   
@@ -197,7 +199,7 @@ extension SetupScreenPillPage {
     medicineManager.registerNewMedicine(med.name(),
                                         interval: med.interval())
     medicineManager.setCurrentPill(med.name())
-        
+    
     let currentPill = medicineManager.getCurrentMedicine()!
     currentPill.currentStock = remainingPills
     currentPill.lastStockRefill = NSDate()
@@ -238,18 +240,16 @@ extension SetupScreenPillPage {
   // Existing medicine configured.
   
   private var ReplaceMedicineAlertText: AlertText {
-    return ("This will change the current settings", "Your previous statistics won't be lost")
+    return (NSLocalizedString("This will change the current settings",
+      comment: "Users just pressed that he will want to change the medicine.")
+      , NSLocalizedString("Your previous statistics won't be lost",
+        comment: ""))
   }
   
   // Type of alerts options.
   
   private var AlertOptions: (ok: String, cancel: String) {
-    return ("Ok", "Cancel")
-  }
-  
-  // The message presented when running out of pills.
-  
-  private var OutOfPills: AlertText {
-    return ("You need to refill your pill stock from the User Profile.", "")
+    return (NSLocalizedString("Ok", comment: "Users selects OK to continue."),
+            NSLocalizedString("Cancel", comment: "Users selects Cancel to continue."))
   }
 }

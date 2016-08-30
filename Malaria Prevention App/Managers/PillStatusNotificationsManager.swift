@@ -19,10 +19,10 @@ class PillStatusNotificationsManager: NotificationManager {
     func toString() -> String {
       
       switch self {
-      case .fourDays: return "4 days"
-      case .oneWeek: return "1 week"
-      case .twoWeeks: return "2 weeks"
-      case .fourWeeks: return "4 weeks"
+      case .fourDays: return "4 " + NSLocalizedString("days", comment: "")
+      case .oneWeek: return "1 " + NSLocalizedString("week", comment: "")
+      case .twoWeeks: return "2 " + NSLocalizedString("weeks", comment: "")
+      case .fourWeeks: return "4 " + NSLocalizedString("weeks", comment: "")
       }
     }
     
@@ -35,11 +35,11 @@ class PillStatusNotificationsManager: NotificationManager {
   
   /// Notification alert body.
   
-  override var alertBody: String { return "You ran out of pills!"}
+  override var alertBody: String { return NSLocalizedString("You ran out of pills!", comment: "") }
   
   /// Notification alert action.
   
-  override var alertAction: String { return "Ok" }
+  override var alertAction: String { return NSLocalizedString("Ok", comment: "") }
   
   /**
    A method that checks if the user has ran out of pills for their selected `ReminderInterval`.

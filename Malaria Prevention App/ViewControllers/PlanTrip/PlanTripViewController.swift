@@ -156,7 +156,8 @@ extension PlanTripViewController {
   @IBAction func generateTrip(sender: AnyObject) {
     if location.text?.characters.count == 0 {
       // Show alert message.
-      ToastHelper.makeToast("Location text can't be empty.")
+      ToastHelper.makeToast(NSLocalizedString("Location text can't be empty.",
+        comment: "Appears when user forgets to write down his trip location"))
       return
     }
     
@@ -294,7 +295,14 @@ extension PlanTripViewController {
   
   private func updateItemsTextField(items: [(String, Bool)]) {
     self.items = items
-    packingList.text = items.count == 0 ? "Only medicine" : "\(items.count + 1) items"
+    
+    let firstLocalizedString =
+      NSLocalizedString("Only medicine",
+                        comment: "Means that the user is only taking medicine with himself on a trip")
+    let secondLocalizedString = NSString.localizedStringWithFormat(NSLocalizedString("%i items",
+      comment: "The number of items taken in the trip."), items.count + 1) as String
+    
+    packingList.text = items.count == 0 ? firstLocalizedString : secondLocalizedString
   }
   
   private func getStoredPlanTripItems() -> [(String, Bool)] {
@@ -316,31 +324,43 @@ extension PlanTripViewController {
   
   // Update trip.
   private var UpdateTripAlertText: AlertText {
-    return ("Update Trip", "All data will be lost")
+    return (
+      NSLocalizedString("Update Trip",
+        comment: "Alert Option that lets the user update the trip options."),
+      NSLocalizedString("All data will be lost",
+        comment: "Tells the user that the trip data will be lost"))
   }
   
   // Succesfully update trip.
   private var SuccessAlertText: AlertText {
-    return ("Success", "")
+    return (NSLocalizedString("Success", comment: ""), "")
   }
   
   // Empty history.
   private var EmptyHistoryAlertText: AlertText {
-    return ("History is empty", "")
+    return (NSLocalizedString("History is empty", comment: "Shows that the trip history is empty"), "")
   }
   
   // Departure day error.
   private var InvalidDepartureAlertText: AlertText {
-    return ("Error", "Departure day must be before arrival")
+    return (
+      NSLocalizedString("Error",
+        comment: "There was an error when creating the trip."),
+      NSLocalizedString("Departure day must be before arrival", comment: ""))
   }
   
   // Arrival day error.
   private var InvalidArrivalAlertText: AlertText {
-    return ("Error", "Arrival day must be after departure")
+    return (
+      NSLocalizedString("Error",
+        comment: "There was an error when creating the trip."),
+      NSLocalizedString("Arrival day must be after departure",
+        comment: "User selected an arrival date before the departure date."))
   }
   
   // Type of alerts options.
   private var AlertOptions: (ok: String, cancel: String) {
-    return ("Ok", "Cancel")
+    return (NSLocalizedString("Ok", comment: ""),
+            NSLocalizedString("Cancel", comment: ""))
   }
 }

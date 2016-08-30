@@ -54,7 +54,8 @@ class SetupScreenUserProfilePage: SetupScreenPage {
                       phone: phone)
     }
     catch let error as User.UserValidationError {
-      ToastHelper.makeToast(error.rawValue)
+      ToastHelper.makeToast(NSLocalizedString(error.rawValue,
+        comment: "An error when the user writes something invalid in the user profile fields."))
       return
     }
     catch {

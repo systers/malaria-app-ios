@@ -9,6 +9,9 @@ class NSNotificationEvents {
    List of events
    
    - dataUpdated: When medicine is changed or if there was a change in the entries.
+   - RFGameFinished - A Rapid Fire game finished.
+   - MVFGameFinished - A Myth vs. Fact game finished.
+   - tripPlanned - A trip was planned.
    - UIApplicationWillEnterForegroundNotification: When application enters foreground.
    - UIApplicationDidBecomeActiveNotification: When application becomes active.
    - UIApplicationWillResignActiveNotification: When application stops being active.

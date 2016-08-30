@@ -174,6 +174,7 @@
 		68C456EA1D5E283000A8F566 /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456E81D5E283000A8F566 /* AchievementsViewController.swift */; };
 		68C456EB1D5E283000A8F566 /* AchievementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456E91D5E283000A8F566 /* AchievementTableViewCell.swift */; };
 		68C456EF1D5F3DBA00A8F566 /* InitialSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68C456EE1D5F3DBA00A8F566 /* InitialSetup.storyboard */; };
+		68E607EF1D75947400CF06FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68E607F11D75947400CF06FA /* Localizable.strings */; };
 		68E62F781D191BB800743214 /* PillStatusNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F771D191BB800743214 /* PillStatusNotificationsManager.swift */; };
 		68E62F7A1D19BA0500743214 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F791D19BA0500743214 /* StringExtensions.swift */; };
 		68E62F7C1D1AC1B100743214 /* WidgetSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F7B1D1AC1B100743214 /* WidgetSettingsManager.swift */; };
@@ -475,6 +476,8 @@
 		68C456E81D5E283000A8F566 /* AchievementsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
 		68C456E91D5E283000A8F566 /* AchievementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementTableViewCell.swift; sourceTree = "<group>"; };
 		68C456EE1D5F3DBA00A8F566 /* InitialSetup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = InitialSetup.storyboard; path = ../../Base.lproj/InitialSetup.storyboard; sourceTree = "<group>"; };
+		68E607F01D75947400CF06FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		68E607F21D75947900CF06FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		68E62F771D191BB800743214 /* PillStatusNotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillStatusNotificationsManager.swift; sourceTree = "<group>"; };
 		68E62F791D19BA0500743214 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		68E62F7B1D1AC1B100743214 /* WidgetSettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WidgetSettingsManager.swift; path = SupportingFiles/WidgetSettingsManager.swift; sourceTree = "<group>"; };
@@ -1074,8 +1077,8 @@
 		687F061C1D661A1D004038F4 /* User Profile */ = {
 			isa = PBXGroup;
 			children = (
-				687F061D1D661A1D004038F4 /* UserProfilePillTableViewCell.swift */,
 				687F061E1D661A1D004038F4 /* UserProfileViewController.swift */,
+				687F061D1D661A1D004038F4 /* UserProfilePillTableViewCell.swift */,
 			);
 			name = "User Profile";
 			path = "Info Hub and Games/User Profile";
@@ -1084,6 +1087,7 @@
 		68B3D0A11D65ED3A00B0FD5F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				68E607EE1D75933600CF06FA /* Localization */,
 				684D7C791D4BAA0C00BB6B64 /* malaria-ios.entitlements */,
 				200EE4921B1343A50087FB24 /* LaunchScreen.xib */,
 				684D7C5F1D4BA80700BB6B64 /* bridging_header.h */,
@@ -1169,6 +1173,14 @@
 				68C456E91D5E283000A8F566 /* AchievementTableViewCell.swift */,
 			);
 			path = Achievements;
+			sourceTree = "<group>";
+		};
+		68E607EE1D75933600CF06FA /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				68E607F11D75947400CF06FA /* Localizable.strings */,
+			);
+			name = Localization;
 			sourceTree = "<group>";
 		};
 		68E62F761D191B7200743214 /* UserProfileHelpers */ = {
@@ -1446,6 +1458,7 @@
 			files = (
 				200EE4AF1B1349D40087FB24 /* ImagesAssets.xcassets in Resources */,
 				68C456EF1D5F3DBA00A8F566 /* InitialSetup.storyboard in Resources */,
+				68E607EF1D75947400CF06FA /* Localizable.strings in Resources */,
 				200EE48F1B1343A50087FB24 /* Main.storyboard in Resources */,
 				200C73431B40392A00998100 /* ApiExamples in Resources */,
 				200EE4941B1343A50087FB24 /* LaunchScreen.xib in Resources */,
@@ -1799,6 +1812,16 @@
 				200EE4931B1343A50087FB24 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		68E607F11D75947400CF06FA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68E607F01D75947400CF06FA /* en */,
+				68E607F21D75947900CF06FA /* Base */,
+			);
+			name = Localizable.strings;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		E4C20AD81C8B7D6000B686F4 /* MainInterface.storyboard */ = {

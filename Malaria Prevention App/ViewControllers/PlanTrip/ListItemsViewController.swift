@@ -69,9 +69,11 @@ extension ListItemsViewController : UITableViewDataSource, UITableViewDelegate, 
   }
   
   func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-    let deleteButton = UITableViewRowAction(style: .Default, title: "Delete", handler: { (action, indexPath) in
-      self.listItems.removeAtIndex(indexPath.row)
-      tableView.reloadData()
+    let deleteButton = UITableViewRowAction(style: .Default,
+                                            title: NSLocalizedString("Delete", comment: ""),
+                                            handler: { (action, indexPath) in
+                                              self.listItems.removeAtIndex(indexPath.row)
+                                              tableView.reloadData()
     })
     deleteButton.backgroundColor = DeleteButtonColor
     return [deleteButton]
@@ -103,7 +105,7 @@ extension ListItemsViewController : UITableViewDataSource, UITableViewDelegate, 
     cell.name.setTitle(medicine.name(), forState: .Normal)
     
     let neededPills = MedicineStats.numberNeededPills(departure, date2: arrival, interval: self.medicine.interval())
-    cell.quantity.text = "\(neededPills) pills"
+    cell.quantity.text = NSString.localizedStringWithFormat(NSLocalizedString("%i pills", comment: "The number of pills taken in the trip"), neededPills) as String
     
     cell.name.titleLabel?.adjustsFontSizeToFitWidth = true
     return cell.contentView
@@ -166,7 +168,7 @@ extension ListItemsViewController {
       })
     
     alert.addTextFieldWithConfigurationHandler { (textField: UITextField!) -> Void in
-      textField.placeholder = "Name"
+      textField.placeholder = NSLocalizedString("Name", comment: "")
       textField.text = ""
       textField.clearButtonMode = .WhileEditing
     }
@@ -191,7 +193,7 @@ extension ListItemsViewController {
       })
     
     alert.addTextFieldWithConfigurationHandler { (textField: UITextField!) -> Void in
-      textField.placeholder = "Name"
+      textField.placeholder = NSLocalizedString("Name", comment: "")
       textField.text = self.listItems[indexPath.row].0
     }
     alert.addAction(UIAlertAction(title: AlertOptions.cancel, style: .Cancel, handler: nil))
@@ -206,22 +208,27 @@ extension ListItemsViewController {
   
   // Pick medicine.
   private var PickMedicineAlertText: AlertText {
-    return ("What do you want to bring to the trip?", "Pick one medicine")
+    return (
+      NSLocalizedString("What do you want to bring to the trip?", comment: ""),
+      NSLocalizedString("Pick one medicine", comment: "When the user needs to choose between medicines."))
   }
   
   // Change entry.
   private var ModifyEntryAlertText: AlertText {
-    return ("Change item", "")
-  }}
-
-// New entry.
-private var CreateEntryAlertText: AlertText {
-  return ("What do you want to bring to the trip?", "")
-}
-
-// Type of alerts options.
-private var AlertOptions: (done: String, cancel: String) {
-  return ("Done", "Cancel")
+    return (NSLocalizedString("Change item", comment: "Changing an item in the trip."), "")
+  }
+  
+  // New entry.
+  private var CreateEntryAlertText: AlertText {
+    return (NSLocalizedString("What do you want to bring to the trip?", comment: ""), "")
+  }
+  
+  // Type of alerts options.
+  private var AlertOptions: (done: String, cancel: String) {
+    return (
+      NSLocalizedString("Done", comment: ""),
+      NSLocalizedString("Cancel", comment: ""))
+  }
 }
 
 class ItemCell : UITableViewCell {

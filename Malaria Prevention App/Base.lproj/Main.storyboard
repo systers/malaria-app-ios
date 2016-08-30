@@ -1383,13 +1383,6 @@
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZp-tr-xNU" userLabel="Notification Time Input">
-                                        <rect key="frame" x="140" y="174" width="385" height="30"/>
-                                        <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="I take" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8E-ev-9vI">
                                         <rect key="frame" x="10" y="88" width="123" height="26"/>
                                         <constraints>
@@ -1419,6 +1412,13 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="nXx-wQ-F2R"/>
                                         </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZp-tr-xNU" userLabel="Notification Time Input">
+                                        <rect key="frame" x="141" y="174" width="385" height="30"/>
+                                        <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>

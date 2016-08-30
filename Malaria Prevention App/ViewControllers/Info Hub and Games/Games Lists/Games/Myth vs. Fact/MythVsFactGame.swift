@@ -8,15 +8,15 @@ class MythVsFactGame {
   var _maximumScore: Int = 0
   
   init() {
-    let entry1 = MVFGameEntry(statement: "Once you get malaria you will be immune from it for the rest of your life.",
+    let entry1 = MVFGameEntry(statement: NSLocalizedString("Statement 1", comment: ""),
                               correctAnswer: false)
-    let entry2 = MVFGameEntry(statement: "Malaria is a life-threatening disease.",
+    let entry2 = MVFGameEntry(statement: NSLocalizedString("Statement 2", comment: ""),
                               correctAnswer: true)
-    let entry3 = MVFGameEntry(statement: "You don’t have to worry about malaria in the dry season.",
+    let entry3 = MVFGameEntry(statement: NSLocalizedString("Statement 3", comment: ""),
                               correctAnswer: false)
-    let entry4 = MVFGameEntry(statement: "Nearly half of the world's population is at risk of malaria.",
+    let entry4 = MVFGameEntry(statement: NSLocalizedString("Statement 4", comment: ""),
                               correctAnswer: true)
-    let entry5 = MVFGameEntry(statement: "There is a vaccine for malaria.",
+    let entry5 = MVFGameEntry(statement: NSLocalizedString("Statement 5", comment: ""),
                               correctAnswer: false)
     
     entries.appendContentsOf([entry1, entry2, entry3, entry4, entry5])
@@ -36,12 +36,8 @@ extension MythVsFactGame: Game {
     }
   }
   
-  static var name: String { return "Myth vs. Fact" }
-  static var rules: String { return "- Decide whether the statement is correct"
-    + "or false by dragging in its corresponding container.\n\n"
-    + "- Score Achievement Points for every correct answer you give.\n\n"
-    + "- The correct answer will blink after each statement."
-  }
+  static var name: String { return NSLocalizedString("Myth vs. Fact", comment: "The name of the MVF game") }
+  static var rules: String { return NSLocalizedString("MythVsFact Rules", comment: "The rules of the Myth vs. Fact game") }
   
   var numberOfLevels: Int { return entries.count }
 }

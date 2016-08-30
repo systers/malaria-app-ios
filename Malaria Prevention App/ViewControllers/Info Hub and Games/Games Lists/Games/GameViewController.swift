@@ -87,10 +87,12 @@ extension GameViewController: GameDelegate {
 extension GameViewController {
   
   private var BackButtonAlertText: AlertText {
-    return ("Back", "")
+    return (NSLocalizedString("Back",
+      comment: "Makes the user go back to the games list."), "")
   }
   
   private var RestartButtonAlertText: AlertText {
-    return ("Restart", "")
+    return (NSLocalizedString("Restart",
+      comment: "Restarts the game"), "")
   }
 }

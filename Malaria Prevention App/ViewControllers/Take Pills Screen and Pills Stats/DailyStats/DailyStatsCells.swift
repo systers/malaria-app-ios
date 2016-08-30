@@ -1,6 +1,6 @@
 import UIKit
 
-/// DailyStatCell, is generic.
+/// DailyStatCell is generic.
 
 class StateCell: UITableViewCell {
   @IBOutlet weak var statIcon: UIImageView!
@@ -19,8 +19,12 @@ protocol Stat {
 /// Adherence stats.
 
 class Adherence: Stat {
-  var title : String { return "Adherence to medicine" }
-  var image : UIImage { return UIImage(named: "Adherence")! }
+  var title: String {
+    return NSLocalizedString("Adherence to medicine",
+                             comment: "Presented in the Daily Stats View Controller and showing how well the user took his medicine.")
+  }
+  
+  var image: UIImage { return UIImage(named: "Adherence")! }
   var attributeValue : String {
     let numberFormatter = NSNumberFormatter()
     numberFormatter.numberStyle = NSNumberFormatterStyle.PercentStyle
@@ -34,17 +38,25 @@ class Adherence: Stat {
 /// Pill Streakstats.
 
 class PillStreak : Stat {
-  var title : String { return "Doses in a Row" }
-  var image : UIImage { return UIImage(named: "DosesInRow")! }
+  var title: String {
+    return NSLocalizedString("Doses in a Row",
+                             comment: "Presented in the Daily Stats View Controller and showing how well the user took his medicine.")
+  }
+  
+  var image: UIImage { return UIImage(named: "DosesInRow")! }
   var attributeValue : String { return "\(CachedStatistics.sharedInstance.todaysPillStreak)"}
 }
 
 /// When the user last taken his medicine stats.
 
 class MedicineLastTaken : Stat {
-  var title : String { return "Medicine Last Take" }
-  var image : UIImage { return UIImage(named: "MedicineLastTaken")! }
-  var attributeValue : String {
+  var title: String {
+    return NSLocalizedString("Medicine Last Take",
+                             comment: "Presented in the Daily Stats View Controller and showing how well the user took his medicine.")
+  }
+  
+  var image: UIImage { return UIImage(named: "MedicineLastTaken")! }
+  var attributeValue: String {
     if let last = CachedStatistics.sharedInstance.lastMedicine {
       return last.formatWith("M/d")
     }

@@ -80,10 +80,12 @@ class MedicinePickerView : UIPickerView {
    */
   
   private func generateMedicineString(medicine: Medicine.Pill) -> String {
-    return medicine.name() + " (" + (medicine.interval() == 7 ? "Weekly" : "Daily") + ")"
+    return medicine.name() + " (" + (medicine.interval() == 7
+      ? NSLocalizedString("Weekly", comment: "")
+      : NSLocalizedString("Daily", comment: "")) + ")"
   }
   
-  required  init?(coder aDecoder: NSCoder) {
+  required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
   }
 }

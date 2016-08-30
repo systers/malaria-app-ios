@@ -5,10 +5,12 @@ import Foundation
 class RapidFireAchievementManager: NSObject, SpecializedAchievementManager {
   static let sharedInstance = RapidFireAchievementManager()
   
-  static let FlawlessGame = "Flawless game"
+  static let FlawlessGame = NSLocalizedString("Flawless game",
+                                              comment: "The achievement name.")
 
   private let FlawlessGameDescription =
-  "Finish a Rapid Fire game without picking any wrong answer."
+  NSLocalizedString("Finish a Rapid Fire game without picking any wrong answer.",
+                    comment: "The achievement description.")
   
   private var game: RapidFireGame?
   private let achievementManager = AchievementManager.sharedInstance
