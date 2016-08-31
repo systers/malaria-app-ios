@@ -101,6 +101,9 @@ class UserProfileViewController: UIViewController {
     locationField.addTarget(self,
                             action: #selector(locationAutocompleteCallback),
                             forControlEvents: UIControlEvents.EditingDidEnd)
+    
+    remindMeWeeksButton.titleLabel!.adjustsFontSizeToFitWidth = true;
+    remindMeWeeksButton.titleLabel!.lineBreakMode = .ByClipping;
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -136,12 +139,15 @@ class UserProfileViewController: UIViewController {
     
     tableView.reloadData()
     
-    remainingLabel.text = "You have \(medicineStock!) \(timeMeasuringUnit!) of \(currentMedicine!.name) left."
+    remainingLabel.text = String.localizedStringWithFormat(
+      NSLocalizedString("You have %d %@ of %@ left.",
+        comment: "Shows the number of pills left."),
+      medicineStock!, timeMeasuringUnit!, currentMedicine!.name)
     
     // Check if we need to refresh notification
     let remainingPillsBasedOnTheirInterval = medicineStock! * currentMedicine!.interval
     
-    let shouldPresentNotification: Bool = psnm!.shouldPresentNotification(remainingPillsBasedOnTheirInterval, reminderValue: reminderValue.rawValue)
+    let shouldPresentNotification = psnm!.shouldPresentNotification(remainingPillsBasedOnTheirInterval, reminderValue: reminderValue.rawValue)
     
     self.remainingLabel.textColor = shouldPresentNotification ? UIColor.redColor() : Constants.DefaultBrownTint
     
@@ -169,9 +175,13 @@ class UserProfileViewController: UIViewController {
     medicineStock = Int(currentMedicine!.remainingMedicine)
     
     if medicineStock == 1 {
-      timeMeasuringUnit = (currentMedicine!.interval == 7) ? "week" : "day"
+      timeMeasuringUnit = (currentMedicine!.interval == 7)
+        ? NSLocalizedString("week", comment: "")
+        : NSLocalizedString("day", comment: "")
     } else {
-      timeMeasuringUnit = (currentMedicine!.interval == 7) ? "weeks" : "days"
+      timeMeasuringUnit = (currentMedicine!.interval == 7)
+        ? NSLocalizedString("weeks", comment: "")
+        : NSLocalizedString("days", comment: "")
     }
     
     // Get the current user from Core Data.
@@ -180,7 +190,7 @@ class UserProfileViewController: UIViewController {
     
     // TODO: Save the results for a future widget.
     WidgetSettingsManager.WidgetSetting.remainingPills.setObject(medicineStock ?? 0)
-    WidgetSettingsManager.WidgetSetting.remainingPillsMeasuringUnit.setObject(timeMeasuringUnit ?? "days")
+    WidgetSettingsManager.WidgetSetting.remainingPillsMeasuringUnit.setObject(timeMeasuringUnit ?? NSLocalizedString("days", comment: ""))
   }
   
   /*
@@ -212,7 +222,8 @@ class UserProfileViewController: UIViewController {
                         phone: phone)
       }
       catch let error as User.UserValidationError {
-        ToastHelper.makeToast(error.rawValue)
+        ToastHelper.makeToast(NSLocalizedString(error.rawValue,
+          comment: "An error when the user writes something invalid in the user profile fields."))
         return
       }
       catch {
@@ -374,6 +385,8 @@ extension UserProfileViewController {
   
   // Set reminder.
   private var SetReminderText: AlertText {
-    return ("Set reminder for:", "")
+    return (
+      NSLocalizedString("Set reminder for:",
+        comment: "Setting the time reminder for a pills."), "")
   }
 }

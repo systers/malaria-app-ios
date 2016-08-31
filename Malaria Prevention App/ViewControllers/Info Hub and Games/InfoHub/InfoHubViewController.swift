@@ -185,19 +185,27 @@ extension InfoHubViewController : UICollectionViewDelegate, UICollectionViewData
 extension InfoHubViewController {
   
   private var NoInformationAvailableAlertText: AlertText {
-    return ("No available message from Peace Corps.", "")
+    return (NSLocalizedString("No available message from Peace Corps.", comment: ""), "")
   }
   
   private var CantUpdateFromPeaceCorpsAlertText: AlertText  {
-    return ("Couldn't update Peace Corps messages", "Please try again later.")
+    return (
+      NSLocalizedString("Couldn't update Peace Corps messages",
+        comment: "Showed when the messages from the server couldn't be fetched."),
+      NSLocalizedString("Please try again later.", comment: ""))
   }
   
   private var NoInternetConnectionAlertText: AlertText {
-    return ("Couldn't update Peace Corps messages.", "No available internet connection. Please try again later.")
+    return (
+      NSLocalizedString("Couldn't update Peace Corps messages.",
+        comment: "Showed when the messages from the server couldn't be fetched."),
+      NSLocalizedString("No available internet connection. Please try again later.", comment: ""))
   }
   
   private var AlertOptions: (ok: String, cancel: String, settings: String) {
-    return ("Ok", "Cancel", "Settings")
+    return (NSLocalizedString("Ok", comment: ""),
+            NSLocalizedString("Cancel", comment: ""),
+            NSLocalizedString("Settings", comment: ""))
   }
   
 }

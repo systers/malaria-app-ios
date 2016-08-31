@@ -5,7 +5,7 @@ import CVCalendar
 /**
  `MonthlyViewController`: shows the calendar view.
  
- Using variation of CVCalendar by changing CVCalendarMonthContentViewController 
+ Using variation of CVCalendar by changing CVCalendarMonthContentViewController
  and commenting the lines calling the methods responsible for making the transitioning.
  
  This was done because, for e.g., August 30 and 31 2015 were impossible to select due to the automatic transition.
@@ -157,7 +157,6 @@ extension MonthlyViewController {
           popup(registryDate.startOfDay, dayView: dayView)
         }
       }
-      
     }
     
     previouslySelect = selected
@@ -268,29 +267,45 @@ extension MonthlyViewController {
   
   // Selected future entry.
   private var SelectedFutureDateAlertText: AlertText {
-    return ("Not possible to change entries in the future", "")
+    return (NSLocalizedString("Not possible to change entries in the future", comment: ""), "")
   }
   
   private func generateTookMedicineActionSheetText(date: NSDate) -> AlertText {
     let isWeekly = CachedStatistics.sharedInstance.medicine.interval == 7
     let tookMedicine = CachedStatistics.sharedInstance.registriesManager.tookMedicine(date)
     
-    let intervalRegularity = isWeekly ? "weekly" : "daily"
+    let weeklyLocalizedString = NSLocalizedString("weekly", comment: "Every week")
+    let dailyLocalizedString = NSLocalizedString("daily", comment: "Every day")
+    
+    let intervalRegularity = isWeekly ? weeklyLocalizedString : dailyLocalizedString
     let dateString = date.formatWith("MMMM d yyyy")
+    
+    let firstLocalizedStringWithFormat = String.localizedStringWithFormat(NSLocalizedString("You already took your %@ pill",
+      comment: "When the user already took the pill."), intervalRegularity)
+    
+    let secondLocalizedStringWithFormat = String.localizedStringWithFormat(NSLocalizedString("Did you take your medicine on %@ ?",
+      comment: "Asks if the user took his medicine on a respective date."), dateString)
+    
+    let thirdLocalizedStringWithFormat = String.localizedStringWithFormat(NSLocalizedString("You didn't take your %@ pill",
+      comment: "When the user didn't take the pill."), intervalRegularity)
+    
     if tookMedicine != nil {
-      return ("You already took your " + intervalRegularity + " pill", "Did you take your medicine on " + dateString + "?")
+      return (firstLocalizedStringWithFormat, secondLocalizedStringWithFormat)
     } else {
-      return ("You didn't took your " + intervalRegularity + " pill", "Did you take your medicine on " + dateString + "?")
+      return (thirdLocalizedStringWithFormat, secondLocalizedStringWithFormat)
     }
   }
   
   // Did take pill alert text.
   private var TookMedicineAlertActionText: (did: String, didNot: String) {
-    return ("Yes, I did", "No, I didn't")
+    return (NSLocalizedString("Yes, I did", comment: ""),
+            NSLocalizedString("No, I didn't", comment: ""))
   }
   
   // Type of alerts options.
   private var AlertOptions: (ok: String, cancel: String, dismiss: String) {
-    return ("Ok", "Cancel", "Dismiss")
+    return (NSLocalizedString("Ok", comment: ""),
+            NSLocalizedString("Cancel", comment: ""),
+            NSLocalizedString("Dismiss", comment: ""))
   }
 }

@@ -30,4 +30,12 @@ extension String {
     formatter.dateFormat = format
     return formatter.dateFromString(self)!
   }
+  
+    func localized(language: String) -> String {
+      
+      let path = NSBundle.mainBundle().pathForResource(language, ofType: "lproj")
+      let bundle = NSBundle(path: path!)
+      
+      return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
+    }
 }

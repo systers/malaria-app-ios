@@ -6,22 +6,49 @@ class RapidFireGame {
   
   var entries: [RapidFireGameEntry] = []
   var _maximumScore: Int = 0
-
+  
   init() {
-    let entry1 = RapidFireGameEntry(question: "Melfoquine should be taken:",
-                                    answers: ["Daily", "Weekly", "Monthly"],
+    
+    
+    let firstQuestionTitle = NSLocalizedString("Question 1", comment: "")
+    let firstQuestionsAnswers = [NSLocalizedString("Daily", comment: ""),
+                                 NSLocalizedString("Weekly", comment: ""),
+                                 NSLocalizedString("Monthly", comment: "")]
+    
+    let entry1 = RapidFireGameEntry(question: firstQuestionTitle,
+                                    answers: firstQuestionsAnswers,
                                     correctAnswer: 1)
-    let entry2 = RapidFireGameEntry(question: "Malaria is caused by:",
-                                    answers: ["Virus", "Bacteria", "Protozoa"],
+    
+    let secondQuestionTitle = NSLocalizedString("Question 2", comment: "")
+    let secondQuestionsAnswers = [NSLocalizedString("Virus", comment: ""),
+                                  NSLocalizedString("Bacteria", comment: ""),
+                                  NSLocalizedString("Protozoa", comment: "")]
+    
+    let entry2 = RapidFireGameEntry(question: secondQuestionTitle,
+                                    answers: secondQuestionsAnswers,
                                     correctAnswer: 2)
-    let entry3 = RapidFireGameEntry(question: "Doxycycline should be taken: ",
-                                    answers: ["Daily", "Weekly", "Monthly"],
+    
+    let thirdQuestionTitle = NSLocalizedString("Question 3", comment: "")
+    let thirdQuestionsAnswers = firstQuestionsAnswers
+    
+    let entry3 = RapidFireGameEntry(question: thirdQuestionTitle,
+                                    answers: thirdQuestionsAnswers,
                                     correctAnswer: 0)
-    let entry4 = RapidFireGameEntry(question: "Malaria is transmitted through ... mosquito.",
-                                    answers: ["Female Aedes", "Female Anopheles", "Male Aedes"],
+    
+    let fourthQuestionTitle = NSLocalizedString("Question 4", comment: "")
+    let fourthQuestionsAnswers = [NSLocalizedString("Female Aedes", comment: ""),
+                                  NSLocalizedString("Female Anopheles", comment: ""),
+                                  NSLocalizedString("Male Aedes", comment: "")]
+    
+    let entry4 = RapidFireGameEntry(question: fourthQuestionTitle,
+                                    answers: fourthQuestionsAnswers,
                                     correctAnswer: 1)
-    let entry5 = RapidFireGameEntry(question: "Malarone should be taken:",
-                                    answers: ["Daily", "Weekly", "Monthly"],
+    
+    let fifthQuestionTitle = NSLocalizedString("Question 5", comment: "")
+    let fifthQuestionsAnswers = firstQuestionsAnswers
+    
+    let entry5 = RapidFireGameEntry(question: fifthQuestionTitle,
+                                    answers: fifthQuestionsAnswers,
                                     correctAnswer: 0)
     
     entries.appendContentsOf([entry1, entry2, entry3, entry4, entry5])
@@ -41,12 +68,16 @@ extension RapidFireGame: Game {
     }
   }
   
-  static var name: String { return "Rapid Fire" }
-  static var rules: String { return "- Answer questions quickly, under time pressure.\n\n"
-    + "- Score Achievement Points for every correct answer you give." }
+  static var name: String {
+    return NSLocalizedString("Rapid Fire", comment: "Game name.")
+  }
+  
+  static var rules: String {
+    return NSLocalizedString("Rapid Fire game rules", comment: "The Rapid Fire game rules.")
+  }
   
   var numberOfLevels: Int { return entries.count }
-
+  
 }
 
 class RapidFireGameEntry {

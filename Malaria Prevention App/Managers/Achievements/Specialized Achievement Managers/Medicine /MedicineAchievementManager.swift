@@ -4,8 +4,9 @@ import Foundation
 
 class MedicineAchievementManager: NSObject, SpecializedAchievementManager {
   
-  static let StayingSafe = "Staying safe"
-  private let StayingSafeDescription = "Take your first medicine."
+  static let StayingSafe = NSLocalizedString("Staying safe", comment: "Achievement name")
+  private let StayingSafeDescription = NSLocalizedString("Take your first medicine.",
+                                                         comment: "Achievement description.")
   
   private var medicine: Medicine
   private let achievementManager = AchievementManager.sharedInstance

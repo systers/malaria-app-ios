@@ -1,0 +1,184 @@
+"Achievement %@ unlocked" = "Achievement %@ unlocked";
+
+"Location text can't be empty." = "Location text can't be empty.";
+
+"You need to refill your pill stock from the User Profile." = "You need to refill your pill stock from the User Profile.";
+
+"Did you take %@ today?" = "Did you take %@ today?";
+
+// User Validation Errors
+
+"First name must have minimum two characters." = "First name must have minimum two characters.";
+"Last name must have minimum two characters." = "Last name must have minimum two characters.";
+"Location must have minimum two characters." = "Location must have minimum two characters.";
+"Phone must have minimum two characters." = "Phone must have minimum two characters.";
+"Gender must have minimum two characters." = "Gender must have minimum two characters.";
+"Please insert your real age." = "Please insert your real age.";
+"Please insert a valid email." = "Please insert a valid email.";
+"Please insert a valid phone number." = "Please insert a valid phone number.";
+
+// Sharing Stats
+
+"Share Your Stats!" = "Share Your Stats!";
+
+// Alert options
+
+"Cancel" = "Cancel";
+"Ok" = "Ok";
+"Yes" = "Yes";
+"No" = "No";
+"Dismiss" = "Dismiss";
+"Yes, I did" = "Yes, I did";
+"No, I didn't" = "No, I didn't";
+"Back" = "Back";
+"Restart" = "Restart";
+"Settings" = "Settings";
+"Success" = "Success";
+"Error" = "Error";
+"Done" = "Done";
+
+// Daily stats
+
+"Adherence to medicine" = "Adherence to medicine";
+"Adherence" = "Adherence";
+"Doses in a Row" = "Doses in a Row";
+"DosesInRow" = "DosesInRow";
+"Medicine Last Take" = "Medicine Last Take";
+"MedicineLastTaken" = "MedicineLastTaken";
+
+// Did Take Pills View Controller
+
+"You forgot your medicine for quite a while" = "You forgot your medicine for quite a while";
+"Would you like to change your reminder time?" = "Would you like to change your reminder time?";
+
+// Monthly View Controller
+
+"Not possible to change entries in the future" = "Not possible to change entries in the future";
+"You already took your %@ pill" = "You already took your %@ pill";
+"You didn't take your %@ pill" = "You didn't take your %@ pill";
+"Did you take your medicine on %@ ?" = "Did you take your medicine on %@ ?";
+
+"daily" = "daily";
+"weekly" = "weekly";
+
+// Pill Stats View Controller
+
+"No entries" = "No entries";
+
+// Myth vs. Fact
+
+"Statement 1" = "Once you get malaria you will be immune from it for the rest of your life.";
+"Statement 2" = "Malaria is a life-threatening disease.";
+"Statement 3" = "You don’t have to worry about malaria in the dry season.";
+"Statement 4" = "Nearly half of the world's population is at risk of malaria.";
+"Statement 5" = "There is a vaccine for malaria.";
+
+"Myth vs. Fact" = "Myth vs. Fact";
+"MythVsFact Rules" = "- Decide whether the statement is correct or false by dragging in its corresponding container.\n\n- Score Achievement Points for every correct answer you give.\n\n- The correct answer will blink after each statement.";
+
+"Statement %i / %i" = "Statement %i / %i";
+
+// Rapid Fire
+
+"Question 1" = "Melfoquine should be taken:";
+
+"Daily" = "Daily";
+"Weekly" = "Weekly";
+"Monthly" = "Monthly";
+
+"Question 2" = "Malaria is caused by:";
+
+"Virus" = "Virus";
+"Bacteria" = "Bacteria";
+"Protozoa" = "Protozoa";
+
+"Question 3" = "Doxycycline should be taken: ";
+"Question 4" = "Malaria is transmitted through ... mosquito.";
+
+"Female Aedes" = "Female Aedes";
+"Female Anopheles" = "Female Anopheles";
+"Male Aedes" = "Male Aedes";
+
+"Question 5" = "Malarone should be taken:";
+
+"Rapid Fire" = "Rapid Fire";
+"Rapid Fire game rules" = "- Answer questions quickly, under time pressure.\n\n- Score Achievement Points for every correct answer you give.";
+
+"Question %i / %i" = "Question %i / %i";
+"%i %@" = "%i %@";
+"second" = "second";
+"seconds" = "seconds";
+
+// Info Hub
+
+"No available message from Peace Corps." = "No available message from Peace Corps.";
+"Couldn't update Peace Corps messages" = "Couldn't update Peace Corps messages";
+"Please try again later." = "Please try again later.";
+"Couldn't update Peace Corps messages." = "Couldn't update Peace Corps messages.";
+"No available internet connection. Please try again later." = "No available internet connection. Please try again later.";
+
+// Plan Trip View Controller
+
+"Only medicine" = "Only medicine";
+"%i items" = "%i items";
+
+"Update Trip" = "Update Trip";
+"All data will be lost" = "All data will be lost";
+"History is empty" = "History is empty";
+"Departure day must be before arrival" = "Departure day must be before arrival";
+"Arrival day must be after departure" = "Arrival day must be after departure";
+
+// List Items View Controller
+
+"Delete" = "Delete";
+"%i pills" = "%i pills";
+"Name" = "Name";
+
+"What do you want to bring to the trip?" = "What do you want to bring to the trip?";
+"Pick one medicine" = "Pick one medicine";
+"Change item" = "Change item";
+
+// User Profile
+
+"You have %d %@ of %@ left." = "You have %d %@ of %@ left.";
+"week" = "week";
+"day" = "day";
+"weeks" = "weeks";
+"days" = "days";
+
+"Set reminder for:" = "Set reminder for:";
+
+// Gender Text Field
+
+"Male" = "Male";
+"Female" = "Female";
+"Other" = "Other";
+
+// Achievements
+
+"Flawless game" = "Flawless game";
+"Finish a Rapid Fire game without picking any wrong answer." = "Finish a Rapid Fire game without picking any wrong answer.";
+"First Trip" = "First Trip";
+"Plan your first trip." = "Plan your first trip.";
+"Staying safe" = "Staying safe";
+"Take your first medicine." = "Take your first medicine.";
+
+"Completed" = "Completed";
+
+"General" = "General";
+"Pills" = "Pills";
+"Games" = "Games";
+
+// Pill notification manager
+
+"You ran out of pills!" = "You ran out of pills!";
+
+// Game Controller
+
+"Score: %i" = "Score: %i";
+"You gained %i achievement %@" = "You gained %i achievement %@.";
+"Game over" = "Game over";
+"point" = "point";
+"points" = "points";
+"Couldn't start game" = "Couldn't start game";
+"There was a problem fetching the content for this game." = "There was a problem fetching the content for this game.";

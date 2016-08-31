@@ -1,0 +1,87 @@
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "04u-MG-LwX"; */
+"04u-MG-LwX.text" = "Title";
+
+/* Class = "UILabel"; text = "Achievement Description"; ObjectID = "1eI-AA-Crq"; */
+"1eI-AA-Crq.text" = "Achievement Description";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "2ui-i1-O2E"; */
+"2ui-i1-O2E.normalTitle" = "Back";
+
+/* Class = "UIButton"; normalTitle = "Start Game"; ObjectID = "6JL-fx-LZz"; */
+"6JL-fx-LZz.normalTitle" = "Start Game";
+
+/* Class = "UILabel"; text = "achievements"; ObjectID = "DQ0-yr-1em"; */
+"DQ0-yr-1em.text" = "achievements";
+
+/* Class = "UILabel"; text = "games"; ObjectID = "F8u-jq-2Oz"; */
+"F8u-jq-2Oz.text" = "games";
+
+/* Class = "UILabel"; text = "myth Vs. Fact"; ObjectID = "GoW-aM-tXG"; */
+"GoW-aM-tXG.text" = "myth Vs. Fact";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "HWW-MS-eqw"; */
+"HWW-MS-eqw.text" = "Label";
+
+/* Class = "UILabel"; text = " - Answer questions quickly, under time pressure.  - Score Achievement Points for every 3 correct answers you give."; ObjectID = "IhX-cC-ZjO"; */
+"IhX-cC-ZjO.text" = " - Answer questions quickly, under time pressure.  - Score Achievement Points for every 3 correct answers you give.";
+
+/* Class = "UILabel"; text = "In Progress"; ObjectID = "NDn-iT-fcC"; */
+"NDn-iT-fcC.text" = "In Progress";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "QLj-jc-7a4"; */
+"QLj-jc-7a4.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "info Hub"; ObjectID = "V8e-58-wHB"; */
+"V8e-58-wHB.text" = "info Hub";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "W9y-bM-HWr"; */
+"W9y-bM-HWr.text" = "Title";
+
+/* Class = "UILabel"; text = "rapid Fire"; ObjectID = "Ywz-qs-EjT"; */
+"Ywz-qs-EjT.text" = "rapid Fire";
+
+/* Class = "UILabel"; text = "Game Title"; ObjectID = "ZA3-EV-igJ"; */
+"ZA3-EV-igJ.text" = "Game Title";
+
+/* Class = "UILabel"; text = "Statement 1 / 66"; ObjectID = "bOg-1D-p1r"; */
+"bOg-1D-p1r.text" = "Statement 1 / 66";
+
+/* Class = "UILabel"; text = "Score: 0"; ObjectID = "bvo-ka-gGD"; */
+"bvo-ka-gGD.text" = "Score: 0";
+
+/* Class = "UIButton"; normalTitle = "End Game"; ObjectID = "ggj-G5-0Cf"; */
+"ggj-G5-0Cf.normalTitle" = "End Game";
+
+/* Class = "UILabel"; text = "Rules"; ObjectID = "gpG-29-uDV"; */
+"gpG-29-uDV.text" = "Rules";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "hWn-Ry-jPz"; */
+"hWn-Ry-jPz.text" = "Title";
+
+/* Class = "UILabel"; text = "Achievement Title"; ObjectID = "hyW-wY-wXI"; */
+"hyW-wY-wXI.text" = "Achievement Title";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "jA7-QC-0Vu"; */
+"jA7-QC-0Vu.text" = "Label";
+
+/* Class = "UILabel"; text = "5 seconds"; ObjectID = "jBy-lZ-Kqg"; */
+"jBy-lZ-Kqg.text" = "5 seconds";
+
+/* Class = "UIButton"; normalTitle = "End Game"; ObjectID = "l9W-MP-l75"; */
+"l9W-MP-l75.normalTitle" = "End Game";
+
+/* Class = "UILabel"; text = "Score: 0"; ObjectID = "m81-j1-PAd"; */
+"m81-j1-PAd.text" = "Score: 0";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "rVr-Xf-Cwt"; */
+"rVr-Xf-Cwt.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "s7o-yq-h2X"; */
+"s7o-yq-h2X.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Close"; ObjectID = "sM3-Os-Flw"; */
+"sM3-Os-Flw.normalTitle" = "Close";
+
+/* Class = "UILabel"; text = "Question 1 / 66"; ObjectID = "wVp-Km-135"; */
+"wVp-Km-135.text" = "Question 1 / 66";

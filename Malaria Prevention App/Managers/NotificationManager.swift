@@ -30,7 +30,7 @@ class NotificationManager: CoreDataContextManager {
   
   func scheduleNotification(fireTime: NSDate) {
     
-    if fireTime < NSDate() {
+    if fireTime < NSDate() && !fireTime.sameDayAs(NSDate()) {
       return
     }
     
@@ -54,8 +54,6 @@ class NotificationManager: CoreDataContextManager {
       return
     }
     
-    UIApplication.sharedApplication().cancelAllLocalNotifications()
-
     for notification in notifications
       where notification.category == category {
         UIApplication.sharedApplication().cancelLocalNotification(notification)

@@ -7,9 +7,11 @@ class AchievementManager: CoreDataContextManager {
   static var sharedInstance = AchievementManager(
     context: CoreDataHelper.sharedInstance.createBackgroundContext()!
   )
-
+  
   override init(context: NSManagedObjectContext) {
     super.init(context: context)
+    
+    clearAchievements()
     
     addTag(Constants.Achievements.GeneralTag)
     addTag(Constants.Achievements.PillsTag)
@@ -43,7 +45,7 @@ class AchievementManager: CoreDataContextManager {
   
   func getAchievements() -> [AchievementObject] {
     var results: [AchievementObject] = []
-
+    
     for tag in tags {
       let achievementObject = AchievementObject(tag, achievements.filter { $0.tag == tag })
       
@@ -57,7 +59,7 @@ class AchievementManager: CoreDataContextManager {
   
   /// Checks whether an achievement is already defined.
   
-  func checkForDuplicateAchievements(achievementName: String) -> Bool {        
+  func checkForDuplicateAchievements(achievementName: String) -> Bool {
     for achievement in achievements {
       if achievement.name! == achievementName {
         return true
@@ -84,7 +86,9 @@ class AchievementManager: CoreDataContextManager {
     Logger.Info("Unlocked achievement: \(name)")
     
     // Show alert message.
-    ToastHelper.makeToast("Achievement \"\(name)\" unlocked.")
+    ToastHelper.makeToast(String.localizedStringWithFormat(
+      NSLocalizedString("Achievement %@ unlocked",
+        comment: "Tells the user that the achievement is unlocked."), name))
     
     CoreDataHelper.sharedInstance.saveContext(context)
   }

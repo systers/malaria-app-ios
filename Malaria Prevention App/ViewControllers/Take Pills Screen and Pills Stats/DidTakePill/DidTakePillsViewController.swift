@@ -221,12 +221,15 @@ extension DidTakePillsViewController {
   
   // Existing medicine configured.
   private var ResheduleNotificationAlertText: AlertText {
-    return ("You forgot your medicine for quite a while",
-            "Would you like to change your reminder time?")
+    return (NSLocalizedString("You forgot your medicine for quite a while",
+      comment: "Showed when the medicine was not taken for quite a while."),
+            NSLocalizedString("Would you like to change your reminder time?",
+              comment: "Prompted when the user needs to change his reminder time."))
   }
   
   // Type of alerts options.
   private var AlertOptions: (yes: String, no: String) {
-    return ("Yes", "No")
+    return (NSLocalizedString("Yes", comment: ""),
+            NSLocalizedString("No", comment: ""))
   }
 }

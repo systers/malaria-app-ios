@@ -52,7 +52,9 @@ class GameController<T: Game>: GameHandler {
     didSet {
       guard let delegate = self.delegate else { fatalError("Did you forget to set the delegate?") }
       
-      delegate.setScoreLabelTextTo("Score: \(userScore)")
+      let localizedString = String.localizedStringWithFormat(
+        NSLocalizedString("Score: %i", comment: "The user score"), userScore)
+      delegate.setScoreLabelTextTo(localizedString)
     }
   }
   
@@ -61,7 +63,7 @@ class GameController<T: Game>: GameHandler {
    */
   
   // MARK: Game Handler Methods.
-
+  
   /// Method that starts the game if the game has any levels.
   
   func startGame() {
@@ -112,14 +114,20 @@ extension GameController {
   // achievements points earned.
   
   private var GameOverText: AlertText {
-    return ("Game over",
-            "You gained \(userScore) achievement "
-              + ( ((userScore) == 1) ? "point." : "points.")
-    )
+    return (
+      NSLocalizedString("Game over", comment: "States that the game is over"),
+      String.localizedStringWithFormat(
+        NSLocalizedString("You gained %i achievement %@",
+          comment: "Shows how many points the user received"), userScore,
+        userScore == 1
+          ? NSLocalizedString("point", comment: "")
+          : NSLocalizedString("points", comment: "")
+      ))
   }
   
   private var NoRFEntries: AlertText {
-    return ("Couldn't start game",
-            "There was a problem fetching the content for this game.")
+    return (
+      NSLocalizedString("Couldn't start game", comment: "User couldn't start the game"),
+      NSLocalizedString("There was a problem fetching the content for this game.", comment: ""))
   }
 }

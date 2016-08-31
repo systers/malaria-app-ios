@@ -3,7 +3,7 @@ import UIKit
 
 /// Manages notifications for medicine.
 
-class MedicineNotificationsManager : NotificationManager {
+class MedicineNotificationsManager: NotificationManager {
   
   /// Notification category.
   
@@ -13,7 +13,11 @@ class MedicineNotificationsManager : NotificationManager {
   
   override var alertBody: String {
     let medicineName = MedicineManager(context: context).getCurrentMedicine()!.name
-    return "Did you take \(medicineName) today?" }
+    
+    let localizedString = String.localizedStringWithFormat(
+      NSLocalizedString("Did you take %@ today?", comment: ""), medicineName)
+    return localizedString
+  }
   
   /// Notification alert action.
   override var alertAction: String { return "Take pill" }

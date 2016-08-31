@@ -39,7 +39,13 @@ final class RapidFireController: GameController<RapidFireGame>, RFGameHandler {
   
   private var count = 5 {
     didSet {
-      let newText = count == 1 ? "\(count) second" : "\(count) seconds"
+      
+      let localizedString = String.localizedStringWithFormat(
+        NSLocalizedString("%i %@", comment: "Number of seconds"), count,
+        count == 1
+          ? NSLocalizedString("second", comment: "")
+          : NSLocalizedString("seconds", comment: ""))
+      let newText = localizedString
       rapidFireDelegate!.setCountdownLabelTextTo(newText)
     }
   }
@@ -53,7 +59,10 @@ final class RapidFireController: GameController<RapidFireGame>, RFGameHandler {
       }
       
       let labelText = game?.entries[currentLevel].question
-      let numberLabelText = "Question \(currentLevel + 1) / \(game!.entries.count)"
+      let localizedString = String.localizedStringWithFormat(
+        NSLocalizedString("Question %i / %i", comment: "The question number"),
+        currentLevel + 1, game!.entries.count)
+      let numberLabelText = localizedString
       
       rapidFireDelegate!.setNextQuestionText(labelText!,
                                              numberLabelText: numberLabelText)

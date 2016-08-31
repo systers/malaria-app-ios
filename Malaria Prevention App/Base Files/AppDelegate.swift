@@ -9,10 +9,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   let widgetHandler = WidgetHandler.sharedInstance
   
-  let generalAchievementManager = GeneralAchievementsManager.sharedInstance
-  let rapidFireAchievementManager = RapidFireAchievementManager.sharedInstance
-  
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    
+    GeneralAchievementsManager.sharedInstance.defineAchievements()
+    RapidFireAchievementManager.sharedInstance.defineAchievements()
     
     // Fabric's Crashlytics initialization.
     Fabric.with([Crashlytics.self])
@@ -37,7 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Check if we need to show the initial setup screen or if the user already
     // configured everything.
     
-    if !UserSettingsManager.UserSetting.didConfigureMedicine.getBool() {
+    if !UserSettingsManager.UserSetting.didConfigureMedicine.getBool()
+    && !User.isUserAlreadyCreated() {
       window!.rootViewController =
         UIStoryboard.instantiate(SetupScreenContainerViewController.self,
                                  fromStoryboard: Constants.Storyboards.InitialSetup)

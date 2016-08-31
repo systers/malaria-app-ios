@@ -8,10 +8,13 @@ class GenderTextField: UITextField {
   
   private var genderPickerProvider: PickerProvider!
   private var picker: UIPickerView!
-  private let genderValues = ["Male", "Female", "Other"]
+  private let genderValues = [
+    NSLocalizedString("Male", comment: "A gender"),
+    NSLocalizedString("Female", comment: "A gender"),
+    NSLocalizedString("Other", comment: "A gender")]
   
   private var toolBar: ToolbarWithDone!
-
+  
   override func layoutSubviews() {
     super.layoutSubviews()
     
