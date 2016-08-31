@@ -67,7 +67,10 @@ final class MythVsFactController: GameController<MythVsFactGame>, MVFGameHandler
     }
     
     let labelText = game?.entries[currentLevel].statement
-    let numberLabelText = "Statement \(currentLevel + 1) / \(game!.entries.count)"
+    let localizedString = String.localizedStringWithFormat(
+      NSLocalizedString("Statement %i / %i", comment: "The statement number."),
+      currentLevel + 1, game!.entries.count)
+    let numberLabelText = localizedString
     
     mythVsFactDelegate?.setNextStatementText(labelText!,
                                              numberLabelText: numberLabelText)

@@ -3,7 +3,7 @@ import UIKit
 
 /// Manages notifications for medicine.
 
-class MedicineNotificationsManager : NotificationManager {
+class MedicineNotificationsManager: NotificationManager {
   
   /// Notification category.
   

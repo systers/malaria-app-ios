@@ -17,9 +17,7 @@ class RapidFireAchievementManager: NSObject, SpecializedAchievementManager {
   
   override init() {
     super.init()
-    
-    defineAchievements()
-    
+        
     NSNotificationEvents.ObserveRFGameFinished(self,
                                                selector: #selector(checkAchievements))
   }

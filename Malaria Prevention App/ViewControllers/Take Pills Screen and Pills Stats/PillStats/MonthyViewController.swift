@@ -274,7 +274,10 @@ extension MonthlyViewController {
     let isWeekly = CachedStatistics.sharedInstance.medicine.interval == 7
     let tookMedicine = CachedStatistics.sharedInstance.registriesManager.tookMedicine(date)
     
-    let intervalRegularity = isWeekly ? "weekly" : "daily"
+    let weeklyLocalizedString = NSLocalizedString("weekly", comment: "Every week")
+    let dailyLocalizedString = NSLocalizedString("daily", comment: "Every day")
+    
+    let intervalRegularity = isWeekly ? weeklyLocalizedString : dailyLocalizedString
     let dateString = date.formatWith("MMMM d yyyy")
     
     let firstLocalizedStringWithFormat = String.localizedStringWithFormat(NSLocalizedString("You already took your %@ pill",

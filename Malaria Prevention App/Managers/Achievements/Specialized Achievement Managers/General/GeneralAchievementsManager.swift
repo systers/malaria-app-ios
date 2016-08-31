@@ -18,8 +18,6 @@ class GeneralAchievementsManager: NSObject, SpecializedAchievementManager {
     super.init()
     
     context = CoreDataHelper.sharedInstance.createBackgroundContext()!
-
-    defineAchievements()
     
     NSNotificationEvents.ObserveTripPlanned(self,
                                             selector: #selector(checkAchievements))

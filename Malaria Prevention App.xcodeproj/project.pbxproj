@@ -107,14 +107,12 @@
 		684D7C071D4BA41B00BB6B64 /* DailyStatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7BFC1D4BA41B00BB6B64 /* DailyStatsTableViewController.swift */; };
 		684D7C081D4BA41B00BB6B64 /* DidTakePillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7BFE1D4BA41B00BB6B64 /* DidTakePillsViewController.swift */; };
 		684D7C091D4BA41B00BB6B64 /* PagesManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7BFF1D4BA41B00BB6B64 /* PagesManagerViewController.swift */; };
-		684D7C0A1D4BA41B00BB6B64 /* PillScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684D7C001D4BA41B00BB6B64 /* PillScreens.storyboard */; };
 		684D7C0B1D4BA41B00BB6B64 /* CalendarSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C021D4BA41B00BB6B64 /* CalendarSettings.swift */; };
 		684D7C0C1D4BA41B00BB6B64 /* MonthAdherenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C031D4BA41B00BB6B64 /* MonthAdherenceCell.swift */; };
 		684D7C0D1D4BA41B00BB6B64 /* MonthyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C041D4BA41B00BB6B64 /* MonthyViewController.swift */; };
 		684D7C0E1D4BA41B00BB6B64 /* PillsStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C051D4BA41B00BB6B64 /* PillsStatsViewController.swift */; };
 		684D7C2A1D4BA50A00BB6B64 /* InfoHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C1E1D4BA50A00BB6B64 /* InfoHubViewController.swift */; };
 		684D7C2B1D4BA50A00BB6B64 /* PostDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C1F1D4BA50A00BB6B64 /* PostDetailedViewController.swift */; };
-		684D7C2C1D4BA50A00BB6B64 /* InfoHub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684D7C201D4BA50A00BB6B64 /* InfoHub.storyboard */; };
 		684D7C2D1D4BA50A00BB6B64 /* InfoHubPageManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C211D4BA50A00BB6B64 /* InfoHubPageManagerViewController.swift */; };
 		684D7C421D4BA75C00BB6B64 /* AchievementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C381D4BA75C00BB6B64 /* AchievementManager.swift */; };
 		684D7C431D4BA75C00BB6B64 /* AchievementManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D7C3A1D4BA75C00BB6B64 /* AchievementManagerProtocol.swift */; };
@@ -173,13 +171,15 @@
 		68C456DB1D5E27F900A8F566 /* GamesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456CC1D5E27F900A8F566 /* GamesListViewController.swift */; };
 		68C456EA1D5E283000A8F566 /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456E81D5E283000A8F566 /* AchievementsViewController.swift */; };
 		68C456EB1D5E283000A8F566 /* AchievementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C456E91D5E283000A8F566 /* AchievementTableViewCell.swift */; };
-		68C456EF1D5F3DBA00A8F566 /* InitialSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68C456EE1D5F3DBA00A8F566 /* InitialSetup.storyboard */; };
 		68E607EF1D75947400CF06FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68E607F11D75947400CF06FA /* Localizable.strings */; };
 		68E62F781D191BB800743214 /* PillStatusNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F771D191BB800743214 /* PillStatusNotificationsManager.swift */; };
 		68E62F7A1D19BA0500743214 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F791D19BA0500743214 /* StringExtensions.swift */; };
 		68E62F7C1D1AC1B100743214 /* WidgetSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F7B1D1AC1B100743214 /* WidgetSettingsManager.swift */; };
 		68E62F801D1C2C6B00743214 /* MedicineStockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F7F1D1C2C6B00743214 /* MedicineStockManager.swift */; };
 		68E62F821D1DAC7D00743214 /* TestMedicineStockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E62F811D1DAC7D00743214 /* TestMedicineStockManager.swift */; };
+		68EFC4651D762FD400E9B52F /* InfoHub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68EFC4671D762FD400E9B52F /* InfoHub.storyboard */; };
+		68EFC46C1D76331500E9B52F /* InitialSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68EFC46E1D76331500E9B52F /* InitialSetup.storyboard */; };
+		68EFC4711D76344900E9B52F /* PillScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68EFC4731D76344900E9B52F /* PillScreens.storyboard */; };
 		CCFBDC64AA827DD3E102D347 /* Pods_Malaria_Prevention_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435D68C3391FDBE054AD193A /* Pods_Malaria_Prevention_App.framework */; };
 		DA4040E956BE3C4385C90D8D /* Pods_Malaria_Prevention_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F990FCAC4BCA42CC60DFC765 /* Pods_Malaria_Prevention_AppTests.framework */; };
 		E4A01EFD1C8F84310070AED4 /* ImagesAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 200EE4AE1B1349D40087FB24 /* ImagesAssets.xcassets */; };
@@ -398,14 +398,12 @@
 		684D7BFC1D4BA41B00BB6B64 /* DailyStatsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyStatsTableViewController.swift; sourceTree = "<group>"; };
 		684D7BFE1D4BA41B00BB6B64 /* DidTakePillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DidTakePillsViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		684D7BFF1D4BA41B00BB6B64 /* PagesManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagesManagerViewController.swift; sourceTree = "<group>"; };
-		684D7C001D4BA41B00BB6B64 /* PillScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PillScreens.storyboard; sourceTree = "<group>"; };
 		684D7C021D4BA41B00BB6B64 /* CalendarSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarSettings.swift; sourceTree = "<group>"; };
 		684D7C031D4BA41B00BB6B64 /* MonthAdherenceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthAdherenceCell.swift; sourceTree = "<group>"; };
 		684D7C041D4BA41B00BB6B64 /* MonthyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthyViewController.swift; sourceTree = "<group>"; };
 		684D7C051D4BA41B00BB6B64 /* PillsStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillsStatsViewController.swift; sourceTree = "<group>"; };
 		684D7C1E1D4BA50A00BB6B64 /* InfoHubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoHubViewController.swift; sourceTree = "<group>"; };
 		684D7C1F1D4BA50A00BB6B64 /* PostDetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailedViewController.swift; sourceTree = "<group>"; };
-		684D7C201D4BA50A00BB6B64 /* InfoHub.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InfoHub.storyboard; sourceTree = "<group>"; };
 		684D7C211D4BA50A00BB6B64 /* InfoHubPageManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoHubPageManagerViewController.swift; sourceTree = "<group>"; };
 		684D7C381D4BA75C00BB6B64 /* AchievementManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementManager.swift; sourceTree = "<group>"; };
 		684D7C3A1D4BA75C00BB6B64 /* AchievementManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementManagerProtocol.swift; sourceTree = "<group>"; };
@@ -475,14 +473,22 @@
 		68C456CC1D5E27F900A8F566 /* GamesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesListViewController.swift; sourceTree = "<group>"; };
 		68C456E81D5E283000A8F566 /* AchievementsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
 		68C456E91D5E283000A8F566 /* AchievementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementTableViewCell.swift; sourceTree = "<group>"; };
-		68C456EE1D5F3DBA00A8F566 /* InitialSetup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = InitialSetup.storyboard; path = ../../Base.lproj/InitialSetup.storyboard; sourceTree = "<group>"; };
-		68E607F01D75947400CF06FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		68E607F21D75947900CF06FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		68E62F771D191BB800743214 /* PillStatusNotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillStatusNotificationsManager.swift; sourceTree = "<group>"; };
 		68E62F791D19BA0500743214 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		68E62F7B1D1AC1B100743214 /* WidgetSettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WidgetSettingsManager.swift; path = SupportingFiles/WidgetSettingsManager.swift; sourceTree = "<group>"; };
 		68E62F7F1D1C2C6B00743214 /* MedicineStockManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineStockManager.swift; sourceTree = "<group>"; };
 		68E62F811D1DAC7D00743214 /* TestMedicineStockManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMedicineStockManager.swift; sourceTree = "<group>"; };
+		68EFC4621D76269900E9B52F /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		68EFC4631D76269900E9B52F /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/MainInterface.strings; sourceTree = "<group>"; };
+		68EFC46A1D762FDF00E9B52F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/InfoHub.storyboard; sourceTree = "<group>"; };
+		68EFC46D1D76331500E9B52F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/InitialSetup.storyboard; sourceTree = "<group>"; };
+		68EFC4721D76344900E9B52F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PillScreens.storyboard; sourceTree = "<group>"; };
+		68EFC4761D76347600E9B52F /* ro */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ro; path = ro.lproj/InfoHub.storyboard; sourceTree = "<group>"; };
+		68EFC4781D76366000E9B52F /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
+		68EFC4791D763CDD00E9B52F /* ro */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ro; path = ro.lproj/InitialSetup.storyboard; sourceTree = "<group>"; };
+		68EFC47A1D763DAA00E9B52F /* ro */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ro; path = ro.lproj/PillScreens.storyboard; sourceTree = "<group>"; };
+		68EFC47B1D763F1700E9B52F /* ro */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ro; path = ro.lproj/Main.storyboard; sourceTree = "<group>"; };
 		73828B901BCEE68C00CAAC56 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		77EBB526D56724E76C3D8934 /* Pods-Malaria Prevention AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Malaria Prevention AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Malaria Prevention AppTests/Pods-Malaria Prevention AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FEA2907B98DDA54A4764706 /* Pods-Malaria Prevention App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Malaria Prevention App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Malaria Prevention App/Pods-Malaria Prevention App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -810,7 +816,7 @@
 		684D7BF91D4BA41B00BB6B64 /* Take Pills Screen and Pills Stats */ = {
 			isa = PBXGroup;
 			children = (
-				684D7C001D4BA41B00BB6B64 /* PillScreens.storyboard */,
+				68EFC4731D76344900E9B52F /* PillScreens.storyboard */,
 				684D7BFF1D4BA41B00BB6B64 /* PagesManagerViewController.swift */,
 				684D7BFA1D4BA41B00BB6B64 /* DailyStats */,
 				684D7BFD1D4BA41B00BB6B64 /* DidTakePill */,
@@ -851,7 +857,7 @@
 			isa = PBXGroup;
 			children = (
 				684D7C211D4BA50A00BB6B64 /* InfoHubPageManagerViewController.swift */,
-				684D7C201D4BA50A00BB6B64 /* InfoHub.storyboard */,
+				68EFC4671D762FD400E9B52F /* InfoHub.storyboard */,
 				68C456E71D5E283000A8F566 /* Achievements */,
 				68C456BB1D5E27F900A8F566 /* Games Lists */,
 				684D7C1D1D4BA50A00BB6B64 /* InfoHub */,
@@ -1055,7 +1061,7 @@
 		687F060E1D6619F2004038F4 /* Initial Setup */ = {
 			isa = PBXGroup;
 			children = (
-				68C456EE1D5F3DBA00A8F566 /* InitialSetup.storyboard */,
+				68EFC46E1D76331500E9B52F /* InitialSetup.storyboard */,
 				687F06141D6619F2004038F4 /* SetupPageViewController.swift */,
 				687F06151D6619F2004038F4 /* SetupScreenContainerViewController.swift */,
 				687F060F1D6619F2004038F4 /* Pages */,
@@ -1352,6 +1358,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ro,
 			);
 			mainGroup = 200EE47B1B1343A50087FB24;
 			productRefGroup = 200EE4851B1343A50087FB24 /* Products */;
@@ -1457,7 +1464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				200EE4AF1B1349D40087FB24 /* ImagesAssets.xcassets in Resources */,
-				68C456EF1D5F3DBA00A8F566 /* InitialSetup.storyboard in Resources */,
+				68EFC46C1D76331500E9B52F /* InitialSetup.storyboard in Resources */,
 				68E607EF1D75947400CF06FA /* Localizable.strings in Resources */,
 				200EE48F1B1343A50087FB24 /* Main.storyboard in Resources */,
 				200C73431B40392A00998100 /* ApiExamples in Resources */,
@@ -1465,8 +1472,8 @@
 				203A40921B66A7BE00FCE4EE /* Settings.bundle in Resources */,
 				209F60BF1B6E4AED00EDA461 /* Sounds in Resources */,
 				684D7C7A1D4BAA0C00BB6B64 /* malaria-ios.entitlements in Resources */,
-				684D7C0A1D4BA41B00BB6B64 /* PillScreens.storyboard in Resources */,
-				684D7C2C1D4BA50A00BB6B64 /* InfoHub.storyboard in Resources */,
+				68EFC4711D76344900E9B52F /* PillScreens.storyboard in Resources */,
+				68EFC4651D762FD400E9B52F /* InfoHub.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1802,6 +1809,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				200EE48E1B1343A50087FB24 /* Base */,
+				68EFC47B1D763F1700E9B52F /* ro */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1810,6 +1818,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				200EE4931B1343A50087FB24 /* Base */,
+				68EFC4621D76269900E9B52F /* ro */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -1817,17 +1826,46 @@
 		68E607F11D75947400CF06FA /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				68E607F01D75947400CF06FA /* en */,
 				68E607F21D75947900CF06FA /* Base */,
+				68EFC4781D76366000E9B52F /* ro */,
 			);
 			name = Localizable.strings;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		68EFC4671D762FD400E9B52F /* InfoHub.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68EFC46A1D762FDF00E9B52F /* Base */,
+				68EFC4761D76347600E9B52F /* ro */,
+			);
+			name = InfoHub.storyboard;
+			sourceTree = "<group>";
+		};
+		68EFC46E1D76331500E9B52F /* InitialSetup.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68EFC46D1D76331500E9B52F /* Base */,
+				68EFC4791D763CDD00E9B52F /* ro */,
+			);
+			name = InitialSetup.storyboard;
+			path = ../../Base.lproj;
+			sourceTree = "<group>";
+		};
+		68EFC4731D76344900E9B52F /* PillScreens.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68EFC4721D76344900E9B52F /* Base */,
+				68EFC47A1D763DAA00E9B52F /* ro */,
+			);
+			name = PillScreens.storyboard;
 			sourceTree = "<group>";
 		};
 		E4C20AD81C8B7D6000B686F4 /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E4C20AD91C8B7D6000B686F4 /* Base */,
+				68EFC4631D76269900E9B52F /* ro */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";

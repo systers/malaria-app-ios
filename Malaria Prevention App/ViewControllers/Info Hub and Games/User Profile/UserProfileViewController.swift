@@ -101,6 +101,9 @@ class UserProfileViewController: UIViewController {
     locationField.addTarget(self,
                             action: #selector(locationAutocompleteCallback),
                             forControlEvents: UIControlEvents.EditingDidEnd)
+    
+    remindMeWeeksButton.titleLabel!.adjustsFontSizeToFitWidth = true;
+    remindMeWeeksButton.titleLabel!.lineBreakMode = .ByClipping;
   }
   
   override func viewWillAppear(animated: Bool) {

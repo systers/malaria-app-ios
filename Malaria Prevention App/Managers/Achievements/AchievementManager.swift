@@ -11,6 +11,8 @@ class AchievementManager: CoreDataContextManager {
   override init(context: NSManagedObjectContext) {
     super.init(context: context)
     
+    clearAchievements()
+    
     addTag(Constants.Achievements.GeneralTag)
     addTag(Constants.Achievements.PillsTag)
     addTag(Constants.Achievements.GamesTag)

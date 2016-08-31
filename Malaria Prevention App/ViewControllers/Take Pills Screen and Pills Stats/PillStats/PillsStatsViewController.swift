@@ -14,7 +14,7 @@ class PillsStatsViewController : UIViewController {
   
   @IBInspectable var GraphDateFormat: String = "M.d.yyyy"
   @IBInspectable var NoDataText: String = NSLocalizedString("No entries",
-                                                            comment: "No entries for tht medicine")
+                                                            comment: "No entries for that medicine.")
   @IBInspectable var NumberRecentMonths: Int = 4
   @IBInspectable var GraphFillColor: UIColor = UIColor(hex: 0xA1D4E2)
   @IBInspectable var XAxisLineColor: UIColor = UIColor(hex: 0x8A8B8A)

@@ -10,7 +10,7 @@
         <!--Games List View Controller-->
         <scene sceneID="EzI-OV-DOY">
             <objects>
-                <viewController storyboardIdentifier="GamesListViewController" id="9YU-V4-hOC" customClass="GamesListViewController" customModule="malaria_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GamesListViewController" id="9YU-V4-hOC" customClass="GamesListViewController" customModule="Malaria_Prevention_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pDR-Vk-PmE"/>
                         <viewControllerLayoutGuide type="bottom" id="AuU-G0-tAe"/>
@@ -36,7 +36,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" reuseIdentifier="Games Collection View Cell" id="2P7-jj-Phv" customClass="PeaceCorpsMessageCollectionViewCell" customModule="malaria_ios" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" reuseIdentifier="Games Collection View Cell" id="2P7-jj-Phv" customClass="PeaceCorpsMessageCollectionViewCell" customModule="Malaria_Prevention_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -130,7 +130,7 @@
         <!--Rapid Fire View Controller-->
         <scene sceneID="PGq-HB-4iL">
             <objects>
-                <viewController id="vA5-h3-axR" customClass="RapidFireViewController" customModule="malaria_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vA5-h3-axR" customClass="RapidFireViewController" customModule="Malaria_Prevention_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mRT-pI-rBT"/>
                         <viewControllerLayoutGuide type="bottom" id="PBb-CF-Shi"/>
@@ -305,7 +305,7 @@
         <!--Post Detailed View Controller-->
         <scene sceneID="1nY-J7-WFT">
             <objects>
-                <viewController storyboardIdentifier="PostDetailedViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="A9n-fY-OME" customClass="PostDetailedViewController" customModule="malaria_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostDetailedViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="A9n-fY-OME" customClass="PostDetailedViewController" customModule="Malaria_Prevention_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rzw-tk-Ltu"/>
                         <viewControllerLayoutGuide type="bottom" id="IL7-dq-NcB"/>
@@ -437,7 +437,7 @@
         <!--Info Hub View Controller-->
         <scene sceneID="YCY-Qb-nlU">
             <objects>
-                <viewController storyboardIdentifier="InfoHubViewController" id="o41-au-PMD" customClass="InfoHubViewController" customModule="malaria_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoHubViewController" id="o41-au-PMD" customClass="InfoHubViewController" customModule="Malaria_Prevention_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OvY-Bl-YPX"/>
                         <viewControllerLayoutGuide type="bottom" id="DCQ-nj-LfX"/>
@@ -477,7 +477,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" reuseIdentifier="postCollectionCell" id="fSA-15-xSO" customClass="PeaceCorpsMessageCollectionViewCell" customModule="malaria_ios" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" reuseIdentifier="postCollectionCell" id="fSA-15-xSO" customClass="PeaceCorpsMessageCollectionViewCell" customModule="Malaria_Prevention_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -556,7 +556,7 @@
         <!--Achievements View Controller-->
         <scene sceneID="sFR-rU-JdT">
             <objects>
-                <viewController storyboardIdentifier="AchievementsViewController" id="hdF-4Z-dR0" customClass="AchievementsViewController" customModule="malaria_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AchievementsViewController" id="hdF-4Z-dR0" customClass="AchievementsViewController" customModule="Malaria_Prevention_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5FK-ov-dac"/>
                         <viewControllerLayoutGuide type="bottom" id="DZs-te-8uN"/>
@@ -594,7 +594,7 @@
                                 </constraints>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Achievement Cell" rowHeight="75" id="jA5-ca-7Bd" customClass="AchievementTableViewCell" customModule="malaria_ios" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Achievement Cell" rowHeight="75" id="jA5-ca-7Bd" customClass="AchievementTableViewCell" customModule="Malaria_Prevention_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jA5-ca-7Bd" id="GS3-0t-lbf">
@@ -626,8 +626,8 @@
                                                     <color key="textColor" red="0.4378715158" green="0.32177186009999997" blue="0.2744835913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDn-iT-fcC">
-                                                    <rect key="frame" x="483" y="14" width="68" height="19"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NDn-iT-fcC">
+                                                    <rect key="frame" x="447" y="14" width="140" height="19"/>
                                                     <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="13"/>
                                                     <color key="textColor" red="0.4378715158" green="0.32177186009999997" blue="0.2744835913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -647,6 +647,7 @@
                                                 <constraint firstAttribute="leadingMargin" secondItem="1eI-AA-Crq" secondAttribute="leading" id="Smi-ob-CaS"/>
                                                 <constraint firstItem="72g-5X-2p7" firstAttribute="top" secondItem="NDn-iT-fcC" secondAttribute="bottom" constant="8" id="X7m-EN-A8P"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="1eI-AA-Crq" secondAttribute="bottom" constant="6" id="Yxq-yA-eeK"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="NDn-iT-fcC" secondAttribute="trailing" constant="5" id="cZF-w9-mnp"/>
                                                 <constraint firstItem="72g-5X-2p7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hyW-wY-wXI" secondAttribute="trailing" constant="5" id="ke9-EJ-d57"/>
                                                 <constraint firstItem="1eI-AA-Crq" firstAttribute="top" secondItem="hyW-wY-wXI" secondAttribute="bottom" constant="8" id="mri-Z0-696"/>
                                                 <constraint firstItem="NDn-iT-fcC" firstAttribute="centerX" secondItem="72g-5X-2p7" secondAttribute="centerX" id="nfm-Lp-Y6X"/>
@@ -718,7 +719,7 @@
         <!--Game Rules View Controller-->
         <scene sceneID="Fio-1i-u8I">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="U92-ip-Ijb" customClass="GameRulesViewController" customModule="malaria_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="U92-ip-Ijb" customClass="GameRulesViewController" customModule="Malaria_Prevention_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wT3-ed-yYr"/>
                         <viewControllerLayoutGuide type="bottom" id="3lJ-p2-v8F"/>
@@ -853,7 +854,7 @@
         <!--Myth Vs Fact View Controller-->
         <scene sceneID="IKj-Ek-YA6">
             <objects>
-                <viewController id="7M5-Sm-ujZ" customClass="MythVsFactViewController" customModule="malaria_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7M5-Sm-ujZ" customClass="MythVsFactViewController" customModule="Malaria_Prevention_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VpF-Il-qWx"/>
                         <viewControllerLayoutGuide type="bottom" id="1iH-99-WaA"/>
@@ -942,7 +943,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HWW-MS-eqw" customClass="InsetLabel" customModule="malaria_ios" customModuleProvider="target">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HWW-MS-eqw" customClass="InsetLabel" customModule="Malaria_Prevention_App" customModuleProvider="target">
                                 <rect key="frame" x="25" y="201" width="550" height="33"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="23"/>

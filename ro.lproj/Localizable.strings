@@ -1,0 +1,186 @@
+"Achievement %@ unlocked" = "Obiectivul %@ a fost deblocat";
+
+"Location text can't be empty." = "Textul destinației nu poate fi gol.";
+
+"You need to refill your pill stock from the User Profile." = "Trebuie să îți resuplimentezi stocul din secțiunea Profilum Meu";
+
+"Did you take %@ today?" = "Ți-ai luat %@ astăzi?";
+
+// User Validation Errors
+
+"First name must have minimum two characters." = "Prenumele trebuie să aibă minim două caractere.";
+"Last name must have minimum two characters." = "Numele trebuie să aibă minim două caractere.";
+"Location must have minimum two characters." = "Locația trebuie să aibă minim două caractere.";
+"Phone must have minimum two characters." = "Telefonul trebuie să aibă minim două caractere.";
+"Gender must have minimum two characters." = "Sexul trebuie să aibă minim două caractere.";
+"Please insert your real age." = "Te rog introdu vârsta ta adevărată.";
+"Please insert a valid email." = "Te rog introdu un email valid.";
+"Please insert a valid phone number." = "Te rog introdu un telefon valid";
+
+// Sharing Stats
+
+"Share Your Stats!" = "Împărtășește-ți statisticile!";
+
+// Alert options
+
+"Cancel" = "Anulare";
+"Ok" = "Ok";
+"Yes" = "Da";
+"No" = "Nu";
+"Dismiss" = "Înlătură";
+"Yes, I did" = "Da, am luat";
+"No, I didn't" = "Nu, nu am luat";
+"Back" = "Înapoi";
+"Restart" = "Restart";
+"Settings" = "Setări";
+"Success" = "Succes";
+"Error" = "Eroare";
+"Done" = "Finalizare";
+
+// Daily stats
+
+"Adherence to medicine" = "Aderență la medicație";
+"Adherence" = "Aderență";
+"Doses in a Row" = "Doze la rând";
+"DosesInRow" = "DozeLaRând";
+"Medicine Last Take" = "Ultima dată a pastilei";
+"MedicineLastTaken" = "UltimaDatăAPastilei";
+
+// Did Take Pills View Controller
+
+"You forgot your medicine for quite a while" = "Ai uitat să iei medicamentul în ultima vreme.";
+"Would you like to change your reminder time?" = "Ai dori să îți schimbi ora de amintire?";
+
+// Monthly View Controller
+
+"Not possible to change entries in the future" = "Nu poți să schimbi înregistrări în viitor";
+"You already took your %@ pill" = "Ți-ai luat deja pastila %@";
+"You didn't take your %@ pill" = "Nu ți-ai luat pastila %@";
+"Did you take your medicine on %@ ?" = "Ți-ai luat pastila pe %@ ?";
+
+"daily" = "zilnic";
+"weekly" = "săptămânal";
+
+// Pill Stats View Controller
+
+"No entries" = "Nicio înregistrare";
+
+// Myth vs. Fact
+
+"Statement 1" = "Odată ce ai luat malarie vei fi imun pe viață.";
+"Statement 2" = "Malaria este o boală fatală.";
+"Statement 3" = "Nu trebuie să te temi de malaria în sezonul uscat.";
+"Statement 4" = "Jumătate din populația planetei este în pericol de malarie.";
+"Statement 5" = "Există un vaccin pentru malarie.";
+
+"Myth vs. Fact" = "Mit vs. Adevăr";
+"MythVsFact Rules" = "- Decide dacă constatarea este corectă sau falsă prin a o trage în containerul coresponzător.\n\n- Câștigă puncte de realizări pentru fiecare răspuns corect pe care îl dai.\n\n- Răspunsul corect va sclipi după fiecare răspuns.";
+
+"Statement %i / %i" = "Constatarea %i / %i";
+
+
+// Rapid Fire
+
+"Question 1" = "Melfoquine trebuie administrată:";
+
+"Daily" = "Zilnic";
+"Weekly" = "Săptămânal";
+"Monthly" = "Lunar";
+
+"Question 2" = "Malaria este cauzată de:";
+
+"Virus" = "Virus";
+"Bacteria" = "Bacterie";
+"Protozoa" = "Protozoare";
+
+"Question 3" = "Doxycycline trebuie administrată: ";
+"Question 4" = "Malaria este transmisă prin țânțarul ....";
+
+"Female Aedes" = "Femelă Aedes";
+"Female Anopheles" = "Femelă Anopheles";
+"Male Aedes" = "Mascul Aedes";
+
+"Question 5" = "Malarone trebuie administrată:";
+
+"Rapid Fire" = "Foc Rapid";
+"Rapid Fire game rules" = "- Răspunde rapid la întrebări, sunt presiunea timpului.\n\n- Căștigă puncte de realizări pentru fiecare răspuns corect pe care îl dai.";
+
+"Question %i / %i" = "Întrebarea %i / %i";
+
+"%i %@" = "%i %@";
+"second" = "secundă";
+"seconds" = "secunde";
+
+// Info Hub
+
+"No available message from Peace Corps." = "Niciun mesaj disponibil de la Peace Corps.";
+"Couldn't update Peace Corps messages" = "Nu am reușit să actualizez mesajele de la Peace Corps.";
+"Please try again later." = "Te rog încearcă mai târziu.";
+"Couldn't update Peace Corps messages." = "Nu am putut actualiza mesajele de la Peace Corps.";
+"No available internet connection. Please try again later." = "Nu există conexiune la internet. Te rog, încearcă mai târziu.";
+
+// Plan Trip View Controller
+
+"Only medicine" = "Numai medicamente";
+"%i items" = "%i obiecte";
+
+"Update Trip" = "Actualizează excursie";
+"All data will be lost" = "Toate datele vor fi pierdute";
+"History is empty" = "Istoricul e gol";
+"Departure day must be before arrival" = "Plecarea trebuie să fie înaintea sosirii.";
+"Arrival day must be after departure" = "Sosirea trebuie să fie după plecare.";
+
+// List Items View Controller
+
+"Delete" = "Șterge";
+"%i pills" = "%i pastile";
+"Name" = "Nume";
+
+"What do you want to bring to the trip?" = "Ce vrei să iei în excursie?";
+"Pick one medicine" = "Alege un medicament";
+"Change item" = "Schimbă obiect";
+
+// User Profile
+
+"You have %d %@ of %@ left." = "Ți-au mai rămas %d %@ de %@.";
+"week" = "săptămână";
+"day" = "zi";
+"weeks" = "săptămâni";
+"days" = "zile";
+
+"Set reminder for:" = "Amintește-mi pentru:";
+
+// Gender Text Field
+
+"Male" = "Masculin";
+"Female" = "Femenin";
+"Other" = "Altceva";
+
+// Achievements
+
+"Flawless game" = "Joc Perfect";
+"Finish a Rapid Fire game without picking any wrong answer." = "Finalizează un joc de Foc Rapid fără să gresești vreun răspuns.";
+"First Trip" = "Prima Excursie";
+"Plan your first trip." = "Planifică prima excursie.";
+"Staying safe" = "Menține-te sănătos";
+"Take your first medicine." = "Ia prima ta pastilă.";
+
+"Completed" = "Finalizat";
+
+"General" = "General";
+"Pills" = "Pastile";
+"Games" = "Jocuri";
+
+// Pill notification manager
+
+"You ran out of pills!" = "Ai rămas fără pastile!";
+
+// Game Controller
+
+"Score: %i" = "Scor: %i";
+"Game over" = "Joc terminat";
+"You gained %i achievement %@" = "Ai obținut %i %@ de realizări.";
+"point" = "punct";
+"points" = "puncte";
+"Couldn't start game" = "Nu a putut începe jocul";
+"There was a problem fetching the content for this game." = "A fost o problemă cu preluarea datelor pentru acest joc";
