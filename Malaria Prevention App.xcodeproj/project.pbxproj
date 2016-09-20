@@ -328,8 +328,7 @@
 		200C72661B40368600998100 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		200C73421B40392A00998100 /* ApiExamples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ApiExamples; sourceTree = "<group>"; };
 		200EE4841B1343A50087FB24 /* Malaria Prevention App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Malaria Prevention App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		200EE48E1B1343A50087FB24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		200EE4931B1343A50087FB24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		200EE4931B1343A50087FB24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Base; path = "Storyboards/Launch Screen"; sourceTree = "<group>"; };
 		200EE4991B1343A60087FB24 /* Malaria Prevention AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Malaria Prevention AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		200EE49E1B1343A60087FB24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		200EE49F1B1343A60087FB24 /* TestUserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUserSettings.swift; sourceTree = "<group>"; };
@@ -479,7 +478,7 @@
 		68E62F7B1D1AC1B100743214 /* WidgetSettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WidgetSettingsManager.swift; path = SupportingFiles/WidgetSettingsManager.swift; sourceTree = "<group>"; };
 		68E62F7F1D1C2C6B00743214 /* MedicineStockManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineStockManager.swift; sourceTree = "<group>"; };
 		68E62F811D1DAC7D00743214 /* TestMedicineStockManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMedicineStockManager.swift; sourceTree = "<group>"; };
-		68EFC4621D76269900E9B52F /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		68E7ABAC1D919339003FF09C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68EFC4631D76269900E9B52F /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		68EFC46A1D762FDF00E9B52F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/InfoHub.storyboard; sourceTree = "<group>"; };
 		68EFC46D1D76331500E9B52F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/InitialSetup.storyboard; sourceTree = "<group>"; };
@@ -1326,7 +1325,7 @@
 				TargetAttributes = {
 					200EE4831B1343A50087FB24 = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = 8GY46T35JG;
+						DevelopmentTeam = A9972S5PQC;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -1342,7 +1341,7 @@
 					};
 					E4C20AD11C8B7D6000B686F4 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 8GY46T35JG;
+						DevelopmentTeam = A9972S5PQC;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -1356,7 +1355,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 				ro,
 			);
@@ -1808,17 +1806,17 @@
 		200EE48D1B1343A50087FB24 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				200EE48E1B1343A50087FB24 /* Base */,
 				68EFC47B1D763F1700E9B52F /* ro */,
+				68E7ABAC1D919339003FF09C /* Base */,
 			);
 			name = Main.storyboard;
+			path = Storyboards/Main;
 			sourceTree = "<group>";
 		};
 		200EE4921B1343A50087FB24 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				200EE4931B1343A50087FB24 /* Base */,
-				68EFC4621D76269900E9B52F /* ro */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -1830,7 +1828,7 @@
 				68EFC4781D76366000E9B52F /* ro */,
 			);
 			name = Localizable.strings;
-			path = ..;
+			path = ../Localization;
 			sourceTree = "<group>";
 		};
 		68EFC4671D762FD400E9B52F /* InfoHub.storyboard */ = {
@@ -1840,6 +1838,7 @@
 				68EFC4761D76347600E9B52F /* ro */,
 			);
 			name = InfoHub.storyboard;
+			path = "../../Storyboards/Info Hub";
 			sourceTree = "<group>";
 		};
 		68EFC46E1D76331500E9B52F /* InitialSetup.storyboard */ = {
@@ -1849,7 +1848,7 @@
 				68EFC4791D763CDD00E9B52F /* ro */,
 			);
 			name = InitialSetup.storyboard;
-			path = ../../Base.lproj;
+			path = "../../Storyboards/Initial Screen";
 			sourceTree = "<group>";
 		};
 		68EFC4731D76344900E9B52F /* PillScreens.storyboard */ = {
@@ -1859,6 +1858,7 @@
 				68EFC47A1D763DAA00E9B52F /* ro */,
 			);
 			name = PillScreens.storyboard;
+			path = "../../Storyboards/Pills Screen";
 			sourceTree = "<group>";
 		};
 		E4C20AD81C8B7D6000B686F4 /* MainInterface.storyboard */ = {
@@ -1968,7 +1968,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "Malaria Prevention App/Base Files/malaria-ios.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Teodor Ciuraru (6ZEUGGSMB6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1988,9 +1988,9 @@
 				INFOPLIST_FILE = "Malaria Prevention App/Base Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "anita-borg.pc-malaria-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = org.systers.peacecorps.malaria;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "8bc20038-c97a-4ec8-bf50-d5f45d774937";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Base Files/bridging_header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2003,14 +2003,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "Malaria Prevention App/Base Files/malaria-ios.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Anita Borg Institute for Women and Technology (A9972S5PQC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Anita Borg Institute for Women and Technology (A9972S5PQC)";
 				INFOPLIST_FILE = "Malaria Prevention App/Base Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "anita-borg.pc-malaria-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = org.systers.peacecorps.malaria;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "e5857aff-199a-40e0-86d6-5d99fa086ae0";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Base Files/bridging_header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2058,15 +2058,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Malaria App Widget/Malaria App Widget.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Teodor Ciuraru (6ZEUGGSMB6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				INFOPLIST_FILE = "Malaria App Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "anita-borg.pc-malaria-ios.pill-widget";
+				PRODUCT_BUNDLE_IDENTIFIER = org.systers.peacecorps.malaria.pillWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "59adffb0-0433-4e1e-86f3-cef25587d539";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -2076,14 +2076,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Malaria App Widget/Malaria App Widget.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Anita Borg Institute for Women and Technology (A9972S5PQC)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Malaria App Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "anita-borg.pc-malaria-ios.pill-widget";
+				PRODUCT_BUNDLE_IDENTIFIER = org.systers.peacecorps.malaria.pillWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "7ee39ec7-d823-4768-bcbd-2ff68bddae41";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "";
 			};

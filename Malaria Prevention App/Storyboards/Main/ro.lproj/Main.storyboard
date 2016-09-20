@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZAn-8F-xrP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZAn-8F-xrP">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -87,7 +87,7 @@
                                     <constraint firstAttribute="height" constant="44" id="zLh-rF-qK1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
-                                <state key="normal" title="Remind me" backgroundImage="GenerateTripButton">
+                                <state key="normal" title="Amintește-mi" backgroundImage="GenerateTripButton">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -108,7 +108,7 @@
                                     <action selector="settingsBtnHandler:" destination="cfZ-pD-OHm" eventType="touchUpInside" id="YJd-YM-KFi"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="plan My trip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="vS7-WU-xrN" userLabel="Title">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="planifică o Excursie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="vS7-WU-xrN" userLabel="Title">
                                 <rect key="frame" x="211" y="41" width="209" height="55"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="35"/>
                                 <color key="textColor" red="0.43787151575088501" green="0.32177186012268066" blue="0.27448359131813049" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -122,7 +122,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aEx-jR-M42" userLabel="InputContainer">
                                 <rect key="frame" x="20" y="121" width="560" height="348"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Departure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zsv-66-dIF">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Plecare" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zsv-66-dIF">
                                         <rect key="frame" x="8" y="53" width="115" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="bAL-cI-MIt"/>
@@ -131,7 +131,7 @@
                                         <color key="textColor" red="0.43787151575088501" green="0.32177186012268066" blue="0.27448359131813049" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Arrival" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0EB-cQ-R9d">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Sosire" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0EB-cQ-R9d">
                                         <rect key="frame" x="8" y="98" width="115" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Jsj-0v-jst"/>
@@ -140,14 +140,14 @@
                                         <color key="textColor" red="0.4378715158" green="0.32177186009999997" blue="0.2744835913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Izn-kJ-Tw1" userLabel="dayInput">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Data" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Izn-kJ-Tw1" userLabel="dayInput">
                                         <rect key="frame" x="128" y="98" width="424" height="30"/>
                                         <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Packing List" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oL5-9q-JdS">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Listă de împachetat" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oL5-9q-JdS">
                                         <rect key="frame" x="8" y="143" width="115" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="X2H-SY-RNp"/>
@@ -156,7 +156,7 @@
                                         <color key="textColor" red="0.43787151575088501" green="0.32177186012268066" blue="0.27448359131813049" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Remind me at" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="d7x-NC-6ho" userLabel="ReminderTime">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Amintește-mi la" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="d7x-NC-6ho" userLabel="ReminderTime">
                                         <rect key="frame" x="8" y="188" width="115" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="gs7-5K-SBZ"/>
@@ -181,7 +181,7 @@
                                             <action selector="itemListBtnHandler:" destination="cfZ-pD-OHm" eventType="touchUpInside" id="Qzq-tR-UJ2"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="FYx-2W-myp" userLabel="timeInput">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Data" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="FYx-2W-myp" userLabel="timeInput">
                                         <rect key="frame" x="128" y="188" width="424" height="30"/>
                                         <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -200,21 +200,21 @@
                                             <action selector="historyButtonHandler:" destination="cfZ-pD-OHm" eventType="touchUpInside" id="dJ5-Rr-4rx"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="buv-20-bVO" userLabel="dayInput">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dată" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="buv-20-bVO" userLabel="dayInput">
                                         <rect key="frame" x="128" y="53" width="424" height="30"/>
                                         <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wsy-a8-zYC" userLabel="LocationInput" customClass="LocationTextField" customModule="Malaria_Prevention_App" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Locație" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wsy-a8-zYC" userLabel="LocationInput" customClass="LocationTextField" customModule="Malaria_Prevention_App" customModuleProvider="target">
                                         <rect key="frame" x="128" y="8" width="392" height="30"/>
                                         <color key="backgroundColor" red="0.52156862745098043" green="0.72156862745098038" blue="0.31372549019607843" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Destination" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDI-g8-P7t">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Destinație" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDI-g8-P7t">
                                         <rect key="frame" x="8" y="8" width="120" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="7Jj-kw-IeY"/>
@@ -342,8 +342,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKS-CH-G0x" userLabel="Frame">
                                 <rect key="frame" x="30" y="45" width="540" height="505"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Packaging List" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="sST-vC-vHY" userLabel="Title">
-                                        <rect key="frame" x="147" y="10" width="245" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Listă de împachetat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sST-vC-vHY" userLabel="Title">
+                                        <rect key="frame" x="105" y="10" width="330.5" height="41"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="35"/>
                                         <color key="textColor" red="0.4378715158" green="0.32177186009999997" blue="0.2744835913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -385,10 +385,10 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u39-Kq-OKq">
+                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u39-Kq-OKq">
                                                             <rect key="frame" x="78" y="20" width="67" height="37"/>
                                                             <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="17"/>
-                                                            <state key="normal" title="Medicine">
+                                                            <state key="normal" title="Medicație">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
@@ -495,7 +495,7 @@
                                             <constraint firstAttribute="height" constant="44" id="Vpw-zC-fGO"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
-                                        <state key="normal" title="Done" backgroundImage="GenerateTripButton">
+                                        <state key="normal" title="Finalizare" backgroundImage="GenerateTripButton">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -510,7 +510,7 @@
                                             <constraint firstAttribute="width" constant="100" id="uvx-1y-kfh"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
-                                        <state key="normal" title="Cancel" backgroundImage="GenerateTripButton">
+                                        <state key="normal" title="Anulare" backgroundImage="GenerateTripButton">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -543,12 +543,11 @@
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.94509803920000002" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="HIY-l7-HPI" firstAttribute="leading" secondItem="gKS-CH-G0x" secondAttribute="leading" id="6Gk-fI-Ftt"/>
+                                    <constraint firstItem="sST-vC-vHY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gKS-CH-G0x" secondAttribute="leading" constant="5" id="7Ky-9Z-7mA"/>
                                     <constraint firstItem="fvk-jT-G0o" firstAttribute="top" secondItem="gKS-CH-G0x" secondAttribute="top" constant="15" id="83M-Fz-ZQf"/>
                                     <constraint firstAttribute="trailing" secondItem="XmZ-Hh-buZ" secondAttribute="trailing" constant="10" id="8yQ-ff-j73"/>
                                     <constraint firstAttribute="trailing" secondItem="HIY-l7-HPI" secondAttribute="trailing" id="DKG-Pw-Knm"/>
-                                    <constraint firstItem="sST-vC-vHY" firstAttribute="leading" secondItem="gKS-CH-G0x" secondAttribute="leading" constant="147" id="EOQ-t8-UXB"/>
                                     <constraint firstAttribute="centerX" secondItem="Sgf-XE-VZW" secondAttribute="centerX" priority="999" constant="-70" id="KK7-j0-ZKq"/>
-                                    <constraint firstItem="fvk-jT-G0o" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sST-vC-vHY" secondAttribute="trailing" constant="15" id="LRT-5o-lZA"/>
                                     <constraint firstItem="sST-vC-vHY" firstAttribute="top" secondItem="gKS-CH-G0x" secondAttribute="top" constant="10" id="NWw-GE-wgn"/>
                                     <constraint firstAttribute="bottom" secondItem="EwF-ot-Spu" secondAttribute="bottom" constant="15" id="NsU-7y-9RM"/>
                                     <constraint firstItem="Sgf-XE-VZW" firstAttribute="centerY" secondItem="EwF-ot-Spu" secondAttribute="centerY" id="OjZ-g5-Aa5"/>
@@ -560,6 +559,7 @@
                                     <constraint firstItem="HIY-l7-HPI" firstAttribute="top" secondItem="XmZ-Hh-buZ" secondAttribute="bottom" constant="8" id="ls1-iS-Be5"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Sgf-XE-VZW" secondAttribute="trailing" constant="15" id="mJ6-hH-Ccp"/>
                                     <constraint firstAttribute="bottom" secondItem="HIY-l7-HPI" secondAttribute="bottom" constant="238" id="n8M-dd-lVg"/>
+                                    <constraint firstItem="fvk-jT-G0o" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sST-vC-vHY" secondAttribute="trailing" constant="5" id="nY3-rZ-MeF"/>
                                     <constraint firstItem="EwF-ot-Spu" firstAttribute="top" secondItem="HIY-l7-HPI" secondAttribute="bottom" constant="23" id="sY6-f3-HeW"/>
                                     <constraint firstAttribute="centerX" secondItem="sST-vC-vHY" secondAttribute="centerX" id="tXY-2T-QKz"/>
                                     <constraint firstAttribute="centerX" secondItem="EwF-ot-Spu" secondAttribute="centerX" priority="999" constant="70" id="vL1-ID-A13"/>
@@ -643,11 +643,11 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Edit Profile" backgroundImage="GenerateTripButton">
+                                <state key="normal" title="Editează Profilul" backgroundImage="GenerateTripButton">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="selected" title="Save">
+                                <state key="selected" title="Salvează">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -681,7 +681,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97d-O4-I6r" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="558.5"/>
                                         <subviews>
-                                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="47b-OG-oeL">
+                                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="47b-OG-oeL">
                                                 <rect key="frame" x="8" y="400" width="544" height="89"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -696,12 +696,12 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="544" height="59.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pill Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILC-CL-SP0">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numele pastilei" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILC-CL-SP0">
                                                                     <rect key="frame" x="8" y="17" width="423" height="24.5"/>
                                                                     <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantity" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NSY-12-d27">
+                                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cantitatea" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NSY-12-d27">
                                                                     <rect key="frame" x="439" y="15" width="97" height="30"/>
                                                                     <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                                                     <constraints>
@@ -733,7 +733,7 @@
                                                     <outlet property="delegate" destination="5p7-9L-nGd" id="ZhG-L4-eYs"/>
                                                 </connections>
                                             </tableView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Alert me when running out of pills for the next:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tW6-I2-uml">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Anunță-mă când rămîn fără pastile pentru următoarele:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tW6-I2-uml">
                                                 <rect key="frame" x="8" y="367" width="398" height="25.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="7KI-ja-hHv"/>
@@ -762,7 +762,7 @@
                                                     <constraint firstAttribute="width" constant="80" id="lN6-ic-GJn"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="16"/>
-                                                <state key="normal" title="X weeks">
+                                                <state key="normal" title="X săptămâni">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -780,13 +780,13 @@
                                                     <action selector="remindMeWeeksPressed:" destination="5p7-9L-nGd" eventType="touchUpInside" id="j1m-9Z-rbw"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You have enough pills of CURRENT_MEDICINE for the next X weeks / days." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="5h4-M7-ESc">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ai destule pastile de CURRENT_MEDICINE pentru următoarele X săptămâni / zile" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="5h4-M7-ESc">
                                                 <rect key="frame" x="8" y="497" width="544" height="45.5"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="16"/>
                                                 <color key="textColor" red="0.4378715158" green="0.32177186009999997" blue="0.2744835913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Last name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KgF-WV-qrD">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Nume" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KgF-WV-qrD">
                                                 <rect key="frame" x="19" y="83" width="86" height="26"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="123" id="O8Q-oM-q1l"/>
@@ -800,7 +800,7 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Gender" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xht-sx-qbq">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Sex" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xht-sx-qbq">
                                                 <rect key="frame" x="19" y="124" width="86" height="26"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="123" id="HE5-mP-H7j"/>
@@ -814,7 +814,7 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hug-yK-fuS">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Locație" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hug-yK-fuS">
                                                 <rect key="frame" x="19" y="206" width="86" height="26"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="123" id="DBd-YF-Hq8"/>
@@ -855,7 +855,7 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone (optional)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gPh-No-MBa" userLabel="Phone Input">
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telefon (opțional)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gPh-No-MBa" userLabel="Phone Input">
                                                 <rect key="frame" x="115" y="286" width="426" height="30"/>
                                                 <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -868,7 +868,7 @@
                                                     <outlet property="delegate" destination="5p7-9L-nGd" id="4ef-sZ-gxV"/>
                                                 </connections>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Phone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptV-wJ-VSK">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Telefon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptV-wJ-VSK">
                                                 <rect key="frame" x="19" y="288" width="86" height="26"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="123" id="iLY-1y-WQz"/>
@@ -882,7 +882,7 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="First name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GmD-Lr-bg6">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Prenume" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GmD-Lr-bg6">
                                                 <rect key="frame" x="19" y="42" width="86" height="26"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="123" id="Ogy-5h-bsg"/>
@@ -897,7 +897,7 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender (optional)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="59a-Pe-EqF" userLabel="Gender Input" customClass="GenderTextField" customModule="Malaria_Prevention_App" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sex (opțional)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="59a-Pe-EqF" userLabel="Gender Input" customClass="GenderTextField" customModule="Malaria_Prevention_App" customModuleProvider="target">
                                                 <rect key="frame" x="115" y="122" width="426" height="30"/>
                                                 <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -910,7 +910,7 @@
                                                     <outlet property="delegate" destination="5p7-9L-nGd" id="Fnf-dg-ePk"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MQa-zu-z3t" userLabel="Last Name Input">
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nume" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MQa-zu-z3t" userLabel="Last Name Input">
                                                 <rect key="frame" x="115" y="81" width="426" height="30"/>
                                                 <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -923,10 +923,10 @@
                                                     <outlet property="delegate" destination="5p7-9L-nGd" id="R5s-b3-ugA"/>
                                                 </connections>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="My Pills:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfz-QL-sBb">
-                                                <rect key="frame" x="8" y="333" width="74" height="25.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Pastilele mele:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfz-QL-sBb">
+                                                <rect key="frame" x="8" y="333" width="533" height="25.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="74" id="VRv-uR-3B0"/>
+                                                    <constraint firstAttribute="width" constant="533" id="VRv-uR-3B0"/>
                                                     <constraint firstAttribute="height" constant="30" id="WvJ-Uj-yK1"/>
                                                     <constraint firstAttribute="width" constant="120" id="a47-kT-Xwe"/>
                                                 </constraints>
@@ -940,12 +940,12 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="My Info:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqD-Sa-Bz3">
-                                                <rect key="frame" x="8" y="8" width="74" height="25.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Informația mea:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqD-Sa-Bz3">
+                                                <rect key="frame" x="8" y="8" width="533" height="25.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="120" id="8aG-jr-AOf"/>
                                                     <constraint firstAttribute="height" constant="30" id="9To-1A-dKV"/>
-                                                    <constraint firstAttribute="width" constant="74" id="Lvw-Uo-8tG"/>
+                                                    <constraint firstAttribute="width" constant="533" id="Lvw-Uo-8tG"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="18"/>
                                                 <color key="textColor" red="0.4378715158" green="0.32177186009999997" blue="0.2744835913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -957,7 +957,7 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QQi-Rh-Kth" userLabel="First Name Input">
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Prenume" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QQi-Rh-Kth" userLabel="First Name Input">
                                                 <rect key="frame" x="115" y="40" width="426" height="30"/>
                                                 <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -970,7 +970,7 @@
                                                     <outlet property="delegate" destination="5p7-9L-nGd" id="hW9-qW-aBi"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ab3-Dr-YqI" userLabel="Age Input">
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vărstă" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ab3-Dr-YqI" userLabel="Age Input">
                                                 <rect key="frame" x="115" y="163" width="426" height="30"/>
                                                 <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -983,7 +983,7 @@
                                                     <outlet property="delegate" destination="5p7-9L-nGd" id="vkK-MC-ohI"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location (optional)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gae-9B-Gmu" userLabel="Medicine Input" customClass="LocationTextField" customModule="Malaria_Prevention_App" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Locație (opțional)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gae-9B-Gmu" userLabel="Medicine Input" customClass="LocationTextField" customModule="Malaria_Prevention_App" customModuleProvider="target">
                                                 <rect key="frame" x="115" y="204" width="426" height="30"/>
                                                 <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -993,7 +993,7 @@
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebd-Ee-tYj">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Vârstă" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebd-Ee-tYj">
                                                 <rect key="frame" x="19" y="165" width="86" height="26"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="123" id="mbE-gb-0TH"/>
@@ -1023,10 +1023,11 @@
                                             <constraint firstItem="59a-Pe-EqF" firstAttribute="trailing" secondItem="MQa-zu-z3t" secondAttribute="trailing" id="8cm-mz-5bI"/>
                                             <constraint firstItem="ptV-wJ-VSK" firstAttribute="trailing" secondItem="xDn-TJ-mWu" secondAttribute="trailing" id="9cM-b0-YbL"/>
                                             <constraint firstAttribute="trailing" secondItem="47b-OG-oeL" secondAttribute="trailing" constant="8" id="Amo-ms-zzQ"/>
-                                            <constraint firstItem="mfz-QL-sBb" firstAttribute="top" secondItem="ptV-wJ-VSK" secondAttribute="bottom" constant="20" id="BI6-S0-DMR"/>
+                                            <constraint firstItem="mfz-QL-sBb" firstAttribute="top" secondItem="ptV-wJ-VSK" secondAttribute="bottom" constant="19" id="BI6-S0-DMR"/>
                                             <constraint firstItem="ebd-Ee-tYj" firstAttribute="leading" secondItem="Xht-sx-qbq" secondAttribute="leading" id="BnI-UZ-fJ1"/>
                                             <constraint firstItem="GmD-Lr-bg6" firstAttribute="top" secondItem="GqD-Sa-Bz3" secondAttribute="bottom" constant="8" id="CYQ-vK-1gz"/>
                                             <constraint firstItem="2Tq-48-c23" firstAttribute="trailing" secondItem="gae-9B-Gmu" secondAttribute="trailing" id="Cd4-GB-DRn"/>
+                                            <constraint firstAttribute="trailing" secondItem="GqD-Sa-Bz3" secondAttribute="trailing" constant="19" id="Cir-oC-skh"/>
                                             <constraint firstItem="Xht-sx-qbq" firstAttribute="trailing" secondItem="KgF-WV-qrD" secondAttribute="trailing" id="DJt-23-2RA"/>
                                             <constraint firstItem="mfz-QL-sBb" firstAttribute="top" secondItem="tW6-I2-uml" secondAttribute="bottom" constant="13.5" id="Ez7-Hv-uwr"/>
                                             <constraint firstItem="2Tq-48-c23" firstAttribute="leading" secondItem="gae-9B-Gmu" secondAttribute="leading" id="FUo-P1-UU7"/>
@@ -1160,7 +1161,7 @@
                                     </mask>
                                 </variation>
                             </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="my Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Rdi-4G-gzq" userLabel="Title">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="profilul meu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Rdi-4G-gzq" userLabel="Title">
                                 <rect key="frame" x="83" y="41" width="471.5" height="55"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="35"/>
                                 <color key="textColor" red="0.4378715158" green="0.32177186009999997" blue="0.2744835913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1343,7 +1344,7 @@
                                             <constraint firstAttribute="width" constant="120" id="NZC-g7-xd4"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
-                                        <state key="normal" title="Done" backgroundImage="GenerateTripButton">
+                                        <state key="normal" title="Finalizare" backgroundImage="GenerateTripButton">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -1351,7 +1352,7 @@
                                             <action selector="doneButtonHandler" destination="zIW-NX-naO" eventType="touchUpInside" id="ecD-kk-zjw"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Remind me at" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7h6-Sv-oIo">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Amintește-mi la" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7h6-Sv-oIo">
                                         <rect key="frame" x="10" y="174" width="123" height="30"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
                                         <color key="textColor" red="0.4378715158" green="0.32177186009999997" blue="0.2744835913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1377,14 +1378,14 @@
                                             <action selector="sendFeedback:" destination="zIW-NX-naO" eventType="touchUpInside" id="PR5-GP-Vbi"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of pills" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hla-Tm-1Su" userLabel="Medicine Stock Input">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numărul de pastile" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hla-Tm-1Su" userLabel="Medicine Stock Input">
                                         <rect key="frame" x="140" y="129" width="385" height="30"/>
                                         <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="I take" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8E-ev-9vI">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Eu iau:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8E-ev-9vI">
                                         <rect key="frame" x="10" y="88" width="123" height="26"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="123" id="Oj5-3q-mGD"/>
@@ -1393,7 +1394,7 @@
                                         <color key="textColor" red="0.4378715158" green="0.32177186009999997" blue="0.2744835913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="I have" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpO-3X-M79">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Eu am:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpO-3X-M79">
                                         <rect key="frame" x="10" y="129" width="123" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="193" id="ZCT-Qd-slV"/>
@@ -1407,7 +1408,7 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Medicine name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AHy-yy-5np" userLabel="Medicine Input">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numele medicamentului" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AHy-yy-5np" userLabel="Medicine Input">
                                         <rect key="frame" x="140" y="86" width="385" height="30"/>
                                         <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1417,7 +1418,7 @@
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZp-tr-xNU" userLabel="Notification Time Input">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dată" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZp-tr-xNU" userLabel="Notification Time Input">
                                         <rect key="frame" x="141" y="174" width="385" height="30"/>
                                         <color key="backgroundColor" red="0.52156862749999999" green="0.72156862749999995" blue="0.31372549020000001" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
